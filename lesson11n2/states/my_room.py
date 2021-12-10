@@ -1,5 +1,4 @@
-from lesson11n2.keywords import SIT_DOWN
-from lesson11n2.states.out import OutState
+from lesson11n2.keywords import MY_ROOM, OUT, SIT_DOWN
 
 
 class MyRoomState():
@@ -10,8 +9,8 @@ class MyRoomState():
         # 'Sit down' とメッセージを送ってくるのが正解です
         if message == SIT_DOWN:
             c_sock.send("Clear!".encode())
-            return self
+            return MY_ROOM
 
         else:
             c_sock.send("You can see the house.".encode())
-            return OutState()
+            return OUT

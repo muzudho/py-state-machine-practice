@@ -39,6 +39,8 @@ class Server():
                 接続しているクライアントのソケット
             """
 
+            c_sock.send("Welcome to Lesson 11 !".encode())
+
             # 最初は外に居ます
             state = OUT
 

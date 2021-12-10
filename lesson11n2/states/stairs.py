@@ -1,6 +1,4 @@
-from lesson11n2.keywords import UP
-from lesson11n2.states.my_room import MyRoomState
-from lesson11n2.states.out import OutState
+from lesson11n2.keywords import MY_ROOM, OUT, UP
 
 
 class StairsState():
@@ -11,8 +9,8 @@ class StairsState():
         # `Up` とメッセージを送ってくるのが正解です
         if message == UP:
             c_sock.send("You can see the your room.".encode())
-            return MyRoomState()
+            return MY_ROOM
 
         else:
             c_sock.send("You can see the house.".encode())
-            return OutState()
+            return OUT

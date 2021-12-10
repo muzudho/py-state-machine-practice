@@ -1,7 +1,7 @@
 import sys
 
 from lesson07.main_and_finally import MainAndFinally
-from lesson11.server import Server
+from lesson11n2.server import Server
 
 server = None
 

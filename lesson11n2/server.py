@@ -2,6 +2,7 @@ import socket
 from threading import Thread
 
 from lesson11n2.states.out import OutState
+from lesson11n2.state_gen import state_gen
 
 
 class Server():
@@ -39,6 +40,8 @@ class Server():
                 接続しているクライアントのソケット
             """
 
+            c_sock.send("Welcome to Lesson 11-2 !".encode())
+
             # 最初は外に居ます
             state = OutState()
 
@@ -48,7 +51,8 @@ class Server():
                     message = c_sock.recv(self._message_size).decode()
 
                     # メッセージに応じたアクションを行ったあと、次の state に変えます
-                    state = state.react(message, c_sock)
+                    state_name = state.react(message, c_sock)
+                    state = state_gen[state_name]()
 
                 except Exception as e:
                     # client no longer connected
