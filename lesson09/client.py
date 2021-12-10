@@ -1,8 +1,5 @@
 import socket
-import random
 from threading import Thread
-from datetime import datetime
-from colorama import Fore, init, Back
 
 
 class Client():
@@ -56,28 +53,12 @@ class Client():
                     print(f"Terminate this thread")
                     return
 
-        # init colors
-        init()
-
-        # set the available colors
-        colors = [Fore.BLUE, Fore.CYAN, Fore.GREEN, Fore.LIGHTBLACK_EX,
-                  Fore.LIGHTBLUE_EX, Fore.LIGHTCYAN_EX, Fore.LIGHTGREEN_EX,
-                  Fore.LIGHTMAGENTA_EX, Fore.LIGHTRED_EX, Fore.LIGHTWHITE_EX,
-                  Fore.LIGHTYELLOW_EX, Fore.MAGENTA, Fore.RED, Fore.WHITE, Fore.YELLOW
-                  ]
-
-        # choose a random color for the client
-        client_color = random.choice(colors)
-
         # initialize TCP socket
         self._s_sock = socket.socket()
         # connect to the server
         print(f"[*] Connecting to {self._s_host}:{self._s_port}...")
         self._s_sock.connect((self._s_host, self._s_port))
         print("[+] Connected.")
-
-        # prompt the client for a name
-        name = input("Enter your name: ")
 
         # make a thread that listens for messages to this client & print them
         self._s_thr = Thread(target=server_worker)
@@ -89,11 +70,11 @@ class Client():
         while True:
             # input message we want to send to the server
             to_send = input()
+
             # a way to exit the program
             if to_send.lower() == 'q':
                 break
-            # add the datetime, name & the color of the sender
-            date_now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            to_send = f"{client_color}[{date_now}] {name} {to_send}{Fore.RESET}"
+
+            to_send = f"{to_send}"
             # finally, send the message
             self._s_sock.send(to_send.encode())

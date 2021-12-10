@@ -1,4 +1,5 @@
 import socket
+import random
 from threading import Thread
 
 
@@ -27,6 +28,9 @@ class EchoServer():
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
 
+        # この数字を当てるゲームです
+        self._secret_number = random.randint(0, 101)
+
     def run(self):
         def client_worker(c_sock):
             """クライアントから送信されてくるバイナリデータに対応します
@@ -41,10 +45,6 @@ class EchoServer():
                     # クライアントから受信したバイナリデータをテキストに変換します
                     message = c_sock.recv(self._message_size).decode()
 
-                    # とりあえず "Echo: " と頭に付けてバイナリデータに変換して送り返します
-                    message = f"Echo: {message}"
-                    c_sock.send(message.encode())
-
                 except Exception as e:
                     # client no longer connected
                     # remove it from the set
@@ -53,6 +53,24 @@ class EchoServer():
                     print(f"Remove a socket")
                     self._c_sock_set.remove(c_sock)
                     break
+
+                try:
+                    # 数値に変換
+                    number = int(message)
+
+                    if number < self._secret_number:
+                        c_sock.send("Too Small".encode())
+
+                    elif self._secret_number < number:
+                        c_sock.send("Too Big".encode())
+
+                    else:
+                        c_sock.send("Just Right!".encode())
+
+                    c_sock.send(message.encode())
+
+                except ValueError as e:
+                    c_sock.send("Please input a number".encode())
 
         self._c_sock_set = set()  # 初期化
 
