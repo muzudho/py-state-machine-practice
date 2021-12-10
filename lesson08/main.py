@@ -27,16 +27,34 @@ class Client():
         # '_s_sock' - (Server socket) 接続先サーバーのソケットです
         self._s_sock = None
 
+        # '_s_thr' - (Server thread) サーバーからのメッセージを受信するスレッド
+        self._s_thr = None
+
     def clean_up(self):
         # サーバーのソケットを閉じます
         self._s_sock.close()
+
+        # 実行中のスレッドがあれば終了するまで待機するのがクリーンです
+        if not(self._s_thr is None) and self._s_thr.is_alive():
+            print("[CleanUp] Before join")
+            self._s_thr.join()
+            print("[CleanUp] After join")
+            self._s_thr = None
 
     def run(self):
 
         def server_worker():
             while True:
-                message = self._s_sock.recv(MESSAGE_SIZE).decode()
-                print("\n" + message)
+                try:
+                    message = self._s_sock.recv(MESSAGE_SIZE).decode()
+                    print("\n" + message)
+                except Exception as e:
+                    # client no longer connected
+                    # remove it from the set
+                    print(f"[!] Error: {e}")
+
+                    print(f"Terminate this thread")
+                    return
 
         # init colors
         init()
@@ -62,11 +80,11 @@ class Client():
         name = input("Enter your name: ")
 
         # make a thread that listens for messages to this client & print them
-        thr = Thread(target=server_worker)
+        self._s_thr = Thread(target=server_worker)
         # make the thread daemon so it ends whenever the main thread ends
-        thr.daemon = True
+        self._s_thr.daemon = True
         # start the thread
-        thr.start()
+        self._s_thr.start()
 
         while True:
             # input message we want to send to the server
