@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 from lesson11n2.states.out import OutState
-from lesson11n2.state_gen import state_gen
+from lesson11n2.state_gen_conf import state_gen
 
 
 class Server():
