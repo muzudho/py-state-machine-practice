@@ -2,10 +2,10 @@ import sys
 import signal
 
 
-class MainAndExit():
-    def __init__(self, on_main, on_exit):
+class MainAndFinally():
+    def __init__(self, on_main, on_finally):
         self.on_main = on_main
-        self.on_exit = on_exit
+        self.on_finally = on_finally
 
     def run(self):
 
@@ -24,7 +24,7 @@ class MainAndExit():
             signal.signal(signal.SIGINT, signal.SIG_IGN)
 
             # ここで終了処理
-            self.on_exit()
+            self.on_finally()
 
             # 強制終了のシグナルを有効に戻します
             signal.signal(signal.SIGTERM, signal.SIG_DFL)
@@ -33,5 +33,5 @@ class MainAndExit():
     def on_main(self):
         pass
 
-    def on_exit(self):
+    def on_finally(self):
         pass
