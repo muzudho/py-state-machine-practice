@@ -1,5 +1,5 @@
-from lesson11n1.keywords import OPEN
-from lesson11n1.states.stairs import StairsState
+from lesson11n2.keywords import OPEN
+from lesson11n2.states.stairs import StairsState
 
 
 class OutState():

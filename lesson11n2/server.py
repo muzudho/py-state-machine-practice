@@ -1,7 +1,7 @@
 import socket
 from threading import Thread
 
-from lesson11n1.states.out import OutState
+from lesson11n2.states.out import OutState
 
 
 class Server():

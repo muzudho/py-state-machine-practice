@@ -1,6 +1,6 @@
-from lesson11n1.keywords import UP
-from lesson11n1.states.my_room import MyRoomState
-from lesson11n1.states.out import OutState
+from lesson11n2.keywords import UP
+from lesson11n2.states.my_room import MyRoomState
+from lesson11n2.states.out import OutState
 
 
 class StairsState():

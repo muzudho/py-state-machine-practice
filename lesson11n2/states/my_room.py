@@ -1,5 +1,5 @@
-from lesson11n1.keywords import SIT_DOWN
-from lesson11n1.states.out import OutState
+from lesson11n2.keywords import SIT_DOWN
+from lesson11n2.states.out import OutState
 
 
 class MyRoomState():

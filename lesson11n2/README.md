@@ -1,6 +1,6 @@
-# lesson11n1
+# lesson11n2
 
-lesson11-1.  
+lesson11-2.  
 
 状態の数だけ if文を書いていたところを、 ステート（State）デザインパターンで書き直す練習用のサンプルです  
 
@@ -9,7 +9,7 @@ lesson11-1.
 Server start:  
 
 ```shell
-python.exe -m lesson11n1.main
+python.exe -m lesson11n2.main
 ```
 
 Client start:  
