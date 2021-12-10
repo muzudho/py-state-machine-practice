@@ -43,6 +43,12 @@ if __name__ == "__main__":
 
     def __on_main():
         """ここに処理を書いてください"""
+
+        # print("0除算")
+        # print(7/0)
+
+        # [Ctrl] + [C]
+
         print("7秒待つので好きな強制終了をしろだぜ")
         for i in range(0, 7):
             time.sleep(1)
@@ -52,7 +58,7 @@ if __name__ == "__main__":
 
     def __on_exit():
         """終了時にやりたい処理をここに書いてください"""
-        print("終わった")
+        print("★終わった")
 
     main_and_exit.on_exit = __on_exit
 
