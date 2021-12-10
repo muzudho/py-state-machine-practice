@@ -13,7 +13,9 @@ def __on_main():
 
 def __on_finally():
     # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-    echo_server.clean_up()
+    if echo_server:
+        echo_server.clean_up()
+
     print("★しっかり終わった")
 
 

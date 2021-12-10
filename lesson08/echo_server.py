@@ -10,8 +10,10 @@ class EchoServer():
         ----------
         host : str
             サーバーのIPアドレス。 規定値 "0.0.0.0"
+
         port : int
             サーバー側のポート番号。 規定値 5002
+
         message_size : int
             １回の通信で送れるバイト長。 規定値 1024
         """
