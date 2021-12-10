@@ -14,4 +14,6 @@ python.exe -m lesson10.main
 
 Client start:  
 
-`lesson9`
+```shell
+python.exe -m lesson09.main
+```
