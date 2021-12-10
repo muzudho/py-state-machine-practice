@@ -1,6 +1,6 @@
 # lesson08
 
-これから練習でよく使うサーバーを作るための練習用のサンプルです  
+これから練習でよく使うことになるサーバーを作るための練習用のサンプルです  
 
 📖 [How to Make a Chat Application in Python](https://www.thepythoncode.com/article/make-a-chat-room-application-in-python)  
 
