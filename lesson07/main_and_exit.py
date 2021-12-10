@@ -3,8 +3,9 @@ import signal
 
 
 class MainAndExit():
-    def __init__(self):
-        pass
+    def __init__(self, on_main, on_exit):
+        self.on_main = on_main
+        self.on_exit = on_exit
 
     def run(self):
 
