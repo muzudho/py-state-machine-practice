@@ -1,7 +1,10 @@
 import socket
 from threading import Thread
 
-from lesson11.keywords import MY_ROOM, MSG_OPEN, OUT, MSG_SIT_DOWN, STAIRS, MSG_UP
+from lesson11n3.states.out import OutState
+from lesson11n3.state_gen_conf import state_gen
+from lesson11n3.keywords import OUT
+from lesson11n3.transition_conf import transition
 
 
 class Server():
@@ -39,41 +42,25 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("Welcome to Lesson 11 !".encode())
+            c_sock.send("Welcome to Lesson 11-3 !".encode())
 
             # 最初は外に居ます
-            state = OUT
+            state_name = OUT
+            state = OutState()
 
             while True:
                 try:
                     # クライアントから受信したバイナリデータをテキストに変換します
                     message = c_sock.recv(self._message_size).decode()
 
-                    if state == STAIRS:
-                        # `Up` とメッセージを送ってくるのが正解です
-                        if message == MSG_UP:
-                            state = MY_ROOM
-                            c_sock.send("You can see the your room.".encode())
-                        else:
-                            state = OUT
-                            c_sock.send("You can see the house.".encode())
+                    # メッセージに応じたアクションを行ったあと、Edge名を返します
+                    edge_name = state.react(message, c_sock)
 
-                    elif state == MY_ROOM:
-                        # 'Sit down' とメッセージを送ってくるのが正解です
-                        if message == MSG_SIT_DOWN:
-                            c_sock.send("Clear!".encode())
-                        else:
-                            state = OUT
-                            c_sock.send("You can see the house.".encode())
+                    # Edge名から、次の state名 に変えます
+                    state_name = transition[state_name][edge_name]
 
-                    else:
-                        # 外に居ます。 'Open' とメッセージを送ってくるのが正解です
-                        if message == MSG_OPEN:
-                            state = STAIRS
-                            c_sock.send("You can see the stairs.".encode())
-                        else:
-                            state = OUT
-                            c_sock.send("You can see the house.".encode())
+                    # ステート名からオブジェクトを生成します
+                    state = state_gen[state_name]()
 
                 except Exception as e:
                     # client no longer connected

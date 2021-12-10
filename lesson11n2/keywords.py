@@ -1,7 +1,11 @@
+# States
+
 OUT = "Out"
 STAIRS = "Stairs"
 MY_ROOM = "My room"
 
-OPEN = "Open"
-UP = "Up"
-SIT_DOWN = "Sit down"
+# Actions
+
+MSG_OPEN = "Open"
+MSG_UP = "Up"
+MSG_SIT_DOWN = "Sit down"
