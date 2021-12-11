@@ -4,6 +4,8 @@ from threading import Thread
 from lesson13.request import Request
 from lesson13.state_machine_helper import StateMachineHelper
 from lesson13.keywords import OUT
+from lesson13.transition_conf import transition
+from lesson13.state_gen_conf import state_gen
 
 
 class Server():
@@ -49,7 +51,7 @@ class Server():
             #print(f"[server.py 51] state_path={state_path}")
             #state = OutState()
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelper.create_state(state_path)
+            state = StateMachineHelper.create_state(state_gen, state_path)
 
             while True:
                 try:
@@ -69,10 +71,11 @@ class Server():
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelper.lookup_next_state_path(
-                        state_path, edge_name)
+                        transition, state_path, edge_name)
 
                     # state_gen_conf.py を見て state_path から state を生成します
-                    state = StateMachineHelper.create_state(state_path)
+                    state = StateMachineHelper.create_state(
+                        state_gen, state_path)
 
                 except Exception as e:
                     # client no longer connected

@@ -1,6 +1,4 @@
 """細かな処理"""
-from lesson13n2.transition_conf import transition
-from lesson13n2.state_gen_conf import state_gen
 
 
 class StateMachineHelper():
@@ -8,7 +6,7 @@ class StateMachineHelper():
         pass
 
     @classmethod
-    def lookup_next_state_path(clazz, state_path, edge_name):
+    def lookup_next_state_path(clazz, transition, state_path, edge_name):
         # transition設定ファイルの階層を下りていきましょう
         # print(
         #    f"[lookup_next_state 12] state_path={state_path}")
@@ -33,7 +31,7 @@ class StateMachineHelper():
         return state_path
 
     @classmethod
-    def create_state(clazz, state_path):
+    def create_state(clazz, state_gen, state_path):
         # ステート名パスをたどって、state_gen設定ファイルの階層を下りていきましょう
         # print(
         #    f"[create_state 39] state_path={state_path}")
