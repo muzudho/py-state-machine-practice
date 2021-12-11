@@ -1,9 +1,9 @@
 import socket
 from threading import Thread
 
-from lesson13.request import Request
-from lesson13.state_machine_helper import StateMachineHelper
-from lesson13.keywords import OUT
+from lesson13n2.request import Request
+from lesson13n2.state_machine_helper import StateMachineHelper
+from lesson13n2.keywords import OUT
 
 
 class Server():
@@ -41,8 +41,8 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("""Welcome to Lesson 13 !
-----------------------""".encode())
+            c_sock.send("""Welcome to Lesson 13-2 !
+------------------------""".encode())
 
             # 最初は外に居ます
             state_path = [OUT]
@@ -65,11 +65,18 @@ class Server():
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
                     edge_name = state.update(req)
                     print(
-                        f"[server.py 67] edge_name={edge_name}")
+                        f"[server.py] edge_name={edge_name}")
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelper.lookup_next_state_path(
                         state_path, edge_name)
+
+                    if state_path is None:
+                        # ステートマシンは終了しました
+                        print("[server.py] State machine is finished")
+                        print("Remove a socket")
+                        self._c_sock_set.remove(c_sock)
+                        break
 
                     # state_gen_conf.py を見て state_path から state を生成します
                     state = StateMachineHelper.create_state(state_path)
