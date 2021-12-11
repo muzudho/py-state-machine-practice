@@ -43,12 +43,21 @@ class StateMachineHelper():
                 f"[create_state 43] drop state_node={state_node}")
             curr_dict = curr_dict[state_node]
 
+        print(
+            f"[create_state] curr_dict={curr_dict}")
+
         # サブステートに無名状態があれば規定値ですので最下層まで下りていきましょう
-        if curr_dict is dict:  # 文字列型で '' を検索してしまうことを避けます
-            while '' in curr_dict:
+        while True:
+            if isinstance(curr_dict, dict) and ('' in curr_dict):  # 文字列型で '' を含むか誤判定してしまうことを避けます
+                print(
+                    f"[create_state] drop ''")
                 curr_dict = curr_dict['']
+            else:
+                break
 
         # 葉要素を実行してオブジェクトを生成します
         state_generator = curr_dict
+        print(
+            f"[create_state] state_generator={state_generator}")
         state = state_generator()
         return state

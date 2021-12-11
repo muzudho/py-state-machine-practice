@@ -47,8 +47,10 @@ class Server():
 
             # 最初は外に居ます
             state_path = [OUT]
-            print(f"[server.py 51] state_path={state_path}")
-            state = OutState()
+            #print(f"[server.py 51] state_path={state_path}")
+            #state = OutState()
+            # state_gen_conf.py を見て state_path から state を生成します
+            state = StateMachineHelper.create_state(state_path)
 
             while True:
                 try:
