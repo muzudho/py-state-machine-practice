@@ -1,5 +1,5 @@
-from lesson12.keywords import MSG_PULL_KNOB
-from lesson12.keywords import E_FAILED, E_OPENED
+from lesson12.keywords import E_PULLED_KNOB, MSG_PULL_KNOB
+from lesson12.keywords import E_FAILED
 
 
 class OutCloseDoorState():
@@ -10,7 +10,7 @@ class OutCloseDoorState():
         # 外に居ます。 'Pull knob' とメッセージを送ってくるのが正解です
         if message == MSG_PULL_KNOB:
             c_sock.send("You can see the open door.".encode())
-            return E_OPENED
+            return E_PULLED_KNOB
 
         else:
             c_sock.send("""You can see the house.

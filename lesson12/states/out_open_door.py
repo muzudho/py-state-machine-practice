@@ -1,5 +1,5 @@
-from lesson12.keywords import MSG_ENTER
-from lesson12.keywords import E_FAILED, E_OPENED
+from lesson12.keywords import E_ENTER, MSG_ENTER
+from lesson12.keywords import E_FAILED
 
 
 class OutOpenDoorState():
@@ -10,7 +10,7 @@ class OutOpenDoorState():
         # 外に居ます。 'Enter' とメッセージを送ってくるのが正解です
         if message == MSG_ENTER:
             c_sock.send("You can see the stairs.".encode())
-            return E_OPENED
+            return E_ENTER
 
         else:
             c_sock.send("""You can see the house.

@@ -16,7 +16,9 @@ MSG_SIT_DOWN = "Sit down"
 
 # Edges
 
-E_OPENED = "Opened"
+E_TURNED_KNOB = "TurnedKnob"
+E_PULLED_KNOB = "PulledKnob"
+E_ENTER = "Enter"
 E_UP = "Up"
 E_SITTING_DOWN = "Sitting down"
 E_FAILED = "Failed"

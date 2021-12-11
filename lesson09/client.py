@@ -73,7 +73,7 @@ class Client():
 
         while not self._is_terminate_server_thread:
             # input message we want to send to the server
-            to_send = input()  # ここでブロックします
+            to_send = input()  # ここでブロックします。このブロックをプログラムから解除する簡単な方法はありません
 
             # a way to exit the program
             if to_send.lower() == 'q':

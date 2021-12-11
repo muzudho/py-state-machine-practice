@@ -1,8 +1,16 @@
-from lesson12.keywords import OUT, E_FAILED, E_OPENED, E_SITTING_DOWN, E_UP, MY_ROOM, STAIRS
+from lesson12.keywords import E_ENTER, E_PULLED_KNOB, E_TURNED_KNOB, OUT, E_FAILED, E_SITTING_DOWN, E_UP, MY_ROOM, OUT_CLOSE_DOOR, OUT_OPEN_DOOR, STAIRS
 
 transition = {
     OUT: {
-        E_OPENED: STAIRS,
+        E_TURNED_KNOB: OUT_CLOSE_DOOR,
+        E_FAILED: OUT,
+    },
+    OUT_CLOSE_DOOR: {
+        E_PULLED_KNOB: OUT_OPEN_DOOR,
+        E_FAILED: OUT,
+    },
+    OUT_OPEN_DOOR: {
+        E_ENTER: STAIRS,
         E_FAILED: OUT,
     },
     STAIRS: {

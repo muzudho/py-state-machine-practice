@@ -1,5 +1,5 @@
-from lesson12.keywords import MSG_TURN_KNOB
-from lesson12.keywords import E_FAILED, E_OPENED
+from lesson12.keywords import E_TURNED_KNOB, MSG_TURN_KNOB
+from lesson12.keywords import E_FAILED
 
 
 class OutState():
@@ -11,7 +11,7 @@ class OutState():
         if message == MSG_TURN_KNOB:
             c_sock.send("""You can see the house.
 You can see the close door.""".encode())
-            return E_OPENED
+            return E_TURNED_KNOB
 
         else:
             c_sock.send("""You can see the house.
