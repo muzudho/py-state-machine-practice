@@ -13,5 +13,6 @@ class StairsState():
             return E_UP
 
         else:
-            c_sock.send("You can see the house.".encode())
+            c_sock.send("""You can see the house.
+You can see the close knob.""".encode())
             return E_FAILED

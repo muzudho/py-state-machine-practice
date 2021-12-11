@@ -1,12 +1,16 @@
 # States
 
-OUT = "Out"
+OUT = "Out"  # Out/CloseKnob
+OUT_CLOSE_DOOR = "Out/CloseDoor"
+OUT_OPEN_DOOR = "Out/OpenDoor"
 STAIRS = "Stairs"
 MY_ROOM = "My room"
 
 # Actions
 
-MSG_OPEN = "Open"
+MSG_TURN_KNOB = "Turn knob"
+MSG_PULL_KNOB = "Pull knob"
+MSG_ENTER = "Enter"
 MSG_UP = "Up"
 MSG_SIT_DOWN = "Sit down"
 

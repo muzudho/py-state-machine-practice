@@ -22,7 +22,7 @@
 ```
 
 👆 前レッスンでは ドアは 開く（Open）で開けました。  
-しかし、ドアは ノブを回す（Turn）、引く（Pull）、閉じる（Close）の３ステップで開くものかもしれません。  
+しかし、ドアは ノブを回す（TurnKnob）、ノブを引く（PullKnob）、入る（Enter）の３ステップで開くものかもしれません。  
 
 ```plain
                      +--------------+
@@ -116,5 +116,5 @@ python.exe -m lesson12.main
 Client start:  
 
 ```shell
-python.exe -m lesson12.main
+python.exe -m lesson09.main
 ```

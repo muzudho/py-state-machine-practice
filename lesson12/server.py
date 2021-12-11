@@ -42,7 +42,10 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("Welcome to Lesson 12 !".encode())
+            c_sock.send("""Welcome to Lesson 12 !
+----------------------
+You can see the house.
+You can see the close knob.""".encode())
 
             # 最初は外に居ます
             state_name = OUT

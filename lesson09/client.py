@@ -27,6 +27,9 @@ class Client():
         # '_s_thr' - (Server thread) サーバーからのメッセージを受信するスレッド
         self._s_thr = None
 
+        # サーバースレッドが終了したら、メインスレッドも終了させるのに使います
+        self._is_terminate_server_thread = False
+
     def clean_up(self):
         # サーバーのソケットを閉じます
         self._s_sock.close()
@@ -50,7 +53,8 @@ class Client():
                     # remove it from the set
                     print(f"[!] Error: {e}")
 
-                    print(f"Terminate this thread")
+                    print(f"Finished listening to the server")
+                    self._is_terminate_server_thread = True
                     return
 
         # initialize TCP socket
@@ -67,9 +71,9 @@ class Client():
         # start the thread
         self._s_thr.start()
 
-        while True:
+        while not self._is_terminate_server_thread:
             # input message we want to send to the server
-            to_send = input()
+            to_send = input()  # ここでブロックします
 
             # a way to exit the program
             if to_send.lower() == 'q':
