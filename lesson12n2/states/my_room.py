@@ -6,7 +6,7 @@ class MyRoomState():
     def __init__(self):
         pass
 
-    def react(self, c_sock, pull_trigger):
+    def update(self, c_sock, pull_trigger):
         c_sock.send("You can see the your room.".encode())
 
         # 入力

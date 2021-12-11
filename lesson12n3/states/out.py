@@ -1,5 +1,5 @@
-from lesson12n2.keywords import E_TURNED_KNOB, MSG_TURN_KNOB
-from lesson12n2.keywords import E_FAILED
+from lesson12n3.keywords import E_TURNED_KNOB, MSG_TURN_KNOB
+from lesson12n3.keywords import E_FAILED
 
 
 class OutState():

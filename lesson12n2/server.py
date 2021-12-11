@@ -42,7 +42,7 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("""Welcome to Lesson 12-1 !
+            c_sock.send("""Welcome to Lesson 12-2 !
 ------------------------""".encode())
 
             # 最初は外に居ます
@@ -57,7 +57,7 @@ class Server():
                         return message
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
-                    edge_name = state.react(
+                    edge_name = state.update(
                         c_sock, pull_trigger=__on_pull_trigger)
 
                     # Edge名から、次の state名 に変えます

@@ -22,11 +22,11 @@ if __name__ == "__main__":
 
     node_name = random.choice(list(nodes.keys()))
     node = nodes[node_name]
-    message = node.react(message)
+    message = node.update(message)
     print(f"1.{node_name} {message}")
 
     for i in range(2, 21):
         node_name = random.choice(node.next_name_list)
         node = nodes[node_name]
-        message = node.react(message)
+        message = node.update(message)
         print(f"{i}.{node_name} {message}")

@@ -5,7 +5,7 @@ class OutState():
     def __init__(self):
         pass
 
-    def react(self, message, c_sock):
+    def update(self, message, c_sock):
         # 外に居ます。 'Open' とメッセージを送ってくるのが正解です
         if message == MSG_OPEN:
             c_sock.send("You can see the stairs.".encode())

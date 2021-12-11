@@ -2,5 +2,5 @@ class MieBehavior():
     def __init__(self):
         pass
 
-    def react(self, message):
+    def update(self, message):
         print("ISE JINGU")

@@ -2,7 +2,7 @@ class OsakaBehavior():
     def __init__(self):
         pass
 
-    def react(self, message):
+    def update(self, message):
         if message in ["TAKOYAKI", "YATSUHASHI", "AKASHIYAKI", "SHIKA_SENBEI", "MIKAN"]:
             # 食べ物を止めます
             return "TSUTEN_KAKU"

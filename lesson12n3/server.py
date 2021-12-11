@@ -1,10 +1,10 @@
 import socket
 from threading import Thread
 
-from lesson12.states.out import OutState
-from lesson12.state_gen_conf import state_gen
-from lesson12.keywords import OUT
-from lesson12.transition_conf import transition
+from lesson12n3.states.out import OutState
+from lesson12n3.state_gen_conf import state_gen
+from lesson12n3.keywords import OUT
+from lesson12n3.transition_conf import transition
 
 
 class Server():
@@ -42,10 +42,8 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("""Welcome to Lesson 12 !
-----------------------
-You can see the house.
-You can see the close knob.""".encode())
+            c_sock.send("""Welcome to Lesson 12-3 !
+------------------------""".encode())
 
             # 最初は外に居ます
             state_name = OUT
@@ -53,11 +51,14 @@ You can see the close knob.""".encode())
 
             while True:
                 try:
-                    # クライアントから受信したバイナリデータをテキストに変換します
-                    message = c_sock.recv(self._message_size).decode()
+                    def __on_pull_trigger():
+                        # クライアントから受信したバイナリデータをテキストに変換します
+                        message = c_sock.recv(self._message_size).decode()
+                        return message
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
-                    edge_name = state.update(message, c_sock)
+                    edge_name = state.update(
+                        c_sock, pull_trigger=__on_pull_trigger)
 
                     # Edge名から、次の state名 に変えます
                     state_name = transition[state_name][edge_name]

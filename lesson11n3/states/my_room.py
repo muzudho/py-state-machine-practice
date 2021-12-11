@@ -6,7 +6,7 @@ class MyRoomState():
     def __init__(self):
         pass
 
-    def react(self, message, c_sock):
+    def update(self, message, c_sock):
         # 'Sit down' とメッセージを送ってくるのが正解です
         if message == MSG_SIT_DOWN:
             c_sock.send("Clear!".encode())

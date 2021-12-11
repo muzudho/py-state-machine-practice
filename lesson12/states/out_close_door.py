@@ -6,7 +6,7 @@ class OutCloseDoorState():
     def __init__(self):
         pass
 
-    def react(self, message, c_sock):
+    def update(self, message, c_sock):
         # 外に居ます。 'Pull knob' とメッセージを送ってくるのが正解です
         if message == MSG_PULL_KNOB:
             c_sock.send("You can see the open door.".encode())

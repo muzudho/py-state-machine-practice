@@ -54,7 +54,7 @@ class Server():
                     message = c_sock.recv(self._message_size).decode()
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
-                    edge_name = state.react(message, c_sock)
+                    edge_name = state.update(message, c_sock)
 
                     # Edge名から、次の state名 に変えます
                     state_name = transition[state_name][edge_name]

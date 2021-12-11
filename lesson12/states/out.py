@@ -6,7 +6,7 @@ class OutState():
     def __init__(self):
         pass
 
-    def react(self, message, c_sock):
+    def update(self, message, c_sock):
         # 外に居ます。 'Turn knob' とメッセージを送ってくるのが正解です
         if message == MSG_TURN_KNOB:
             c_sock.send("""You can see the close door.""".encode())

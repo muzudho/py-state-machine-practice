@@ -22,5 +22,5 @@ class Node():
     def next_name_list(self):
         return self._next_name_list
 
-    def react(self, message):
-        return self._behavior.react(message)
+    def update(self, message):
+        return self._behavior.update(message)
