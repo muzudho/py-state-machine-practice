@@ -9,8 +9,7 @@ class OutState():
     def react(self, message, c_sock):
         # 外に居ます。 'Turn knob' とメッセージを送ってくるのが正解です
         if message == MSG_TURN_KNOB:
-            c_sock.send("""You can see the house.
-You can see the close door.""".encode())
+            c_sock.send("""You can see the close door.""".encode())
             return E_TURNED_KNOB
 
         else:
