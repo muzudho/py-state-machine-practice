@@ -1,11 +1,11 @@
 import socket
 from threading import Thread
 
-from lesson13.request import Request
-from lesson13.state_machine_helper import StateMachineHelper
-from lesson13.keywords import OUT
-from lesson13.transition_conf import transition
-from lesson13.state_gen_conf import state_gen
+from lesson14.request import Request
+from lesson14.state_machine_helper import StateMachineHelper
+from lesson14.keywords import INIT
+from lesson14.transition_conf import transition
+from lesson14.state_gen_conf import state_gen
 
 
 class Server():
@@ -43,11 +43,11 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("""Welcome to Lesson 13 !
+            c_sock.send("""Welcome to Lesson 14 !
 ----------------------""".encode())
 
-            # 最初は外に居ます
-            state_path = [OUT]
+            # 最初
+            state_path = [INIT]
             # state_gen_conf.py を見て state_path から state を生成します
             state = StateMachineHelper.create_state(state_gen, state_path)
 
@@ -60,16 +60,25 @@ class Server():
 
                     # 開発が進むと Request の引数が増えたり減ったりするでしょう
                     req = Request(
-                        c_sock=c_sock, pull_trigger=__on_pull_trigger)
+                        state_path=state_path,
+                        c_sock=c_sock,
+                        pull_trigger=__on_pull_trigger)
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
                     edge_name = state.update(req)
                     print(
-                        f"[server.py 67] edge_name={edge_name}")
+                        f"[server.py] edge_name={edge_name}")
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelper.lookup_next_state_path(
                         transition, state_path, edge_name)
+
+                    if state_path is None:
+                        # ステートマシンは終了しました
+                        print("[server.py] State machine is finished")
+                        print("Remove a socket")
+                        self._c_sock_set.remove(c_sock)
+                        break
 
                     # state_gen_conf.py を見て state_path から state を生成します
                     state = StateMachineHelper.create_state(

@@ -1,5 +1,4 @@
-from lesson12n3.keywords import E_PULLED_KNOB, MSG_PULL_KNOB
-from lesson12n3.keywords import E_FAILED
+from lesson12n3.keywords import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
 
 
 class OutCloseDoorState():

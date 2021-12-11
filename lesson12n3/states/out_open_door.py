@@ -1,5 +1,4 @@
-from lesson12n3.keywords import E_ENTER, MSG_ENTER
-from lesson12n3.keywords import E_FAILED
+from lesson12n3.keywords import E_ENTER, MSG_ENTER, E_FAILED
 
 
 class OutOpenDoorState():

@@ -1,5 +1,4 @@
-from lesson11n3.keywords import MSG_UP
-from lesson11n3.keywords import E_FAILED, E_UP
+from lesson11n3.keywords import MSG_UP, E_FAILED, E_UP
 
 
 class StairsState():
