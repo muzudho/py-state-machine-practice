@@ -53,7 +53,8 @@ class Client():
                     # remove it from the set
                     print(f"[!] Error: {e}")
 
-                    print(f"Finished listening to the server")
+                    print(f"""Finished listening to the server.
+Please push q key to quit.""")
                     self._is_terminate_server_thread = True
                     return
 
