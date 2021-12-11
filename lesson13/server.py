@@ -1,7 +1,10 @@
 import socket
 from threading import Thread
+from lesson13.request import Request
+from lesson13.state_machine_helper import StateMachineHelper
 
-from lesson11.keywords import MY_ROOM, MSG_OPEN, OUT, MSG_SIT_DOWN, STAIRS, MSG_UP
+from lesson13.states.out import OutState
+from lesson13.keywords import OUT
 
 
 class Server():
@@ -39,42 +42,36 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("Welcome to Lesson 11 !".encode())
+            c_sock.send("""Welcome to Lesson 13 !
+----------------------""".encode())
 
             # 最初は外に居ます
-            state = OUT
+            state_path = [OUT]
+            print(f"[server.py 51] state_path={state_path}")
+            state = OutState()
 
             while True:
                 try:
-                    # クライアントから受信したバイナリデータをテキストに変換します
-                    message = c_sock.recv(self._message_size).decode()
+                    def __on_pull_trigger():
+                        # クライアントから受信したバイナリデータをテキストに変換します
+                        message = c_sock.recv(self._message_size).decode()
+                        return message
 
-                    if state == STAIRS:
-                        # `Up` とメッセージを送ってくるのが正解です
-                        if message == MSG_UP:
-                            state = MY_ROOM
-                            c_sock.send("You can see the your room.".encode())
-                        else:
-                            state = OUT
-                            c_sock.send("You can see the house.".encode())
+                    # 開発が進むと Request の引数が増えたり減ったりするでしょう
+                    req = Request(
+                        c_sock=c_sock, pull_trigger=__on_pull_trigger)
 
-                    elif state == MY_ROOM:
-                        # 'Sit down' とメッセージを送ってくるのが正解です
-                        if message == MSG_SIT_DOWN:
-                            c_sock.send("""Clear!
-Please push q key to quit.""".encode())
-                        else:
-                            state = OUT
-                            c_sock.send("You can see the house.".encode())
+                    # メッセージに応じたアクションを行ったあと、Edge名を返します
+                    edge_name = state.update(req)
+                    print(
+                        f"[server.py 67] edge_name={edge_name}")
 
-                    else:
-                        # 外に居ます。 'Open' とメッセージを送ってくるのが正解です
-                        if message == MSG_OPEN:
-                            state = STAIRS
-                            c_sock.send("You can see the stairs.".encode())
-                        else:
-                            state = OUT
-                            c_sock.send("You can see the house.".encode())
+                    # transition_conf.py を見て state_path を得ます
+                    state_path = StateMachineHelper.lookup_next_state_path(
+                        state_path, edge_name)
+
+                    # state_gen_conf.py を見て state_path から state を生成します
+                    state = StateMachineHelper.create_state(state_path)
 
                 except Exception as e:
                     # client no longer connected

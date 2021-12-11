@@ -1,5 +1,5 @@
-from lesson12n3.keywords import MSG_SIT_DOWN
-from lesson12n3.keywords import E_FAILED, E_SITTING_DOWN
+from lesson13.keywords import MSG_SIT_DOWN
+from lesson13.keywords import E_FAILED, E_SITTING_DOWN
 
 
 class MyRoomState():
