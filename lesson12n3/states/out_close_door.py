@@ -6,11 +6,11 @@ class OutCloseDoorState():
     def __init__(self):
         pass
 
-    def update(self, c_sock, pull_trigger):
-        c_sock.send("""You can see the close door.""".encode())
+    def update(self, req):
+        req.c_sock.send("""You can see the close door.""".encode())
 
         # 入力
-        message = pull_trigger()
+        message = req.pull_trigger()
 
         # 外に居ます。 'Pull knob' とメッセージを送ってくるのが正解です
         if message == MSG_PULL_KNOB:

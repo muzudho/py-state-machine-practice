@@ -1,5 +1,6 @@
 import socket
 from threading import Thread
+from lesson12n3.request import Request
 
 from lesson12n3.states.out import OutState
 from lesson12n3.state_gen_conf import state_gen
@@ -56,9 +57,12 @@ class Server():
                         message = c_sock.recv(self._message_size).decode()
                         return message
 
+                    # 開発が進むと Request の引数が増えたり減ったりするでしょう
+                    req = Request(
+                        c_sock=c_sock, pull_trigger=__on_pull_trigger)
+
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
-                    edge_name = state.update(
-                        c_sock, pull_trigger=__on_pull_trigger)
+                    edge_name = state.update(req)
 
                     # Edge名から、次の state名 に変えます
                     state_name = transition[state_name][edge_name]

@@ -6,11 +6,11 @@ class StairsState():
     def __init__(self):
         pass
 
-    def update(self, c_sock, pull_trigger):
-        c_sock.send("You can see the stairs.".encode())
+    def update(self, req):
+        req.c_sock.send("You can see the stairs.".encode())
 
         # 入力
-        message = pull_trigger()
+        message = req.pull_trigger()
 
         # `Up` とメッセージを送ってくるのが正解です
         if message == MSG_UP:
