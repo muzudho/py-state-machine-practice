@@ -9,7 +9,7 @@ from lesson15.transition_conf_wcsc import Transition
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
     """辺の一覧を作成"""
     state_node_path = list(parent_state_node_path)
-    if not (node_name is None):
+    if not (node_name is None) and not (node_name is ""):
         state_node_path.append(node_name)
         pass
 
