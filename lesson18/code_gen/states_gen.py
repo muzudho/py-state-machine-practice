@@ -39,6 +39,8 @@ def state_files_gen(dir_path):
 
     def update(self, req):
 
+        self.on_entry(req)
+
         # 入力
         msg = req.pull_trigger()
 
@@ -95,6 +97,9 @@ def state_files_gen(dir_path):
                     text = f"""{pre_text}
 
 {text}
+
+    def on_entry(self, req):
+        pass
 """
 
                 f.write(text)

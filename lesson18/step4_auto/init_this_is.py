@@ -1,8 +1,10 @@
-from lesson18.step2_auto.const import E_OVER, E_A, E_AN
+from lesson18.step2_auto.const import E_AN, E_OVER, E_A
 
 class InitThisIsState():
 
     def update(self, req):
+
+        self.on_entry(req)
 
         # 入力
         msg = req.pull_trigger()
@@ -17,3 +19,6 @@ class InitThisIsState():
         else:
             raise ValueError("Unexpected condition")
 
+
+    def on_entry(self, req):
+        pass

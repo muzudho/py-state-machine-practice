@@ -4,6 +4,8 @@ class PenState():
 
     def update(self, req):
 
+        self.on_entry(req)
+
         # 入力
         msg = req.pull_trigger()
 
@@ -13,3 +15,6 @@ class PenState():
         else:
             raise ValueError("Unexpected condition")
 
+
+    def on_entry(self, req):
+        pass
