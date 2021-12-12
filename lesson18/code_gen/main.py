@@ -1,13 +1,13 @@
 import sys
 
 from lesson07.main_and_finally import MainAndFinally
-from lesson18.server import Server
+from lesson18.code_gen.render import Render
 
 server = None
 
 
 def __on_main():
-    server = Server(host="0.0.0.0", port=5002)
+    server = Render()
     server.run()
 
 

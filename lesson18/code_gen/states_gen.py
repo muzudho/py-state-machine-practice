@@ -1,7 +1,7 @@
 import os
 from lesson18.code_gen.py_gen import CodeGen
 from lesson18.step1_const_conf import ConstConf
-from lesson18.step3_transition_conf_wcsc import Transition
+from lesson18.step3_transition_conf import Transition
 
 
 def state_files_gen(dir_path):
@@ -47,6 +47,15 @@ def state_files_gen(dir_path):
                     transition.data, node_path.split("/")
                 )
 
+                # line_list = []
+                # for edge in directed_edge_list:
+                #    line_list.append(f"# {{edge.name}}")
+                #
+                # text += CodeGen.create_comment_block("        ", line_list)
+                #                    text += """
+                #        # 何もせず終わります
+                #        return E_OVER
+                # """
                 used_const = set()
                 block_list = []
                 for edge in directed_edge_list:
@@ -69,7 +78,7 @@ def state_files_gen(dir_path):
 
                 # 定数をインポートします
                 if 0 < len(used_const):
-                    pre_text = "from lesson18.step2_auto.const import "
+                    pre_text = "from lesson17.step2_auto.const import "
                     is_skip_first = True
 
                     for const in used_const:

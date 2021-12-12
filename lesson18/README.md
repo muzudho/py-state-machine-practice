@@ -1,14 +1,32 @@
-# Lesson 18
+# Lesson18
 
-前回の Lesson17 では定数ファイルを自動生成するようにしました  
+Lesson14のコードをベースに、Lesson17の実行ファイルを使ってコードを自動生成し差し替えていきましょう  
 
-自動生成されたファイルに人が手を加えて、また自動生成したときに上書きで消えてしまうというのは嫌なので、  
-自動生成されたファイルに人が手を加えずに 後付けで機能を追加していけるようにしましょう  
+## Build
 
-# Run
+```shell
+python.exe -m lesson18.code_gen.main
+```
 
-実行前に `lesson18/auto_gen` フォルダーが既に作成されていれば、削除してください  
+## Run
+
+Server start:  
 
 ```shell
 python.exe -m lesson18.main
+```
+
+Client start:  
+
+```shell
+python.exe -m lesson09.main
+```
+
+Input:  
+
+```shell
+This
+is
+a
+pen
 ```
