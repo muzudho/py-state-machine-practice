@@ -128,8 +128,10 @@ class Render:
             c.node("(Terminal)", shape="circle", color="gray")
 
             # Debug
-            def __create_cluster(curr_dict, indent, cluster_name):
-                with self._g.subgraph(name=cluster_name) as c2:
+            def __create_cluster(curr_dict, indent, cluster_key):
+                with self._g.subgraph(name=f"cluster_{cluster_key}") as c2:
+                    c2.attr(color="pink", label=cluster_key)
+
                     # エッジを先に検出
                     if "__edge__" in curr_dict:
                         edge_list = curr_dict["__edge__"]
@@ -139,17 +141,17 @@ class Render:
                             if dst_node is None:
                                 dst_node = "(Terminal)"
                             # ノード
-                            c.node(src_node, shape="circle", color="pink")
+                            c2.node(src_node, shape="circle", color="pink")
                             # エッジ
-                            c.edge(src_node, dst_node, label=edge.name)
+                            c2.edge(src_node, dst_node, label=edge.name)
 
                     for key, value in curr_dict.items():
                         if key == "__edge__":
                             pass  # 検出済み
                         else:
-                            __create_cluster(value, f"{indent}  ", f"cluster_{key}")
+                            __create_cluster(value, f"{indent}  ", key)
 
-            __create_cluster(tree, "", "cluster_root")
+            __create_cluster(tree, "", "root")
 
         # 描画
         self._g.render("lesson15n2-graphs")
