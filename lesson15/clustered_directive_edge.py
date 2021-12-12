@@ -31,3 +31,6 @@ class ClusteredDirectiveEdge:
     @property
     def cluster(self):
         return self._cluster
+
+    def to_cluster_str(self):
+        return "/".join(self._cluster)

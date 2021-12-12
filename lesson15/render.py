@@ -1,3 +1,4 @@
+import collections
 from graphviz import Digraph
 from lesson15.directive_edge import DirectiveEdge
 from lesson15.clustered_directive_edge import ClusteredDirectiveEdge
@@ -43,16 +44,32 @@ def rearrenge_in_tree(clustered_edge_in_list):
     tree = {}
 
     for clustering_edge in clustered_edge_in_list:
+        print("----")
+        print(f"clustering_edge.directive_edge={clustering_edge.directive_edge}")
+
+        print(f"clustering_edge.to_cluster_str()={clustering_edge.to_cluster_str()}")
+
         curr_dict = tree
-        for cluster_node in clustering_edge.cluster:
 
-            if not (cluster_node in curr_dict):
-                curr_dict[cluster_node] = {}
+        if len(clustering_edge.cluster) < 1:
+            print(f"len(clustering_edge.cluster)={len(clustering_edge.cluster)}")
+            pass
+        else:
 
-            curr_dict = curr_dict[cluster_node]
+            for cluster_node in clustering_edge.cluster:
+                print(f"  cluster_node={cluster_node}")
 
-        curr_dict["__edge__"] = clustering_edge.directive_edge
+                if not (cluster_node in curr_dict):
+                    curr_dict[cluster_node] = {}
 
+                curr_dict = curr_dict[cluster_node]
+
+        if "__edge__" in curr_dict:
+            curr_dict["__edge__"].append(clustering_edge.directive_edge)
+        else:
+            curr_dict["__edge__"] = [clustering_edge.directive_edge]
+
+    print("----")
     return tree
 
 
@@ -84,14 +101,20 @@ class Render:
         # ツリー構造に再配置
         tree = rearrenge_in_tree(clustered_edge_in_list)
         # Debug
-        def __show_tree(curr_dict):
+        def __show_tree(curr_dict, indent):
+            # エッジを先に検出
+            if "__edge__" in curr_dict:
+                edge_list = curr_dict["__edge__"]
+                for edge in edge_list:
+                    print(f"[Tree] __edge__ {indent}value={edge}")
+
             for key, value in curr_dict.items():
                 if key == "__edge__":
-                    print(f"[Tree] __edge__ value={value}")
+                    pass  # 検出済み
                 else:
-                    __show_tree(value)
+                    __show_tree(value, f"{indent}  ")
 
-        __show_tree(tree)
+        __show_tree(tree, "")
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:
