@@ -1,6 +1,6 @@
 from graphviz import Digraph
 from lesson15.directive_edge import DirectiveEdge
-from lesson15.transition_conf import transition
+from lesson15.transition_conf import INIT, Transition
 
 
 def search(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -37,17 +37,18 @@ class Render:
 
         edge_list = []
 
-        search(transition, [], None, edge_list)
+        transition = Transition("This is a pen", INIT)
+        search(transition.data, [], None, edge_list)
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:
             # 一番外側のクラスターのラベルは図のタイトルのように見える
-            c.attr(color="white", label="--Title--")
-            # 始端ノード
+            c.attr(color="white", label=transition.title)
+            # 始端記号
             c.node("(Start)", shape="circle", color="gray")
-            # TODO 最初のノード
-            c.node("Init", shape="circle", color="pink")
-            # 終端ノード
+            # 始端と開始ノードのエッジ
+            c.edge("(Start)", transition.entry_node, label="start")
+            # 終端記号
             c.node("(Terminal)", shape="circle", color="gray")
 
             for edge in edge_list:

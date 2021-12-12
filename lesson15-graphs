@@ -1,9 +1,9 @@
 digraph {
 	node [shape=square style=filled]
 	subgraph cluster_root {
-		color=white label="--Title--"
+		color=white label="This is a pen"
 		"(Start)" [color=gray shape=circle]
-		Init [color=pink shape=circle]
+		"(Start)" -> Init [label=start]
 		"(Terminal)" [color=gray shape=circle]
 		Init [color=pink shape=circle]
 		Init -> Init [label=over]
