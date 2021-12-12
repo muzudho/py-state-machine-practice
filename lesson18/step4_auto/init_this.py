@@ -1,6 +1,6 @@
-from lesson18.step2_auto.const import E_OVER, E_PIN, E_PEN
+from lesson18.step2_auto.const import E_OVER, E_IS, E_WAS
 
-class InitThisIsAState():
+class InitThisState():
 
     def update(self, req):
 
@@ -10,10 +10,10 @@ class InitThisIsAState():
         # 分岐
         if msg == E_OVER:
             return ['Init']
-        elif msg == E_PIN:
+        elif msg == E_WAS:
             return ['Init']
-        elif msg == E_PEN:
-            return ['Pen']
+        elif msg == E_IS:
+            return ['Init', 'This', 'Is']
         else:
             raise ValueError("Unexpected condition")
 

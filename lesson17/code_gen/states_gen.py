@@ -23,6 +23,9 @@ def state_files_gen(dir_path):
     # ノードの一覧
     node_path_set = Transition.extract_node_path_set(edge_list)
     for node_path in node_path_set:
+        if node_path is None:
+            continue
+
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")
         # print(f"[Render] node_path={node_path} ----> {file_stem}")

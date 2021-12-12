@@ -1,5 +1,5 @@
 from lesson15n2.directive_edge import DirectiveEdge
-from lesson18.keywords import (
+from lesson18.step2_auto.const import (
     A,
     E_A,
     E_AN,

@@ -23,6 +23,9 @@ def state_files_gen(dir_path):
     # ノードの一覧
     node_path_set = Transition.extract_node_path_set(edge_list)
     for node_path in node_path_set:
+        if node_path is None:
+            continue
+
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")
         # print(f"[Render] node_path={node_path} ----> {file_stem}")
@@ -78,7 +81,7 @@ def state_files_gen(dir_path):
 
                 # 定数をインポートします
                 if 0 < len(used_const):
-                    pre_text = "from lesson17.step2_auto.const import "
+                    pre_text = "from lesson18.step2_auto.const import "
                     is_skip_first = True
 
                     for const in used_const:
