@@ -12,7 +12,7 @@ class Render:
 
     def run(self):
         const_file_gen("lesson17/auto_gen/const.py")
-        state_files_gen("lesson16n3/auto_gen")
+        state_files_gen("lesson17/auto_gen")
 
     def clean_up(self):
         pass

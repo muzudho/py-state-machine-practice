@@ -30,15 +30,16 @@ def state_files_gen(dir_path):
         path = f"{dir_path}/{file_stem}.py"
         try:
             with open(path, "x", encoding="UTF-8") as f:
-                # from lesson16n3.transition_conf_wcsc import E_OVER
-                text = f"""class {class_name}State():
+                text = f"""from lesson17.auto_gen.const import INIT, E_OVER
 
-def update(self, req):
+class {class_name}State():
 
-    # TODO 入力
-    msg = ""
+    def update(self, req):
 
-    # 分岐
+        # TODO 入力
+        msg = ""
+
+        # 分岐
 """
 
                 # エッジの分岐部分
