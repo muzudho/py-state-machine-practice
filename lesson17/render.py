@@ -12,9 +12,9 @@ class Render:
 
     def run(self):
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        const_file_gen("lesson17/auto_gen1", "const.py")
+        const_file_gen("lesson17/step2_auto", "const.py")
 
-        state_files_gen("lesson17/auto_gen2")
+        state_files_gen("lesson17/step4_auto")
 
     def clean_up(self):
         pass

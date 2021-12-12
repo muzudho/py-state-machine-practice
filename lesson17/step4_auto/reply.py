@@ -1,7 +1,7 @@
-from lesson17.auto_gen1.const import E_AGREE, E_REJECT
+from lesson17.step2_auto.const import E_AGREE, E_REJECT
 
-class ReplyState():
 
+class ReplyState:
     def update(self, req):
 
         # TODO 入力
@@ -9,9 +9,8 @@ class ReplyState():
 
         # 分岐
         if msg == E_AGREE:
-            return ['Reply', 'Agree']
+            return ["Reply", "Agree"]
         elif msg == E_REJECT:
-            return ['Reply', 'Reject']
+            return ["Reply", "Reject"]
         else:
             raise ValueError("Unexpected condition")
-

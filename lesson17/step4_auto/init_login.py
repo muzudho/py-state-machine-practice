@@ -1,7 +1,7 @@
-from lesson17.auto_gen1.const import E_OK, E_INCORRECT
+from lesson17.step2_auto.const import E_OK, E_INCORRECT
 
-class InitLoginState():
 
+class InitLoginState:
     def update(self, req):
 
         # TODO 入力
@@ -9,9 +9,8 @@ class InitLoginState():
 
         # 分岐
         if msg == E_OK:
-            return ['Lobby']
+            return ["Lobby"]
         elif msg == E_INCORRECT:
-            return ['Init']
+            return ["Init"]
         else:
             raise ValueError("Unexpected condition")
-

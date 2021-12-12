@@ -1,5 +1,5 @@
 from lesson15n2.directive_edge import DirectiveEdge
-from lesson17.auto_gen1.const import (
+from lesson17.step2_auto.const import (
     AGREE,
     E_AGREE,
     E_COMPLETED,

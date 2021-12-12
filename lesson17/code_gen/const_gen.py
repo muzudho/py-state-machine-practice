@@ -1,6 +1,6 @@
 import os
 
-from lesson17.const_conf import ConstConf
+from lesson17.step1_const_conf import ConstConf
 
 
 def const_file_gen(dir_path, file_name):
