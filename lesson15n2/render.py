@@ -1,4 +1,3 @@
-import collections
 from graphviz import Digraph
 from lesson15n2.directive_edge import DirectiveEdge
 from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
