@@ -1,6 +1,8 @@
 from graphviz import Digraph
 from lesson15.directive_edge import DirectiveEdge
-from lesson15.transition_conf import INIT, Transition
+
+# from lesson15.transition_conf import Transition
+from lesson15.transition_conf_wcsc import Transition
 
 
 def search(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -37,7 +39,7 @@ class Render:
 
         edge_list = []
 
-        transition = Transition("This is a pen", INIT)
+        transition = Transition()
         search(transition.data, [], None, edge_list)
 
         # クラスター 'cluster_' から名前を始める必要あり

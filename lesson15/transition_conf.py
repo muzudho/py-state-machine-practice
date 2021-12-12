@@ -45,9 +45,9 @@ E_OVER = "over"  # 以上
 
 
 class Transition:
-    def __init__(self, title, entry_node):
-        self._title = title
-        self._entry_node = entry_node
+    def __init__(self):
+        self._title = "This is a pen"
+        self._entry_node = INIT
         self._data = {
             INIT: {
                 E_OVER: [INIT],
@@ -74,14 +74,14 @@ class Transition:
             },
         }
 
-        pass
-
     @property
     def title(self):
+        """図のタイトル"""
         return self._title
 
     @property
     def data(self):
+        """ツリー構造のエッジ"""
         return self._data
 
     @property
