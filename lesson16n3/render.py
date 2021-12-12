@@ -38,9 +38,8 @@ class Render:
             path = f"lesson16n3/auto_gen/{file_stem}.py"
             try:
                 with open(path, "x", encoding="UTF-8") as f:
-                    text = f"""from lesson16n3.transition_conf_wcsc import E_OVER
-
-class {class_name}State():
+                    # from lesson16n3.transition_conf_wcsc import E_OVER
+                    text = f"""class {class_name}State():
 
     def update(self, req):
 
@@ -68,7 +67,7 @@ class {class_name}State():
                     for edge in directed_edge_list:
                         block = []
                         block.append(f"msg == '{edge.name}'")  # TODO 条件式。定数で書きたい
-                        block.append(f"return E_OVER")  # TODO 遷移先の名前を定数で書きたい
+                        block.append(f"return {edge.dst}")  # TODO 遷移先の名前を定数で書きたい
                         block_list.append(block)
 
                     text += CodeGen.create_switch_block("        ", block_list)

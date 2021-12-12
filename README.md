@@ -28,3 +28,4 @@
 * 📖 [Lesson15-2](./lesson15n2) - サブステートを可視化できるように、 graphviz のクラスタリングを使いましょう
 * 📖 [Lesson16](./lesson16) - `auto_gen` フォルダーを自動生成し、その中に `init.py` ファイルの雛型を自動生成してみましょう
 * 📖 [Lesson16-2](./lesson16n2) - `transition_conf.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
+- 📖 [Lesson16-3](./lesson16n3) - 次に、 エッジの分岐を自動生成しましょう
