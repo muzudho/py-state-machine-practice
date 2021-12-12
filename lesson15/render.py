@@ -23,7 +23,11 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
         if isinstance(child, dict):
             create_edge_list(child, state_node_path, child_key, result_edge_list)
         else:
-            edge = DirectiveEdge(child_key, state_node_path, child)
+            edge = DirectiveEdge(
+                src=state_node_path,
+                dst=child,
+                name=child_key,
+            )
             result_edge_list.append(edge)
 
 

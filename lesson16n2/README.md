@@ -1,4 +1,4 @@
-# Lesson 16n2
+# Lesson 16-2
 
 次に、 `transition_conf.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう  
 

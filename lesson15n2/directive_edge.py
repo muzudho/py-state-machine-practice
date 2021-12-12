@@ -1,10 +1,10 @@
 class DirectiveEdge:
     """向きのある辺"""
 
-    def __init__(self, name, src, dst):
-        self._name = name
+    def __init__(self, src, dst, name):
         self._src = src
         self._dst = dst
+        self._name = name
 
     def __str__(self):
         return f"[{self.to_src_str()}]--{self._name}-->[{self.to_dst_str()}]"
