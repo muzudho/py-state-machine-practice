@@ -36,8 +36,8 @@ def state_files_gen(dir_path):
 
     def update(self, req):
 
-        # TODO 入力
-        msg = ""
+        # 入力
+        msg = req.pull_trigger()
 
         # 分岐
 """
@@ -47,15 +47,6 @@ def state_files_gen(dir_path):
                     transition.data, node_path.split("/")
                 )
 
-                # line_list = []
-                # for edge in directed_edge_list:
-                #    line_list.append(f"# {{edge.name}}")
-                #
-                # text += CodeGen.create_comment_block("        ", line_list)
-                #                    text += """
-                #        # 何もせず終わります
-                #        return E_OVER
-                # """
                 used_const = set()
                 block_list = []
                 for edge in directed_edge_list:
