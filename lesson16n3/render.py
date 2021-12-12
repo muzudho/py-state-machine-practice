@@ -30,7 +30,7 @@ class Render:
         for node_path in node_path_set:
             file_stem = node_path.replace("/", "_").lower()
             class_name = node_path.replace("/", "")
-            print(f"[Render] node_path={node_path} ----> {file_stem}")
+            # print(f"[Render] node_path={node_path} ----> {file_stem}")
 
             # `init.py` ファイルを作成します
             # 'x' - ファイルが存在しない場合のみの上書き
@@ -42,9 +42,6 @@ class Render:
 class {class_name}State():
 
     def update(self, req):
-        # 何もせず終わります
-        return E_OVER
-
 """
 
                     # エッジの分岐部分
@@ -52,7 +49,14 @@ class {class_name}State():
                         transition.data, node_path.split("/")
                     )
                     for edge in directed_edge_list:
-                        print(f"[Render] edge={edge}")
+                        # print(f"[Render] edge={edge}")
+                        print(f"[Render] edge.name={edge.name}")
+                        text += f"        # {edge.name}\n"
+
+                    text += """
+        # 何もせず終わります
+        return E_OVER
+"""
 
                     f.write(text)
 
