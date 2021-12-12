@@ -1,7 +1,7 @@
 import os
-from lesson17.code_gen.py_gen import CodeGen
-from lesson17.step1_const_conf import ConstConf
-from lesson17.step3_transition_conf_wcsc import Transition
+from lesson18.code_gen.py_gen import CodeGen
+from lesson18.step1_const_conf import ConstConf
+from lesson18.step3_transition_conf_wcsc import Transition
 
 
 def state_files_gen(dir_path):
@@ -36,8 +36,8 @@ def state_files_gen(dir_path):
 
     def update(self, req):
 
-        # 入力
-        msg = req.pull_trigger()
+        # TODO 入力
+        msg = ""
 
         # 分岐
 """
@@ -78,7 +78,7 @@ def state_files_gen(dir_path):
 
                 # 定数をインポートします
                 if 0 < len(used_const):
-                    pre_text = "from lesson17.step2_auto.const import "
+                    pre_text = "from lesson18.step2_auto.const import "
                     is_skip_first = True
 
                     for const in used_const:

@@ -2,8 +2,8 @@ class InitState():
 
     def update(self, req):
 
-        # 入力
-        msg = req.pull_trigger()
+        # TODO 入力
+        msg = ""
 
         # 分岐
         if True:

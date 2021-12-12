@@ -1,15 +1,14 @@
 from lesson17.step2_auto.const import E_START
 
-class ReplyAgreeState():
 
+class ReplyAgreeState:
     def update(self, req):
 
-        # 入力
-        msg = req.pull_trigger()
+        # TODO 入力
+        msg = ""
 
         # 分岐
         if msg == E_START:
-            return ['Game']
+            return ["Game"]
         else:
             raise ValueError("Unexpected condition")
-

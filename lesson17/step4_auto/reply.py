@@ -1,16 +1,17 @@
-from lesson17.step2_auto.const import E_AGREE, E_REJECT
+from lesson17.step2_auto.const import E_REJECT, E_AGREE
 
+class ReplyState():
 
-class ReplyState:
     def update(self, req):
 
-        # TODO 入力
-        msg = ""
+        # 入力
+        msg = req.pull_trigger()
 
         # 分岐
         if msg == E_AGREE:
-            return ["Reply", "Agree"]
+            return ['Reply', 'Agree']
         elif msg == E_REJECT:
-            return ["Reply", "Reject"]
+            return ['Reply', 'Reject']
         else:
             raise ValueError("Unexpected condition")
+
