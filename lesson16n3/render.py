@@ -43,6 +43,11 @@ class Render:
 class {class_name}State():
 
     def update(self, req):
+
+        # TODO 入力
+        msg = ""
+
+        # 分岐
 """
 
                     # エッジの分岐部分
@@ -50,21 +55,23 @@ class {class_name}State():
                         transition.data, node_path.split("/")
                     )
 
-                    line_list = []
-                    for edge in directed_edge_list:
-                        line_list.append(f"# {{edge.name}}")
-
-                    text += CodeGen.create_comment_block("        ", line_list)
-
+                    # line_list = []
                     # for edge in directed_edge_list:
-                    #    # print(f"[Render] edge={edge}")
-                    #    print(f"[Render] edge.name={edge.name}")
-                    #    text += f"        # {edge.name}\n"
+                    #    line_list.append(f"# {{edge.name}}")
+                    #
+                    # text += CodeGen.create_comment_block("        ", line_list)
+                    #                    text += """
+                    #        # 何もせず終わります
+                    #        return E_OVER
+                    # """
+                    block_list = []
+                    for edge in directed_edge_list:
+                        block = []
+                        block.append(f"msg == '{edge.name}'")  # TODO 条件式。定数で書きたい
+                        block.append(f"return E_OVER")  # TODO 遷移先の名前を定数で書きたい
+                        block_list.append(block)
 
-                    text += """
-        # 何もせず終わります
-        return E_OVER
-"""
+                    text += CodeGen.create_switch_block("        ", block_list)
 
                     f.write(text)
 
