@@ -1,4 +1,5 @@
 import os
+from lesson16n3.code_gen import CodeGen
 from lesson16n3.transition_conf_wcsc import Transition
 
 
@@ -48,10 +49,17 @@ class {class_name}State():
                     directed_edge_list = Transition.create_edge_list_by_node_path(
                         transition.data, node_path.split("/")
                     )
+
+                    line_list = []
                     for edge in directed_edge_list:
-                        # print(f"[Render] edge={edge}")
-                        print(f"[Render] edge.name={edge.name}")
-                        text += f"        # {edge.name}\n"
+                        line_list.append(f"# {{edge.name}}")
+
+                    text += CodeGen.create_comment_block("        ", line_list)
+
+                    # for edge in directed_edge_list:
+                    #    # print(f"[Render] edge={edge}")
+                    #    print(f"[Render] edge.name={edge.name}")
+                    #    text += f"        # {edge.name}\n"
 
                     text += """
         # 何もせず終わります
