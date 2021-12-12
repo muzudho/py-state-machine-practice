@@ -3,6 +3,6 @@ from lesson16n2.transition_conf_wcsc import E_OVER
 class ReplyRejectState():
 
     def update(self, req):
-        # ‰½‚à‚¹‚¸I‚í‚è‚Ü‚·
+        # ä½•ã‚‚ã›ãšçµ‚ã‚ã‚Šã¾ã™
         return E_OVER
 

@@ -36,7 +36,7 @@ class Render:
             # 'x' - ファイルが存在しない場合のみの上書き
             path = f"lesson16n2/auto_gen/{file_stem}.py"
             try:
-                with open(path, "x") as f:
+                with open(path, "x", encoding="UTF-8") as f:
                     f.write(
                         f"""from lesson16n2.transition_conf_wcsc import E_OVER
 
