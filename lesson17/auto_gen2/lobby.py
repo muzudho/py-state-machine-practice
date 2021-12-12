@@ -1,4 +1,4 @@
-from lesson17.auto_gen1.const import E_GAME_SUMMARY, E_LOGOUT
+from lesson17.auto_gen1.const import E_LOGOUT, E_GAME_SUMMARY
 
 class LobbyState():
 
