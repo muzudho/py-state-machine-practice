@@ -1,6 +1,6 @@
 from graphviz import Digraph
 from lesson15.directive_edge import DirectiveEdge
-from lesson15.directive_edge_in_cluster import DirectiveEdgeInCluster
+from lesson15.clustered_directive_edge import ClusteredDirectiveEdge
 
 # from lesson15.transition_conf import Transition
 from lesson15.transition_conf_wcsc import Transition
@@ -29,13 +29,31 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
 
 def clustering(edge_list):
     """ノードパスによってクラスタリング"""
-    edge_list_in_clustering = []
+    clustered_edge_in_list = []
 
     for edge in edge_list:
-        edge_in_clustering = DirectiveEdgeInCluster.clustering(edge)
-        edge_list_in_clustering.append(edge_in_clustering)
+        clustering_edge = ClusteredDirectiveEdge.clustering(edge)
+        clustered_edge_in_list.append(clustering_edge)
 
-    return edge_list_in_clustering
+    return clustered_edge_in_list
+
+
+def rearrenge_in_tree(clustered_edge_in_list):
+    """ツリー構造に再配置"""
+    tree = {}
+
+    for clustering_edge in clustered_edge_in_list:
+        curr_dict = tree
+        for cluster_node in clustering_edge.cluster:
+
+            if not (cluster_node in curr_dict):
+                curr_dict[cluster_node] = {}
+
+            curr_dict = curr_dict[cluster_node]
+
+        curr_dict["__edge__"] = clustering_edge.directive_edge
+
+    return tree
 
 
 class Render:
@@ -58,10 +76,19 @@ class Render:
         create_edge_list(transition.data, [], None, edge_list)
 
         # ノードパスによってクラスタリング
-        edge_list_in_clustering = clustering(edge_list)
+        clustered_edge_in_list = clustering(edge_list)
         # Debug
-        for edge_in_clustering in edge_list_in_clustering:
-            print(f"edge_in_clustering={edge_in_clustering}")
+        for clustering_edge in clustered_edge_in_list:
+            print(f"clustering_edge={clustering_edge}")
+
+        # ツリー構造に再配置
+        tree = rearrenge_in_tree(clustered_edge_in_list)
+        # Debug
+        for key, value in tree.items():
+            if key == "__edge__":
+                print(f"[Tree] __edge__ value={value}")
+            else:
+                print(f"[Tree] key={key} value={value}")
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:

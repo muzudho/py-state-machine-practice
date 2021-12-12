@@ -1,4 +1,4 @@
-class DirectiveEdgeInCluster:
+class ClusteredDirectiveEdge:
     """エッジがどのクラスターに所属するかという観点で分類したもの"""
 
     @classmethod
@@ -14,7 +14,7 @@ class DirectiveEdgeInCluster:
             else:
                 break
 
-        return DirectiveEdgeInCluster(directive_edge, cluster)
+        return ClusteredDirectiveEdge(directive_edge, cluster)
 
     def __init__(self, directive_edge, cluster):
         self._directive_edge = directive_edge

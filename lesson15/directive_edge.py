@@ -6,6 +6,9 @@ class DirectiveEdge:
         self._src = src
         self._dst = dst
 
+    def __str__(self):
+        return f"[{self.to_src_str()}]--{self._name}-->[{self.to_dst_str()}]"
+
     @property
     def name(self):
         """名前"""
