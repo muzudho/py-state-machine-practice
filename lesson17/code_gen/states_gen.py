@@ -14,7 +14,7 @@ def state_files_gen(dir_path):
         print(f"[Render] edge={edge}")
 
     try:
-        # `auto_gen` フォルダーが無ければ作る
+        # フォルダーが無ければ作る
         os.makedirs(dir_path)
     except FileExistsError:
         # 既存なら無視
@@ -78,7 +78,7 @@ def state_files_gen(dir_path):
 
                 # 定数をインポートします
                 if 0 < len(used_const):
-                    pre_text = "from lesson17.auto_gen.const import "
+                    pre_text = "from lesson17.auto_gen1.const import "
                     is_skip_first = True
 
                     for const in used_const:

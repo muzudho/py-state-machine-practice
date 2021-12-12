@@ -1,7 +1,9 @@
+import os
+
 from lesson17.const_conf import ConstConf
 
 
-def const_file_gen(path):
+def const_file_gen(dir_path, file_name):
     conf = ConstConf()
 
     text = ""
@@ -10,7 +12,14 @@ def const_file_gen(path):
         text += f"{key} = '{value}'\n"
 
     try:
-        with open(path, "x", encoding="UTF-8") as f:
+        # フォルダーが無ければ作る
+        os.makedirs(dir_path)
+    except FileExistsError:
+        # 既存なら無視
+        pass
+
+    try:
+        with open(f"{dir_path}/{file_name}", "x", encoding="UTF-8") as f:
             f.write(text)
 
     except FileExistsError as e:
