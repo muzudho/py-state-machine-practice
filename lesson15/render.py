@@ -84,11 +84,14 @@ class Render:
         # ツリー構造に再配置
         tree = rearrenge_in_tree(clustered_edge_in_list)
         # Debug
-        for key, value in tree.items():
-            if key == "__edge__":
-                print(f"[Tree] __edge__ value={value}")
-            else:
-                print(f"[Tree] key={key} value={value}")
+        def __show_tree(curr_dict):
+            for key, value in curr_dict.items():
+                if key == "__edge__":
+                    print(f"[Tree] __edge__ value={value}")
+                else:
+                    __show_tree(value)
+
+        __show_tree(tree)
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:
