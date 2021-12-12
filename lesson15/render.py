@@ -1,11 +1,13 @@
 from graphviz import Digraph
 from lesson15.directive_edge import DirectiveEdge
+from lesson15.directive_edge_in_cluster import DirectiveEdgeInCluster
 
 # from lesson15.transition_conf import Transition
 from lesson15.transition_conf_wcsc import Transition
 
 
-def search(curr_dict, parent_state_node_path, node_name, result_edge_list):
+def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
+    """辺の一覧を作成"""
     state_node_path = list(parent_state_node_path)
     if not (node_name is None):
         state_node_path.append(node_name)
@@ -19,10 +21,21 @@ def search(curr_dict, parent_state_node_path, node_name, result_edge_list):
         child = curr_dict[child_key]
 
         if isinstance(child, dict):
-            search(child, state_node_path, child_key, result_edge_list)
+            create_edge_list(child, state_node_path, child_key, result_edge_list)
         else:
             edge = DirectiveEdge(child_key, state_node_path, child)
             result_edge_list.append(edge)
+
+
+def clustering(edge_list):
+    """ノードパスによってクラスタリング"""
+    edge_list_in_clustering = []
+
+    for edge in edge_list:
+        edge_in_clustering = DirectiveEdgeInCluster.clustering(edge)
+        edge_list_in_clustering.append(edge_in_clustering)
+
+    return edge_list_in_clustering
 
 
 class Render:
@@ -40,7 +53,15 @@ class Render:
         edge_list = []
 
         transition = Transition()
-        search(transition.data, [], None, edge_list)
+
+        # エッジの一覧を作成
+        create_edge_list(transition.data, [], None, edge_list)
+
+        # ノードパスによってクラスタリング
+        edge_list_in_clustering = clustering(edge_list)
+        # Debug
+        for edge_in_clustering in edge_list_in_clustering:
+            print(f"edge_in_clustering={edge_in_clustering}")
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:

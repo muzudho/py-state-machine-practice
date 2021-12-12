@@ -15,19 +15,19 @@ class DirectiveEdge:
     # def name(self, val):
     #    self._name = val
 
-    # @property
-    # def src(self):
-    #    """遷移元の状態ノードが縦に並ぶリスト"""
-    #    return self._src
+    @property
+    def src(self):
+        """遷移元の状態ノードが縦に並ぶリスト"""
+        return self._src
 
     # @src.setter
     # def path(self, val):
     #    self._src = val
 
-    # @property
-    # def dst(self):
-    #    """遷移先の状態ノードが縦に並ぶリスト"""
-    #    return self._dst
+    @property
+    def dst(self):
+        """遷移先の状態ノードが縦に並ぶリスト"""
+        return self._dst
 
     # @dst.setter
     # def dst(self, val):
