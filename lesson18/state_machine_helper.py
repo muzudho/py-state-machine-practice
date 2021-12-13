@@ -4,7 +4,7 @@
 class StateMachineHelper:
     @classmethod
     def is_verbose(clazz):
-        return False
+        return True
 
     @classmethod
     def lookup_next_state_path(clazz, transition_conf, state_path, edge_name):
@@ -13,7 +13,7 @@ class StateMachineHelper:
         if clazz.is_verbose():
             print(f"[lookup_next_state 12] state_path={state_path}")
 
-        curr_dict = transition_conf
+        curr_dict = transition_conf.data
         for state_node in state_path:
 
             if clazz.is_verbose():
