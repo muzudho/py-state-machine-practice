@@ -6,7 +6,12 @@ class ClusteredDirectiveEdge:
         src = directive_edge.src  # List
         dst = directive_edge.dst
         cluster = []
-        min_n = min(len(src), len(dst))
+
+        if (src is None) or (dst is None):
+            min_n = 0
+        else:
+            min_n = min(len(src), len(dst))
+
         # 一致するところまでが、同じクラスター
         for i in range(0, min_n):
             if src[i] == dst[i]:
