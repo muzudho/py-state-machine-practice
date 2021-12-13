@@ -69,3 +69,14 @@ class ConstConf:
                 new_list.append(f"{quote}{item}{quote}")  # 文字列
 
         return new_list
+
+    def pickup_from_item(self, item, used_const_set):
+        """item が定数なら used_const_set へ追加します"""
+        if item in self._data:
+            used_const_set.add(item)
+
+    def pickup_from_list(self, list_obj, used_const_set):
+        """list_obj の中で使われている定数を used_const_set へ追加します"""
+        for item in list_obj:
+            if item in self._data:
+                used_const_set.add(item)

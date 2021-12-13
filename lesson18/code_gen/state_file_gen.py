@@ -21,21 +21,12 @@ class StateFileGen:
             transition.data, node_path.split("/")
         )
 
-        # 必要な定数を調査
-        used_const = set()
+        # 使った定数を調査
+        used_const_set = set()
         for edge in directed_edge_list:
-            if edge.name != "":
-                edge_const = const_conf.rev_data[edge.name]
-                used_const.add(edge_const)
+            const_conf.pickup_from_item(edge.name, used_const_set)
 
         text = ""
-
-        # 定数をインポートします
-        if 0 < len(used_const):
-            text += ImportGen.generate(
-                from_s="lesson18.step1n2_auto.const", import_list=used_const
-            )
-
         text += ClassGen.generate(name=f"{class_name}State")
         text += MethodGen.signature(name="update", parameters_s="self, req")
         text += """
@@ -48,8 +39,11 @@ class StateFileGen:
 """
 
         # エッジ分岐部
+        used_const_set = set()  # 使った定数
         edge_switch_list = StateFileGen.__edge_switch_list(
-            const_conf=const_conf, directed_edge_list=directed_edge_list
+            const_conf=const_conf,
+            directed_edge_list=directed_edge_list,
+            used_const_set=used_const_set,
         )
         text += SwitchGen.generate("        ", block_list=edge_switch_list)
         text += "\n"
@@ -62,11 +56,19 @@ class StateFileGen:
                     name=f"on_{edge.name}", parameters_s="self, req"
                 )
 
+        # 定数のインポートをファイルの冒頭に付けます
+        if 0 < len(used_const_set):
+            statement = ImportGen.generate(
+                from_s="lesson18.step1n2_auto.const", import_set=used_const_set
+            )
+            text = f"{statement}\n{text}"
+
         with open(path, "w", encoding="UTF-8") as f:
             f.write(text)
 
     @classmethod
-    def __edge_switch_list(clazz, const_conf, directed_edge_list):
+    def __edge_switch_list(clazz, const_conf, directed_edge_list, used_const_set):
+
         branch_list = []
         for edge in directed_edge_list:
             # 条件式
@@ -74,6 +76,7 @@ class StateFileGen:
                 cond = "True"  # 恒真
             else:
                 operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
+                const_conf.pickup_from_item(operand, used_const_set)
                 cond = f"msg == {operand}"
 
             # if～elif文
@@ -83,6 +86,7 @@ class StateFileGen:
                 item_list = const_conf.replace_list(
                     edge.dst, '"'
                 )  # リストの要素をなるべく定数に置換、でなければ "文字列" に置換
+                const_conf.pickup_from_list(item_list, used_const_set)
                 text = ", ".join(item_list)
                 body_sequence.append(f"return {text}")
             else:
