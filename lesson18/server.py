@@ -70,7 +70,8 @@ class Server:
                         pull_trigger=__on_pull_trigger,
                     )
 
-                    # メッセージに応じたアクションを行ったあと、Edge名を返します
+                    # メッセージに応じたアクションを行ったあと、Edge名を返します。
+                    # Edge名は None であってはいけません
                     edge_name = state.update(req)
                     print(f"[server.py] edge_name={edge_name}")
 

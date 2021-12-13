@@ -40,12 +40,12 @@ class StateFileGen:
 
         # エッジ分岐部
         used_const_set = set()  # 使った定数
-        edge_switch_list = StateFileGen.__edge_switch_list(
+        switch_model = StateFileGen.__edge_switch_model(
             const_conf=const_conf,
             directed_edge_list=directed_edge_list,
             used_const_set=used_const_set,
         )
-        text += SwitchGen.generate("        ", block_list=edge_switch_list)
+        text += SwitchGen.generate("        ", switch_model=switch_model)
         text += "\n"
 
         # ハンドラ自動生成
@@ -67,9 +67,10 @@ class StateFileGen:
             f.write(text)
 
     @classmethod
-    def __edge_switch_list(clazz, const_conf, directed_edge_list, used_const_set):
+    def __edge_switch_model(clazz, const_conf, directed_edge_list, used_const_set):
 
-        branch_list = []
+        if_else_list = []
+        # if～elif文
         for edge in directed_edge_list:
             # 条件式
             if edge.name == "":
@@ -79,7 +80,7 @@ class StateFileGen:
                 const_conf.pickup_from_item(operand, used_const_set)
                 cond = f"msg == {operand}"
 
-            # if～elif文
+            # シーケンス
             body_sequence = []
             body_sequence.append(f"self.on_{edge.name}()")  # イベントハンドラ呼出し
             if edge.dst:
@@ -87,14 +88,15 @@ class StateFileGen:
                     edge.dst, '"'
                 )  # リストの要素をなるべく定数に置換、でなければ "文字列" に置換
                 const_conf.pickup_from_list(item_list, used_const_set)
-                text = ", ".join(item_list)
-                body_sequence.append(f"return {text}")
+                csv = ", ".join(item_list)
+                body_sequence.append(f"return [{csv}]")
             else:
                 body_sequence.append("return None")
 
-            # else文
-            else_sequence = ['raise ValueError(f"Unexpected msg={msg}")']
+            if_else_list.append([cond, body_sequence])
 
-            branch_list.append([cond, body_sequence, else_sequence])
+        # else文
+        else_sequence = ['raise ValueError(f"Unexpected msg={msg}")']
 
-        return branch_list
+        switch_model = [if_else_list, else_sequence]
+        return switch_model

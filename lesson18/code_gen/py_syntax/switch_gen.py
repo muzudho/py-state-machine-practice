@@ -1,7 +1,14 @@
 class SwitchGen:
     @classmethod
-    def generate(clazz, indent, block_list, else_sequence=None):
-        """TODO 分岐構造を記述します
+    def generate(clazz, indent, switch_model, else_sequence=None):
+        """分岐構造を記述します
+
+        Parameters
+        ----------
+        switch_model : list
+            [0] if～elifブロックのリスト
+                ブロックはさらに [0]条件式 [1]パラメーター文字列 に分かれます
+            [1] あればelseブロックのシーケンス
 
         Examples
         --------
@@ -21,23 +28,25 @@ class SwitchGen:
 
         is_first = True
 
-        for block in block_list:
-            cond = block[0]
+        if_elif_list = switch_model[0]
+        for cond_body in if_elif_list:
+            cond = cond_body[0]
             if is_first:
                 is_first = False
                 text += f"{indent}if {cond}:\n"
             else:
                 text += f"{indent}elif {cond}:\n"
 
-            body_sequence = block[1]
+            body_sequence = cond_body[1]
             for line in body_sequence:
                 text += f"{indent}    {line}\n"
 
             text += "\n"
 
-        if else_sequence:
+        if 0 < len(switch_model):
             text += f"{indent}else:\n"
-            for line in body_sequence:
+            else_sequence = switch_model[1]
+            for line in else_sequence:
                 text += f"{indent}    {line}\n"
 
         return text
