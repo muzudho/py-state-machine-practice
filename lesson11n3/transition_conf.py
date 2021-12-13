@@ -1,6 +1,14 @@
-from lesson11n3.keywords import OUT, E_FAILED, E_OPENED, E_SITTING_DOWN, E_UP, MY_ROOM, STAIRS
+from lesson11n3.keywords import (
+    OUT,
+    E_FAILED,
+    E_OPENED,
+    E_SITTING_DOWN,
+    E_UP,
+    MY_ROOM,
+    STAIRS,
+)
 
-transition = {
+transition_conf = {
     OUT: {
         E_OPENED: STAIRS,
         E_FAILED: OUT,
@@ -12,5 +20,5 @@ transition = {
     MY_ROOM: {
         E_SITTING_DOWN: MY_ROOM,
         E_FAILED: OUT,
-    }
+    },
 }

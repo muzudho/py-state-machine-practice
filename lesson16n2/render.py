@@ -1,5 +1,5 @@
 import os
-from lesson16n2.transition_conf_wcsc import Transition
+from lesson16n2.transition_conf_wcsc import TransitionConf
 
 
 class Render:
@@ -11,10 +11,10 @@ class Render:
         pass
 
     def run(self):
-        transition = Transition()
+        transition_conf = TransitionConf()
 
         # エッジの一覧
-        edge_list = transition.create_edge_list()
+        edge_list = transition_conf.create_edge_list()
         for edge in edge_list:
             print(f"[Render] edge={edge}")
 
@@ -26,7 +26,7 @@ class Render:
             pass
 
         # ノードの一覧
-        node_path_set = Transition.extract_node_path_set(edge_list)
+        node_path_set = TransitionConf.extract_node_path_set(edge_list)
         for node_path in node_path_set:
             file_stem = node_path.replace("/", "_").lower()
             class_name = node_path.replace("/", "")

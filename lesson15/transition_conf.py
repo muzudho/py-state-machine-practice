@@ -40,11 +40,8 @@ E_PIN = "pin"
 E_PEN = "pen"
 E_OVER = "over"  # 以上
 
-# Transition
-# ----------
 
-
-class Transition:
+class TransitionConf:
     def __init__(self):
         self._title = "This is a pen"
         self._entry_node = INIT

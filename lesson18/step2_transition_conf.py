@@ -17,7 +17,7 @@ from lesson18.step1n2_auto.const import (
 )
 
 
-class Transition:
+class TransitionConf:
     def __init__(self):
         self._title = "CSA Server protocol 1.2.1"
         self._entry_node = INIT

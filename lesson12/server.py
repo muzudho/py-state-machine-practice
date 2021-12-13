@@ -4,10 +4,10 @@ from threading import Thread
 from lesson12.states.out import OutState
 from lesson12.state_gen_conf import state_gen
 from lesson12.keywords import OUT
-from lesson12.transition_conf import transition
+from lesson12.transition_conf import transition_conf
 
 
-class Server():
+class Server:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
@@ -42,10 +42,12 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("""Welcome to Lesson 12 !
+            c_sock.send(
+                """Welcome to Lesson 12 !
 ----------------------
 You can see the house.
-You can see the close knob.""".encode())
+You can see the close knob.""".encode()
+            )
 
             # 最初は外に居ます
             state_name = OUT
@@ -60,7 +62,7 @@ You can see the close knob.""".encode())
                     edge_name = state.update(message, c_sock)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = transition[state_name][edge_name]
+                    state_name = transition_conf[state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
                     state = state_gen[state_name]()

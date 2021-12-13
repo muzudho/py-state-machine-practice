@@ -1,6 +1,21 @@
-from lesson14.keywords import A, E_A, E_AN, E_IS, E_OVER, E_PEN, E_PIN, E_THAT, E_THIS, E_WAS, INIT, IS, PEN, THIS
+from lesson14.keywords import (
+    A,
+    E_A,
+    E_AN,
+    E_IS,
+    E_OVER,
+    E_PEN,
+    E_PIN,
+    E_THAT,
+    E_THIS,
+    E_WAS,
+    INIT,
+    IS,
+    PEN,
+    THIS,
+)
 
-transition = {
+transition_conf = {
     INIT: {
         E_OVER: [INIT],
         E_THAT: [INIT],
@@ -19,9 +34,9 @@ transition = {
                     E_PEN: [PEN],
                 },
             },
-        }
+        },
     },
     PEN: {
         E_OVER: None,
-    }
+    },
 }

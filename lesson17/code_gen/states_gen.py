@@ -1,15 +1,15 @@
 import os
 from lesson17.code_gen.py_gen import CodeGen
 from lesson17.step1_const_conf import ConstConf
-from lesson17.step2_transition_conf_wcsc import Transition
+from lesson17.step2_transition_conf_wcsc import TransitionConf
 
 
 def state_files_gen(dir_path):
-    transition = Transition()
+    transition_conf = TransitionConf()
     const_conf = ConstConf()
 
     # エッジの一覧
-    edge_list = transition.create_edge_list()
+    edge_list = transition_conf.create_edge_list()
     for edge in edge_list:
         print(f"[Render] edge={edge}")
 
@@ -21,7 +21,7 @@ def state_files_gen(dir_path):
         pass
 
     # ノードの一覧
-    node_path_set = Transition.extract_node_path_set(edge_list)
+    node_path_set = TransitionConf.extract_node_path_set(edge_list)
     for node_path in node_path_set:
         if node_path is None:
             continue
@@ -46,8 +46,8 @@ def state_files_gen(dir_path):
 """
 
                 # エッジの分岐部分
-                directed_edge_list = Transition.create_edge_list_by_node_path(
-                    transition.data, node_path.split("/")
+                directed_edge_list = TransitionConf.create_edge_list_by_node_path(
+                    transition_conf.data, node_path.split("/")
                 )
 
                 # line_list = []

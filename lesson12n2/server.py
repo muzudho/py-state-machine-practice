@@ -4,10 +4,10 @@ from threading import Thread
 from lesson12n2.states.out import OutState
 from lesson12n2.state_gen_conf import state_gen
 from lesson12n2.keywords import OUT
-from lesson12n2.transition_conf import transition
+from lesson12n2.transition_conf import transition_conf
 
 
-class Server():
+class Server:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
@@ -42,8 +42,10 @@ class Server():
                 接続しているクライアントのソケット
             """
 
-            c_sock.send("""Welcome to Lesson 12-2 !
-------------------------""".encode())
+            c_sock.send(
+                """Welcome to Lesson 12-2 !
+------------------------""".encode()
+            )
 
             # 最初は外に居ます
             state_name = OUT
@@ -51,17 +53,17 @@ class Server():
 
             while True:
                 try:
+
                     def __on_pull_trigger():
                         # クライアントから受信したバイナリデータをテキストに変換します
                         message = c_sock.recv(self._message_size).decode()
                         return message
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
-                    edge_name = state.update(
-                        c_sock, pull_trigger=__on_pull_trigger)
+                    edge_name = state.update(c_sock, pull_trigger=__on_pull_trigger)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = transition[state_name][edge_name]
+                    state_name = transition_conf[state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
                     state = state_gen[state_name]()

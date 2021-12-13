@@ -4,10 +4,10 @@ from threading import Thread
 from lesson11n3.states.out import OutState
 from lesson11n3.state_gen_conf import state_gen
 from lesson11n3.keywords import OUT
-from lesson11n3.transition_conf import transition
+from lesson11n3.transition_conf import transition_conf
 
 
-class Server():
+class Server:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
@@ -57,7 +57,7 @@ class Server():
                     edge_name = state.update(message, c_sock)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = transition[state_name][edge_name]
+                    state_name = transition_conf[state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
                     state = state_gen[state_name]()

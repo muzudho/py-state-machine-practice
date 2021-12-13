@@ -5,7 +5,7 @@
 transigion_conf.py:  
 
 ```python
-transition = {
+transition_conf = {
     OUT: {
         E_TURNED_KNOB: OUT_CLOSE_DOOR,
         E_FAILED: OUT,
@@ -34,7 +34,7 @@ transition = {
 transigion_conf.py:
 
 ```python
-transition = {
+transition_conf = {
     OUT: {
         '': {
             E_TURNED_KNOB: [OUT, CLOSE_DOOR],

@@ -38,11 +38,8 @@ E_MOVE_ECHO = "move_echo"
 E_GAME_OVER_FLOODGATE = "game_over_floodgate"
 E_GAME_OVER_WCSC = "game_over_wcsc"
 
-# Transition
-# ----------
 
-
-class Transition:
+class TransitionConf:
     def __init__(self):
         self._title = "CSA Server protocol 1.2.1"
         self._entry_node = INIT

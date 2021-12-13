@@ -43,11 +43,8 @@ E_GAME_OVER_WCSC = "game_over_wcsc"
 
 E_OVER = "over"  # 練習プログラム用
 
-# Transition
-# ----------
 
-
-class Transition:
+class TransitionConf:
     def __init__(self):
         self._title = "CSA Server protocol 1.2.1"
         self._entry_node = INIT

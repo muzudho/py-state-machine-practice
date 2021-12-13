@@ -2,12 +2,12 @@ from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
 from lesson18.code_gen.py_syntax.method_gen import MethodGen
 from lesson18.code_gen.py_syntax.switch_gen import SwitchGen
-from lesson18.step2_transition_conf import Transition
+from lesson18.step2_transition_conf import TransitionConf
 
 
 class StateFileGen:
     @classmethod
-    def generate(clazz, dir_path, const_conf, transition, node_path):
+    def generate(clazz, dir_path, const_conf, transition_conf, node_path):
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")
         # print(f"[Render] node_path={node_path} ----> {file_stem}")
@@ -17,8 +17,8 @@ class StateFileGen:
         path = f"{dir_path}/{file_stem}.py"
 
         # エッジの分岐部分
-        directed_edge_list = Transition.create_edge_list_by_node_path(
-            transition.data, node_path.split("/")
+        directed_edge_list = TransitionConf.create_edge_list_by_node_path(
+            transition_conf.data, node_path.split("/")
         )
 
         # 使った定数を調査

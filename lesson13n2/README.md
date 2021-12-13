@@ -3,7 +3,7 @@
 `transigion_conf.py` に、ステートマシンを終了させる出口を指定できるようにしましょう  
 
 ```python
-transition = {
+transition_conf = {
     OUT: {
         '': {
             E_TURNED_KNOB: [OUT, CLOSE_DOOR],

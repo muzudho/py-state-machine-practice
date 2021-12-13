@@ -4,7 +4,7 @@ from threading import Thread
 from lesson18.request import Request
 from lesson18.state_machine_helper import StateMachineHelper
 from lesson18.step1n2_auto.const import INIT
-from lesson18.step2_transition_conf import Transition
+from lesson18.step2_transition_conf import TransitionConf
 from lesson18.state_gen_conf import state_gen
 
 
@@ -48,7 +48,7 @@ class Server:
 ----------------------""".encode()
             )
 
-            transition = Transition()
+            transition_conf = TransitionConf()
 
             # 最初
             state_path = [INIT]
@@ -76,7 +76,7 @@ class Server:
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelper.lookup_next_state_path(
-                        transition, state_path, edge_name
+                        transition_conf, state_path, edge_name
                     )
 
                     if state_path is None:

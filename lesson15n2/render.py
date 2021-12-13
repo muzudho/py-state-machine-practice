@@ -2,8 +2,8 @@ from graphviz import Digraph
 from lesson15n2.directive_edge import DirectiveEdge
 from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
 
-# from lesson15n2.transition_conf import Transition
-from lesson15n2.transition_conf_wcsc import Transition
+# from lesson15n2.transition_conf import TransitionConf
+from lesson15n2.transition_conf_wcsc import TransitionConf
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -86,10 +86,10 @@ class Render:
 
         edge_list = []
 
-        transition = Transition()
+        transition_conf = TransitionConf()
 
         # エッジの一覧を作成
-        create_edge_list(transition.data, [], None, edge_list)
+        create_edge_list(transition_conf.data, [], None, edge_list)
 
         # ノードパスによってクラスタリング
         clustered_edge_in_list = clustering(edge_list)
@@ -118,11 +118,11 @@ class Render:
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:
             # 一番外側のクラスターのラベルは図のタイトルのように見える
-            c.attr(color="white", label=transition.title)
+            c.attr(color="white", label=transition_conf.title)
             # 始端記号
             c.node("(Start)", shape="circle", color="gray")
             # 始端と開始ノードのエッジ
-            c.edge("(Start)", transition.entry_node, label="start")
+            c.edge("(Start)", transition_conf.entry_node, label="start")
             # 終端記号
             c.node("(Terminal)", shape="circle", color="gray")
 
