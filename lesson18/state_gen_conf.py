@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson18.step1n2_auto.const import A, E_THIS, INIT, IS, PEN, THIS
+from lesson18.step1n2_auto.const import A, E_OVER, E_THIS, INIT, IS, PEN, THIS
 from lesson18.step2n2_auto.init import InitState
 from lesson18.step2n2_auto.init_this import InitThisState
 from lesson18.step2n2_auto.init_this_is import InitThisIsState
@@ -113,7 +113,12 @@ def __create_pen_state():
 
     obj.on_entry = __on_entry
 
-    # TODO 入力待機をなしにしたい
+    def __on_trigger(req):
+        """入力待機を無しにしてそのまま抜けます"""
+
+        return E_OVER
+
+    obj.on_trigger = __on_trigger
 
     return obj
 

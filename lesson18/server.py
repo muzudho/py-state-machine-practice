@@ -81,8 +81,11 @@ class Server:
                     )
 
                     if state_path is None:
-                        # ステートマシンは終了しました
-                        print("[server.py] State machine is finished")
+                        # 次のステートがナンだったので、ステートマシンは終了しました
+                        # TODO クライアントに quit 命令などを送信する必要があるか？
+                        print(
+                            "[server.py] Next state is None. State machine is finished."
+                        )
                         print("Remove a socket")
                         self._c_sock_set.remove(c_sock)
                         break
