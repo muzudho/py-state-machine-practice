@@ -1,10 +1,10 @@
 """State Generator"""
-from lesson18.step2_auto.const import A, INIT, IS, PEN, THIS
-from lesson18.step4_auto.init import InitState
-from lesson18.step4_auto.init_this import InitThisState
-from lesson18.step4_auto.init_this_is import InitThisIsState
-from lesson18.step4_auto.init_this_is_a import InitThisIsAState
-from lesson18.step4_auto.pen import PenState
+from lesson18.step1n2_auto.const import A, INIT, IS, PEN, THIS
+from lesson18.step2n2_auto.init import InitState
+from lesson18.step2n2_auto.init_this import InitThisState
+from lesson18.step2n2_auto.init_this_is import InitThisIsState
+from lesson18.step2n2_auto.init_this_is_a import InitThisIsAState
+from lesson18.step2n2_auto.pen import PenState
 
 
 def __create_init_state():

@@ -1,5 +1,4 @@
 from lesson17.code_gen.const_gen import const_file_gen
-from lesson17.code_gen.states_gen import state_files_gen
 
 
 class Render:
@@ -12,9 +11,7 @@ class Render:
 
     def run(self):
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        const_file_gen("lesson17/step2_auto", "const.py")
-
-        state_files_gen("lesson17/step4_auto")
+        const_file_gen("lesson17/step1n2_auto", "const.py")
 
     def clean_up(self):
         pass

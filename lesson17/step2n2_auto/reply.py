@@ -1,4 +1,4 @@
-from lesson17.step2_auto.const import E_REJECT, E_AGREE
+from lesson17.step1n2_auto.const import E_REJECT, E_AGREE
 
 class ReplyState():
 

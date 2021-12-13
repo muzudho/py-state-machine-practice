@@ -1,7 +1,7 @@
 import sys
 
 from lesson07.main_and_finally import MainAndFinally
-from lesson17.render import Render
+from lesson17.render_step1 import Render
 
 server = None
 

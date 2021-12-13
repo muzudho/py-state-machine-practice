@@ -1,6 +1,6 @@
-from lesson17.step2_auto.const import E_REJECT
+from lesson17.step1n2_auto.const import E_START
 
-class ReplyRejectState():
+class ReplyAgreeState():
 
     def update(self, req):
 
@@ -8,8 +8,8 @@ class ReplyRejectState():
         msg = req.pull_trigger()
 
         # 分岐
-        if msg == E_REJECT:
-            return ['Lobby']
+        if msg == E_START:
+            return ['Game']
         else:
             raise ValueError("Unexpected condition")
 

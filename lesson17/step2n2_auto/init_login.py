@@ -1,6 +1,6 @@
-from lesson17.step2_auto.const import E_COMPLETED
+from lesson17.step1n2_auto.const import E_INCORRECT, E_OK
 
-class LobbyLogoutState():
+class InitLoginState():
 
     def update(self, req):
 
@@ -8,7 +8,9 @@ class LobbyLogoutState():
         msg = req.pull_trigger()
 
         # 分岐
-        if msg == E_COMPLETED:
+        if msg == E_OK:
+            return ['Lobby']
+        elif msg == E_INCORRECT:
             return ['Init']
         else:
             raise ValueError("Unexpected condition")

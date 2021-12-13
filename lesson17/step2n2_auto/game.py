@@ -1,4 +1,4 @@
-from lesson17.step2_auto.const import E_GAME_OVER_FLOODGATE, E_MOVE_ECHO, E_GAME_OVER_WCSC, E_MOVE
+from lesson17.step1n2_auto.const import E_GAME_OVER_FLOODGATE, E_MOVE_ECHO, E_MOVE, E_GAME_OVER_WCSC
 
 class GameState():
 

@@ -4,7 +4,7 @@ from lesson18.code_gen.import_gen import ImportGen
 from lesson18.code_gen.method_gen import MethodGen
 from lesson18.code_gen.py_gen import CodeGen
 from lesson18.step1_const_conf import ConstConf
-from lesson18.step3_transition_conf import Transition
+from lesson18.step2_transition_conf import Transition
 
 
 def state_files_gen(dir_path):
@@ -54,7 +54,7 @@ def state_files_gen(dir_path):
         # 定数をインポートします
         if 0 < len(used_const):
             text += ImportGen.generate(
-                from_s="lesson18.step2_auto.const", import_list=used_const
+                from_s="lesson18.step1n2_auto.const", import_list=used_const
             )
 
         text += ClassGen.generate(name=f"{class_name}State")
