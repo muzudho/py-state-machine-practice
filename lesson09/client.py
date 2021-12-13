@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 
-class Client():
+class Client:
     def __init__(self, server_host="127.0.0.1", server_port=5002, message_size=1024):
         """クライアントです。
 
@@ -35,26 +35,36 @@ class Client():
         self._s_sock.close()
 
         # 実行中のスレッドがあれば終了するまで待機するのがクリーンです
-        if not(self._s_thr is None) and self._s_thr.is_alive():
+        if not (self._s_thr is None) and self._s_thr.is_alive():
             print("[CleanUp] Before join")
             self._s_thr.join()
             print("[CleanUp] After join")
             self._s_thr = None
 
     def run(self):
-
         def server_worker():
             while True:
                 try:
                     message = self._s_sock.recv(self._message_size).decode()
                     print("\n" + message)
+
+                    if message == "quit":
+                        # サーバーから quit が送られてきたら終了することにします
+                        # サーバーから強制的に切断しても同じですが、エラーメッセージが出ないという違いがあります
+                        # TODO ただし、このワーカースレッドが止まっても、標準入力の待機からは自動的には抜けません
+                        print(f"""[-] Disconnected by server.""")
+                        self._is_terminate_server_thread = True
+                        return
+
                 except Exception as e:
                     # client no longer connected
                     # remove it from the set
                     print(f"[!] Error: {e}")
 
-                    print(f"""Finished listening to the server.
-Please push q key to quit.""")
+                    print(
+                        f"""Finished listening to the server.
+Please push q key to quit."""
+                    )
                     self._is_terminate_server_thread = True
                     return
 
@@ -77,7 +87,7 @@ Please push q key to quit.""")
             to_send = input()  # ここでブロックします。このブロックをプログラムから解除する簡単な方法はありません
 
             # a way to exit the program
-            if to_send.lower() == 'q':
+            if to_send.lower() == "q":
                 break
 
             to_send = f"{to_send}"

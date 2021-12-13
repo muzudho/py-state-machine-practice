@@ -120,6 +120,12 @@ def __create_pen_state():
 
     obj.on_trigger = __on_trigger
 
+    def __on_over(req):
+        """クライアントを終了させます"""
+        req.c_sock.send("quit".encode())
+
+    obj.on_over = __on_over
+
     return obj
 
 
