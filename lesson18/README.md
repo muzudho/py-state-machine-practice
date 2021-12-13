@@ -4,6 +4,11 @@ Lesson14のコードをベースに、Lesson17の実行ファイルを使って�
 
 ## Build
 
+実行前に 以下のフォルダーが既に作成されていれば、削除してください
+
+- `lesson18/step1n2_auto`
+- `lesson18/step2n2_auto`
+
 ```shell
 python.exe -m lesson18.code_gen.main_step1
 python.exe -m lesson18.code_gen.main_step2

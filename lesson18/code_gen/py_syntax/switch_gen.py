@@ -1,18 +1,6 @@
-class CodeGen:
-    def __init__(self):
-        pass
-
+class SwitchGen:
     @classmethod
-    def create_comment_block(clazz, indent, line_list):
-        text = ""
-
-        for line in line_list:
-            text += f"{indent}{line}\n"
-
-        return text
-
-    @classmethod
-    def create_switch_block(clazz, indent, block_list):
+    def generate(clazz, indent, block_list):
         """TODO 分岐構造を記述します
 
         Examples

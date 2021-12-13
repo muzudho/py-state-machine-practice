@@ -1,8 +1,8 @@
 import os
-from lesson18.code_gen.class_gen import ClassGen
-from lesson18.code_gen.import_gen import ImportGen
-from lesson18.code_gen.method_gen import MethodGen
-from lesson18.code_gen.py_gen import CodeGen
+from lesson18.code_gen.py_syntax.class_gen import ClassGen
+from lesson18.code_gen.py_syntax.import_gen import ImportGen
+from lesson18.code_gen.py_syntax.method_gen import MethodGen
+from lesson18.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson18.step1_const_conf import ConstConf
 from lesson18.step2_transition_conf import Transition
 
@@ -72,14 +72,16 @@ def state_files_gen(dir_path):
         edge_branch_list = __edge_branch_list(
             const_conf=const_conf, directed_edge_list=directed_edge_list
         )
-        text += CodeGen.create_switch_block("        ", block_list=edge_branch_list)
+        text += SwitchGen.generate("        ", block_list=edge_branch_list)
         text += "\n"
 
         # ハンドラ自動生成
         text += MethodGen.generate(name="on_entry", parameters_s="self, req")
         for edge in directed_edge_list:
             if edge.name != "":
-                text += MethodGen.generate(name=edge.name, parameters_s="self, req")
+                text += MethodGen.generate(
+                    name=f"on_{edge.name}", parameters_s="self, req"
+                )
 
         try:
             with open(path, "x", encoding="UTF-8") as f:
