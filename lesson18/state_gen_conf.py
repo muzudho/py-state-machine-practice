@@ -32,6 +32,12 @@ State path={state_path_str}""".encode()
 
     obj.on_that = __on_that
 
+    def __on_over(req):  # TODO __on_that
+        if InitState.is_verbose():
+            req.c_sock.send(f"[English] Over分岐".encode())
+
+    obj.on_over = __on_over
+
     return obj
 
 
