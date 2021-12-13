@@ -1,32 +1,24 @@
 class ConstConf:
     def __init__(self):
-        # 全単射にしてください
+        # (1) キーと値は 全単射にしてください
+        # (2) 大文字と小文字は区別します
         self._data = {
             # States
             # ------
             #
+            # 値はグラフのノードの名前です。 PascalCase です
             # ディクショナリーのキーとして Edge と被らないように PascalCase にします
             "INIT": "Init",
             "THIS": "This",
             "IS": "Is",
             "A": "A",
             "PEN": "Pen",
-            # Actions
-            # -------
-            #
-            # 競合しないので、任意の文字列です
-            "MSG_THAT": "That",
-            "MSG_THIS": "This",
-            "MSG_WAS": "was",
-            "MSG_IS": "is",
-            "MSG_AN": "an",
-            "MSG_A": "a",
-            "MSG_PIN": "pin",
-            "MSG_PEN": "pen",
             # Edges
             # -----
             #
-            # ディクショナリーのキーとして State と被らないように頭に snake_case にします
+            # 値はグラフの辺の名前です。 snake_case です
+            # ディクショナリーのキーとして State と被らないように頭に E_ を付けます
+            # ディクショナリーの値の方も一意でないといけません
             "E_THAT": "that",
             "E_THIS": "this",
             "E_WAS": "was",
@@ -36,6 +28,19 @@ class ConstConf:
             "E_PIN": "pin",
             "E_PEN": "pen",
             "E_OVER": "over",  # 以上
+            # Actions
+            # -------
+            #
+            # 任意の文字列ですが、値が State や Edge と突合するなら、それを使い回してください
+            "MSG_THAT": "That",
+            # "MSG_THIS": "This", # 被るので THIS を使い回してください
+            # "MSG_WAS": "was",  # 被るので E_WAS を使い回してください
+            # "MSG_IS": "is", # 以下略
+            # "MSG_AN": "an",
+            # "MSG_A": "a",
+            # "MSG_PIN": "pin",
+            # "MSG_PEN": "pen",
+            # "MSG_OVER": "over",
         }
 
         # 逆向きは自動生成します

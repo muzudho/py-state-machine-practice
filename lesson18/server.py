@@ -44,7 +44,7 @@ class Server:
             """
 
             c_sock.send(
-                """Welcome to Lesson 14 !
+                """Welcome to Lesson 18 !
 ----------------------""".encode()
             )
 

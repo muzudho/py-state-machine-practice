@@ -77,7 +77,10 @@ class StateFileGen:
                 cond = "True"  # 恒真
             else:
                 operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
+                # この練習プログラムでは E_XXX のような定数になってるはず
                 const_conf.pickup_from_item(operand, used_const_set)
+                # E_XXX を MSG_XXX に置換
+                operand = operand.replace("E_", "MSG_")
                 cond = f"msg == {operand}"
 
             # シーケンス
@@ -96,7 +99,7 @@ class StateFileGen:
             if_else_list.append([cond, body_sequence])
 
         # else文
-        else_sequence = ['raise ValueError(f"Unexpected msg={msg}")']
+        else_sequence = ['raise ValueError(f"Unexpected msg:{msg}")']
 
         switch_model = [if_else_list, else_sequence]
         return switch_model
