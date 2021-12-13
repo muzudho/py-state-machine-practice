@@ -6,6 +6,8 @@ from lesson18.step2n2_auto.init_this_is import InitThisIsState
 from lesson18.step2n2_auto.init_this_is_a import InitThisIsAState
 from lesson18.step2n2_auto.pen import PenState
 
+__is_verbose = True
+
 
 def __create_init_state():
     obj = InitState()
@@ -32,19 +34,19 @@ State path={state_path_str}""".encode()
     obj.on_trigger = __on_trigger
 
     def __on_this(req):  # TODO __on_this
-        if InitState.is_verbose():
+        if __is_verbose:
             req.c_sock.send(f"[English] This分岐".encode())
 
     obj.on_this = __on_this
 
     def __on_that(req):  # TODO __on_that
-        if InitState.is_verbose():
+        if __is_verbose:
             req.c_sock.send(f"[English] That分岐".encode())
 
     obj.on_that = __on_that
 
     def __on_over(req):  # TODO __on_that
-        if InitState.is_verbose():
+        if __is_verbose:
             req.c_sock.send(f"[English] Over分岐".encode())
 
     obj.on_over = __on_over
