@@ -18,9 +18,5 @@ def const_file_gen(dir_path, file_name):
         # 既存なら無視
         pass
 
-    try:
-        with open(f"{dir_path}/{file_name}", "x", encoding="UTF-8") as f:
-            f.write(text)
-
-    except FileExistsError as e:
-        print(f"[Ignore] {e}")
+    with open(f"{dir_path}/{file_name}", "w", encoding="UTF-8") as f:
+        f.write(text)

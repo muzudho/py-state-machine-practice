@@ -62,12 +62,8 @@ class StateFileGen:
                     name=f"on_{edge.name}", parameters_s="self, req"
                 )
 
-        try:
-            with open(path, "x", encoding="UTF-8") as f:
-                f.write(text)
-
-        except FileExistsError as e:
-            print(f"[Ignore] {e}")
+        with open(path, "w", encoding="UTF-8") as f:
+            f.write(text)
 
     @classmethod
     def __edge_switch_list(clazz, const_conf, directed_edge_list):
@@ -76,16 +72,21 @@ class StateFileGen:
             # 条件式
             if edge.name == "":
                 cond = "True"  # 恒真
-            elif edge.name in const_conf.rev_data:
-                cond = f"msg == {const_conf.rev_data[edge.name]}"  # 定数
             else:
-                cond = f'msg == "{edge.name}"'  # 文字列
+                operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
+                cond = f"msg == {operand}"
 
             # if～elif文
-            body_sequence = [
-                f"self.on_{edge.name}()",  # イベントハンドラ呼出し
-                f"return {edge.dst}",  # TODO 遷移先の名前を定数で書きたい
-            ]
+            body_sequence = []
+            body_sequence.append(f"self.on_{edge.name}()")  # イベントハンドラ呼出し
+            if edge.dst:
+                item_list = const_conf.replace_list(
+                    edge.dst, '"'
+                )  # リストの要素をなるべく定数に置換、でなければ "文字列" に置換
+                text = ", ".join(item_list)
+                body_sequence.append(f"return {text}")
+            else:
+                body_sequence.append("return None")
 
             # else文
             else_sequence = ['raise ValueError(f"Unexpected msg={msg}")']

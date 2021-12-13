@@ -1,4 +1,4 @@
-from lesson18.code_gen.py_syntax.const_gen import const_file_gen
+from lesson18.code_gen.const_file_gen import const_file_gen
 
 
 class Render:
