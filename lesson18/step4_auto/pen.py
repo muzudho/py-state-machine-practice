@@ -15,5 +15,9 @@ class PenState():
         else:
             raise ValueError("Unexpected condition")
 
+    def on_entry(self, req):
         pass
+
+    def over(self, req):
         pass
+

@@ -1,4 +1,4 @@
-from lesson18.step2_auto.const import E_OVER, E_THIS, E_THAT
+from lesson18.step2_auto.const import E_THAT, E_THIS, E_OVER
 class InitState():
     def update(self, req):
 
@@ -23,7 +23,15 @@ class InitState():
         else:
             raise ValueError("Unexpected condition")
 
+    def on_entry(self, req):
         pass
+
+    def over(self, req):
         pass
+
+    def that(self, req):
         pass
+
+    def this(self, req):
         pass
+

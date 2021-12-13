@@ -1,4 +1,4 @@
-from lesson18.step2_auto.const import E_OVER, E_PIN, E_PEN
+from lesson18.step2_auto.const import E_PEN, E_PIN, E_OVER
 class InitThisIsAState():
     def update(self, req):
 
@@ -23,7 +23,15 @@ class InitThisIsAState():
         else:
             raise ValueError("Unexpected condition")
 
+    def on_entry(self, req):
         pass
+
+    def over(self, req):
         pass
+
+    def pin(self, req):
         pass
+
+    def pen(self, req):
         pass
+
