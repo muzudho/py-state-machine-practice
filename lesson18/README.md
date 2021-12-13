@@ -5,7 +5,8 @@ Lesson14のコードをベースに、Lesson17の実行ファイルを使って�
 ## Build
 
 ```shell
-python.exe -m lesson18.code_gen.main
+python.exe -m lesson18.code_gen.main_step1
+python.exe -m lesson18.code_gen.main_step2
 ```
 
 ## Run

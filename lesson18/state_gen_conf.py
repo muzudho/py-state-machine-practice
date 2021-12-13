@@ -20,13 +20,13 @@ State path={state_path_str}""".encode()
 
     obj.on_entry = __on_entry
 
-    def __on_this(req):
+    def __on_this(req):  # TODO __on_this
         if InitState.is_verbose():
             req.c_sock.send(f"[English] This分岐".encode())
 
     obj.on_this = __on_this
 
-    def __on_that(req):
+    def __on_that(req):  # TODO __on_that
         if InitState.is_verbose():
             req.c_sock.send(f"[English] That分岐".encode())
 

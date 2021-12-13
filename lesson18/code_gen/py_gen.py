@@ -34,15 +34,18 @@ class CodeGen:
         is_first = True
 
         for block in block_list:
+            cond = block[0]
+            body = block[1]
+
             if is_first:
                 is_first = False
-                text += f"""{indent}if {block[0]}:
-{indent}    {block[1]}
-"""
+                text += f"{indent}if {cond}:\n"
             else:
-                text += f"""{indent}elif {block[0]}:
-{indent}    {block[1]}
-"""
+                text += f"{indent}elif {cond}:\n"
+
+            lines = body.split("\n")
+            for line in lines:
+                text += f"{indent}    {line}\n"
 
         text += f"""{indent}else:
 {indent}    raise ValueError("Unexpected condition")
