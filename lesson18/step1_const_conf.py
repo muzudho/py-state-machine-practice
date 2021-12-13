@@ -46,8 +46,16 @@ class ConstConf:
         # 逆向きは自動生成します
         self._rev_data = {}
 
+        init_size = len(self._data)
+
         for key, value in self._data.items():
+            if value in self._rev_data:
+                raise ValueError("value:{value} が重複しました。全単射にしてください")
+
             self._rev_data[value] = key
+
+        if init_size != len(self._rev_data):
+            raise ValueError("定数のキーとバリューは全単射にしてください")
 
     @property
     def data(self):
