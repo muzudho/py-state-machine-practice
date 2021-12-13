@@ -79,8 +79,6 @@ class StateFileGen:
                 operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
                 # この練習プログラムでは E_XXX のような定数になってるはず
                 const_conf.pickup_from_item(operand, used_const_set)
-                # E_XXX を MSG_XXX に置換
-                operand = operand.replace("E_", "MSG_")
                 cond = f"msg == {operand}"
 
             # シーケンス
