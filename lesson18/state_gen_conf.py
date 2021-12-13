@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson18.step1n2_auto.const import A, INIT, IS, PEN, THIS
+from lesson18.step1n2_auto.const import A, E_THIS, INIT, IS, PEN, THIS
 from lesson18.step2n2_auto.init import InitState
 from lesson18.step2n2_auto.init_this import InitThisState
 from lesson18.step2n2_auto.init_this_is import InitThisIsState
@@ -19,6 +19,17 @@ State path={state_path_str}""".encode()
         )
 
     obj.on_entry = __on_entry
+
+    def __on_trigger(req):
+        msg = req.pull_trigger()
+
+        # Edge名に変換
+        if msg == "This":
+            return E_THIS
+
+        return msg
+
+    obj.on_trigger = __on_trigger
 
     def __on_this(req):  # TODO __on_this
         if InitState.is_verbose():

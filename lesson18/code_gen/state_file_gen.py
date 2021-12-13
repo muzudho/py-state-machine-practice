@@ -89,7 +89,7 @@ class StateFileGen:
 
             # シーケンス
             body_sequence = []
-            body_sequence.append(f"self.on_{edge.name}()")  # イベントハンドラ呼出し
+            body_sequence.append(f"self.on_{edge.name}(req)")  # イベントハンドラ呼出し
             if edge.dst:
                 item_list = const_conf.replace_list(
                     edge.dst, '"'
