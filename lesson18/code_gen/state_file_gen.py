@@ -33,7 +33,7 @@ class StateFileGen:
         self.on_entry(req)
 
         # 入力
-        msg = req.pull_trigger()
+        msg = self.on_trigger(req)
 
         # 分岐
 """
@@ -48,8 +48,14 @@ class StateFileGen:
         text += SwitchGen.generate("        ", switch_model=switch_model)
         text += "\n"
 
-        # ハンドラ自動生成
+        # ハンドラ生成
         text += MethodGen.generate(name="on_entry", parameters_s="self, req")
+        text += MethodGen.generate(
+            name="on_trigger",
+            parameters_s="self, req",
+            body_sequence=["return req.pull_trigger()"],
+        )
+        # ハンドラ自動生成
         for edge in directed_edge_list:
             if edge.name != "":
                 text += MethodGen.generate(
