@@ -71,7 +71,7 @@ class Server:
                     )
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します。
-                    # Edge名は None であってはいけません
+                    # Edge名は空でない文字列です。 None や list であってはいけません
                     edge_name = state.update(req)
                     print(f"[server.py] edge_name={edge_name}")
 

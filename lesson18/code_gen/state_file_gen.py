@@ -78,27 +78,23 @@ class StateFileGen:
         if_else_list = []
         # if～elif文
         for edge in directed_edge_list:
+
+            # エッジ名を定数に置きかえれるか試します
+            edge_operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
+
             # 条件式
             if edge.name == "":
                 cond = "True"  # 恒真
             else:
-                operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
                 # この練習プログラムでは E_XXX のような定数になってるはず
-                const_conf.pickup_from_item(operand, used_const_set)
-                cond = f"msg == {operand}"
+                const_conf.pickup_from_item(edge_operand, used_const_set)
+                cond = f"msg == {edge_operand}"
 
             # シーケンス
             body_sequence = []
             body_sequence.append(f"self.on_{edge.name}(req)")  # イベントハンドラ呼出し
-            if edge.dst:
-                item_list = const_conf.replace_list(
-                    edge.dst, '"'
-                )  # リストの要素をなるべく定数に置換、でなければ "文字列" に置換
-                const_conf.pickup_from_list(item_list, used_const_set)
-                csv = ", ".join(item_list)
-                body_sequence.append(f"return [{csv}]")
-            else:
-                body_sequence.append("return None")
+            # エッジ名を返します
+            body_sequence.append(f"return {edge_operand}")
 
             if_else_list.append([cond, body_sequence])
 
