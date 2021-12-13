@@ -1,6 +1,6 @@
 class SwitchGen:
     @classmethod
-    def generate(clazz, indent, block_list):
+    def generate(clazz, indent, block_list, else_sequence=None):
         """TODO 分岐構造を記述します
 
         Examples
@@ -23,20 +23,21 @@ class SwitchGen:
 
         for block in block_list:
             cond = block[0]
-            body = block[1]
-
             if is_first:
                 is_first = False
                 text += f"{indent}if {cond}:\n"
             else:
                 text += f"{indent}elif {cond}:\n"
 
-            lines = body.split("\n")
-            for line in lines:
+            body_sequence = block[1]
+            for line in body_sequence:
                 text += f"{indent}    {line}\n"
 
-        text += f"""{indent}else:
-{indent}    raise ValueError("Unexpected condition")
-"""
+            text += "\n"
+
+        if else_sequence:
+            text += f"{indent}else:\n"
+            for line in body_sequence:
+                text += f"{indent}    {line}\n"
 
         return text

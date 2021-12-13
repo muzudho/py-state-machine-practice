@@ -48,10 +48,10 @@ class StateFileGen:
 """
 
         # エッジ分岐部
-        edge_branch_list = __edge_branch_list(
+        edge_switch_list = StateFileGen.__edge_switch_list(
             const_conf=const_conf, directed_edge_list=directed_edge_list
         )
-        text += SwitchGen.generate("        ", block_list=edge_branch_list)
+        text += SwitchGen.generate("        ", block_list=edge_switch_list)
         text += "\n"
 
         # ハンドラ自動生成
@@ -69,23 +69,27 @@ class StateFileGen:
         except FileExistsError as e:
             print(f"[Ignore] {e}")
 
+    @classmethod
+    def __edge_switch_list(clazz, const_conf, directed_edge_list):
+        branch_list = []
+        for edge in directed_edge_list:
+            # 条件式
+            if edge.name == "":
+                cond = "True"  # 恒真
+            elif edge.name in const_conf.rev_data:
+                cond = f"msg == {const_conf.rev_data[edge.name]}"  # 定数
+            else:
+                cond = f'msg == "{edge.name}"'  # 文字列
 
-def __edge_branch_list(const_conf, directed_edge_list):
-    branch_list = []
-    for edge in directed_edge_list:
-        # 条件式
-        if edge.name == "":
-            cond = "True"  # 恒真
-        elif edge.name in const_conf.rev_data:
-            cond = f"msg == {const_conf.rev_data[edge.name]}"  # 定数
-        else:
-            cond = f'msg == "{edge.name}"'  # 文字列
+            # if～elif文
+            body_sequence = [
+                f"self.on_{edge.name}()",  # イベントハンドラ呼出し
+                f"return {edge.dst}",  # TODO 遷移先の名前を定数で書きたい
+            ]
 
-        # 本文
-        body = ""
-        body += f"self.on_{edge.name}()\n"  # イベントハンドラ呼出し
-        body += f"return {edge.dst}\n"  # TODO 遷移先の名前を定数で書きたい
+            # else文
+            else_sequence = ['raise ValueError(f"Unexpected msg={msg}")']
 
-        branch_list.append([cond, body])
+            branch_list.append([cond, body_sequence, else_sequence])
 
-    return branch_list
+        return branch_list
