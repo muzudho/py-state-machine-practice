@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 from lesson11n3.states.out import OutState
-from lesson11n3.state_gen_conf import state_gen
+from lesson11n3.step3_state_gen_conf import state_gen
 from lesson11n3.step1_const_conf_house_v2 import OUT
 from lesson11n3.step2_transition_conf_house import transition_conf
 

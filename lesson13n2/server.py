@@ -5,7 +5,7 @@ from lesson13n2.request import Request
 from lesson13n2.state_machine_helper import StateMachineHelper
 from lesson13n2.step1_const_conf_house import OUT
 from lesson13n2.step2_transition_conf_house import transition_conf
-from lesson13n2.state_gen_conf import state_gen
+from lesson13n2.step3_state_gen_conf import state_gen
 
 
 class Server:
