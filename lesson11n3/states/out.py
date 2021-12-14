@@ -1,4 +1,4 @@
-from lesson11n3.keywords import MSG_OPEN, E_FAILED, E_OPENED
+from lesson11n3.const_conf import MSG_OPEN, E_FAILED, E_OPENED
 
 
 class OutState():

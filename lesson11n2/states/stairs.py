@@ -1,7 +1,7 @@
-from lesson11n2.keywords import MY_ROOM, OUT, MSG_UP
+from lesson11n2.const_conf import MY_ROOM, OUT, MSG_UP
 
 
-class StairsState():
+class StairsState:
     def __init__(self):
         pass
 

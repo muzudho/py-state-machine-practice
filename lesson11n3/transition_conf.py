@@ -1,4 +1,4 @@
-from lesson11n3.keywords import (
+from lesson11n3.const_conf import (
     OUT,
     E_FAILED,
     E_OPENED,

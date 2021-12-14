@@ -1,10 +1,10 @@
 import socket
 from threading import Thread
 
-from lesson11.keywords import MY_ROOM, MSG_OPEN, OUT, MSG_SIT_DOWN, STAIRS, MSG_UP
+from lesson11.const_conf import MY_ROOM, MSG_OPEN, OUT, MSG_SIT_DOWN, STAIRS, MSG_UP
 
 
-class Server():
+class Server:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
@@ -61,8 +61,10 @@ class Server():
                     elif state == MY_ROOM:
                         # 'Sit down' とメッセージを送ってくるのが正解です
                         if message == MSG_SIT_DOWN:
-                            c_sock.send("""Clear!
-Please push q key to quit.""".encode())
+                            c_sock.send(
+                                """Clear!
+Please push q key to quit.""".encode()
+                            )
                         else:
                             state = OUT
                             c_sock.send("You can see the house.".encode())
