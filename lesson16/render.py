@@ -11,15 +11,15 @@ class Render:
 
     def run(self):
         try:
-            # `auto_gen` フォルダーが無ければ作る
-            os.makedirs("lesson16/auto_gen")
+            # `step2n2_auto` フォルダーが無ければ作る
+            os.makedirs("lesson16/step2n2_auto")
         except FileExistsError:
             # 既存なら無視
             pass
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
-        path = "lesson16/auto_gen/init.py"
+        path = "lesson16/step2n2_auto/init.py"
         try:
             with open(path, "x") as f:
                 f.write(

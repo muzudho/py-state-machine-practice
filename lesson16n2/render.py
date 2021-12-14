@@ -19,8 +19,8 @@ class Render:
             print(f"[Render] edge={edge}")
 
         try:
-            # `auto_gen` フォルダーが無ければ作る
-            os.makedirs("lesson16n2/auto_gen")
+            # `step2n2_auto` フォルダーが無ければ作る
+            os.makedirs("lesson16n2/step2n2_auto")
         except FileExistsError:
             # 既存なら無視
             pass
@@ -34,7 +34,7 @@ class Render:
 
             # `init.py` ファイルを作成します
             # 'x' - ファイルが存在しない場合のみの上書き
-            path = f"lesson16n2/auto_gen/{file_stem}.py"
+            path = f"lesson16n2/step2n2_auto/{file_stem}.py"
             try:
                 with open(path, "x", encoding="UTF-8") as f:
                     f.write(
