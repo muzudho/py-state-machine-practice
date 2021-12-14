@@ -1,4 +1,4 @@
-from lesson13n2.const_conf import (
+from lesson13.step1_const_conf_house import (
     CLOSE_DOOR,
     E_ENTER,
     E_PULLED_KNOB,
@@ -32,7 +32,7 @@ transition_conf = {
         E_FAILED: [OUT],
     },
     MY_ROOM: {
-        E_SITTING_DOWN: None,
+        E_SITTING_DOWN: [MY_ROOM],
         E_FAILED: [OUT],
     },
 }

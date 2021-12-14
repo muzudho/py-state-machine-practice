@@ -1,7 +1,7 @@
-from lesson13.const_conf import E_ENTER, MSG_ENTER, E_FAILED
+from lesson13.step1_const_conf_house import E_ENTER, MSG_ENTER, E_FAILED
 
 
-class OutOpenDoorState():
+class OutOpenDoorState:
     def __init__(self):
         pass
 

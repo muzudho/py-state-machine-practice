@@ -1,13 +1,15 @@
-from lesson13.const_conf import E_TURNED_KNOB, MSG_TURN_KNOB, E_FAILED
+from lesson13.step1_const_conf_house import E_TURNED_KNOB, MSG_TURN_KNOB, E_FAILED
 
 
-class OutState():
+class OutState:
     def __init__(self):
         pass
 
     def update(self, req):
-        req.c_sock.send("""You can see the house.
-You can see the close knob.""".encode())
+        req.c_sock.send(
+            """You can see the house.
+You can see the close knob.""".encode()
+        )
 
         # 入力
         message = req.pull_trigger()

@@ -1,4 +1,4 @@
-from lesson15.const_conf import (
+from lesson15.step1_const_conf_pen import (
     A,
     E_A,
     E_AN,

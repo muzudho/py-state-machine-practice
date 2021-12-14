@@ -1,5 +1,5 @@
 import os
-from lesson16n2.transition_conf_wcsc import TransitionConf
+from lesson16n2.step2_transition_conf_wcsc import TransitionConf
 
 
 class Render:

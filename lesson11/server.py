@@ -1,7 +1,14 @@
 import socket
 from threading import Thread
 
-from lesson11.const_conf import MY_ROOM, MSG_OPEN, OUT, MSG_SIT_DOWN, STAIRS, MSG_UP
+from lesson11.step1_const_conf_house import (
+    MY_ROOM,
+    MSG_OPEN,
+    OUT,
+    MSG_SIT_DOWN,
+    STAIRS,
+    MSG_UP,
+)
 
 
 class Server:

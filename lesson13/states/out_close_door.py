@@ -1,7 +1,7 @@
-from lesson13.const_conf import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
+from lesson13.step1_const_conf_house import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
 
 
-class OutCloseDoorState():
+class OutCloseDoorState:
     def __init__(self):
         pass
 

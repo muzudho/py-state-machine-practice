@@ -1,4 +1,4 @@
-from lesson11n2.const_conf import MY_ROOM, OUT, MSG_UP
+from lesson11n2.step1_const_conf_house import MY_ROOM, OUT, MSG_UP
 
 
 class StairsState:

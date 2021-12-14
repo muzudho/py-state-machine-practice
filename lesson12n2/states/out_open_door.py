@@ -1,4 +1,4 @@
-from lesson12n2.const_conf import E_ENTER, MSG_ENTER, E_FAILED
+from lesson12n2.step1_const_conf_house import E_ENTER, MSG_ENTER, E_FAILED
 
 
 class OutOpenDoorState:

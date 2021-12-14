@@ -3,7 +3,7 @@ from lesson15.directive_edge import DirectiveEdge
 from lesson15.clustered_directive_edge import ClusteredDirectiveEdge
 
 # from lesson15.transition_conf import TransitionConf
-from lesson15.transition_conf_wcsc import TransitionConf
+from lesson15.step2_transition_conf_wcsc import TransitionConf
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):

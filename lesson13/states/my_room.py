@@ -1,7 +1,7 @@
-from lesson13.const_conf import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
+from lesson13.step1_const_conf_house import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
 
 
-class MyRoomState():
+class MyRoomState:
     def __init__(self):
         pass
 
@@ -13,8 +13,10 @@ class MyRoomState():
 
         # 'Sit down' とメッセージを送ってくるのが正解です
         if message == MSG_SIT_DOWN:
-            req.c_sock.send("""Clear!
-Please push q key to quit.""".encode())
+            req.c_sock.send(
+                """Clear!
+Please push q key to quit.""".encode()
+            )
             return E_SITTING_DOWN
 
         else:

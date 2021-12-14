@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson14.const_conf import A, INIT, IS, PEN, THIS
+from lesson14.step1_const_conf_pen import A, INIT, IS, PEN, THIS
 from lesson14.states.init import InitState
 from lesson14.states.init_this import InitThisState
 from lesson14.states.init_this_is import InitThisIsState

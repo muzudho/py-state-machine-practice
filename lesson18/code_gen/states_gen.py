@@ -1,7 +1,7 @@
 import os
 from lesson18.code_gen.state_file_gen import StateFileGen
-from lesson18.step1_const_conf import ConstConf
-from lesson18.step2_transition_conf import TransitionConf
+from lesson18.step1_const_conf_pen import ConstConf
+from lesson18.step2_transition_conf_pen import TransitionConf
 
 
 def state_files_gen(dir_path):

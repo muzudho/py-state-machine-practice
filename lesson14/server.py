@@ -3,8 +3,8 @@ from threading import Thread
 
 from lesson14.request import Request
 from lesson14.state_machine_helper import StateMachineHelper
-from lesson14.const_conf import INIT
-from lesson14.transition_conf import transition_conf
+from lesson14.step1_const_conf_pen import INIT
+from lesson14.step2_transition_conf_pen import transition_conf
 from lesson14.state_gen_conf import state_gen
 
 

@@ -2,7 +2,7 @@ from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
 from lesson18.code_gen.py_syntax.method_gen import MethodGen
 from lesson18.code_gen.py_syntax.switch_gen import SwitchGen
-from lesson18.step2_transition_conf import TransitionConf
+from lesson18.step2_transition_conf_pen import TransitionConf
 
 
 class StateFileGen:

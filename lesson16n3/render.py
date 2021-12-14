@@ -1,6 +1,6 @@
 import os
 from lesson16n3.code_gen import CodeGen
-from lesson16n3.transition_conf_wcsc import TransitionConf
+from lesson16n3.step2_transition_conf_wcsc import TransitionConf
 
 
 class Render:

@@ -1,5 +1,5 @@
 from lesson15n2.directive_edge import DirectiveEdge
-from lesson16n2.const_conf import (
+from lesson16n2.step1_const_conf_wcsc import (
     AGREE,
     E_AGREE,
     E_COMPLETED,

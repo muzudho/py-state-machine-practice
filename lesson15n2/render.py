@@ -2,7 +2,7 @@ from graphviz import Digraph
 from lesson15n2.directive_edge import DirectiveEdge
 from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
 
-from lesson15n2.transition_conf import TransitionConf
+from lesson15n2.step2_transition_conf_pen import TransitionConf
 
 # from lesson15n2.transition_conf_wcsc import TransitionConf
 
