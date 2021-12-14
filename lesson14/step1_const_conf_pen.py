@@ -5,13 +5,9 @@
 # 本レッスンではノード名を PascalCase にします（エッジと被らないように）
 
 INIT = "Init"
-if INIT:
-    THIS = "This"
-    if THIS:  # インデントを付けてるだけ
-        IS = "Is"
-        if IS:
-            A = "A"
-
+THIS = "This"
+IS = "Is"
+A = "A"
 PEN = "Pen"
 
 # Edges
