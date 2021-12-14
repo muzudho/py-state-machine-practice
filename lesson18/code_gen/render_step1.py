@@ -11,7 +11,7 @@ class Render:
 
     def run(self):
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        const_file_gen("lesson18/step1n2_auto", "const.py")
+        const_file_gen("lesson18/step1n2_auto_const", "pen.py")
 
     def clean_up(self):
         pass

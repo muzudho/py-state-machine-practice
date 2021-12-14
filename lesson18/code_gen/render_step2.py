@@ -10,7 +10,7 @@ class Render:
         pass
 
     def run(self):
-        state_files_gen("lesson18/step2n2_auto")
+        state_files_gen("lesson18/step2n2_auto_state")
 
     def clean_up(self):
         pass

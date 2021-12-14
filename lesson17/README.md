@@ -9,8 +9,8 @@
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  
 
-* `lesson17/step1n2_auto`
-* `lesson17/step2n2_auto`
+* `lesson17/step1n2_auto_const`
+* `lesson17/step2n2_auto_state`
 
 
 ```shell

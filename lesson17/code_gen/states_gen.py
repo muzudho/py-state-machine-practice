@@ -81,7 +81,7 @@ def state_files_gen(dir_path):
 
                 # 定数をインポートします
                 if 0 < len(used_const):
-                    pre_text = "from lesson17.step1n2_auto.const import "
+                    pre_text = "from lesson17.step1n2_auto_const.pen import "
                     is_skip_first = True
 
                     for const in used_const:

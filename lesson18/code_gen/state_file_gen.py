@@ -65,7 +65,7 @@ class StateFileGen:
         # 定数のインポートをファイルの冒頭に付けます
         if 0 < len(used_const_set):
             statement = ImportGen.generate(
-                from_s="lesson18.step1n2_auto.const", import_set=used_const_set
+                from_s="lesson18.step1n2_auto_const.pen", import_set=used_const_set
             )
             text = f"{statement}\n{text}"
 

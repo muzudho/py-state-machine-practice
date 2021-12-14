@@ -1,5 +1,5 @@
-from lesson18.step1n2_auto.const import E_OVER
-from lesson18.step2n2_auto.pen import PenState
+from lesson18.step1n2_auto_const.pen import E_OVER
+from lesson18.step2n2_auto_state.pen import PenState
 
 __is_verbose = True
 

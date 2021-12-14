@@ -1,10 +1,10 @@
 """State Generator"""
-from lesson18.step1n2_auto.const import A, INIT, IS, PEN, THIS
-from lesson18.step3_man.init import create_init_state
-from lesson18.step3_man.init_this import create_init_this_state
-from lesson18.step3_man.init_this_is import create_init_this_is_state
-from lesson18.step3_man.init_this_is_a import create_init_this_is_a_state
-from lesson18.step3_man.pen import create_pen_state
+from lesson18.step1n2_auto_const.pen import A, INIT, IS, PEN, THIS
+from lesson18.step3_man_state.init import create_init_state
+from lesson18.step3_man_state.init_this import create_init_this_state
+from lesson18.step3_man_state.init_this_is import create_init_this_is_state
+from lesson18.step3_man_state.init_this_is_a import create_init_this_is_a_state
+from lesson18.step3_man_state.pen import create_pen_state
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します

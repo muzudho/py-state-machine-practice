@@ -1,10 +1,10 @@
-from lesson18.step2n2_auto.init_this_is import InitThisIsState
+from lesson18.step2n2_auto_state.init_this_is_a import InitThisIsAState
 
 __is_verbose = True
 
 
-def create_init_this_is_state():
-    obj = InitThisIsState()
+def create_init_this_is_a_state():
+    obj = InitThisIsAState()
 
     def __on_entry(req):
         # 現在位置の表示

@@ -1,5 +1,5 @@
-from lesson18.step1n2_auto.const import E_THIS
-from lesson18.step2n2_auto.init import InitState
+from lesson18.step1n2_auto_const.pen import E_THIS
+from lesson18.step2n2_auto_state.init import InitState
 
 __is_verbose = True
 
