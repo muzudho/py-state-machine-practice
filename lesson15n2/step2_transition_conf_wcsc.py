@@ -1,4 +1,4 @@
-from lesson15.step1_const_conf_wcsc import (
+from lesson15.step1_const_conf_wcsc_v1 import (
     AGREE,
     E_AGREE,
     E_COMPLETED,

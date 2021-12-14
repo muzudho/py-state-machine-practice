@@ -1,6 +1,6 @@
 import os
 from lesson17.code_gen.py_gen import CodeGen
-from lesson17.step1_const_conf_wcsc import ConstConf
+from lesson17.step1_const_conf_wcsc_v2 import ConstConf
 from lesson17.step2_transition_conf_wcsc import TransitionConf
 
 
