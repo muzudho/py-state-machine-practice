@@ -1,23 +1,25 @@
 import sys
 
-from lesson07.main_and_finally import MainAndFinally
+from lesson07n2.main_finally import MainFinally
 from lesson09.client import Client
 
 client = None
 
 
-def __on_main():
-    client = Client(server_host="127.0.0.1", server_port=5002)
-    client.run()
+class Main:
+    def on_main(self):
+        client = Client(server_host="127.0.0.1", server_port=5002)
+        client.run()
+        return 0
 
+    def on_finally(self):
+        if client:
+            client.clean_up()
 
-def __on_finally():
-    if client:
-        client.clean_up()
-
-    print("★しっかり終わった")
+        print("★しっかり終わった")
+        return 1
 
 
 # このファイルを直接実行したときは、以下の関数を呼び出します
 if __name__ == "__main__":
-    sys.exit(MainAndFinally(on_main=__on_main, on_finally=__on_finally).run())
+    sys.exit(MainFinally.run(Main()))
