@@ -23,15 +23,15 @@ class Render:
         try:
             with open(path, "x") as f:
                 f.write(
-                    """from lesson16.transition_conf_wcsc import E_OVER
+                    """from lesson15.step1_const_conf_wcsc_v1 import E_OVER
 
-    class InitState():
+class InitState():
 
-        def update(self, req):
-            # 何もせず終わります
-            return E_OVER
+    def update(self, req):
+        # 何もせず終わります
+        return E_OVER
 
-    """
+"""
                 )
         except FileExistsError as e:
             print(f"[Ignore] {e}")
