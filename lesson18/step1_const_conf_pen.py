@@ -6,8 +6,8 @@ class ConstConf:
             # States
             # ------
             #
-            # 値はグラフのノードの名前です。 PascalCase です
-            # ディクショナリーのキーとして Edge と被らないように PascalCase にします
+            # "ステート定数": "ステートマシン図のノード名"
+            # 本レッスンではノード名を PascalCase にします（エッジと被らないように）
             "INIT": "Init",
             "THIS": "This",
             "IS": "Is",
@@ -16,9 +16,9 @@ class ConstConf:
             # Edges
             # -----
             #
-            # 値はグラフの辺の名前です。 snake_case です
+            # "エッジ定数": "ステートマシン図のエッジ名"
+            # 本レッスンではエッジ名を snake_case にします（ノード名と被らないように）
             # ディクショナリーのキーとして State と被らないように頭に E_ を付けます
-            # ディクショナリーの値の方も一意でないといけません
             "E_THAT": "that",
             "E_THIS": "this",
             "E_WAS": "was",

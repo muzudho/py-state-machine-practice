@@ -1,11 +1,13 @@
 class ConstConf:
     def __init__(self):
-        # 全単射にしてください
+        # (1) キーと値は 全単射にしてください
+        # (2) 大文字と小文字は区別します
         self._data = {
             # States
             # ------
             #
-            # ディクショナリーのキーとして Edge と被らないように PascalCase にします
+            # "ステート定数": "ステートマシン図のノード名"
+            # 本レッスンではノード名を PascalCase にします（エッジと被らないように）
             "INIT": "Init",
             "LOGIN": "Login",
             "LOBBY": "Lobby",
@@ -17,7 +19,9 @@ class ConstConf:
             # Edges
             # -----
             #
-            # ディクショナリーのキーとして State と被らないように頭に snake_case にします
+            # "エッジ定数": "ステートマシン図のエッジ名"
+            # 本レッスンではエッジ名を snake_case にします（ノード名と被らないように）
+            # ディクショナリーのキーとして State と被らないように頭に E_ を付けます
             "E_OK": "ok",
             "E_INCORRECT": "incorrect",
             "E_LOGOUT": "logout",
