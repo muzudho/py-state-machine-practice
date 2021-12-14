@@ -3,7 +3,7 @@ from threading import Thread
 
 from lesson12n2.states.out import OutState
 from lesson12n2.step3_state_gen_conf import state_gen
-from lesson12n2.step1_const_conf_house import OUT
+from lesson12.step1_const_conf_house_v3 import OUT
 from lesson12n2.step2_transition_conf_house import transition_conf
 
 
