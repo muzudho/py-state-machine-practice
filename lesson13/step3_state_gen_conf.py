@@ -1,5 +1,11 @@
 """State Generator"""
-from lesson13.step1_const_conf_house import MY_ROOM, OUT, CLOSE_DOOR, OPEN_DOOR, STAIRS
+from lesson12.step1_const_conf_house_v3 import (
+    MY_ROOM,
+    OUT,
+    CLOSE_DOOR,
+    OPEN_DOOR,
+    STAIRS,
+)
 from lesson13.states.my_room import MyRoomState
 from lesson13.states.out import OutState
 from lesson13.states.out_close_door import OutCloseDoorState

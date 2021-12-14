@@ -3,7 +3,7 @@ from threading import Thread
 
 from lesson13.request import Request
 from lesson13.state_machine_helper import StateMachineHelper
-from lesson13.step1_const_conf_house import OUT
+from lesson12.step1_const_conf_house_v3 import OUT
 from lesson13.step2_transition_conf_house import transition_conf
 from lesson13.step3_state_gen_conf import state_gen
 
