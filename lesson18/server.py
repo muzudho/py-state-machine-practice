@@ -5,7 +5,7 @@ from lesson18.request import Request
 from lesson18.state_machine_helper import StateMachineHelper
 from lesson18.step1n2_auto.const import INIT
 from lesson18.step2_transition_conf_pen import TransitionConf
-from lesson18.step3_state_gen_conf import state_gen
+from lesson18.step4_state_gen_conf import state_gen
 
 
 class Server:
