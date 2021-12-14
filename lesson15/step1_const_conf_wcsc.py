@@ -5,21 +5,13 @@
 # 本レッスンではノード名を PascalCase にします（エッジと被らないように）
 
 INIT = "Init"
-if INIT:  # インデントしてるだけ
-    LOGIN = "Login"
-
+LOGIN = "Login"
 LOBBY = "Lobby"
-if LOBBY:
-    LOGOUT = "Logout"
-
+LOGOUT = "Logout"
 REPLY = "Reply"
-if REPLY:
-    AGREE = "Agree"
-    REJECT = "Reject"
-
+AGREE = "Agree"
+REJECT = "Reject"
 GAME = "Game"
-if GAME:
-    pass
 
 # Edges
 # -----
@@ -40,3 +32,4 @@ E_MOVE = "move"
 E_MOVE_ECHO = "move_echo"
 E_GAME_OVER_FLOODGATE = "game_over_floodgate"
 E_GAME_OVER_WCSC = "game_over_wcsc"
+E_OVER = "over"  # あとのレッスン用
