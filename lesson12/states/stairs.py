@@ -1,7 +1,7 @@
-from lesson12.keywords import MSG_UP, E_FAILED, E_UP
+from lesson12.const_conf import MSG_UP, E_FAILED, E_UP
 
 
-class StairsState():
+class StairsState:
     def __init__(self):
         pass
 
@@ -12,6 +12,8 @@ class StairsState():
             return E_UP
 
         else:
-            c_sock.send("""You can see the house.
-You can see the close knob.""".encode())
+            c_sock.send(
+                """You can see the house.
+You can see the close knob.""".encode()
+            )
             return E_FAILED

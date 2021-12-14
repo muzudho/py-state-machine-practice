@@ -1,7 +1,7 @@
-from lesson13n2.keywords import MSG_UP, E_FAILED, E_UP
+from lesson13n2.const_conf import MSG_UP, E_FAILED, E_UP
 
 
-class StairsState():
+class StairsState:
     def __init__(self):
         pass
 

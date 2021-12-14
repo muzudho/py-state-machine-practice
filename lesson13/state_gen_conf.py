@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson13.keywords import MY_ROOM, OUT, CLOSE_DOOR, OPEN_DOOR, STAIRS
+from lesson13.const_conf import MY_ROOM, OUT, CLOSE_DOOR, OPEN_DOOR, STAIRS
 from lesson13.states.my_room import MyRoomState
 from lesson13.states.out import OutState
 from lesson13.states.out_close_door import OutCloseDoorState

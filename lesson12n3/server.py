@@ -4,7 +4,7 @@ from lesson12n3.request import Request
 
 from lesson12n3.states.out import OutState
 from lesson12n3.state_gen_conf import state_gen
-from lesson12n3.keywords import OUT
+from lesson12n3.const_conf import OUT
 from lesson12n3.transition_conf import transition_conf
 
 

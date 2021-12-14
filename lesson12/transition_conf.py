@@ -1,4 +1,4 @@
-from lesson12.keywords import (
+from lesson12.const_conf import (
     E_ENTER,
     E_PULLED_KNOB,
     E_TURNED_KNOB,

@@ -1,7 +1,7 @@
-from lesson12.keywords import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
+from lesson12.const_conf import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
 
 
-class OutCloseDoorState():
+class OutCloseDoorState:
     def __init__(self):
         pass
 
@@ -12,6 +12,8 @@ class OutCloseDoorState():
             return E_PULLED_KNOB
 
         else:
-            c_sock.send("""You can see the house.
-You can see the close knob.""".encode())
+            c_sock.send(
+                """You can see the house.
+You can see the close knob.""".encode()
+            )
             return E_FAILED

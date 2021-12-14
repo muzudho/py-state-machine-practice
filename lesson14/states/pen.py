@@ -1,14 +1,14 @@
-from lesson14.keywords import E_OVER
+from lesson14.const_conf import E_OVER
 
 
-class PenState():
-
+class PenState:
     def update(self, req):
         # 現在位置の表示
-        state_path_str = '/'.join(req.state_path)
+        state_path_str = "/".join(req.state_path)
         req.c_sock.send(
             f"""[English] State path={state_path_str}
-おつかれさまでした""".encode())
+おつかれさまでした""".encode()
+        )
 
         # 入力なし
         # msg = req.pull_trigger()

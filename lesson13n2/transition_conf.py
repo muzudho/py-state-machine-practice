@@ -1,4 +1,4 @@
-from lesson13n2.keywords import (
+from lesson13n2.const_conf import (
     CLOSE_DOOR,
     E_ENTER,
     E_PULLED_KNOB,

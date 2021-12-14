@@ -1,13 +1,11 @@
-from lesson14.keywords import E_PEN, E_PIN, E_OVER, MSG_PEN, MSG_PIN
+from lesson14.const_conf import E_PEN, E_PIN, E_OVER, MSG_PEN, MSG_PIN
 
 
-class InitThisIsAState():
-
+class InitThisIsAState:
     def update(self, req):
         # 現在位置の表示
-        state_path_str = '/'.join(req.state_path)
-        req.c_sock.send(
-            f"[English] State path={state_path_str}".encode())
+        state_path_str = "/".join(req.state_path)
+        req.c_sock.send(f"[English] State path={state_path_str}".encode())
 
         # 入力
         msg = req.pull_trigger()

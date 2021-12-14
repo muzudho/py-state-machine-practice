@@ -1,4 +1,4 @@
-from lesson13.keywords import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
+from lesson13.const_conf import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
 
 
 class OutCloseDoorState():

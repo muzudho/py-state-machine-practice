@@ -1,4 +1,4 @@
-from lesson13.keywords import MSG_UP, E_FAILED, E_UP
+from lesson13.const_conf import MSG_UP, E_FAILED, E_UP
 
 
 class StairsState():

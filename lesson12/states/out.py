@@ -1,7 +1,7 @@
-from lesson12.keywords import E_TURNED_KNOB, MSG_TURN_KNOB, E_FAILED
+from lesson12.const_conf import E_TURNED_KNOB, MSG_TURN_KNOB, E_FAILED
 
 
-class OutState():
+class OutState:
     def __init__(self):
         pass
 
@@ -12,6 +12,8 @@ class OutState():
             return E_TURNED_KNOB
 
         else:
-            c_sock.send("""You can see the house.
-You can see the close knob.""".encode())
+            c_sock.send(
+                """You can see the house.
+You can see the close knob.""".encode()
+            )
             return E_FAILED
