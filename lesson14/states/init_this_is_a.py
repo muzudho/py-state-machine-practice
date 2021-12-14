@@ -1,4 +1,4 @@
-from lesson14.step1_const_conf_pen import E_PEN, E_PIN, E_OVER, MSG_PEN, MSG_PIN
+from lesson14.step1_const_conf_pen_v1 import E_PEN, E_PIN, E_OVER, MSG_PEN, MSG_PIN
 
 
 class InitThisIsAState:

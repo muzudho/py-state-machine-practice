@@ -3,7 +3,7 @@ from threading import Thread
 
 from lesson14.request import Request
 from lesson14.state_machine_helper import StateMachineHelper
-from lesson14.step1_const_conf_pen import INIT
+from lesson14.step1_const_conf_pen_v1 import INIT
 from lesson14.step2_transition_conf_pen import transition_conf
 from lesson14.state_gen_conf import state_gen
 

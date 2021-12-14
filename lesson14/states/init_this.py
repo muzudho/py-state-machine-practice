@@ -1,4 +1,4 @@
-from lesson14.step1_const_conf_pen import E_IS, E_OVER, E_WAS, MSG_IS, MSG_WAS
+from lesson14.step1_const_conf_pen_v1 import E_IS, E_OVER, E_WAS, MSG_IS, MSG_WAS
 
 
 class InitThisState:

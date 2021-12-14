@@ -1,4 +1,4 @@
-from lesson12.step1_const_conf_house import (
+from lesson12.step1_const_conf_house_v3 import (
     E_ENTER,
     E_PULLED_KNOB,
     E_TURNED_KNOB,

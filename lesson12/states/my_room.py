@@ -1,4 +1,4 @@
-from lesson12.step1_const_conf_house import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
+from lesson12.step1_const_conf_house_v3 import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
 
 
 class MyRoomState:

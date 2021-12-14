@@ -1,4 +1,4 @@
-from lesson11n3.step1_const_conf_house import (
+from lesson11n3.step1_const_conf_house_v2 import (
     OUT,
     E_FAILED,
     E_OPENED,
