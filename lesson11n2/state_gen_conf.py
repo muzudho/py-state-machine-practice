@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson11n2.step1_const_conf_house import MY_ROOM, OUT, STAIRS
+from lesson11.step1_const_conf_house_v1 import MY_ROOM, OUT, STAIRS
 from lesson11n2.states.my_room import MyRoomState
 from lesson11n2.states.out import OutState
 from lesson11n2.states.stairs import StairsState

@@ -7,21 +7,21 @@ from lesson12.step1_const_conf_house import (
     E_SITTING_DOWN,
     E_UP,
     MY_ROOM,
-    OUT_CLOSE_DOOR,
-    OUT_OPEN_DOOR,
+    CLOSE_DOOR,
+    OPEN_DOOR,
     STAIRS,
 )
 
 transition_conf = {
     OUT: {
-        E_TURNED_KNOB: OUT_CLOSE_DOOR,
+        E_TURNED_KNOB: CLOSE_DOOR,
         E_FAILED: OUT,
     },
-    OUT_CLOSE_DOOR: {
-        E_PULLED_KNOB: OUT_OPEN_DOOR,
+    CLOSE_DOOR: {
+        E_PULLED_KNOB: OPEN_DOOR,
         E_FAILED: OUT,
     },
-    OUT_OPEN_DOOR: {
+    OPEN_DOOR: {
         E_ENTER: STAIRS,
         E_FAILED: OUT,
     },

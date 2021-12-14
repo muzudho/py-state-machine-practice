@@ -5,8 +5,8 @@
 # 本レッスンではノード名を PascalCase にします（エッジと被らないように）
 
 OUT = "Out"  # Out/CloseKnob
-OUT_CLOSE_DOOR = "Out/CloseDoor"
-OUT_OPEN_DOOR = "Out/OpenDoor"
+CLOSE_DOOR = "CloseDoor"
+OPEN_DOOR = "OpenDoor"
 STAIRS = "Stairs"
 MY_ROOM = "My room"
 

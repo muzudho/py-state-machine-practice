@@ -7,14 +7,14 @@ transigion_conf.py:
 ```python
 transition_conf = {
     OUT: {
-        E_TURNED_KNOB: OUT_CLOSE_DOOR,
+        E_TURNED_KNOB: CLOSE_DOOR,
         E_FAILED: OUT,
     },
-    OUT_CLOSE_DOOR: {
-        E_PULLED_KNOB: OUT_OPEN_DOOR,
+    CLOSE_DOOR: {
+        E_PULLED_KNOB: OPEN_DOOR,
         E_FAILED: OUT,
     },
-    OUT_OPEN_DOOR: {
+    OPEN_DOOR: {
         E_ENTER: STAIRS,
         E_FAILED: OUT,
     },
@@ -63,7 +63,7 @@ transition_conf = {
 👆 ステート（State）とサブステート（Sub-state）を分けて 大きな状態遷移、小さな状態遷移といった　強調を  
 付けた方が 人間の目の検索能力の負担を軽くできるかもしれません。  
 
-また、フラットなものを階層化した影響として、`OUT_CLOSE_DOOR` ではなく `[OUT, CLOSE_DOOR]` とリストで書く変更が出ます  
+また、フラットなものを階層化した影響として、`CLOSE_DOOR` ではなく `[OUT, CLOSE_DOOR]` とリストで書く変更が出ます  
 
 state_gen_conf.py:  
 

@@ -2,8 +2,8 @@
 from lesson12n3.step1_const_conf_house import (
     MY_ROOM,
     OUT,
-    OUT_CLOSE_DOOR,
-    OUT_OPEN_DOOR,
+    CLOSE_DOOR,
+    OPEN_DOOR,
     STAIRS,
 )
 from lesson12n3.states.my_room import MyRoomState
@@ -16,8 +16,8 @@ from lesson12n3.states.stairs import StairsState
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
 state_gen = {
     OUT: lambda: OutState(),
-    OUT_CLOSE_DOOR: lambda: OutCloseDoorState(),
-    OUT_OPEN_DOOR: lambda: OutOpenDoorState(),
+    CLOSE_DOOR: lambda: OutCloseDoorState(),
+    OPEN_DOOR: lambda: OutOpenDoorState(),
     STAIRS: lambda: StairsState(),
     MY_ROOM: lambda: MyRoomState(),
 }
