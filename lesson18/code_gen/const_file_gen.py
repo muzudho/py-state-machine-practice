@@ -1,10 +1,11 @@
 import os
 
-from lesson18.step1_const_conf_pen_v2 import ConstConf
+from lesson18.const_conf import ConstConf
+from lesson18.step1_const_conf_pen_v2 import const_conf_data
 
 
 def const_file_gen(dir_path, file_name):
-    conf = ConstConf()
+    conf = ConstConf(const_conf_data)
 
     text = ""
 
