@@ -44,21 +44,28 @@ class JsonWriter:
         list_s = []
         for k, v in data.items():
             text = ""
-            text += f'{n4sp}"{k}":{{\n'
+            text += f'{n4sp}"{k}":'
 
             # v
             if isinstance(v, dict):
-                text += f",\n".join(JsonWriter.child_dict(v, indent + 1))
+                text += (
+                    "{\n"
+                    + ",\n".join(JsonWriter.child_dict(v, indent + 1))
+                    + f"\n{n4sp}}}"
+                )
             elif isinstance(v, list):
-                item_s = []
-                text += '["'
-                for item in v:
-                    item_s.append(item)
-                text += '","'.join(item_s)
-                text += '"]'
+                text += '["' + '","'.join(JsonWriter.child_list(v, indent + 1)) + f'"]'
+            elif v is None:
+                text += "null"
             else:
                 text += "<★Error>"
 
-            text += f"\n{n4sp}}}"
             list_s.append(text)
         return list_s
+
+    @classmethod
+    def child_list(clazz, data, indent):
+        item_s = []
+        for item in data:
+            item_s.append(item)
+        return item_s
