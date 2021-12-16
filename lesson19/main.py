@@ -1,25 +1,17 @@
-import os
 import sys
-import tomli
-
 
 from lesson07n2.main_finally import MainFinally
-from lesson18.server import Server
-
-server = None
+from lesson19.json_writer import JsonWriter
+from lesson19.step2_transition_conf_pen import TransitionConf as TransitionConfPen
 
 
 class Main:
     def on_main(self):
-        server = Server(host="0.0.0.0", port=5002)
-        server.run()
+        transition_conf = TransitionConfPen()
+        JsonWriter.write("lesson19/auto/transition_pen.json", transition_conf.data)
         return 0
 
     def on_finally(self):
-        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
-
         print("★しっかり終わった")
         return 1
 
