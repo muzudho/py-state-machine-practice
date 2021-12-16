@@ -3,8 +3,6 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.init_file_gen import gen_init_file
 
-render = None
-
 
 class Main:
     def on_main(self):
