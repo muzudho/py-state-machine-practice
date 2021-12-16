@@ -28,7 +28,7 @@ class JsonWriter:
 
         list_s = JsonWriter.list_2(data)
 
-        text += f"{{\n{n4sp}" + f",\n{n4sp}".join(list_s) + "\n}\n"
+        text += f"{{\n" + f",\n".join(list_s) + "\n}\n"
 
         return text
 
@@ -37,6 +37,10 @@ class JsonWriter:
         n4sp = JsonWriter.n4sp()  # 4 spaces
         list_s = []
         for k, v in data.items():
-            list_s.append(f'"{k}":{{\n{n4sp}}}')
+            text = ""
+            text += f'{n4sp}"{k}":{{\n'
+            # v
+            text += f"{n4sp}}}"
+            list_s.append(text)
 
         return list_s
