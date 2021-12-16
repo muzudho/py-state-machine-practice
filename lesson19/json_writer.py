@@ -19,10 +19,14 @@ class JsonWriter:
 
     @classmethod
     def stringify(clazz, data):
+        n4sp = "    "  # 4 spaces
         text = ""
 
-        for item in data:
-            text += f"{item}\n"
-            pass
+        list_s = []
+
+        for k, v in data.items():
+            list_s.append(f'"{k}":{{\n{n4sp}}}')
+
+        text += f"{{\n{n4sp}" + f",\n{n4sp}".join(list_s) + "\n}\n"
 
         return text
