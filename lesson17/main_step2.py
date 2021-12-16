@@ -1,21 +1,15 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson17.render_step2 import Render
-
-render = None
+from lesson17.code_gen.state_files_gen import gen_state_files
 
 
 class Main:
     def on_main(self):
-        render = Render()
-        render.run()
+        gen_state_files("lesson17/step2n2_auto_state")
         return 0
 
     def on_finally(self):
-        if render:
-            render.clean_up()
-
         print("★しっかり終わった")
         return 1
 

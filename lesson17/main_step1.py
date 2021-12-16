@@ -1,21 +1,16 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson17.render_step1 import Render
-
-render = None
+from lesson17.code_gen.const_gen import const_file_gen
 
 
 class Main:
     def on_main(self):
-        render = Render()
-        render.run()
+        # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
+        const_file_gen("lesson17/step1n2_auto_const", "pen.py")
         return 0
 
     def on_finally(self):
-        if render:
-            render.clean_up()
-
         print("★しっかり終わった")
         return 1
 
