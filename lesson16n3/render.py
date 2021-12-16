@@ -1,6 +1,7 @@
 import os
 from lesson16n3.code_gen import CodeGen
-from lesson16n3.step2_transition_conf_wcsc import TransitionConf
+from lesson16n3.transition_conf import TransitionConf
+from lesson16n3.step2_transition_conf_wcsc import transition_conf_data
 
 
 class Render:
@@ -12,7 +13,7 @@ class Render:
         pass
 
     def run(self):
-        transition_conf = TransitionConf()
+        transition_conf = TransitionConf(transition_conf_data)
 
         # エッジの一覧
         edge_list = transition_conf.create_edge_list()
@@ -36,10 +37,9 @@ class Render:
             # `init.py` ファイルを作成します
             # 'x' - ファイルが存在しない場合のみの上書き
             path = f"lesson16n3/step2n2_auto/{file_stem}.py"
-            try:
-                with open(path, "x", encoding="UTF-8") as f:
-                    # from lesson16n3.transition_conf_wcsc import E_OVER
-                    text = f"""class {class_name}State():
+            with open(path, "w", encoding="UTF-8") as f:
+                # from lesson16n3.transition_conf_wcsc import E_OVER
+                text = f"""class {class_name}State():
 
     def update(self, req):
 
@@ -49,33 +49,30 @@ class Render:
         # 分岐
 """
 
-                    # エッジの分岐部分
-                    directed_edge_list = TransitionConf.create_edge_list_by_node_path(
-                        transition_conf.data, node_path.split("/")
-                    )
+                # エッジの分岐部分
+                directed_edge_list = TransitionConf.create_edge_list_by_node_path(
+                    transition_conf.data, node_path.split("/")
+                )
 
-                    # line_list = []
-                    # for edge in directed_edge_list:
-                    #    line_list.append(f"# {{edge.name}}")
-                    #
-                    # text += CodeGen.create_comment_block("        ", line_list)
-                    #                    text += """
-                    #        # 何もせず終わります
-                    #        return E_OVER
-                    # """
-                    block_list = []
-                    for edge in directed_edge_list:
-                        block = []
-                        block.append(f"msg == '{edge.name}'")  # TODO 条件式。定数で書きたい
-                        block.append(f"return {edge.dst}")  # TODO 遷移先の名前を定数で書きたい
-                        block_list.append(block)
+                # line_list = []
+                # for edge in directed_edge_list:
+                #    line_list.append(f"# {{edge.name}}")
+                #
+                # text += CodeGen.create_comment_block("        ", line_list)
+                #                    text += """
+                #        # 何もせず終わります
+                #        return E_OVER
+                # """
+                block_list = []
+                for edge in directed_edge_list:
+                    block = []
+                    block.append(f"msg == '{edge.name}'")  # TODO 条件式。定数で書きたい
+                    block.append(f"return {edge.dst}")  # TODO 遷移先の名前を定数で書きたい
+                    block_list.append(block)
 
-                    text += CodeGen.create_switch_block("        ", block_list)
+                text += CodeGen.create_switch_block("        ", block_list)
 
-                    f.write(text)
-
-            except FileExistsError as e:
-                print(f"[Ignore] {e}")
+                f.write(text)
 
     def clean_up(self):
         pass
