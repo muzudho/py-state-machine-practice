@@ -4,7 +4,8 @@ from threading import Thread
 from lesson18.request import Request
 from lesson18.state_machine_helper import StateMachineHelper
 from lesson18.step1n2_auto_const.pen import INIT
-from lesson18.step2_transition_conf_pen import TransitionConf
+from lesson18.transition_conf import TransitionConf
+from lesson18.step2_transition_conf_pen import transition_conf_data
 from lesson18.step4_state_gen_conf import state_gen
 
 
@@ -48,7 +49,7 @@ class Server:
 ----------------------""".encode()
             )
 
-            transition_conf = TransitionConf()
+            transition_conf = TransitionConf(transition_conf_data)
 
             # 最初
             state_path = [INIT]
