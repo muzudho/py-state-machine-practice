@@ -2,12 +2,15 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson19.transition_json_writer import TransitionJsonWriter
-from lesson19.step2_transition_conf_pen import TransitionConf as TransitionConfPen
+from lesson19.transition_conf import TransitionConf
+from lesson19.step2_transition_conf_pen import (
+    transition_conf_data as transition_conf_pen,
+)
 
 
 class Main:
     def on_main(self):
-        transition_conf = TransitionConfPen()
+        transition_conf = TransitionConf(transition_conf_pen)
         TransitionJsonWriter.write(
             "lesson19/auto/transition_pen.json", transition_conf.data
         )
