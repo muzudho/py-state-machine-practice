@@ -1,22 +1,15 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson18.code_gen.render_step2 import Render
-
-server = None
+from lesson18.code_gen.state_files_gen import gen_state_files
 
 
 class Main:
     def on_main(self):
-        server = Render()
-        server.run()
+        gen_state_files("lesson18/step2n2_auto_state")
         return 0
 
     def on_finally(self):
-        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
-
         print("★しっかり終わった")
         return 1
 

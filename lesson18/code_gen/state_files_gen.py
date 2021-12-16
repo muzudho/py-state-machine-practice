@@ -6,7 +6,7 @@ from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson18.step2_transition_conf_pen import transition_conf_data
 
 
-def state_files_gen(dir_path):
+def gen_state_files(dir_path):
     const_conf = ConstConf(const_conf_data)
     transition_conf = TransitionConfV1n3(transition_conf_data)
 

@@ -1,22 +1,16 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson18.code_gen.render_step1 import Render
-
-server = None
+from lesson18.code_gen.const_file_gen import const_file_gen
 
 
 class Main:
     def on_main(self):
-        server = Render()
-        server.run()
+        # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
+        const_file_gen("lesson18/step1n2_auto_const", "pen.py")
         return 0
 
     def on_finally(self):
-        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
-
         print("★しっかり終わった")
         return 1
 
