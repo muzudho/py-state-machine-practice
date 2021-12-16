@@ -1,22 +1,17 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson16.render import Render
+from lesson16.code_gen.init_file_gen import gen_init_file
 
 render = None
 
 
 class Main:
     def on_main(self):
-        render = Render()
-        render.run()
+        gen_init_file()
         return 0
 
     def on_finally(self):
-        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if render:
-            render.clean_up()
-
         print("★しっかり終わった")
         return 1
 
