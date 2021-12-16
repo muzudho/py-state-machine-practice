@@ -1,7 +1,8 @@
 class SwitchGen:
     @classmethod
     def generate(clazz, indent, block_list):
-        """TODO 分岐構造を記述します
+        """分岐構造を記述します
+        TODO Lesson18から改良版を持ってきたい？
 
         Examples
         --------
