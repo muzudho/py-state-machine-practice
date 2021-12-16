@@ -1,8 +1,8 @@
+from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
 from lesson18.code_gen.py_syntax.method_gen import MethodGen
 from lesson18.code_gen.py_syntax.switch_gen import SwitchGen
-from lesson18.transition_conf import TransitionConf
 
 
 class StateFileGen:
@@ -17,7 +17,7 @@ class StateFileGen:
         path = f"{dir_path}/{file_stem}.py"
 
         # エッジの分岐部分
-        directed_edge_list = TransitionConf.create_edge_list_by_node_path(
+        directed_edge_list = TransitionConfV1n3.create_edge_list_by_node_path(
             transition_conf.data, node_path.split("/")
         )
 
