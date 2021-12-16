@@ -1,4 +1,4 @@
-from lesson17.code_gen.py_syntax.switch_gen import SwitchGen
+from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
