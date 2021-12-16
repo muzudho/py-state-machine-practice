@@ -1,9 +1,4 @@
-from lesson14.step1_const_conf_pen_v1 import (
-    INIT,
-)
-
-
-class TransitionConf:
+class TransitionConfV1:
     def __init__(self, data):
         self._title = data["@title"]
         self._entry_node = data["@entry_node"]

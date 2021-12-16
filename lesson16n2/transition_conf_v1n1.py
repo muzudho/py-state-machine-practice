@@ -1,27 +1,8 @@
+from lesson15.transition_conf_v1 import TransitionConfV1
 from lesson15n2.directive_edge import DirectiveEdge
 
 
-class TransitionConf:
-    def __init__(self, data):
-        self._title = data["@title"]
-        self._entry_node = data["@entry_node"]
-        self._data = data["@data"]
-
-    @property
-    def title(self):
-        """図のタイトル"""
-        return self._title
-
-    @property
-    def data(self):
-        """ツリー構造のエッジ"""
-        return self._data
-
-    @property
-    def entry_node(self):
-        """開始ノードの名前"""
-        return self._entry_node
-
+class TransitionConfV1n1(TransitionConfV1):
     def create_edge_list(self):
         """辺（DirectiveEdgeクラス）の一覧を作成"""
 
