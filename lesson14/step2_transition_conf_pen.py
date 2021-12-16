@@ -15,7 +15,7 @@ from lesson14.step1_const_conf_pen_v1 import (
     THIS,
 )
 
-transition_conf = {
+transition_conf_data = {
     INIT: {
         E_OVER: [INIT],
         E_THAT: [INIT],

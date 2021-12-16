@@ -4,7 +4,7 @@ from threading import Thread
 from lesson13n2.request import Request
 from lesson13n2.state_machine_helper import StateMachineHelper
 from lesson12.step1_const_conf_house_v3 import OUT
-from lesson13n2.step2_transition_conf_house import transition_conf
+from lesson13n2.step2_transition_conf_house import transition_conf_data
 from lesson13n2.step3_state_gen_conf import state_gen
 
 
@@ -68,9 +68,9 @@ class Server:
                     edge_name = state.update(req)
                     print(f"[server.py] edge_name={edge_name}")
 
-                    # transition_conf.py を見て state_path を得ます
+                    # transition_conf_data.py を見て state_path を得ます
                     state_path = StateMachineHelper.lookup_next_state_path(
-                        transition_conf, state_path, edge_name
+                        transition_conf_data, state_path, edge_name
                     )
 
                     if state_path is None:

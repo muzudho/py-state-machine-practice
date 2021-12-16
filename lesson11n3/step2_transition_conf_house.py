@@ -8,7 +8,7 @@ from lesson11n3.step1_const_conf_house_v2 import (
     STAIRS,
 )
 
-transition_conf = {
+transition_conf_data = {
     OUT: {
         E_OPENED: STAIRS,
         E_FAILED: OUT,

@@ -12,7 +12,7 @@ from lesson12.step1_const_conf_house_v3 import (
     STAIRS,
 )
 
-transition_conf = {
+transition_conf_data = {
     OUT: {
         E_TURNED_KNOB: CLOSE_DOOR,
         E_FAILED: OUT,

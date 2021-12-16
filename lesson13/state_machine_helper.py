@@ -6,10 +6,10 @@ class StateMachineHelper:
         pass
 
     @classmethod
-    def lookup_next_state_path(clazz, transition_conf, state_path, edge_name):
+    def lookup_next_state_path(clazz, transition_conf_data, state_path, edge_name):
         # transition設定ファイルの階層を下りていきましょう
         print(f"[lookup_next_state 12] state_path={state_path}")
-        curr_dict = transition_conf
+        curr_dict = transition_conf_data
         for state_node in state_path:
             print(f"[lookup_next_state 14] drop state_node={state_node}")
             curr_dict = curr_dict[state_node]

@@ -3,7 +3,7 @@
 サブサブサブステートマシンを作ってみましょう  
 
 ```python
-transition_conf = {
+transition_conf_data = {
     INIT: {
         E_OVER: [INIT],
         E_THAT: [INIT],

@@ -5,7 +5,7 @@ from lesson12n3.request import Request
 from lesson12n3.states.out import OutState
 from lesson12n3.step3_state_gen_conf import state_gen
 from lesson12.step1_const_conf_house_v3 import OUT
-from lesson12n3.step2_transition_conf_house import transition_conf
+from lesson12n3.step2_transition_conf_house import transition_conf_data
 
 
 class Server:
@@ -67,7 +67,7 @@ class Server:
                     edge_name = state.update(req)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = transition_conf[state_name][edge_name]
+                    state_name = transition_conf_data[state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
                     state = state_gen[state_name]()
