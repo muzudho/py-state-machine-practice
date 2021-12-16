@@ -2,12 +2,12 @@ import os
 from lesson17.code_gen.py_gen import CodeGen
 from lesson17.const_conf import ConstConf
 from lesson17.step1_const_conf_wcsc_v2 import const_conf_data
-from lesson17.transition_conf import TransitionConf
+from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson17.step2_transition_conf_wcsc import transition_conf_data
 
 
 def state_files_gen(dir_path):
-    transition_conf = TransitionConf(transition_conf_data)
+    transition_conf = TransitionConfV1n3(transition_conf_data)
     const_conf = ConstConf(const_conf_data)
 
     # エッジの一覧
@@ -23,7 +23,7 @@ def state_files_gen(dir_path):
         pass
 
     # ノードの一覧
-    node_path_set = TransitionConf.extract_node_path_set(edge_list)
+    node_path_set = TransitionConfV1n3.extract_node_path_set(edge_list)
     for node_path in node_path_set:
         if node_path is None:
             continue
@@ -46,7 +46,7 @@ def state_files_gen(dir_path):
 """
 
             # エッジの分岐部分
-            directed_edge_list = TransitionConf.create_edge_list_by_node_path(
+            directed_edge_list = TransitionConfV1n3.create_edge_list_by_node_path(
                 transition_conf.data, node_path.split("/")
             )
 
