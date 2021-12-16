@@ -3,8 +3,8 @@ import os
 
 class JsonWriter:
     @classmethod
-    def n4sp(clazz):
-        return "    "  # 4 spaces
+    def n4sp(clazz, indent):
+        return "".join(["    "] * indent)  # 4 spaces
 
     @classmethod
     def write(clazz, file_path, data):
@@ -23,24 +23,33 @@ class JsonWriter:
 
     @classmethod
     def stringify(clazz, data):
-        n4sp = JsonWriter.n4sp()  # 4 spaces
-        text = ""
+        indent = 1
+        n4sp = JsonWriter.n4sp(indent)  # 4 spaces
 
-        list_s = JsonWriter.list_2(data)
+        text = f"{{\n"
 
-        text += f"{{\n" + f",\n".join(list_s) + "\n}\n"
+        text += f",\n".join(JsonWriter.child_2(data, indent + 1))
+
+        text += "\n}\n"
 
         return text
 
     @classmethod
-    def list_2(clazz, data):
-        n4sp = JsonWriter.n4sp()  # 4 spaces
-        list_s = []
-        for k, v in data.items():
-            text = ""
-            text += f'{n4sp}"{k}":{{\n'
-            # v
-            text += f"{n4sp}}}"
-            list_s.append(text)
+    def child_2(clazz, data, indent):
+        n4sp = JsonWriter.n4sp(indent)  # 4 spaces
 
-        return list_s
+        if isinstance(data, dict):
+            list_s = []
+            for k, v in data.items():
+                text = ""
+                text += f'{n4sp}"{k}":{{\n'
+
+                # v
+                text += f",\n".join(JsonWriter.child_2(v, indent + 1))
+
+                text += f"\n{n4sp}}}"
+                list_s.append(text)
+            return list_s
+
+        else:
+            return ""
