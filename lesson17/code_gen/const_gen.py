@@ -1,14 +1,15 @@
 import os
 
-from lesson17.step1_const_conf_wcsc_v2 import ConstConf
+from lesson17.const_conf import ConstConf
+from lesson17.step1_const_conf_wcsc_v2 import const_conf_data
 
 
 def const_file_gen(dir_path, file_name):
-    conf = ConstConf()
+    const_conf = ConstConf(const_conf_data)
 
     text = ""
 
-    for key, value in conf.data.items():
+    for key, value in const_conf.data.items():
         text += f"{key} = '{value}'\n"
 
     try:
@@ -18,9 +19,5 @@ def const_file_gen(dir_path, file_name):
         # 既存なら無視
         pass
 
-    try:
-        with open(f"{dir_path}/{file_name}", "x", encoding="UTF-8") as f:
-            f.write(text)
-
-    except FileExistsError as e:
-        print(f"[Ignore] {e}")
+    with open(f"{dir_path}/{file_name}", "w", encoding="UTF-8") as f:
+        f.write(text)
