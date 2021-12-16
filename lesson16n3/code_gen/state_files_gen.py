@@ -1,5 +1,5 @@
 import os
-from lesson16n3.code_gen.code_gen import CodeGen
+from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson16n3.step2_transition_conf_wcsc import transition_conf_data
 
@@ -62,6 +62,6 @@ def gen_state_files():
                 block.append(f"return {edge.dst}")  # TODO 遷移先の名前を定数で書きたい
                 block_list.append(block)
 
-            text += CodeGen.create_switch_block("        ", block_list)
+            text += SwitchGen.generate("        ", block_list)
 
             f.write(text)
