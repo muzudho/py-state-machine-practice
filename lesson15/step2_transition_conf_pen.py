@@ -18,27 +18,29 @@ from lesson14.step1_const_conf_pen_v1 import (
 transition_conf_data = {
     "@title": "This is a pen",
     "@entry_node": INIT,
-    INIT: {
-        E_OVER: [INIT],
-        E_THAT: [INIT],
-        E_THIS: [INIT, THIS],
-        THIS: {
+    "@data": {
+        INIT: {
             E_OVER: [INIT],
-            E_WAS: [INIT],
-            E_IS: [INIT, THIS, IS],
-            IS: {
+            E_THAT: [INIT],
+            E_THIS: [INIT, THIS],
+            THIS: {
                 E_OVER: [INIT],
-                E_AN: [INIT],
-                E_A: [INIT, THIS, IS, A],
-                A: {
+                E_WAS: [INIT],
+                E_IS: [INIT, THIS, IS],
+                IS: {
                     E_OVER: [INIT],
-                    E_PIN: [INIT],
-                    E_PEN: [PEN],
+                    E_AN: [INIT],
+                    E_A: [INIT, THIS, IS, A],
+                    A: {
+                        E_OVER: [INIT],
+                        E_PIN: [INIT],
+                        E_PEN: [PEN],
+                    },
                 },
             },
         },
-    },
-    PEN: {
-        E_OVER: None,
+        PEN: {
+            E_OVER: None,
+        },
     },
 }

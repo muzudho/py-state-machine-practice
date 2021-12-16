@@ -5,9 +5,9 @@ from lesson14.step1_const_conf_pen_v1 import (
 
 class TransitionConf:
     def __init__(self, data):
-        self._title = "This is a pen"
-        self._entry_node = INIT
-        self._data = data
+        self._title = data["@title"]
+        self._entry_node = data["@entry_node"]
+        self._data = data["@data"]
 
     @property
     def title(self):

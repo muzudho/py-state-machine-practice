@@ -1,14 +1,10 @@
 digraph {
 	node [shape=square style=filled]
 	subgraph cluster_root {
-		color=white label="This is a pen"
+		color=white label="CSA Server protocol 1.2.1"
 		"(Start)" [color=gray shape=circle]
 		"(Start)" -> Init [label=start]
 		"(Terminal)" [color=gray shape=circle]
-		"" [color=pink shape=circle]
-		"" -> "C/S/A/ /S/e/r/v/e/r/ /p/r/o/t/o/c/o/l/ /1/./2/./1" [label="@title"]
-		"" [color=pink shape=circle]
-		"" -> "I/n/i/t" [label="@entry_node"]
 		Init [color=pink shape=circle]
 		Init -> "Init/Login" [label=""]
 		"Init/Login" [color=pink shape=circle]
