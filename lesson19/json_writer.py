@@ -24,32 +24,41 @@ class JsonWriter:
     @classmethod
     def stringify(clazz, data):
         indent = 1
-        n4sp = JsonWriter.n4sp(indent)  # 4 spaces
-
         text = f"{{\n"
 
-        text += f",\n".join(JsonWriter.child_2(data, indent + 1))
+        if isinstance(data, dict):
+            text += f",\n".join(JsonWriter.child_dict(data, indent + 1))
+        elif isinstance(data, list):
+            text += "<★List>"
+        else:
+            text += "<★Error>"
 
         text += "\n}\n"
 
         return text
 
     @classmethod
-    def child_2(clazz, data, indent):
+    def child_dict(clazz, data, indent):
         n4sp = JsonWriter.n4sp(indent)  # 4 spaces
 
-        if isinstance(data, dict):
-            list_s = []
-            for k, v in data.items():
-                text = ""
-                text += f'{n4sp}"{k}":{{\n'
+        list_s = []
+        for k, v in data.items():
+            text = ""
+            text += f'{n4sp}"{k}":{{\n'
 
-                # v
-                text += f",\n".join(JsonWriter.child_2(v, indent + 1))
+            # v
+            if isinstance(v, dict):
+                text += f",\n".join(JsonWriter.child_dict(v, indent + 1))
+            elif isinstance(v, list):
+                item_s = []
+                text += '["'
+                for item in v:
+                    item_s.append(item)
+                text += '","'.join(item_s)
+                text += '"]'
+            else:
+                text += "<★Error>"
 
-                text += f"\n{n4sp}}}"
-                list_s.append(text)
-            return list_s
-
-        else:
-            return ""
+            text += f"\n{n4sp}}}"
+            list_s.append(text)
+        return list_s
