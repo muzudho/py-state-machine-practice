@@ -50,7 +50,7 @@ def gen_state_files():
             # for edge in directed_edge_list:
             #    line_list.append(f"# {{edge.name}}")
             #
-            # text += CodeGen.create_comment_block("        ", line_list)
+            # text += CommentGen.generate("        ", line_list)
             #                    text += """
             #        # 何もせず終わります
             #        return E_OVER
