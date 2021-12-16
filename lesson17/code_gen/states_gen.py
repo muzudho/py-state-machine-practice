@@ -2,11 +2,12 @@ import os
 from lesson17.code_gen.py_gen import CodeGen
 from lesson17.const_conf import ConstConf
 from lesson17.step1_const_conf_wcsc_v2 import const_conf_data
-from lesson17.step2_transition_conf_wcsc import TransitionConf
+from lesson17.transition_conf import TransitionConf
+from lesson17.step2_transition_conf_wcsc import transition_conf_data
 
 
 def state_files_gen(dir_path):
-    transition_conf = TransitionConf()
+    transition_conf = TransitionConf(transition_conf_data)
     const_conf = ConstConf(const_conf_data)
 
     # エッジの一覧
