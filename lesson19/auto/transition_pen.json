@@ -1,25 +1,25 @@
 {
-        "Init":{
+    "Init":{
+        "over":["Init"],
+        "that":["Init"],
+        "this":["Init","This"],
+        "This":{
             "over":["Init"],
-            "that":["Init"],
-            "this":["Init","This"],
-            "This":{
+            "was":["Init"],
+            "is":["Init","This","Is"],
+            "Is":{
                 "over":["Init"],
-                "was":["Init"],
-                "is":["Init","This","Is"],
-                "Is":{
+                "an":["Init"],
+                "a":["Init","This","Is","A"],
+                "A":{
                     "over":["Init"],
-                    "an":["Init"],
-                    "a":["Init","This","Is","A"],
-                    "A":{
-                        "over":["Init"],
-                        "pin":["Init"],
-                        "pen":["Pen"]
-                    }
+                    "pin":["Init"],
+                    "pen":["Pen"]
                 }
             }
-        },
-        "Pen":{
-            "over":null
         }
+    },
+    "Pen":{
+        "over":null
+    }
 }

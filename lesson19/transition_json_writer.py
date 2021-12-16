@@ -1,7 +1,7 @@
 import os
 
 
-class JsonWriter:
+class TransitionJsonWriter:
     @classmethod
     def n4sp(clazz, indent):
         return "".join(["    "] * indent)  # 4 spaces
@@ -16,20 +16,26 @@ class JsonWriter:
             # 既存なら無視
             pass
 
-        text = JsonWriter.stringify(data)
+        text = TransitionJsonWriter.stringify(data)
 
         with open(f"{file_path}", "w", encoding="UTF-8") as f:
             f.write(text)
 
     @classmethod
     def stringify(clazz, data):
-        indent = 1
+        indent = 0
         text = f"{{\n"
 
         if isinstance(data, dict):
-            text += f",\n".join(JsonWriter.child_dict(data, indent + 1))
+            text += f",\n".join(TransitionJsonWriter.child_dict(data, indent + 1))
         elif isinstance(data, list):
-            text += "<★List>"
+            text += (
+                '["'
+                + '","'.join(TransitionJsonWriter.child_list(data, indent + 1))
+                + f'"]'
+            )
+        elif data is None:
+            text += "null"
         else:
             text += "<★Error>"
 
@@ -39,7 +45,7 @@ class JsonWriter:
 
     @classmethod
     def child_dict(clazz, data, indent):
-        n4sp = JsonWriter.n4sp(indent)  # 4 spaces
+        n4sp = TransitionJsonWriter.n4sp(indent)  # 4 spaces
 
         list_s = []
         for k, v in data.items():
@@ -50,11 +56,15 @@ class JsonWriter:
             if isinstance(v, dict):
                 text += (
                     "{\n"
-                    + ",\n".join(JsonWriter.child_dict(v, indent + 1))
+                    + ",\n".join(TransitionJsonWriter.child_dict(v, indent + 1))
                     + f"\n{n4sp}}}"
                 )
             elif isinstance(v, list):
-                text += '["' + '","'.join(JsonWriter.child_list(v, indent + 1)) + f'"]'
+                text += (
+                    '["'
+                    + '","'.join(TransitionJsonWriter.child_list(v, indent + 1))
+                    + f'"]'
+                )
             elif v is None:
                 text += "null"
             else:
