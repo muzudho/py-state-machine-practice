@@ -16,47 +16,32 @@ from lesson14.step1_const_conf_pen_v1 import (
 )
 
 
-class TransitionConf:
-    def __init__(self):
-        self._title = "This is a pen"
-        self._entry_node = INIT
-        self._data = {
-            INIT: {
+transition_conf_data = {
+    "@title": "This is a pen",
+    "@entry_node": INIT,
+    "@data": {
+        INIT: {
+            E_OVER: [INIT],
+            E_THAT: [INIT],
+            E_THIS: [INIT, THIS],
+            THIS: {
                 E_OVER: [INIT],
-                E_THAT: [INIT],
-                E_THIS: [INIT, THIS],
-                THIS: {
+                E_WAS: [INIT],
+                E_IS: [INIT, THIS, IS],
+                IS: {
                     E_OVER: [INIT],
-                    E_WAS: [INIT],
-                    E_IS: [INIT, THIS, IS],
-                    IS: {
+                    E_AN: [INIT],
+                    E_A: [INIT, THIS, IS, A],
+                    A: {
                         E_OVER: [INIT],
-                        E_AN: [INIT],
-                        E_A: [INIT, THIS, IS, A],
-                        A: {
-                            E_OVER: [INIT],
-                            E_PIN: [INIT],
-                            E_PEN: [PEN],
-                        },
+                        E_PIN: [INIT],
+                        E_PEN: [PEN],
                     },
                 },
             },
-            PEN: {
-                E_OVER: None,
-            },
-        }
-
-    @property
-    def title(self):
-        """図のタイトル"""
-        return self._title
-
-    @property
-    def data(self):
-        """ツリー構造のエッジ"""
-        return self._data
-
-    @property
-    def entry_node(self):
-        """開始ノードの名前"""
-        return self._entry_node
+        },
+        PEN: {
+            E_OVER: None,
+        },
+    },
+}
