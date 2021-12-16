@@ -16,7 +16,7 @@
 * 📖 [Lesson11](./lesson11) - 状態を持つサーバーの練習用のサンプルです
 * 📖 [Lesson11-2](./lesson11n2) - 状態の数だけ if 文を書いていたところを、 ステート（State）デザインパターンで書き直す練習用のサンプルです
 * 📖 [Lesson11-3](./lesson11n3) - 前レッスンでは 状態（State）が 次の State の名前 を返していました。  
-  これを 辺（Edge） の名前を返すように変更し、 transition_conf.py ファイルの中で  
+  これを 辺（Edge） の名前を返すように変更し、 transition_conf_data.py ファイルの中で  
   どの状態のどの辺は 次にどの状態につながるかを編集できるように変更します
 * 📖 [Lesson12](./lesson12) - サブ状態（Sub-state）を持つサーバーの練習用のサンプルです
 * 📖 [Lesson12-2](./lesson12n2) - update() のメソッドの中で `c_sock.recv()` を呼び出すタイミングをプログラマーが毎回指定する手間の方が、コードが散らばる手間よりメンテナンスしやすいでしょう
@@ -25,11 +25,11 @@
   付けた方が 人間の目の検索能力の負担を軽くできるかもしれません
 * 📖 [Lesson13-2](./lesson13n2) - `transigion_conf.py` に、ステートマシンを終了させる出口を指定できるようにしましょう
 * 📖 [Lesson14](./lesson14) - サブサブサブステートマシンを作ってみましょう
-* 📖 [Lesson15](./lesson15) - `transition_conf.py` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。 graphviz を使って可視化しましょう
+* 📖 [Lesson15](./lesson15) - `transition_conf_data.py` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。 graphviz を使って可視化しましょう
 * 📖 [Lesson15-2](./lesson15n2) - サブステートを可視化できるように、 graphviz のクラスタリングを使いましょう
 * 📖 [Lesson16](./lesson16) - `step2n2_auto` フォルダーを自動生成し、その中に `init.py` ファイルの雛型を自動生成してみましょう
-* 📖 [Lesson16-2](./lesson16n2) - `transition_conf.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
+* 📖 [Lesson16-2](./lesson16n2) - `transition_conf_data.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
 * 📖 [Lesson16-3](./lesson16n3) - 次に、 エッジの分岐を自動生成しましょう
 * 📖 [Lesson17](./lesson17) - 定数の定義も自動生成するようにしましょう
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Lesson14 と同等の Python スクリプトのルーチン（定型処理）を自動生成しましょう
-* 📖 [Lesson19](./lesson19) - `transition_conf.py` のデータ部を JSON へ書き出してみましょう
+* 📖 [Lesson19](./lesson19) - `transition_conf_data.py` のデータ部を JSON へ書き出してみましょう

@@ -18,12 +18,10 @@ class Render:
             pass
 
         # `init.py` ファイルを作成します
-        # 'x' - ファイルが存在しない場合のみの上書き
         path = "lesson16/step2n2_auto/init.py"
-        try:
-            with open(path, "x") as f:
-                f.write(
-                    """from lesson15.step1_const_conf_wcsc_v1 import E_OVER
+        with open(path, "w") as f:
+            f.write(
+                """from lesson15.step1_const_conf_wcsc_v1 import E_OVER
 
 class InitState():
 
@@ -32,9 +30,7 @@ class InitState():
         return E_OVER
 
 """
-                )
-        except FileExistsError as e:
-            print(f"[Ignore] {e}")
+            )
 
     def clean_up(self):
         pass
