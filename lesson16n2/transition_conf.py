@@ -1,0 +1,66 @@
+from lesson15n2.directive_edge import DirectiveEdge
+
+
+class TransitionConf:
+    def __init__(self, data):
+        self._title = data["@title"]
+        self._entry_node = data["@entry_node"]
+        self._data = data["@data"]
+
+    @property
+    def title(self):
+        """図のタイトル"""
+        return self._title
+
+    @property
+    def data(self):
+        """ツリー構造のエッジ"""
+        return self._data
+
+    @property
+    def entry_node(self):
+        """開始ノードの名前"""
+        return self._entry_node
+
+    def create_edge_list(self):
+        """辺（DirectiveEdgeクラス）の一覧を作成"""
+
+        def __create_edge_list(
+            curr_dict, parent_state_node_path, node_name, result_edge_list
+        ):
+            state_node_path = list(parent_state_node_path)
+            if not (node_name is None) and not (node_name is ""):
+                state_node_path.append(node_name)
+
+            print(
+                f"parent_state_node_path={parent_state_node_path} node_name={node_name} state_node_path={state_node_path}"
+            )
+
+            for child_key in curr_dict.keys():
+
+                child = curr_dict[child_key]
+
+                if isinstance(child, dict):
+                    __create_edge_list(
+                        child, state_node_path, child_key, result_edge_list
+                    )
+                else:
+                    edge = DirectiveEdge(src=state_node_path, dst=child, name=child_key)
+                    result_edge_list.append(edge)
+
+        result_edge_list = []
+
+        __create_edge_list(self._data, [], "", result_edge_list)
+
+        return result_edge_list
+
+    @classmethod
+    def extract_node_path_set(clazz, edge_list):
+        """エッジにノードパスが含まれているので、エッジを元にノードパス文字列のセットを作成します"""
+        node_path_set = set()
+
+        for edge in edge_list:
+            node_path_set.add(edge.to_src_str())
+            node_path_set.add(edge.to_dst_str())
+
+        return node_path_set

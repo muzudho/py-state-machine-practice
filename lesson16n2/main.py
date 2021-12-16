@@ -3,19 +3,19 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson16n2.render import Render
 
-server = None
+render = None
 
 
 class Main:
     def on_main(self):
-        server = Render()
-        server.run()
+        render = Render()
+        render.run()
         return 0
 
     def on_finally(self):
         # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
+        if render:
+            render.clean_up()
 
         print("★しっかり終わった")
         return 1
