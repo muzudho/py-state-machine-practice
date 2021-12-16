@@ -1,12 +1,12 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson16n2.code_gen.state_file_gen import gen_state_file
+from lesson16n2.code_gen.state_files_gen import gen_state_files
 
 
 class Main:
     def on_main(self):
-        gen_state_file()
+        gen_state_files()
         return 0
 
     def on_finally(self):

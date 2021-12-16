@@ -1,22 +1,15 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson16n3.render import Render
-
-server = None
+from lesson16n3.code_gen.state_files_gen import gen_state_files
 
 
 class Main:
     def on_main(self):
-        server = Render()
-        server.run()
+        gen_state_files()
         return 0
 
     def on_finally(self):
-        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
-
         print("★しっかり終わった")
         return 1
 

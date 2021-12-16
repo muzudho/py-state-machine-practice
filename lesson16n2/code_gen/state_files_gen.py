@@ -3,7 +3,7 @@ from lesson16n2.transition_conf_v1n2 import TransitionConfV1n2
 from lesson16n2.step2_transition_conf_wcsc import transition_conf_data
 
 
-def gen_state_file():
+def gen_state_files():
     transition_conf = TransitionConfV1n2(transition_conf_data)
 
     # エッジの一覧
