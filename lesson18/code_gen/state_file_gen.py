@@ -2,7 +2,7 @@ from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
 from lesson18.code_gen.py_syntax.method_gen import MethodGen
-from lesson18.code_gen.py_syntax.switch_gen import SwitchGen
+from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 
 
 class StateFileGen:
@@ -75,7 +75,7 @@ class StateFileGen:
     @classmethod
     def __edge_switch_model(clazz, const_conf, directed_edge_list, used_const_set):
 
-        if_else_list = []
+        if_elif_list = []
         # if～elif文
         for edge in directed_edge_list:
 
@@ -90,16 +90,16 @@ class StateFileGen:
                 const_conf.pickup_from_item(edge_operand, used_const_set)
                 cond = f"msg == {edge_operand}"
 
-            # シーケンス
+            # 本文シーケンス
             body_sequence = []
             body_sequence.append(f"self.on_{edge.name}(req)")  # イベントハンドラ呼出し
             # エッジ名を返します
             body_sequence.append(f"return {edge_operand}")
 
-            if_else_list.append([cond, body_sequence])
+            if_elif_list.append([cond, body_sequence])
 
         # else文
         else_sequence = ['raise ValueError(f"Unexpected msg:{msg}")']
 
-        switch_model = [if_else_list, else_sequence]
+        switch_model = [if_elif_list, else_sequence]
         return switch_model
