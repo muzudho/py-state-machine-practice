@@ -55,13 +55,25 @@ def gen_state_files():
             #        # 何もせず終わります
             #        return E_OVER
             # """
-            block_list = []
-            for edge in directed_edge_list:
-                block = []
-                block.append(f"msg == '{edge.name}'")  # TODO 条件式。定数で書きたい
-                block.append(f"return {edge.dst}")  # TODO 遷移先の名前を定数で書きたい
-                block_list.append(block)
+            switch_model = __edge_switch_model(directed_edge_list)
 
-            text += SwitchGen.generate("        ", block_list)
+            text += SwitchGen.generate("        ", switch_model)
 
             f.write(text)
+
+
+def __edge_switch_model(directed_edge_list):
+    if_elif_list = []
+    for edge in directed_edge_list:
+        # 条件式
+        cond = f"msg == '{edge.name}'"  # TODO 条件式。定数で書きたい
+
+        # 本文シーケンス
+        body_sequence = []
+        body_sequence.append(f"return {edge.dst}")  # TODO 遷移先の名前を定数で書きたい
+
+        if_elif_list.append([cond, body_sequence])
+
+    else_sequence = ['raise ValueError("Unexpected condition")']
+
+    return [if_elif_list, else_sequence]
