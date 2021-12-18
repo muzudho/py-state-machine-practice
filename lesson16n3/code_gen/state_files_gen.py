@@ -1,4 +1,5 @@
 import os
+from lesson16.code_gen.file_io import FileIo
 from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson16n3.step2_transition_conf_wcsc import transition_conf_data
@@ -12,12 +13,9 @@ def gen_state_files():
     for edge in edge_list:
         print(f"[Render] edge={edge}")
 
-    try:
-        # `step2n2_auto` フォルダーが無ければ作る
-        os.makedirs("lesson16n3/step2n2_auto")
-    except FileExistsError:
-        # 既存なら無視
-        pass
+    # `step2n2_auto` フォルダーが無ければ作る
+    dir_path = "lesson16n3/step2n2_auto"
+    FileIo.makedirs(dir_path)
 
     # ノードの一覧
     node_path_set = TransitionConfV1n3.extract_node_path_set(edge_list)
@@ -28,10 +26,8 @@ def gen_state_files():
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
-        path = f"lesson16n3/step2n2_auto/{file_stem}.py"
-        with open(path, "w", encoding="UTF-8") as f:
-            # from lesson16n3.transition_conf_wcsc import E_OVER
-            text = f"""class {class_name}State():
+        file_path = f"lesson16n3/step2n2_auto/{file_stem}.py"
+        text = f"""class {class_name}State():
 
     def update(self, req):
 
@@ -41,25 +37,25 @@ def gen_state_files():
         # 分岐
 """
 
-            # エッジの分岐部分
-            directed_edge_list = TransitionConfV1n3.create_edge_list_by_node_path(
-                transition_conf.data, node_path.split("/")
-            )
+        # エッジの分岐部分
+        directed_edge_list = TransitionConfV1n3.create_edge_list_by_node_path(
+            transition_conf.data, node_path.split("/")
+        )
 
-            # line_list = []
-            # for edge in directed_edge_list:
-            #    line_list.append(f"# {{edge.name}}")
-            #
-            # text += CommentGen.generate("        ", line_list)
-            #                    text += """
-            #        # 何もせず終わります
-            #        return E_OVER
-            # """
-            switch_model = __edge_switch_model(directed_edge_list)
+        # line_list = []
+        # for edge in directed_edge_list:
+        #    line_list.append(f"# {{edge.name}}")
+        #
+        # text += CommentGen.generate("        ", line_list)
+        #                    text += """
+        #        # 何もせず終わります
+        #        return E_OVER
+        # """
+        switch_model = __edge_switch_model(directed_edge_list)
 
-            text += SwitchGen.generate("        ", switch_model)
+        text += SwitchGen.generate("        ", switch_model)
 
-            f.write(text)
+        FileIo.write(file_path, text)
 
 
 def __edge_switch_model(directed_edge_list):

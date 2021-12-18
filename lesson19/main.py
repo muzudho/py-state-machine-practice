@@ -1,7 +1,7 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson19.transition_json_writer import TransitionJsonWriter
+from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson19.step2_transition_conf_pen import (
     transition_conf_data as transition_conf_pen,
