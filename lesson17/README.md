@@ -5,6 +5,40 @@
 
 ただし今回はコードを生成するだけで、生成したコードを実行するところまではやりません  
 
+pen.py:  
+
+```python
+INIT = 'Init'
+LOGIN = 'Login'
+LOBBY = 'Lobby'
+LOGOUT = 'Logout'
+REPLY = 'Reply'
+# 以下略
+```
+
+👆 step1 では、定数を定義した Pythonスクリプトを自動生成します  
+
+init.py:  
+
+```python
+class InitState():
+
+    def update(self, req):
+
+        # 入力
+        msg = req.pull_trigger()
+
+        # 分岐
+        if True:
+            return ['Init', 'Login']
+
+        else:
+            raise ValueError(f"Unexpected msg:{msg}")
+```
+
+👆 step2 では、 Pythonスクリプトファイルを自動生成します。このとき、定数に置き換えられるところは置き換えます  
+
+
 # Run
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  

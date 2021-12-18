@@ -4,13 +4,13 @@ import json
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
 from lesson20.transition_json_reader import TransitionJsonReader
-from lesson21.code_gen.transition_conf_py_stringification import (
+from lesson21n2.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
 
 INPUT_JSON_FILE_PATH = "lesson19/auto/transition-pen.json"
-OUTPUT_AUTO_DIR_PATH = "lesson21/auto"
-OUTPUT_AUTO_FILE_PATH = "lesson21/auto/transition_conf.py"
+OUTPUT_AUTO_DIR_PATH = "lesson21n2/auto"
+OUTPUT_AUTO_FILE_PATH = "lesson21n2/auto/transition_conf.py"
 
 
 class Main:
