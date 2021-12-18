@@ -44,9 +44,10 @@ class SwitchGen:
             text += "\n"
 
         if 0 < len(switch_model):
-            text += f"{indent}else:\n"
             else_sequence = switch_model[1]
-            for line in else_sequence:
-                text += f"{indent}    {line}\n"
+            if else_sequence:
+                text += f"{indent}else:\n"
+                for line in else_sequence:
+                    text += f"{indent}    {line}\n"
 
         return text
