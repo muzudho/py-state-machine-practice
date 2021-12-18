@@ -6,7 +6,7 @@ from lesson16.code_gen.file_io import FileIo
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson20.transition_json_reader import TransitionJsonReader
 
-JSON_FILE_PATH = "lesson19/auto/transition_pen.json"
+JSON_FILE_PATH = "lesson19/auto/transition-pen.json"
 
 
 class Main:
@@ -14,13 +14,14 @@ class Main:
         data = TransitionJsonReader.read_file(JSON_FILE_PATH)
 
         dir_path = "lesson20/auto"
-        file_path = "lesson20/auto/from_json_no_fomat.txt"
+        file_path = "lesson20/auto/transition-pen-default-fomat.json"
         out_text = json.dumps(data, indent=4, ensure_ascii=False)
-        print(f"out_text={out_text}")
         FileIo.makedirs(dir_path)
+        print(f"[L20] write {file_path}")
         FileIo.write(file_path, out_text)
 
-        file_path = "lesson20/auto/from_json.txt"
+        file_path = "lesson20/auto/transition-pen.json"
+        print(f"[L20] write {file_path}")
         TransitionJsonWriter.write(file_path, data)
 
         return 0

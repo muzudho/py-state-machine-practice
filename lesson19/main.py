@@ -11,7 +11,7 @@ from lesson19.step2_transition_conf_pen import (
 class Main:
     def on_main(self):
         transition_conf = TransitionConfV1n3(transition_conf_pen)
-        file_path = "lesson19/auto/transition_pen.json"
+        file_path = "lesson19/auto/transition-pen.json"
         TransitionJsonWriter.write(file_path, transition_conf.data)
         return 0
 
