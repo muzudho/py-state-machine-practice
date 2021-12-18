@@ -1,21 +1,32 @@
 class TransitionJsonStringification:
     @classmethod
     def n4sp(clazz, indent):
-        return "".join(["    "] * indent)  # 4 spaces
+        """4 space"""
+        return "".join(["    "] * indent)
 
     @classmethod
-    def stringify(clazz, data):
+    def stringify(clazz, title, entry_node, data):
         indent = 0
+
         text = f"{{\n"
+        indent += 1
+        n4sp = TransitionJsonStringification.n4sp(indent)
+
+        # TODO タイトルのダブルクォーテーションのエスケープ
+        # TODO エントリーノードは文字列か定数か
+
+        text += f"""{n4sp}"@title" : "{title}",
+{n4sp}"@entry_node": "{entry_node}",
+{n4sp}"@data": {{
+"""
+        indent += 1
 
         if isinstance(data, dict):
-            text += f",\n".join(
-                TransitionJsonStringification.child_dict(data, indent + 1)
-            )
+            text += f",\n".join(TransitionJsonStringification.child_dict(data, indent))
         elif isinstance(data, list):
             text += (
                 '["'
-                + '","'.join(TransitionJsonStringification.child_list(data, indent + 1))
+                + '","'.join(TransitionJsonStringification.child_list(data, indent))
                 + f'"]'
             )
         elif data is None:
@@ -23,7 +34,10 @@ class TransitionJsonStringification:
         else:
             text += "<★Error>"
 
-        text += "\n}\n"
+        text += f"\n{n4sp}}}\n"
+        indent -= 1
+
+        text += "}\n"
 
         return text
 

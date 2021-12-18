@@ -12,7 +12,7 @@ class Main:
     def on_main(self):
         transition_conf = TransitionConfV1n3(transition_conf_pen)
         file_path = "lesson19/auto/transition-pen.json"
-        TransitionJsonWriter.write(file_path, transition_conf.data)
+        TransitionJsonWriter.write(file_path, transition_conf)
         return 0
 
     def on_finally(self):

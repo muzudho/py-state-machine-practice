@@ -10,11 +10,11 @@ class TransitionConfV1:
         return self._title
 
     @property
-    def data(self):
-        """ツリー構造のエッジ"""
-        return self._data
-
-    @property
     def entry_node(self):
         """開始ノードの名前"""
         return self._entry_node
+
+    @property
+    def data(self):
+        """ツリー構造のエッジ"""
+        return self._data
