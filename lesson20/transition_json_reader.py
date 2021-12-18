@@ -11,6 +11,4 @@ class TransitionJsonReader:
             in_text = f.read()
 
         data = json.loads(in_text, object_pairs_hook=OrderedDict)
-
-        out_text = json.dumps(data, indent=4, ensure_ascii=False)
-        print(f"out_text={out_text}")
+        return data

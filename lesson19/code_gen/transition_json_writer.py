@@ -10,7 +10,6 @@ class TransitionJsonWriter:
     @classmethod
     def write(clazz, file_path, data):
         text = TransitionJsonWriter.stringify(data)
-
         FileIo.makedirs(os.path.dirname(file_path))
         FileIo.write(file_path, text)
 
