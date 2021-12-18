@@ -1,5 +1,7 @@
 transition_conf_data = {
-    "Init":{
+    "title": "CSA Server protocol 1.2.1",
+    "entry_node": "Init",
+    "data": {
         "over":["Init"],
         "that":["Init"],
         "this":["Init","This"],
@@ -17,9 +19,7 @@ transition_conf_data = {
                     "pen":["Pen"]
                 }
             }
-        }
-    },
-    "Pen":{
+        },
         "over":None
     }
 }

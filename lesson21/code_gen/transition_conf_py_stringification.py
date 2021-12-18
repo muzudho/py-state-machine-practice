@@ -4,37 +4,62 @@ class TransitionConfPyStringification:
         return "".join(["    "] * indent)  # 4 spaces
 
     @classmethod
-    def stringify(clazz, data):
+    def stringify(clazz, ordered_dict_data):
+        """
+        Parameters
+        ----------
+        data :
+            OrderedDict を使った構造
+        """
         indent = 0
-        text = f"transition_conf_data = {{\n"
+        title = ordered_dict_data["title"]  # TODO ダブルクォーテーションのエスケープ
+        entry_node = (
+            f'"{ordered_dict_data["entry_node"]}"'  # TODO ダブルクォーテーションの取り扱い or 定数
+        )
 
-        if isinstance(data, dict):
-            text += f",\n".join(
-                TransitionConfPyStringification.child_dict(data, indent + 1)
-            )
-        elif isinstance(data, list):
-            text += (
-                '["'
-                + '","'.join(
-                    TransitionConfPyStringification.child_list(data, indent + 1)
+        text = f"""transition_conf_data = {{
+    "title": "{title}",
+    "entry_node": {entry_node},
+    "data": {{
+"""
+        indent += 1
+
+        block_list = []
+        for key, value in ordered_dict_data["data"].items():
+            if isinstance(value, dict):
+                block_list.append(
+                    f",\n".join(
+                        TransitionConfPyStringification.child_dict(value, indent + 1)
+                    )
                 )
-                + f'"]'
-            )
-        elif data is None:
-            text += "null"
-        else:
-            text += "<★Error>"
+            elif isinstance(value, list):
+                block_list.append(
+                    '["'
+                    + '","'.join(
+                        TransitionConfPyStringification.child_list(value, indent + 1)
+                    )
+                    + f'"]'
+                )
+            elif value is None:
+                block_list.append("null")
+            else:
+                block_list.append(f"<★Error key={key}>")
 
-        text += "\n}\n"
+        text += ",\n".join(block_list)
+
+        text += """
+    }
+}
+"""
 
         return text
 
     @classmethod
-    def child_dict(clazz, data, indent):
+    def child_dict(clazz, ordered_dict_data, indent):
         n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
 
         list_s = []
-        for k, v in data.items():
+        for k, v in ordered_dict_data.items():
             text = ""
             text += f'{n4sp}"{k}":'
 
