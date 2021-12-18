@@ -1,3 +1,4 @@
+from lesson16.code_gen.file_io import FileIo
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
@@ -14,7 +15,7 @@ class StateFileGen:
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
-        path = f"{dir_path}/{file_stem}.py"
+        file_path = f"{dir_path}/{file_stem}.py"
 
         # エッジの分岐部分
         directed_edge_list = TransitionConfV1n3.create_edge_list_by_node_path(
@@ -69,8 +70,7 @@ class StateFileGen:
             )
             text = f"{statement}\n{text}"
 
-        with open(path, "w", encoding="UTF-8") as f:
-            f.write(text)
+        FileIo.write(file_path, text)
 
     @classmethod
     def __edge_switch_model(clazz, const_conf, directed_edge_list, used_const_set):
