@@ -45,19 +45,25 @@ def gen_state_file(dir_path, node_path, const_conf, transition_conf):
             if_elif_list.append([cond, body_sequence])
 
         else:
-            operand = const_conf.stringify(edge.name, '"')  # できれば定数に変換します。でなければ文字列
-            if operand[0] != '"':
-                # 定数に変換した
+            operand = const_conf.stringify(edge.name, "'")  # できれば定数に変換します。でなければ文字列
+            if operand[0] != "'":
+                # 定数を使った
                 used_const.add(operand)
 
             cond = f"msg == {operand}"  # 条件式。operandは文字列または定数
 
             # 遷移先ノードパス（リスト）
             # TODO ノードの文字列のうち、定数にできるところは定数にしたい
-            destination_list = edge.dst
-            print(f"[Lesson17] destination_list={destination_list}")
+            text_list = []
+            for item in edge.dst:
+                s1 = const_conf.stringify(item, "'")
+                if s1[0] != "'":
+                    # 定数を使った
+                    used_const.add(s1)
+                text_list.append(s1)
 
-            body_sequence = [f"return {edge.dst}"]  # TODO 遷移先の名前を定数で書きたい
+            return_statement = "return [" + ", ".join(text_list) + "]"
+            body_sequence = [return_statement]
 
             if_elif_list.append([cond, body_sequence])
 
