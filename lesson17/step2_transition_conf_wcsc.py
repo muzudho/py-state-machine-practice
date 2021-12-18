@@ -22,9 +22,9 @@ from lesson17.step1n2_auto_const.pen import (
 )
 
 transition_conf_data = {
-    "@title": "CSA Server protocol 1.2.1",
-    "@entry_node": INIT,
-    "@data": {
+    "title": "CSA Server protocol 1.2.1",
+    "entry_node": INIT,
+    "data": {
         INIT: {
             "": [INIT, LOGIN],
             LOGIN: {E_OK: [LOBBY], E_INCORRECT: [INIT]},

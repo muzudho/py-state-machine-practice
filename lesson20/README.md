@@ -1,6 +1,6 @@
 # Lesson 20
 
-`transition-pen.json` ファイルを読み取ってみましょう  
+Lesson 19 で作った `transition-pen.json` ファイルを読み取ってみましょう  
 
 ## Run
 

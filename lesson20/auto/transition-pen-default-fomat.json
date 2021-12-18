@@ -1,55 +1,59 @@
 {
-    "Init": {
-        "over": [
-            "Init"
-        ],
-        "that": [
-            "Init"
-        ],
-        "this": [
-            "Init",
-            "This"
-        ],
-        "This": {
+    "title": "CSA Server protocol 1.2.1",
+    "entry_node": "Init",
+    "data": {
+        "Init": {
             "over": [
                 "Init"
             ],
-            "was": [
+            "that": [
                 "Init"
             ],
-            "is": [
+            "this": [
                 "Init",
-                "This",
-                "Is"
+                "This"
             ],
-            "Is": {
+            "This": {
                 "over": [
                     "Init"
                 ],
-                "an": [
+                "was": [
                     "Init"
                 ],
-                "a": [
+                "is": [
                     "Init",
                     "This",
-                    "Is",
-                    "A"
+                    "Is"
                 ],
-                "A": {
+                "Is": {
                     "over": [
                         "Init"
                     ],
-                    "pin": [
+                    "an": [
                         "Init"
                     ],
-                    "pen": [
-                        "Pen"
-                    ]
+                    "a": [
+                        "Init",
+                        "This",
+                        "Is",
+                        "A"
+                    ],
+                    "A": {
+                        "over": [
+                            "Init"
+                        ],
+                        "pin": [
+                            "Init"
+                        ],
+                        "pen": [
+                            "Pen"
+                        ]
+                    }
                 }
             }
+        },
+        "Pen": {
+            "over": null
         }
-    },
-    "Pen": {
-        "over": null
     }
 }

@@ -15,9 +15,9 @@ class TransitionJsonStringification:
         # TODO タイトルのダブルクォーテーションのエスケープ
         # TODO エントリーノードは文字列か定数か
 
-        text += f"""{n4sp}"@title" : "{title}",
-{n4sp}"@entry_node": "{entry_node}",
-{n4sp}"@data": {{
+        text += f"""{n4sp}"title" : "{title}",
+{n4sp}"entry_node": "{entry_node}",
+{n4sp}"data": {{
 """
         indent += 1
 

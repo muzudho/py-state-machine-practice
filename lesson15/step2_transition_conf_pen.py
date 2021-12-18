@@ -16,9 +16,9 @@ from lesson14.step1_const_conf_pen_v1 import (
 )
 
 transition_conf_data = {
-    "@title": "This is a pen",
-    "@entry_node": INIT,
-    "@data": {
+    "title": "This is a pen",
+    "entry_node": INIT,
+    "data": {
         INIT: {
             E_OVER: [INIT],
             E_THAT: [INIT],

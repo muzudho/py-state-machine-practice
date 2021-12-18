@@ -16,9 +16,9 @@ from lesson18.step1n2_auto_const.pen import (
 )
 
 transition_conf_data = {
-    "@title": "CSA Server protocol 1.2.1",
-    "@entry_node": INIT,
-    "@data": {
+    "title": "CSA Server protocol 1.2.1",
+    "entry_node": INIT,
+    "data": {
         INIT: {
             E_OVER: [INIT],
             E_THAT: [INIT],

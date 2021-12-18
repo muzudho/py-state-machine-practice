@@ -1,8 +1,8 @@
 class TransitionConfV1:
     def __init__(self, data):
-        self._title = data["@title"]
-        self._entry_node = data["@entry_node"]
-        self._data = data["@data"]
+        self._title = data["title"]
+        self._entry_node = data["entry_node"]
+        self._data = data["data"]
 
     @property
     def title(self):

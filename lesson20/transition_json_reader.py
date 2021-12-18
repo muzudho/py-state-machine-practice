@@ -10,5 +10,5 @@ class TransitionJsonReader:
         with open(file_path, encoding="utf-8") as f:
             in_text = f.read()
 
-        data = json.loads(in_text, object_pairs_hook=OrderedDict)
-        return data
+        transition_conf_data = json.loads(in_text, object_pairs_hook=OrderedDict)
+        return transition_conf_data

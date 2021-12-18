@@ -10,9 +10,14 @@ from lesson19.step2_transition_conf_pen import (
 
 class Main:
     def on_main(self):
-        transition_conf = TransitionConfV1n3(transition_conf_pen)
+        transition_conf_data = TransitionConfV1n3(transition_conf_pen)
         file_path = "lesson19/auto/transition-pen.json"
-        TransitionJsonWriter.write(file_path, transition_conf)
+        TransitionJsonWriter.write(
+            file_path=file_path,
+            title=transition_conf_data.title,
+            entry_node=transition_conf_data.entry_node,
+            data=transition_conf_data.data,
+        )
         return 0
 
     def on_finally(self):

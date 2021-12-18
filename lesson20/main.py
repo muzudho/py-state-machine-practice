@@ -11,18 +11,24 @@ JSON_FILE_PATH = "lesson19/auto/transition-pen.json"
 
 class Main:
     def on_main(self):
-        data = TransitionJsonReader.read_file(JSON_FILE_PATH)
+        transition_conf_data = TransitionJsonReader.read_file(JSON_FILE_PATH)
+        print(f"transition_conf_data={transition_conf_data}")
 
         dir_path = "lesson20/auto"
         file_path = "lesson20/auto/transition-pen-default-fomat.json"
-        out_text = json.dumps(data, indent=4, ensure_ascii=False)
+        out_text = json.dumps(transition_conf_data, indent=4, ensure_ascii=False)
         FileIo.makedirs(dir_path)
         print(f"[L20] write {file_path}")
         FileIo.write(file_path, out_text)
 
         file_path = "lesson20/auto/transition-pen.json"
         print(f"[L20] write {file_path}")
-        TransitionJsonWriter.write(file_path, data)
+        TransitionJsonWriter.write(
+            file_path=file_path,
+            title=transition_conf_data.title,
+            entry_node=transition_conf_data.entry_node,
+            data=transition_conf_data.data,
+        )
 
         return 0
 
