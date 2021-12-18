@@ -3,6 +3,6 @@ from lesson15.step1_const_conf_wcsc_v1 import E_OVER
 class InitState():
 
     def update(self, req):
-        # ‰½‚à‚¹‚¸I‚í‚è‚Ü‚·
+        # ä½•ã‚‚ã›ãšçµ‚ã‚ã‚Šã¾ã™
         return E_OVER
 

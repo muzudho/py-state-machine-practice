@@ -1,4 +1,5 @@
 import os
+from lesson16.code_gen.file_io import FileIo
 
 
 class TransitionJsonWriter:
@@ -8,18 +9,10 @@ class TransitionJsonWriter:
 
     @classmethod
     def write(clazz, file_path, data):
-
-        try:
-            # フォルダーが無ければ作る
-            os.makedirs(os.path.dirname(file_path))
-        except FileExistsError:
-            # 既存なら無視
-            pass
-
         text = TransitionJsonWriter.stringify(data)
 
-        with open(f"{file_path}", "w", encoding="UTF-8") as f:
-            f.write(text)
+        FileIo.makedirs(os.path.dirname(file_path))
+        FileIo.write(file_path, text)
 
     @classmethod
     def stringify(clazz, data):
