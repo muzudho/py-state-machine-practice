@@ -33,3 +33,4 @@
 * 📖 [Lesson17](./lesson17) - 定数の定義も自動生成するようにしましょう
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Lesson14 と同等の Python スクリプトのルーチン（定型処理）を自動生成しましょう
 * 📖 [Lesson19](./lesson19) - `transition_conf_data.py` のデータ部を JSON へ書き出してみましょう
+* 📖 [Lesson20](./lesson20) - `transition-pen.json` ファイルを読み取ってみましょう
