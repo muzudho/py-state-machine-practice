@@ -11,7 +11,9 @@ class TransitionConfPyStringification:
         data :
             OrderedDict を使った構造
         """
+
         indent = 0
+        n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
         title = ordered_dict_data["title"]  # TODO ダブルクォーテーションのエスケープ
         entry_node = (
             f'"{ordered_dict_data["entry_node"]}"'  # TODO ダブルクォーテーションの取り扱い or 定数
@@ -22,28 +24,31 @@ class TransitionConfPyStringification:
     "entry_node": {entry_node},
     "data": {{
 """
-        indent += 1
+        indent += 2
+        n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
 
         block_list = []
         for key, value in ordered_dict_data["data"].items():
             if isinstance(value, dict):
                 block_list.append(
-                    f",\n".join(
+                    f'{n4sp}"{key}":{{\n'
+                    + f",\n".join(
                         TransitionConfPyStringification.child_dict(value, indent + 1)
                     )
+                    + f"\n{n4sp}}}"
                 )
             elif isinstance(value, list):
                 block_list.append(
-                    '["'
+                    f'{n4sp}"{key}":["'
                     + '","'.join(
                         TransitionConfPyStringification.child_list(value, indent + 1)
                     )
                     + f'"]'
                 )
             elif value is None:
-                block_list.append("null")
+                block_list.append(f'{n4sp}"{key}":null')
             else:
-                block_list.append(f"<★Error key={key}>")
+                block_list.append(f"<★Error key={key} value={value}>")
 
         text += ",\n".join(block_list)
 
@@ -58,7 +63,7 @@ class TransitionConfPyStringification:
     def child_dict(clazz, ordered_dict_data, indent):
         n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
 
-        list_s = []
+        block_list = []
         for k, v in ordered_dict_data.items():
             text = ""
             text += f'{n4sp}"{k}":'
@@ -85,8 +90,8 @@ class TransitionConfPyStringification:
             else:
                 text += "<★Error>"
 
-            list_s.append(text)
-        return list_s
+            block_list.append(text)
+        return block_list
 
     @classmethod
     def child_list(clazz, data, indent):
