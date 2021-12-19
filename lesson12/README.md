@@ -118,3 +118,14 @@ Client start:
 ```shell
 python.exe -m lesson09.main
 ```
+
+Input:  
+
+```plain
+Turn knob
+Pull knob
+Enter
+Up
+Sit down
+q
+```
