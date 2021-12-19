@@ -2,10 +2,10 @@ import socket
 from threading import Thread
 
 from lesson11n2.states.out import OutState
-from lesson11n2.state_gen_conf import state_gen
+from lesson11n2_data.state_gen_house import state_gen_house
 
 
-class Server():
+class Server:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
@@ -52,7 +52,7 @@ class Server():
 
                     # メッセージに応じたアクションを行ったあと、次の state に変えます
                     state_name = state.update(message, c_sock)
-                    state = state_gen[state_name]()
+                    state = state_gen_house[state_name]()
 
                 except Exception as e:
                     # client no longer connected

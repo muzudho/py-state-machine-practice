@@ -1,4 +1,4 @@
-from lesson11n2.step1_const_conf_house import MSG_OPEN, OUT, STAIRS
+from lesson11_data.step1_const_house_v1 import MSG_OPEN, OUT, STAIRS
 
 
 class OutState:
