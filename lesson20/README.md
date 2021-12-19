@@ -5,5 +5,5 @@ Lesson 19 で作った `transition-pen.json` ファイルを読み取ってみ�
 ## Run
 
 ```shell
-python.exe -m lesson20.main
+python.exe -m lesson20.main_step1_transition_pen
 ```

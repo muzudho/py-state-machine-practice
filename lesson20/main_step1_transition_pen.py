@@ -14,20 +14,23 @@ OUTPUT_JSON_FILE_PATH_2 = "lesson20_data/auto/transition-pen.json"
 
 class Main:
     def on_main(self):
-        transition_conf_data = TransitionJsonReader.read_file(INPUT_JSON_FILE_PATH)
-        # print(f"transition_conf_data={transition_conf_data}")
+        # JSONファイルを読込みます
+        transition_json_obj = TransitionJsonReader.read_file(INPUT_JSON_FILE_PATH)
+        # print(f"transition_json_obj={transition_json_obj}")
 
-        out_text = json.dumps(transition_conf_data, indent=4, ensure_ascii=False)
+        # フォーマッティング無しで出力するなら
+        out_text = json.dumps(transition_json_obj, indent=4, ensure_ascii=False)
         FileIo.makedirs(os.path.dirname(OUTPUT_JSON_FILE_PATH_1))
         print(f"[L20] write {OUTPUT_JSON_FILE_PATH_1}")
         FileIo.write(OUTPUT_JSON_FILE_PATH_1, out_text)
 
+        # フォーマッティングするなら
         print(f"[L20] write {OUTPUT_JSON_FILE_PATH_2}")
         TransitionJsonWriter.write(
             file_path=OUTPUT_JSON_FILE_PATH_2,
-            title=transition_conf_data["title"],
-            entry_node=transition_conf_data["entry_node"],
-            data=transition_conf_data["data"],
+            title=transition_json_obj["title"],
+            entry_node=transition_json_obj["entry_node"],
+            data=transition_json_obj["data"],
         )
 
         return 0
