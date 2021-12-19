@@ -10,7 +10,7 @@ def gen_init_file():
 
     # `init.py` ファイルを作成します
     file_path = "lesson16/step2n2_auto/init.py"
-    text = """from lesson15.step1_const_conf_wcsc_v1 import E_OVER
+    text = """from lesson15_data.step1_const_wcsc import E_OVER
 
 class InitState():
 
