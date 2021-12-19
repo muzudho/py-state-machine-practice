@@ -1,4 +1,4 @@
-from lesson12.step1_const_conf_house_v3 import E_TURNED_KNOB, MSG_TURN_KNOB, E_FAILED
+from lesson12_data.step1_house3_const import E_TURNED_KNOB, MSG_TURN_KNOB, E_FAILED
 
 
 class OutState:
