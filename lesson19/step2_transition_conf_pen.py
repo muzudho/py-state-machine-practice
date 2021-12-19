@@ -15,7 +15,7 @@ from lesson18.step1n2_auto_const.pen import (
     THIS,
 )
 
-transition_conf_data = {
+transition_conf_pen_py_dict = {
     "title": "CSA Server protocol 1.2.1",
     "entry_node": INIT,
     "data": {

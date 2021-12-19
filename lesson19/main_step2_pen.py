@@ -4,19 +4,20 @@ from lesson07n2.main_finally import MainFinally
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson19.step2_transition_conf_pen import (
-    transition_conf_data as transition_conf_pen,
+    transition_conf_pen_py_dict,
 )
+
+OUTPUT_FILE_PATH = "lesson19/step2_auto/transition-pen.json"
 
 
 class Main:
     def on_main(self):
-        transition_conf_data = TransitionConfV1n3(transition_conf_pen)
-        file_path = "lesson19/auto/transition-pen.json"
+        transition_conf_obj = TransitionConfV1n3(transition_conf_pen_py_dict)
         TransitionJsonWriter.write(
-            file_path=file_path,
-            title=transition_conf_data.title,
-            entry_node=transition_conf_data.entry_node,
-            data=transition_conf_data.data,
+            file_path=OUTPUT_FILE_PATH,
+            title=transition_conf_obj.title,
+            entry_node=transition_conf_obj.entry_node,
+            data=transition_conf_obj.data,
         )
         return 0
 
