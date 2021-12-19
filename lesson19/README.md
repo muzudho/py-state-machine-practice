@@ -8,6 +8,6 @@
 ## Run
 
 ```shell
-python.exe -m lesson19.main_step2_transition_pen
-python.exe -m lesson19.main_step2n2_transition_wcsc
+python.exe -m lesson19.main_step2_pen_transition
+python.exe -m lesson19.main_step2n2_wcsc_transition
 ```
