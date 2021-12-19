@@ -1,4 +1,4 @@
-from lesson11n3.step1_const_conf_house_v2 import (
+from lesson11n3_data.step1_const_house_v2 import (
     OUT,
     E_FAILED,
     E_OPENED,
@@ -8,7 +8,7 @@ from lesson11n3.step1_const_conf_house_v2 import (
     STAIRS,
 )
 
-transition_conf_data = {
+transition_house_py_dict = {
     OUT: {
         E_OPENED: STAIRS,
         E_FAILED: OUT,
