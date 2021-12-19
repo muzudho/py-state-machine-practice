@@ -10,4 +10,5 @@
 ```shell
 python.exe -m lesson19.main_step2_pen_transition
 python.exe -m lesson19.main_step2n2_wcsc_transition
+python.exe -m lesson19.main_step2n3_house3n2_transition3
 ```
