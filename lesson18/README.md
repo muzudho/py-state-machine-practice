@@ -10,8 +10,8 @@ Lesson17で行ったコードの自動生成を発展させ、Lesson14と同等�
 - `lesson18/step2n2_auto_state`
 
 ```shell
-python.exe -m lesson18.code_gen.main_step1
-python.exe -m lesson18.code_gen.main_step2
+python.exe -m lesson18.main_step1
+python.exe -m lesson18.main_step2
 ```
 
 ## Run
@@ -19,7 +19,7 @@ python.exe -m lesson18.code_gen.main_step2
 Server start:  
 
 ```shell
-python.exe -m lesson18.main
+python.exe -m lesson18.main_step3
 ```
 
 Client start:  

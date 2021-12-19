@@ -1,13 +1,14 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson18.code_gen.const_file_gen import const_file_gen
+from lesson18.code_gen.state_files_gen import gen_state_files
+
+OUTPUT_DIR = "lesson18/step2n2_auto_state"
 
 
 class Main:
     def on_main(self):
-        # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        const_file_gen("lesson18/step1n2_auto_const", "pen.py")
+        gen_state_files(OUTPUT_DIR)
         return 0
 
     def on_finally(self):

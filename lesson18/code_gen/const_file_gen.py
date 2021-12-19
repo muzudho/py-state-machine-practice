@@ -5,7 +5,7 @@ from lesson18.const_conf import ConstConf
 from lesson18_data.step1_const_dict_pen import const_pen_py_dict
 
 
-def const_file_gen(dir_path, file_name):
+def const_file_gen(file_path):
     conf = ConstConf(const_pen_py_dict)
 
     text = ""
@@ -14,7 +14,6 @@ def const_file_gen(dir_path, file_name):
         text += f"{key} = '{value}'\n"
 
     # フォルダーが無ければ作る
-    FileIo.makedirs(dir_path)
+    FileIo.makedirs(os.path.dirname(file_path))
 
-    dir_path = f"{dir_path}/{file_name}"
-    FileIo.write(dir_path, text)
+    FileIo.write(file_path, text)
