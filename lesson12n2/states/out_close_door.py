@@ -1,4 +1,4 @@
-from lesson12.step1_const_conf_house_v3 import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
+from lesson12_data.step1_house3_const import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
 
 
 class OutCloseDoorState:
