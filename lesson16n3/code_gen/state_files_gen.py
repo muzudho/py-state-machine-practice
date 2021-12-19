@@ -1,11 +1,11 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson16n3.code_gen.state_file_gen import gen_state_file
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
-from lesson15_data.step2_transition_wcsc import transition_wcsc_py_dict
+from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
 
 
 def gen_state_files():
-    transition_conf = TransitionConfV1n3(transition_wcsc_py_dict)
+    transition_conf = TransitionConfV1n3(wcsc_transition_py_dict)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
