@@ -3,7 +3,7 @@ from lesson15n2.directive_edge import DirectiveEdge
 from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
 
 from lesson15.transition_conf_v1 import TransitionConfV1
-from lesson15n2.step2_transition_conf_pen import transition_conf_data
+from lesson14.step2_transition_conf_pen_v1 import transition_conf_data
 
 # from lesson15n2.transition_conf_wcsc import transition_conf_data
 
