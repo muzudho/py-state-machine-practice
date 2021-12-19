@@ -1,4 +1,4 @@
-from lesson15.step1_const_conf_wcsc_v1 import E_OVER
+from lesson15_data.step1_wcsc_const import E_OVER
 
 class InitState():
 

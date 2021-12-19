@@ -9,8 +9,9 @@ def gen_init_file():
     FileIo.makedirs(dir_path)
 
     # `init.py` ファイルを作成します
+    # TODO import文を変数にしたい
     file_path = "lesson16/step2n2_auto/init.py"
-    text = """from lesson15_data.step1_const_wcsc import E_OVER
+    text = """from lesson15_data.step1_wcsc_const import E_OVER
 
 class InitState():
 
