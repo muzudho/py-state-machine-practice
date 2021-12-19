@@ -1,0 +1,36 @@
+{
+    "title" : "CSA Server protocol 1.2.1",
+    "entry_node": "Init",
+    "data": {
+        "Init":{
+            "":["Init","Login"],
+            "Login":{
+                "ok":["Lobby"],
+                "incorrect":["Init"]
+            }
+        },
+        "Lobby":{
+            "game_summary":["Reply"],
+            "logout":["Lobby","Logout"],
+            "Logout":{
+                "completed":["Init"]
+            }
+        },
+        "Reply":{
+            "agree":["Reply","Agree"],
+            "reject":["Reply","Reject"],
+            "Agree":{
+                "start":["Game"]
+            },
+            "Reject":{
+                "reject":["Lobby"]
+            }
+        },
+        "Game":{
+            "move":["Game"],
+            "move_echo":["Game"],
+            "game_over_floodgate":["Init"],
+            "game_over_wcsc":["Lobby"]
+        }
+    }
+}

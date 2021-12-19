@@ -7,9 +7,9 @@ from lesson16.code_gen.file_io import FileIo
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson20.transition_json_reader import TransitionJsonReader
 
-INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/transition-pen.json"
-OUTPUT_JSON_FILE_PATH_1 = "lesson20_data/auto/transition-pen-default-fomat.json"
-OUTPUT_JSON_FILE_PATH_2 = "lesson20_data/auto/transition-pen.json"
+INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/pen-transition.json"
+OUTPUT_JSON_FILE_PATH_1 = "lesson20_data/auto/pen-transition-default-fomat.json"
+OUTPUT_JSON_FILE_PATH_2 = "lesson20_data/auto/pen-transition.json"
 
 
 class Main:
