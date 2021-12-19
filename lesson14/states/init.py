@@ -4,7 +4,7 @@ from lesson14.step1_const_conf_pen_v1 import E_OVER, E_THAT, E_THIS, MSG_THAT, M
 class InitState:
     @classmethod
     def is_verbose(clazz):
-        return False
+        return True
 
     def update(self, req):
         # 現在位置の表示

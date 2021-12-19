@@ -74,7 +74,7 @@ class Server:
 
                     # transition_conf_data.py を見て state_path を得ます
                     state_path = StateMachineHelper.lookup_next_state_path(
-                        transition_conf_data, state_path, edge_name
+                        transition_conf_data["data"], state_path, edge_name
                     )
 
                     if state_path is None:
