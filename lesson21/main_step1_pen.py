@@ -1,5 +1,5 @@
 import sys
-import json
+import os
 
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
@@ -9,8 +9,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
 )
 
 INPUT_JSON_FILE_PATH = "lesson19/auto/transition-pen.json"
-OUTPUT_AUTO_DIR_PATH = "lesson21/auto"
-OUTPUT_AUTO_FILE_PATH = "lesson21/auto/transition_conf.py"
+OUTPUT_AUTO_FILE_PATH = "lesson21/auto/transition_conf_pen.py"
 
 
 class Main:
@@ -19,7 +18,7 @@ class Main:
 
         out_text = TransitionConfPyStringification.stringify(data)
 
-        FileIo.makedirs(OUTPUT_AUTO_DIR_PATH)
+        FileIo.makedirs(os.path.dirname(OUTPUT_AUTO_FILE_PATH))
         print(f"[L21] write {OUTPUT_AUTO_FILE_PATH}")
         FileIo.write(OUTPUT_AUTO_FILE_PATH, out_text)
 
