@@ -3,9 +3,7 @@ from lesson15n2.directive_edge import DirectiveEdge
 from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
 
 from lesson15.transition_conf_v1 import TransitionConfV1
-from lesson14_data.step2_transition_pen import transition_conf_data
-
-# from lesson15n2.transition_conf_wcsc import transition_conf_data
+from lesson14_data.step2_transition_pen import transition_pen_py_dict
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -88,7 +86,7 @@ class Render:
 
         edge_list = []
 
-        transition_conf = TransitionConfV1(transition_conf_data)
+        transition_conf = TransitionConfV1(transition_pen_py_dict)
 
         # エッジの一覧を作成
         create_edge_list(transition_conf.data, [], None, edge_list)
