@@ -1,0 +1,48 @@
+{
+    "title": "House",
+    "entry_node": "Out",
+    "data": {
+        "Out": {
+            "": {
+                "TurnedKnob": [
+                    "Out",
+                    "CloseDoor"
+                ],
+                "Failed": [
+                    "Out"
+                ]
+            },
+            "CloseDoor": {
+                "PulledKnob": [
+                    "Out",
+                    "OpenDoor"
+                ],
+                "Failed": [
+                    "Out"
+                ]
+            },
+            "OpenDoor": {
+                "Enter": [
+                    "Stairs"
+                ],
+                "Failed": [
+                    "Out"
+                ]
+            }
+        },
+        "Stairs": {
+            "Up": [
+                "My room"
+            ],
+            "Failed": [
+                "Out"
+            ]
+        },
+        "My room": {
+            "Sitting down": null,
+            "Failed": [
+                "Out"
+            ]
+        }
+    }
+}
