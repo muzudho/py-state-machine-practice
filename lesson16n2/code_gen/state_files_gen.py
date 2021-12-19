@@ -1,11 +1,11 @@
 import os
 from lesson16.code_gen.file_io import FileIo
 from lesson16n2.transition_conf_v1n2 import TransitionConfV1n2
-from lesson15_data.step2_transition_wcsc import transition_wcsc_py_dict
+from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
 
 
 def gen_state_files():
-    transition_conf = TransitionConfV1n2(transition_wcsc_py_dict)
+    transition_conf = TransitionConfV1n2(wcsc_transition_py_dict)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
@@ -24,9 +24,9 @@ def gen_state_files():
         print(f"[Render] node_path={node_path} ----> {file_stem}")
 
         # `init.py` ファイルを作成します
-        # 'x' - ファイルが存在しない場合のみの上書き
+        # TODO import文を変数にしたい
         file_path = f"lesson16n2/step2n2_auto/{file_stem}.py"
-        text = f"""from lesson15_data.step1_const_wcsc import E_OVER
+        text = f"""from lesson15_data.step1_wcsc_const import E_OVER
 
 class {class_name}State():
 
