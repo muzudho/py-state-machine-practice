@@ -2,15 +2,15 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.state_files_gen import gen_state_files
-from lesson17_data.step1_const_dict_wcsc import const_wcsc_py_dict
-from lesson15_data.step2_transition_wcsc import transition_wcsc_py_dict
+from lesson17_data.step1_wcsc_const_dict import wcsc_const_py_dict
+from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
 
 
 class Main:
     def on_main(self):
         gen_state_files(
-            const_conf_py_dict=const_wcsc_py_dict,
-            transition_conf_data=transition_wcsc_py_dict,
+            const_conf_py_dict=wcsc_const_py_dict,
+            transition_conf_data=wcsc_transition_py_dict,
             output_dir_path="lesson17/step2n2_auto_state",
         )
         return 0
