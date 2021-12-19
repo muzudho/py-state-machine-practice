@@ -1,9 +1,8 @@
 from graphviz import Digraph
-from lesson15.directive_edge import DirectiveEdge
-from lesson15.clustered_directive_edge import ClusteredDirectiveEdge
 
+from lesson15.directive_edge import DirectiveEdge
 from lesson15.transition_conf_v1 import TransitionConfV1
-from lesson15.step2_transition_conf_wcsc import transition_conf_data
+from lesson15_data.step2_transition_wcsc import transition_wcsc_py_dict
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -45,7 +44,7 @@ class Render:
 
         edge_list = []
 
-        transition_conf = TransitionConfV1(transition_conf_data)
+        transition_conf = TransitionConfV1(transition_wcsc_py_dict)
 
         # エッジの一覧を作成
         create_edge_list(transition_conf.data, [], None, edge_list)
