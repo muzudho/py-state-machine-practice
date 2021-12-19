@@ -1,7 +1,7 @@
 import socket
 from threading import Thread
 
-from lesson11_data.step1_const_house_v1 import (
+from lesson11_data.step1_house_v1_const import (
     MY_ROOM,
     MSG_OPEN,
     OUT,
