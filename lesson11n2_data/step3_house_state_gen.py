@@ -6,7 +6,7 @@ from lesson11n2.states.stairs import StairsState
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-state_gen_house = {
+house_state_gen = {
     MY_ROOM: lambda: MyRoomState(),
     OUT: lambda: OutState(),
     STAIRS: lambda: StairsState(),

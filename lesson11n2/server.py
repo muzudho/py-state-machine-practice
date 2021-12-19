@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 from lesson11n2.states.out import OutState
-from lesson11n2_data.state_gen_house import state_gen_house
+from lesson11n2_data.step3_house_state_gen import house_state_gen
 
 
 class Server:
@@ -52,7 +52,7 @@ class Server:
 
                     # メッセージに応じたアクションを行ったあと、次の state に変えます
                     state_name = state.update(message, c_sock)
-                    state = state_gen_house[state_name]()
+                    state = house_state_gen[state_name]()
 
                 except Exception as e:
                     # client no longer connected
