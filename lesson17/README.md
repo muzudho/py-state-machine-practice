@@ -5,7 +5,7 @@
 
 ただし今回はコードを生成するだけで、生成したコードを実行するところまではやりません  
 
-pen.py:  
+const_wcsc.py:  
 
 ```python
 INIT = 'Init'
