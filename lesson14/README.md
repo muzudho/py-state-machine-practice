@@ -2,12 +2,12 @@
 
 サブサブサブステートマシンを作ってみましょう  
 
-step2_transition_conf_pen.py:  
+step2_transition_conf_pen_v1.py:  
 
 ```python
 # 定数の import 部分を略
 
-transition_conf_data = {
+transition_conf_pen_py_dict_v1 = {
     "title": "This is a pen",
     "entry_node": INIT,
     "data": {
