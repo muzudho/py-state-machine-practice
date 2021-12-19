@@ -1,4 +1,4 @@
-from lesson11n3_data.step1_const_house_v2 import MSG_UP, E_FAILED, E_UP
+from lesson11n3_data.step1_house2_const import MSG_UP, E_FAILED, E_UP
 
 
 class StairsState:

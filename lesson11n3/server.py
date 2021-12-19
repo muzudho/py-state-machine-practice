@@ -2,9 +2,9 @@ import socket
 from threading import Thread
 
 from lesson11n3.states.out import OutState
-from lesson11n3_data.step1_const_house_v2 import OUT
-from lesson11n3_data.step2_transition_house import transition_house_py_dict
-from lesson11n3_data.step3_state_gen_house import state_gen_house
+from lesson11n3_data.step1_house2_const import OUT
+from lesson11n3_data.step2_house2_transition import house2_transition_py_dict
+from lesson11n3_data.step3_house2_state_gen import house2_state_gen
 
 
 class Server:
@@ -57,10 +57,10 @@ class Server:
                     edge_name = state.update(message, c_sock)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = transition_house_py_dict[state_name][edge_name]
+                    state_name = house2_transition_py_dict[state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
-                    state = state_gen_house[state_name]()
+                    state = house2_state_gen[state_name]()
 
                 except Exception as e:
                     # client no longer connected
