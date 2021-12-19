@@ -21,7 +21,6 @@ from lesson15.step1_const_conf_wcsc_v1 import (
     REPLY,
 )
 
-
 transition_conf_data = {
     "title": "CSA Server protocol 1.2.1",
     "entry_node": INIT,

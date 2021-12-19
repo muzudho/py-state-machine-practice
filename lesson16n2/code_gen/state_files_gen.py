@@ -1,7 +1,7 @@
 import os
 from lesson16.code_gen.file_io import FileIo
 from lesson16n2.transition_conf_v1n2 import TransitionConfV1n2
-from lesson16n2.step2_transition_conf_wcsc import transition_conf_data
+from lesson15.step2_transition_conf_wcsc import transition_conf_data
 
 
 def gen_state_files():
