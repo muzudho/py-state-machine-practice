@@ -1,14 +1,12 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson17.code_gen.state_file_gen import gen_state_file
-from lesson17.const_conf import ConstConf
-from lesson17.step1_const_conf_wcsc_v2 import const_conf_data
+from lesson17.code_gen.const_conf import ConstConf
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
-from lesson17.step2_transition_conf_wcsc import transition_conf_data
 
 
-def gen_state_files(dir_path):
+def gen_state_files(const_conf_py_dict, transition_conf_data, output_dir_path):
     transition_conf = TransitionConfV1n3(transition_conf_data)
-    const_conf = ConstConf(const_conf_data)
+    const_conf = ConstConf(const_conf_py_dict)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
@@ -16,7 +14,7 @@ def gen_state_files(dir_path):
         print(f"[Render] edge={edge}")
 
     # フォルダーが無ければ作る
-    FileIo.makedirs(dir_path)
+    FileIo.makedirs(output_dir_path)
 
     # ノードの一覧
     node_path_set = TransitionConfV1n3.extract_node_path_set(edge_list)
@@ -24,4 +22,4 @@ def gen_state_files(dir_path):
         if node_path is None:
             continue
 
-        gen_state_file(dir_path, node_path, const_conf, transition_conf)
+        gen_state_file(output_dir_path, node_path, const_conf, transition_conf)

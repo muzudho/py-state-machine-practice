@@ -1,10 +1,10 @@
-from lesson17.const_conf import ConstConf
+from lesson17.code_gen.const_conf import ConstConf
 
 
 class ConstStringification:
     @classmethod
-    def stringify(clazz, const_conf_data):
-        const_conf = ConstConf(const_conf_data)
+    def stringify(clazz, const_conf_py_dict):
+        const_conf = ConstConf(const_conf_py_dict)
 
         text = ""
 
