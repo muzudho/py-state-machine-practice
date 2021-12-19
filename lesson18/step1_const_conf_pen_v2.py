@@ -1,6 +1,6 @@
 # (1) キーと値は 全単射にしてください
 # (2) 大文字と小文字は区別します
-const_conf_data = {
+const_conf_py_dict = {
     # States
     # ------
     #

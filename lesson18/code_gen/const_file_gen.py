@@ -2,11 +2,11 @@ import os
 from lesson16.code_gen.file_io import FileIo
 
 from lesson18.const_conf import ConstConf
-from lesson18.step1_const_conf_pen_v2 import const_conf_data
+from lesson18.step1_const_conf_pen_v2 import const_conf_py_dict
 
 
 def const_file_gen(dir_path, file_name):
-    conf = ConstConf(const_conf_data)
+    conf = ConstConf(const_conf_py_dict)
 
     text = ""
 

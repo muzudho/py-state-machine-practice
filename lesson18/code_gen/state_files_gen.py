@@ -2,13 +2,13 @@ import os
 from lesson16.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen import StateFileGen
 from lesson18.const_conf import ConstConf
-from lesson18.step1_const_conf_pen_v2 import const_conf_data
+from lesson18.step1_const_conf_pen_v2 import const_conf_py_dict
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson18.step2_transition_conf_pen import transition_conf_data
 
 
 def gen_state_files(dir_path):
-    const_conf = ConstConf(const_conf_data)
+    const_conf = ConstConf(const_conf_py_dict)
     transition_conf = TransitionConfV1n3(transition_conf_data)
 
     # エッジの一覧
