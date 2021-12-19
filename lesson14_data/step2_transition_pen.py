@@ -1,4 +1,4 @@
-from lesson14.step1_const_conf_pen_v1 import (
+from lesson14_data.step1_const_pen import (
     A,
     E_A,
     E_AN,
@@ -15,7 +15,7 @@ from lesson14.step1_const_conf_pen_v1 import (
     THIS,
 )
 
-transition_conf_pen_py_dict_v1 = {
+transition_pen_py_dict = {
     "title": "This is a pen",
     "entry_node": INIT,
     "data": {

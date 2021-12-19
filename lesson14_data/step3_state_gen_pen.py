@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson14.step1_const_conf_pen_v1 import A, INIT, IS, PEN, THIS
+from lesson14_data.step1_const_pen import A, INIT, IS, PEN, THIS
 from lesson14.states.init import InitState
 from lesson14.states.init_this import InitThisState
 from lesson14.states.init_this_is import InitThisIsState
@@ -8,7 +8,7 @@ from lesson14.states.pen import PenState
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-state_gen = {
+state_gen_pen = {
     INIT: {
         "": lambda: InitState(),
         THIS: {
