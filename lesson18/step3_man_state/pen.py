@@ -1,4 +1,4 @@
-from lesson18_data.step1n2_auto_const.const_pen import E_OVER
+from lesson18_data.step1n2_auto_const.pen_const import E_OVER
 from lesson18.step2n2_auto_state.pen import PenState
 
 __is_verbose = True

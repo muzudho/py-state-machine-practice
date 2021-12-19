@@ -3,7 +3,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson18.code_gen.const_file_gen import const_file_gen
 
-OUTPUT_FILE_PATH = "lesson18_data/step1n2_auto_const/const_pen.py"
+OUTPUT_FILE_PATH = "lesson18_data/step1n2_auto_const/pen_const.py"
 
 
 class Main:

@@ -3,10 +3,10 @@ from threading import Thread
 
 from lesson18.request import Request
 from lesson18.state_machine_helper import StateMachineHelper
-from lesson18_data.step1n2_auto_const.const_pen import INIT
+from lesson18_data.step1n2_auto_const.pen_const import INIT
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
-from lesson14_data.step2_transition_pen import transition_pen_py_dict
-from lesson18_data.step4_state_gen_pen import state_gen_pen
+from lesson14_data.step2_pen_transition import pen_transition_py_dict
+from lesson18_data.step4_state_gen_pen import pen_state_gen
 
 
 class Server:
@@ -49,12 +49,12 @@ class Server:
 ----------------------""".encode()
             )
 
-            transition_conf = TransitionConfV1n3(transition_pen_py_dict)
+            transition_conf = TransitionConfV1n3(pen_transition_py_dict)
 
             # 最初
             state_path = [INIT]
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelper.create_state(state_gen_pen, state_path)
+            state = StateMachineHelper.create_state(pen_state_gen, state_path)
 
             while True:
                 try:
@@ -92,7 +92,7 @@ class Server:
                         break
 
                     # state_gen_conf.py を見て state_path から state を生成します
-                    state = StateMachineHelper.create_state(state_gen_pen, state_path)
+                    state = StateMachineHelper.create_state(pen_state_gen, state_path)
 
                 except Exception as e:
                     # client no longer connected

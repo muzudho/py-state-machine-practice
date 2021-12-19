@@ -1,6 +1,4 @@
-import os
 import sys
-import tomli
 
 
 from lesson07n2.main_finally import MainFinally

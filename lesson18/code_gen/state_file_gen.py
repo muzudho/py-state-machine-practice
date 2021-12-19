@@ -67,7 +67,7 @@ class StateFileGen:
         # TODO importのパスを変数にしたい
         if 0 < len(used_const_set):
             statement = ImportGen.generate(
-                from_s="lesson18_data.step1n2_auto_const.const_pen",
+                from_s="lesson18_data.step1n2_auto_const.pen_const",
                 import_set=used_const_set,
             )
             text = f"{statement}\n{text}"
