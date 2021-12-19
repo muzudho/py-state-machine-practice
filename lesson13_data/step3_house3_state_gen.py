@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson12.step1_const_conf_house_v3 import (
+from lesson12_data.step1_house3_const import (
     MY_ROOM,
     OUT,
     CLOSE_DOOR,
@@ -14,7 +14,7 @@ from lesson13.states.stairs import StairsState
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-state_gen = {
+house3_state_gen = {
     OUT: {
         "": lambda: OutState(),
         CLOSE_DOOR: lambda: OutCloseDoorState(),

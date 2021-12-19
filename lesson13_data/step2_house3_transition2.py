@@ -1,4 +1,4 @@
-from lesson12.step1_const_conf_house_v3 import (
+from lesson12_data.step1_house3_const import (
     CLOSE_DOOR,
     E_ENTER,
     E_PULLED_KNOB,
@@ -12,7 +12,7 @@ from lesson12.step1_const_conf_house_v3 import (
     STAIRS,
 )
 
-transition_conf_data = {
+house3_transition2_py_dict = {
     OUT: {
         "": {
             E_TURNED_KNOB: [OUT, CLOSE_DOOR],

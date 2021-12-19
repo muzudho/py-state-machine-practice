@@ -5,7 +5,7 @@
 transigion_conf.py:  
 
 ```python
-transition_conf_data = {
+house3_transition_py_dict = {
     OUT: {
         E_TURNED_KNOB: CLOSE_DOOR,
         E_FAILED: OUT,
@@ -34,7 +34,7 @@ transition_conf_data = {
 transigion_conf.py:
 
 ```python
-transition_conf_data = {
+house3_transition2_py_dict = {
     OUT: {
         '': {
             E_TURNED_KNOB: [OUT, CLOSE_DOOR],
@@ -68,7 +68,7 @@ transition_conf_data = {
 state_gen_conf.py:  
 
 ```python
-state_gen = {
+house3_state_gen = {
     OUT: {
         '': lambda: OutState(),
         CLOSE_DOOR: lambda: OutCloseDoorState(),
@@ -93,4 +93,15 @@ Client start:
 
 ```shell
 python.exe -m lesson09.main
+```
+
+Input:  
+
+```plain
+Turn knob
+Pull knob
+Enter
+Up
+Sit down
+q
 ```
