@@ -3,8 +3,8 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
-from lesson18.step2_transition_conf_pen import (
-    transition_conf_pen_py_dict,
+from lesson14.step2_transition_conf_pen_v1 import (
+    transition_conf_pen_py_dict_v1,
 )
 
 OUTPUT_FILE_PATH = "lesson19/step2_auto/transition-pen.json"
@@ -12,7 +12,7 @@ OUTPUT_FILE_PATH = "lesson19/step2_auto/transition-pen.json"
 
 class Main:
     def on_main(self):
-        transition_conf_obj = TransitionConfV1n3(transition_conf_pen_py_dict)
+        transition_conf_obj = TransitionConfV1n3(transition_conf_pen_py_dict_v1)
         TransitionJsonWriter.write(
             file_path=OUTPUT_FILE_PATH,
             title=transition_conf_obj.title,
