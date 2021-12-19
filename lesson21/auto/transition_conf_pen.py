@@ -1,5 +1,5 @@
 transition_conf_data = {
-    "title": "CSA Server protocol 1.2.1",
+    "title": "This is a pen",
     "entry_node": "Init",
     "data": {
         "Init":{

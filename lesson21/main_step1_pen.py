@@ -8,7 +8,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
 
-INPUT_JSON_FILE_PATH = "lesson19/auto/transition-pen.json"
+INPUT_JSON_FILE_PATH = "lesson19/step2_auto/transition-pen.json"
 OUTPUT_AUTO_FILE_PATH = "lesson21/auto/transition_conf_pen.py"
 
 
