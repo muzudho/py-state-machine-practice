@@ -1,4 +1,4 @@
-from lesson14_data.step1_const_pen import E_OVER
+from lesson14_data.step1_pen_const import E_OVER
 
 
 class PenState:
