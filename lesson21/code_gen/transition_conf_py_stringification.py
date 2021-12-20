@@ -4,12 +4,15 @@ from lesson18_data.step1_const_dict_pen import pen_const_py_dict
 
 
 class TransitionConfPyStringification:
+    def __init__(self):
+        self._const_conf = ConstConf(pen_const_py_dict)
+        self._used_const_set = set()
+
     @classmethod
     def n4sp(clazz, indent):
         return "".join(["    "] * indent)  # 4 spaces
 
-    @classmethod
-    def stringify(clazz, ordered_dict_data):
+    def stringify(self, ordered_dict_data):
         """
         Parameters
         ----------
@@ -17,17 +20,14 @@ class TransitionConfPyStringification:
             OrderedDict を使った構造
         """
 
-        const_conf = ConstConf(pen_const_py_dict)
-        used_const_set = set()
-
         indent = 0
         n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
         title = ordered_dict_data["title"]  # TODO ダブルクォーテーションのエスケープ
 
-        # TODO ダブルクォーテーションの取り扱い or 定数
+        # 定数 or "文字列" 判定
         entry_node = ordered_dict_data["entry_node"]
-        entry_node = const_conf.replace_item(entry_node, '"')  # 定数、でなければ "文字列"
-        const_conf.pickup_from_item_to_set(entry_node, used_const_set)
+        entry_node = self._const_conf.replace_item(entry_node, '"')  # 定数、でなければ "文字列"
+        self._const_conf.pickup_from_item_to_set(entry_node, self._used_const_set)
 
         text = f"""transition_conf_data = {{
     "title": "{title}",
@@ -42,18 +42,12 @@ class TransitionConfPyStringification:
             if isinstance(value, dict):
                 block_list.append(
                     f'{n4sp}"{key}":{{\n'
-                    + f",\n".join(
-                        TransitionConfPyStringification.child_dict(value, indent + 1)
-                    )
+                    + f",\n".join(self._child_dict(value, indent + 1))
                     + f"\n{n4sp}}}"
                 )
             elif isinstance(value, list):
                 block_list.append(
-                    f'{n4sp}"{key}":["'
-                    + '","'.join(
-                        TransitionConfPyStringification.child_list(value, indent + 1)
-                    )
-                    + f'"]'
+                    f'{n4sp}"{key}":["' + '","'.join(self._child_list(value)) + f'"]'
                 )
             elif value is None:
                 block_list.append(f'{n4sp}"{key}":null')
@@ -69,41 +63,35 @@ class TransitionConfPyStringification:
 
         # 定数のインポートをファイルの冒頭に付けます
         # TODO importのパスを変数にしたい
-        if 0 < len(used_const_set):
+        if 0 < len(self._used_const_set):
             import_statement = ImportGen.generate(
                 from_s="lesson18_data.step1n2_auto_const.pen_const",
-                import_set=used_const_set,
+                import_set=self._used_const_set,
             )
             text = f"{import_statement}\n{text}"
 
         return text
 
-    @classmethod
-    def child_dict(clazz, ordered_dict_data, indent):
+    def _child_dict(self, ordered_dict_data, indent):
         n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
 
         block_list = []
         for k, v in ordered_dict_data.items():
             text = ""
+
+            # 定数 or "文字列" 判定
+            # k_operand = const_conf.replace_item(k, '"')  # 定数、でなければ "文字列"
+            # const_conf.pickup_from_item_to_set(k_operand, used_const_set)
+
             text += f'{n4sp}"{k}":'
 
             # v
             if isinstance(v, dict):
                 text += (
-                    "{\n"
-                    + ",\n".join(
-                        TransitionConfPyStringification.child_dict(v, indent + 1)
-                    )
-                    + f"\n{n4sp}}}"
+                    "{\n" + ",\n".join(self._child_dict(v, indent + 1)) + f"\n{n4sp}}}"
                 )
             elif isinstance(v, list):
-                text += (
-                    '["'
-                    + '","'.join(
-                        TransitionConfPyStringification.child_list(v, indent + 1)
-                    )
-                    + f'"]'
-                )
+                text += '["' + '","'.join(self._child_list(v)) + f'"]'
             elif v is None:
                 text += "None"
             else:
@@ -112,8 +100,7 @@ class TransitionConfPyStringification:
             block_list.append(text)
         return block_list
 
-    @classmethod
-    def child_list(clazz, data, indent):
+    def _child_list(self, data):
         item_s = []
         for item in data:
             item_s.append(item)

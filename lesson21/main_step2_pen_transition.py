@@ -16,7 +16,8 @@ class Main:
     def on_main(self):
         data = TransitionJsonReader.read_file(INPUT_JSON_FILE_PATH)
 
-        out_text = TransitionConfPyStringification.stringify(data)
+        transition_conf_py_stringification = TransitionConfPyStringification()
+        out_text = transition_conf_py_stringification.stringify(data)
 
         FileIo.makedirs(os.path.dirname(OUTPUT_AUTO_FILE_PATH))
         print(f"[L21] write {OUTPUT_AUTO_FILE_PATH}")
