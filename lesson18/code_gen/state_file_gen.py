@@ -25,7 +25,7 @@ class StateFileGen:
         # 使った定数を調査
         used_const_set = set()
         for edge in directed_edge_list:
-            const_conf.pickup_from_item(edge.name, used_const_set)
+            const_conf.pickup_from_item_to_set(edge.name, used_const_set)
 
         text = ""
         text += ClassGen.generate(name=f"{class_name}State")
@@ -66,11 +66,11 @@ class StateFileGen:
         # 定数のインポートをファイルの冒頭に付けます
         # TODO importのパスを変数にしたい
         if 0 < len(used_const_set):
-            statement = ImportGen.generate(
+            import_statement = ImportGen.generate(
                 from_s="lesson18_data.step1n2_auto_const.pen_const",
                 import_set=used_const_set,
             )
-            text = f"{statement}\n{text}"
+            text = f"{import_statement}\n{text}"
 
         FileIo.write(file_path, text)
 
@@ -89,7 +89,7 @@ class StateFileGen:
                 cond = "True"  # 恒真
             else:
                 # この練習プログラムでは E_XXX のような定数になってるはず
-                const_conf.pickup_from_item(edge_operand, used_const_set)
+                const_conf.pickup_from_item_to_set(edge_operand, used_const_set)
                 cond = f"msg == {edge_operand}"
 
             # 本文シーケンス

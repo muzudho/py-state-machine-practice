@@ -44,7 +44,7 @@ class ConstConf:
 
         return new_list
 
-    def pickup_from_item(self, item, used_const_set):
+    def pickup_from_item_to_set(self, item, used_const_set):
         """item が定数なら used_const_set へ追加します"""
         if item in self._data:
             used_const_set.add(item)

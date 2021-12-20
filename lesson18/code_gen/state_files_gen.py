@@ -1,4 +1,3 @@
-import os
 from lesson16.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen import StateFileGen
 from lesson18.const_conf import ConstConf
