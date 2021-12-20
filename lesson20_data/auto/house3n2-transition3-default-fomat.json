@@ -32,13 +32,13 @@
         },
         "Stairs": {
             "Up": [
-                "My room"
+                "MyRoom"
             ],
             "Failed": [
                 "Out"
             ]
         },
-        "My room": {
+        "MyRoom": {
             "Sitting down": null,
             "Failed": [
                 "Out"

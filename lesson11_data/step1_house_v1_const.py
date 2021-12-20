@@ -6,7 +6,7 @@
 
 OUT = "Out"
 STAIRS = "Stairs"
-MY_ROOM = "My room"
+MY_ROOM = "MyRoom"
 
 # Actions
 # -------

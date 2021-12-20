@@ -4,25 +4,25 @@
     "data": {
         "Out":{
             "":{
-                "TurnedKnob":["Out","CloseDoor"],
-                "Failed":["Out"]
+                "turned_knob":["Out","CloseDoor"],
+                "failed":["Out"]
             },
             "CloseDoor":{
-                "PulledKnob":["Out","OpenDoor"],
-                "Failed":["Out"]
+                "pulled_knob":["Out","OpenDoor"],
+                "failed":["Out"]
             },
             "OpenDoor":{
-                "Enter":["Stairs"],
-                "Failed":["Out"]
+                "enter":["Stairs"],
+                "failed":["Out"]
             }
         },
         "Stairs":{
-            "Up":["My room"],
-            "Failed":["Out"]
+            "up":["MyRoom"],
+            "failed":["Out"]
         },
-        "My room":{
-            "Sitting down":null,
-            "Failed":["Out"]
+        "MyRoom":{
+            "sitting_down":null,
+            "failed":["Out"]
         }
     }
 }

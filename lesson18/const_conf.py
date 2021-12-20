@@ -11,7 +11,7 @@ class ConstConf:
 
         for key, value in self._data.items():
             if value in self._rev_data:
-                raise ValueError("value:{value} が重複しました。全単射にしてください")
+                raise ValueError(f"value:{value} が重複しました。全単射にしてください")
 
             self._rev_data[value] = key
 

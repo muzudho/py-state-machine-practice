@@ -17,10 +17,10 @@
             }
         },
         "Stairs":{
-            "Up":["My room"],
+            "Up":["MyRoom"],
             "Failed":["Out"]
         },
-        "My room":{
+        "MyRoom":{
             "Sitting down":null,
             "Failed":["Out"]
         }
