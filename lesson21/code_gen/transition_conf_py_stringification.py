@@ -1,11 +1,10 @@
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
 from lesson18.const_conf import ConstConf
-from lesson18_data.step1_const_dict_pen import pen_const_py_dict
 
 
 class TransitionConfPyStringification:
-    def __init__(self):
-        self._const_conf = ConstConf(pen_const_py_dict)
+    def __init__(self, const_py_dict):
+        self._const_conf = ConstConf(const_py_dict)
         self._used_const_set = set()
 
     @classmethod
