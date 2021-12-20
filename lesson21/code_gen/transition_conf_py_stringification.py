@@ -12,7 +12,7 @@ class TransitionConfPyStringification:
     def n4sp(clazz, indent):
         return "".join(["    "] * indent)  # 4 spaces
 
-    def stringify(self, ordered_dict_data):
+    def stringify(self, variable_name, ordered_dict_data):
         """
         Parameters
         ----------
@@ -29,7 +29,7 @@ class TransitionConfPyStringification:
         entry_node = self._const_conf.replace_item(entry_node, '"')  # 定数、でなければ "文字列"
         self._const_conf.pickup_from_item_to_set(entry_node, self._used_const_set)
 
-        text = f"""transition_conf_data = {{
+        text = f"""{variable_name} = {{
     "title": "{title}",
     "entry_node": {entry_node},
     "data": {{
@@ -39,20 +39,24 @@ class TransitionConfPyStringification:
 
         block_list = []
         for key, value in ordered_dict_data["data"].items():
+            # 定数 or "文字列" 判定
+            k_operand = self._const_conf.replace_item(key, '"')  # 定数、でなければ "文字列"
+            self._const_conf.pickup_from_item_to_set(k_operand, self._used_const_set)
+
             if isinstance(value, dict):
                 block_list.append(
-                    f'{n4sp}"{key}":{{\n'
+                    f"{n4sp}{k_operand}: {{\n"
                     + f",\n".join(self._child_dict(value, indent + 1))
                     + f"\n{n4sp}}}"
                 )
             elif isinstance(value, list):
                 block_list.append(
-                    f'{n4sp}"{key}":["' + '","'.join(self._child_list(value)) + f'"]'
+                    f"{n4sp}{k_operand}: [" + ", ".join(self._child_list(value)) + f"]"
                 )
             elif value is None:
-                block_list.append(f'{n4sp}"{key}":null')
+                block_list.append(f"{n4sp}{k_operand}:null")
             else:
-                block_list.append(f"<★Error key={key} value={value}>")
+                block_list.append(f"<★Error key={k_operand} value={value}>")
 
         text += ",\n".join(block_list)
 
@@ -80,10 +84,10 @@ class TransitionConfPyStringification:
             text = ""
 
             # 定数 or "文字列" 判定
-            # k_operand = const_conf.replace_item(k, '"')  # 定数、でなければ "文字列"
-            # const_conf.pickup_from_item_to_set(k_operand, used_const_set)
+            k_operand = self._const_conf.replace_item(k, '"')  # 定数、でなければ "文字列"
+            self._const_conf.pickup_from_item_to_set(k_operand, self._used_const_set)
 
-            text += f'{n4sp}"{k}":'
+            text += f"{n4sp}{k_operand}: "
 
             # v
             if isinstance(v, dict):
@@ -91,7 +95,7 @@ class TransitionConfPyStringification:
                     "{\n" + ",\n".join(self._child_dict(v, indent + 1)) + f"\n{n4sp}}}"
                 )
             elif isinstance(v, list):
-                text += '["' + '","'.join(self._child_list(v)) + f'"]'
+                text += "[" + ", ".join(self._child_list(v)) + f"]"
             elif v is None:
                 text += "None"
             else:
@@ -101,7 +105,12 @@ class TransitionConfPyStringification:
         return block_list
 
     def _child_list(self, data):
-        item_s = []
+        item_list = []
         for item in data:
-            item_s.append(item)
-        return item_s
+
+            # 定数 or "文字列" 判定
+            operand = self._const_conf.replace_item(item, '"')  # 定数、でなければ "文字列"
+            self._const_conf.pickup_from_item_to_set(operand, self._used_const_set)
+
+            item_list.append(operand)
+        return item_list
