@@ -1,3 +1,8 @@
+from lesson18.code_gen.py_syntax.import_gen import ImportGen
+from lesson18.const_conf import ConstConf
+from lesson18_data.step1_const_dict_pen import pen_const_py_dict
+
+
 class TransitionConfPyStringification:
     @classmethod
     def n4sp(clazz, indent):
@@ -12,12 +17,17 @@ class TransitionConfPyStringification:
             OrderedDict を使った構造
         """
 
+        const_conf = ConstConf(pen_const_py_dict)
+        used_const_set = set()
+
         indent = 0
         n4sp = TransitionConfPyStringification.n4sp(indent)  # 4 spaces
         title = ordered_dict_data["title"]  # TODO ダブルクォーテーションのエスケープ
-        entry_node = (
-            f'"{ordered_dict_data["entry_node"]}"'  # TODO ダブルクォーテーションの取り扱い or 定数
-        )
+
+        # TODO ダブルクォーテーションの取り扱い or 定数
+        entry_node = ordered_dict_data["entry_node"]
+        entry_node = const_conf.replace_item(entry_node, '"')  # 定数、でなければ "文字列"
+        const_conf.pickup_from_item_to_set(entry_node, used_const_set)
 
         text = f"""transition_conf_data = {{
     "title": "{title}",
@@ -56,6 +66,15 @@ class TransitionConfPyStringification:
     }
 }
 """
+
+        # 定数のインポートをファイルの冒頭に付けます
+        # TODO importのパスを変数にしたい
+        if 0 < len(used_const_set):
+            import_statement = ImportGen.generate(
+                from_s="lesson18_data.step1n2_auto_const.pen_const",
+                import_set=used_const_set,
+            )
+            text = f"{import_statement}\n{text}"
 
         return text
 
