@@ -2,7 +2,7 @@ import os
 from lesson16.code_gen.file_io import FileIo
 
 from lesson18.const_conf import ConstConf
-from lesson18_data.step1_pen_const_dict import pen_const_py_dict
+from lesson18_data.pen_step1_const_dict import pen_const_py_dict
 
 
 def const_file_gen(file_path):
