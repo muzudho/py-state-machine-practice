@@ -1,7 +1,7 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen import StateFileGen
 from lesson18.const_conf import ConstConf
-from lesson18_data.step1_const_dict_pen import pen_const_py_dict
+from lesson18_data.step1_pen_const_dict import pen_const_py_dict
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
 

@@ -6,7 +6,7 @@ from lesson18.state_machine_helper import StateMachineHelper
 from lesson18_data.step1n2_auto_const.pen_const import INIT
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
-from lesson18_data.step4_state_gen_pen import pen_state_gen
+from lesson18_data.step4_pen_state_gen import pen_state_gen
 
 
 class Server:
