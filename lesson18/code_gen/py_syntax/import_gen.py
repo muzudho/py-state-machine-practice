@@ -4,5 +4,5 @@ class ImportGen:
         if len(import_set) < 1:
             return ""
 
-        list_s = ", ".join(import_set)
+        list_s = ", ".join(sorted(import_set))
         return f"from {from_s} import {list_s}\n"
