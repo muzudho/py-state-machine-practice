@@ -1,0 +1,18 @@
+{
+    "OUT": "Out",
+    "CLOSE_DOOR": "CloseDoor",
+    "OPEN_DOOR": "OpenDoor",
+    "STAIRS": "Stairs",
+    "MY_ROOM": "MyRoom",
+    "E_TURNED_KNOB": "turned_knob",
+    "E_PULLED_KNOB": "pulled_knob",
+    "E_ENTER": "enter",
+    "E_UP": "up",
+    "E_SITTING_DOWN": "sitting_down",
+    "E_FAILED": "failed",
+    "MSG_TURN_KNOB": "Turn knob",
+    "MSG_PULL_KNOB": "Pull knob",
+    "MSG_ENTER": "Enter",
+    "MSG_UP": "Up",
+    "MSG_SIT_DOWN": "Sit down"
+}
