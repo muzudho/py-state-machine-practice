@@ -48,6 +48,8 @@ class InitState():
 
 
 ```shell
-python.exe -m lesson17.main_step1
+python.exe -m lesson17.main_step1_wcsc_const
+python.exe -m lesson17.main_step1_pen_const
+python.exe -m lesson17.main_step1_house3_const
 python.exe -m lesson17.main_step2
 ```
