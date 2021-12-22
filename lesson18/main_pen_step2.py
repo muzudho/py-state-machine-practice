@@ -3,7 +3,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson18.code_gen.state_files_gen import gen_state_files
 
-OUTPUT_DIR = "lesson18/step2n2_auto_state"
+OUTPUT_DIR = "lesson18/pen_step2n2_auto_state"
 
 
 class Main:

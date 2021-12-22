@@ -1,4 +1,4 @@
-from lesson18.step2n2_auto_state.init_this_is import InitThisIsState
+from lesson18.pen_step2n2_auto_state.init_this_is import InitThisIsState
 
 __is_verbose = True
 
