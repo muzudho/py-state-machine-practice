@@ -11,7 +11,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
 from lesson18_data.house3_step1_const_dict import house3_const_py_dict
 
 INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/house3n2-transition2.json"
-OUTPUT_AUTO_FILE_PATH = "lesson21/step2n2_auto/step2_house3n2_transition2.py"
+OUTPUT_AUTO_FILE_PATH = "lesson21_data/step2n2_auto/step2_house3n2_transition2.py"
 OUTPUT_VARIABLE_NAME = "house3n2_transition2_py_dict"
 
 
