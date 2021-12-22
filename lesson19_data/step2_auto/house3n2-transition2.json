@@ -3,10 +3,8 @@
     "entry_node": "Out",
     "data": {
         "Out":{
-            "":{
-                "turned_knob":["Out","CloseDoor"],
-                "failed":["Out"]
-            },
+            "turned_knob":["Out","CloseDoor"],
+            "failed":["Out"],
             "CloseDoor":{
                 "pulled_knob":["Out","OpenDoor"],
                 "failed":["Out"]
