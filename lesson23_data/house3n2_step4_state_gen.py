@@ -10,8 +10,8 @@ from lesson23.house3n2_step2n2_auto_state.stairs import StairsState
 
 # Lesson 23 State wrapper
 from lesson23.house3n2_step3_man_state.myroom import create_my_room
-from lesson23.house3n2_step3_man_state.out_closedoor import create_close_door
-from lesson23.house3n2_step3_man_state.out_opendoor import create_open_door
+from lesson23.house3n2_step3_man_state.out_closedoor import create_out_close_door
+from lesson23.house3n2_step3_man_state.out_opendoor import create_out_open_door
 from lesson23.house3n2_step3_man_state.out import create_out
 from lesson23.house3n2_step3_man_state.stairs import create_stairs
 
@@ -20,8 +20,8 @@ from lesson23.house3n2_step3_man_state.stairs import create_stairs
 house3n2_state_gen = {
     MY_ROOM: {
         "": lambda: create_my_room(MyRoomState()),
-        CLOSE_DOOR: lambda: create_close_door(OutCloseDoorState),
-        OPEN_DOOR: lambda: create_open_door(OutOpenDoorState),
+        CLOSE_DOOR: lambda: create_out_close_door(OutCloseDoorState),
+        OPEN_DOOR: lambda: create_out_open_door(OutOpenDoorState),
     },
     OUT: lambda: create_out(OutState()),
     STAIRS: lambda: create_stairs(StairsState()),

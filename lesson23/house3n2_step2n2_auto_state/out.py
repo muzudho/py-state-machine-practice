@@ -1,4 +1,4 @@
-from lesson18_data.step1n2_auto_const.pen_const import E_FAILED, E_TURNED_KNOB
+from lesson23_data.step1n2_auto_const.house3n2_const import E_FAILED, E_TURNED_KNOB
 
 class OutState():
     def update(self, req):

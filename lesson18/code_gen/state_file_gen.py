@@ -66,7 +66,6 @@ class StateFileGen:
                 )
 
         # 定数のインポートをファイルの冒頭に付けます
-        # TODO importのパスを変数にしたい
         if 0 < len(used_const_set):
             import_statement = ImportGen.generate_import(
                 from_s=import_from_path,
