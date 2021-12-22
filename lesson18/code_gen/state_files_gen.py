@@ -1,12 +1,10 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen import StateFileGen
 from lesson18.const_conf import ConstConf
-from lesson18_data.pen_step1_const_dict import pen_const_py_dict
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
-from lesson14_data.step2_pen_transition import pen_transition_py_dict
 
 
-def gen_state_files_v18(dir_path):
+def gen_state_files_v18(dir_path, pen_const_py_dict, pen_transition_py_dict):
     const_conf = ConstConf(pen_const_py_dict)
     transition_conf = TransitionConfV1n3(pen_transition_py_dict)
 
