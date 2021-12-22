@@ -7,5 +7,7 @@ TODO JSONをdict等へ変換
 # Run
 
 ```shell
-python.exe -m lesson22.main_step1_house3_const
+python.exe -m lesson22.main_step1_house3n2_const
+python.exe -m lesson22.main_step1n2_pen_const
+python.exe -m lesson22.main_step1n3_wcsc_const
 ```

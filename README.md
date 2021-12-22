@@ -35,3 +35,4 @@
 * 📖 [Lesson19](./lesson19) - `conf_transition_py_dict.py` のデータ部を JSON へ書き出してみましょう
 * 📖 [Lesson20](./lesson20) - `pen-transition.json` ファイルを読み取ってみましょう
 * 📖 [Lesson21](./lesson21) - トランジション設定ファイル（JSON形式）から、 `pen_transition.py` ファイルを逆生成してみましょう
+* 📖 [Lesson22](./lesson22) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
