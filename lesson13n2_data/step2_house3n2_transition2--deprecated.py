@@ -14,8 +14,10 @@ from lesson12_data.step1_house3_const import (
 
 house3n2_transition2_py_dict = {
     OUT: {
-        E_TURNED_KNOB: [OUT, CLOSE_DOOR],
-        E_FAILED: [OUT],
+        "": {
+            E_TURNED_KNOB: [OUT, CLOSE_DOOR],
+            E_FAILED: [OUT],
+        },
         CLOSE_DOOR: {
             E_PULLED_KNOB: [OUT, OPEN_DOOR],
             E_FAILED: [OUT],

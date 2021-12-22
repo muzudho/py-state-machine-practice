@@ -4,9 +4,9 @@ from lesson07n2.main_finally import MainFinally
 from lesson18.code_gen.state_files_gen import gen_state_files_v18
 from lesson20.transition_json_reader import TransitionJsonReader
 
-INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-pen-const.json"
-INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
-OUTPUT_STEP2_AUTO_STATE_DIR = "lesson23/pen_step2n2_auto_state"
+INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-house3-const.json"
+INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/house3n2-transition3.json"
+OUTPUT_STEP2_AUTO_STATE_DIR = "lesson23/house3n2_step2n2_auto_state"
 
 
 class Main:

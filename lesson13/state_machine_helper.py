@@ -14,6 +14,7 @@ class StateMachineHelper:
             print(f"[lookup_next_state 14] drop state_node={state_node}")
             curr_dict = curr_dict[state_node]
 
+        # TODO 無名キーの仕様は廃止したい
         # サブステートに無名状態があれば規定値ですので最下層まで下りていきましょう
         while "" in curr_dict:
             curr_dict = curr_dict[""]
