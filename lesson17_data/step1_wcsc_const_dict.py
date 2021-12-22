@@ -22,6 +22,7 @@ wcsc_const_py_dict = {
     # ディクショナリーのキーとして State と被らないように頭に E_ を付けます
     "E_OK": "ok",
     "E_INCORRECT": "incorrect",
+    "E_LOGIN": "login",
     "E_LOGOUT": "logout",
     "E_COMPLETED": "completed",
     "E_GAME_SUMMARY": "game_summary",
