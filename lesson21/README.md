@@ -20,7 +20,7 @@ step2-3:
 ## Run
 
 ```shell
-python.exe -m lesson21.main_step2_house3n2_transition2
-python.exe -m lesson21.main_step2n2_pen_transition
-python.exe -m lesson21.main_step2n3_wcsc_transition
+python.exe -m lesson21.main_house3n2_step2_transition2
+python.exe -m lesson21.main_pen_step2_transition
+python.exe -m lesson21.main_wcsc_step2_transition
 ```

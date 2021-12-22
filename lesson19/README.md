@@ -21,7 +21,7 @@ step2n3:
 ## Run
 
 ```shell
-python.exe -m lesson19.main_step2_pen_transition
-python.exe -m lesson19.main_step2n2_wcsc_transition
-python.exe -m lesson19.main_step2n3_house3n2_transition3
+python.exe -m lesson19.main_pen_step2_transition
+python.exe -m lesson19.main_wcsc_step2_transition
+python.exe -m lesson19.main_house3n2_step2_transition3
 ```
