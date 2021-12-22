@@ -5,7 +5,8 @@ from lesson15n2.directive_edge import DirectiveEdge
 class TransitionConfV1n3(TransitionConfV1n2):
     @classmethod
     def create_edge_list_by_node_path(clazz, curr_dict, node_path):
-        """ノードパスを指定して、辺（DirectiveEdgeクラス）の一覧を作成"""
+        """ノードパスを辿って任意のノードまで下りていき、
+        そのノードの辺（DirectiveEdgeクラス）の一覧を作成"""
         # print(f"[128] node_path={node_path}")
 
         def __create_edge_list(curr_dict, result_edge_list, node_path, depth):
