@@ -37,7 +37,7 @@ pen
 q
 ```
 
-# house3n2
+# house3n2 (WIP)
 
 ## Set up
 
@@ -48,10 +48,30 @@ python.exe -m lesson23.main_house3n2_step2
 
 ## Run
 
+Server start:  
+
 ```shell
+python.exe -m lesson23.main_house3n2_step3
 ```
 
-# wcsc
+Client start:  
+
+```shell
+python.exe -m lesson09.main
+```
+
+Input:  
+
+```plain
+Turn knob
+Pull knob
+Enter
+Up
+Sit down
+q
+```
+
+# wcsc (WIP)
 ## Set up
 
 ```shell

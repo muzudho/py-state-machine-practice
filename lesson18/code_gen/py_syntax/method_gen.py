@@ -1,6 +1,6 @@
 class MethodGen:
     @classmethod
-    def generate(clazz, name, parameters_s, body_sequence=None):
+    def generate_method(clazz, name, parameters_s, body_sequence=None):
         signature = MethodGen.signature(name=name, parameters_s=parameters_s)
 
         if body_sequence is None:

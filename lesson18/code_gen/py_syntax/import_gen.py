@@ -1,6 +1,6 @@
 class ImportGen:
     @classmethod
-    def generate(self, from_s, import_set):
+    def generate_import(self, from_s, import_set):
         if len(import_set) < 1:
             return ""
 

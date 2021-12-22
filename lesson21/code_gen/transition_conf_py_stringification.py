@@ -67,7 +67,7 @@ class TransitionConfPyStringification:
         # 定数のインポートをファイルの冒頭に付けます
         # TODO importのパスを変数にしたい
         if 0 < len(self._used_const_set):
-            import_statement = ImportGen.generate(
+            import_statement = ImportGen.generate_import(
                 from_s="lesson18_data.step1n2_auto_const.pen_const",
                 import_set=self._used_const_set,
             )

@@ -1,6 +1,6 @@
 class SwitchGen:
     @classmethod
-    def generate(clazz, indent, switch_model):
+    def generate_switch(clazz, indent, switch_model):
         """分岐構造を記述します
 
         Parameters

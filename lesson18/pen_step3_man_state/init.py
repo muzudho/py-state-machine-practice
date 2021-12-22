@@ -3,7 +3,7 @@ from lesson18_data.step1n2_auto_const.pen_const import E_THIS
 __is_verbose = True
 
 
-def create_init_state(target_state):
+def create_init_state(state):
     def __on_entry(req):
         """現在位置の表示"""
         state_path_str = "/".join(req.state_path)
@@ -11,8 +11,6 @@ def create_init_state(target_state):
             f"""[English] "This" "is" "a" "pen" と１単語を１行ずつ打鍵してください。
 State path={state_path_str}""".encode()
         )
-
-    target_state.on_entry = __on_entry
 
     def __on_trigger(req):
         msg = req.pull_trigger()
@@ -23,24 +21,21 @@ State path={state_path_str}""".encode()
 
         return msg
 
-    target_state.on_trigger = __on_trigger
-
     def __on_this(req):
         if __is_verbose:
             req.c_sock.send(f"[English] This分岐".encode())
-
-    target_state.on_this = __on_this
 
     def __on_that(req):
         if __is_verbose:
             req.c_sock.send(f"[English] That分岐".encode())
 
-    target_state.on_that = __on_that
-
     def __on_over(req):
         if __is_verbose:
             req.c_sock.send(f"[English] Over分岐".encode())
 
-    target_state.on_over = __on_over
-
-    return target_state
+    state.on_entry = __on_entry
+    state.on_trigger = __on_trigger
+    state.on_this = __on_this
+    state.on_that = __on_that
+    state.on_over = __on_over
+    return state

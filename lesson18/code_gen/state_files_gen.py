@@ -22,4 +22,6 @@ def gen_state_files_v18(dir_path, const_py_dict, transition_py_dict):
         if node_path is None:
             continue
 
-        StateFileGen().generate(dir_path, const_conf, transition_conf, node_path)
+        StateFileGen().generate_state_file(
+            dir_path, const_conf, transition_conf, node_path
+        )

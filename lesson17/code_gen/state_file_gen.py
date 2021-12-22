@@ -25,16 +25,6 @@ def gen_state_file(dir_path, node_path, const_conf, transition_conf):
         transition_conf.data, node_path.split("/")
     )
 
-    # line_list = []
-    # for edge in directed_edge_list:
-    #    line_list.append(f"# {{edge.name}}")
-    #
-    # text += CommentGen.generate("        ", line_list)
-    #                    text += """
-    #        # 何もせず終わります
-    #        return E_OVER
-    # """
-
     used_const = set()
     if_elif_list = []
     for edge in directed_edge_list:
@@ -71,7 +61,7 @@ def gen_state_file(dir_path, node_path, const_conf, transition_conf):
     else_sequence = ['raise ValueError(f"Unexpected msg:{msg}")']
 
     switch_model = [if_elif_list, else_sequence]
-    text += SwitchGen.generate("        ", switch_model)
+    text += SwitchGen.generate_switch("        ", switch_model)
 
     # 定数をインポートします
     # TODO import文を変数にしたい

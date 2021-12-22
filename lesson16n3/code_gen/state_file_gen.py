@@ -26,18 +26,9 @@ def gen_state_file(transition_conf, node_path):
         transition_conf.data, node_path.split("/")
     )
 
-    # line_list = []
-    # for edge in directed_edge_list:
-    #    line_list.append(f"# {{edge.name}}")
-    #
-    # text += CommentGen.generate("        ", line_list)
-    #                    text += """
-    #        # 何もせず終わります
-    #        return E_OVER
-    # """
     switch_model = __edge_switch_model(directed_edge_list)
 
-    text += SwitchGen.generate("        ", switch_model)
+    text += SwitchGen.generate_switch("        ", switch_model)
 
     FileIo.write(file_path, text)
 

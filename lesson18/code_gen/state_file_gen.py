@@ -8,7 +8,7 @@ from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 
 class StateFileGen:
     @classmethod
-    def generate(clazz, dir_path, const_conf, transition_conf, node_path):
+    def generate_state_file(clazz, dir_path, const_conf, transition_conf, node_path):
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")
         # print(f"[Render] node_path={node_path} ----> {file_stem}")
@@ -28,7 +28,7 @@ class StateFileGen:
             const_conf.pickup_from_item_to_set(edge.name, used_const_set)
 
         text = ""
-        text += ClassGen.generate(name=f"{class_name}State")
+        text += ClassGen.generate_class(name=f"{class_name}State")
         text += MethodGen.signature(name="update", parameters_s="self, req")
         text += """
         self.on_entry(req)
@@ -46,12 +46,12 @@ class StateFileGen:
             directed_edge_list=directed_edge_list,
             used_const_set=used_const_set,
         )
-        text += SwitchGen.generate("        ", switch_model=switch_model)
+        text += SwitchGen.generate_switch("        ", switch_model=switch_model)
         text += "\n"
 
         # ハンドラ生成
-        text += MethodGen.generate(name="on_entry", parameters_s="self, req")
-        text += MethodGen.generate(
+        text += MethodGen.generate_method(name="on_entry", parameters_s="self, req")
+        text += MethodGen.generate_method(
             name="on_trigger",
             parameters_s="self, req",
             body_sequence=["return req.pull_trigger()"],
@@ -59,14 +59,14 @@ class StateFileGen:
         # ハンドラ自動生成
         for edge in directed_edge_list:
             if edge.name != "":
-                text += MethodGen.generate(
+                text += MethodGen.generate_method(
                     name=f"on_{edge.name}", parameters_s="self, req"
                 )
 
         # 定数のインポートをファイルの冒頭に付けます
         # TODO importのパスを変数にしたい
         if 0 < len(used_const_set):
-            import_statement = ImportGen.generate(
+            import_statement = ImportGen.generate_import(
                 from_s="lesson18_data.step1n2_auto_const.pen_const",
                 import_set=used_const_set,
             )
