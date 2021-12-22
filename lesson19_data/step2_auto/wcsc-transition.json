@@ -1,6 +1,6 @@
 {
     "title" : "CSA Server protocol 1.2.1",
-    "entry_node": "Init",
+    "entry_state": "Init",
     "data": {
         "Init":{
             "login":["Init","Login"],

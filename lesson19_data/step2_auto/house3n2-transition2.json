@@ -1,6 +1,6 @@
 {
     "title" : "House",
-    "entry_node": "Out",
+    "entry_state": "Out",
     "data": {
         "Out":{
             "turned_knob":["Out","CloseDoor"],

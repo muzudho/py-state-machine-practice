@@ -7,10 +7,10 @@ from lesson19.code_gen.transition_json_stringification import (
 
 class TransitionJsonWriter:
     @classmethod
-    def write(clazz, file_path, title, entry_node, data):
+    def write(clazz, file_path, title, entry_state, data):
         text = TransitionJsonStringification.stringify(
             title=title,
-            entry_node=entry_node,
+            entry_state=entry_state,
             data=data,
         )
         FileIo.makedirs(os.path.dirname(file_path))

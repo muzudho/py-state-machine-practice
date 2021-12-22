@@ -14,7 +14,7 @@ from lesson12_data.step1_house3_const import (
 
 house3n2_transition3_py_dict = {
     "title": "House",
-    "entry_node": OUT,
+    "entry_state": OUT,
     "data": {
         OUT: {
             E_TURNED_KNOB: [OUT, CLOSE_DOOR],

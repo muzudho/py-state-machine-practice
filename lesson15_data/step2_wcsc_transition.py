@@ -24,7 +24,7 @@ from lesson15_data.step1_wcsc_const import (
 
 wcsc_transition_py_dict = {
     "title": "CSA Server protocol 1.2.1",
-    "entry_node": INIT,
+    "entry_state": INIT,
     "data": {
         INIT: {
             E_LOGIN: [INIT, LOGIN],

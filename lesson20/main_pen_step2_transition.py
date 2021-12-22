@@ -29,7 +29,7 @@ class Main:
         TransitionJsonWriter.write(
             file_path=OUTPUT_JSON_FILE_PATH_2,
             title=transition_json_obj["title"],
-            entry_node=transition_json_obj["entry_node"],
+            entry_state=transition_json_obj["entry_state"],
             data=transition_json_obj["data"],
         )
 

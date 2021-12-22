@@ -1,6 +1,6 @@
 {
     "title" : "This is a pen",
-    "entry_node": "Init",
+    "entry_state": "Init",
     "data": {
         "Init":{
             "over":["Init"],

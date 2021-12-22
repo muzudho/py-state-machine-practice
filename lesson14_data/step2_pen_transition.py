@@ -17,7 +17,7 @@ from lesson14_data.step1_pen_const import (
 
 pen_transition_py_dict = {
     "title": "This is a pen",
-    "entry_node": INIT,
+    "entry_state": INIT,
     "data": {
         INIT: {
             E_OVER: [INIT],

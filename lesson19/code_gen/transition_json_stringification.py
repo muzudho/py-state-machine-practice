@@ -5,7 +5,7 @@ class TransitionJsonStringification:
         return "".join(["    "] * indent)
 
     @classmethod
-    def stringify(clazz, title, entry_node, data):
+    def stringify(clazz, title, entry_state, data):
         indent = 0
 
         text = f"{{\n"
@@ -16,7 +16,7 @@ class TransitionJsonStringification:
         # TODO エントリーノードは文字列か定数か
 
         text += f"""{n4sp}"title" : "{title}",
-{n4sp}"entry_node": "{entry_node}",
+{n4sp}"entry_state": "{entry_state}",
 {n4sp}"data": {{
 """
         indent += 1

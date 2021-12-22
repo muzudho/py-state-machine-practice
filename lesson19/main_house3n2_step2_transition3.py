@@ -15,7 +15,7 @@ class Main:
         TransitionJsonWriter.write(
             file_path=OUTPUT_FILE_PATH,
             title=transition_conf_obj.title,
-            entry_node=transition_conf_obj.entry_node,
+            entry_state=transition_conf_obj.entry_state,
             data=transition_conf_obj.data,
         )
         return 0

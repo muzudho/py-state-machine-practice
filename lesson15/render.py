@@ -56,7 +56,7 @@ class Render:
             # 始端記号
             c.node("(Start)", shape="circle", color="gray")
             # 始端と開始ノードのエッジ
-            c.edge("(Start)", transition_conf.entry_node, label="start")
+            c.edge("(Start)", transition_conf.entry_state, label="start")
             # 終端記号
             c.node("(Terminal)", shape="circle", color="gray")
 

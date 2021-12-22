@@ -24,13 +24,13 @@ class TransitionConfPyStringification:
         title = ordered_dict_data["title"]  # TODO ダブルクォーテーションのエスケープ
 
         # 定数 or "文字列" 判定
-        entry_node = ordered_dict_data["entry_node"]
-        entry_node = self._const_conf.replace_item(entry_node, '"')  # 定数、でなければ "文字列"
-        self._const_conf.pickup_from_item_to_set(entry_node, self._used_const_set)
+        entry_state = ordered_dict_data["entry_state"]
+        entry_state = self._const_conf.replace_item(entry_state, '"')  # 定数、でなければ "文字列"
+        self._const_conf.pickup_from_item_to_set(entry_state, self._used_const_set)
 
         text = f"""{variable_name} = {{
     "title": "{title}",
-    "entry_node": {entry_node},
+    "entry_state": {entry_state},
     "data": {{
 """
         indent += 2

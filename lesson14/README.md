@@ -9,7 +9,7 @@ lesson14_data/step2_pen_transition.py:
 
 pen_transition_py_dict = {
     "title": "This is a pen",
-    "entry_node": INIT,
+    "entry_state": INIT,
     "data": {
         INIT: {
             E_OVER: [INIT],
