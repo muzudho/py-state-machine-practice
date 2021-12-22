@@ -12,8 +12,8 @@ class Main:
     def on_main(self):
         gen_state_files_v18(
             dir_path=OUTPUT_STEP2_AUTO_DIR,
-            pen_const_py_dict=pen_const_py_dict,
-            pen_transition_py_dict=pen_transition_py_dict,
+            const_py_dict=pen_const_py_dict,
+            transition_py_dict=pen_transition_py_dict,
         )
         return 0
 
