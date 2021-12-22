@@ -3,7 +3,7 @@
     "entry_node": "Init",
     "data": {
         "Init": {
-            "": [
+            "login": [
                 "Init",
                 "Login"
             ],

@@ -3,44 +3,42 @@
     "entry_node": "Out",
     "data": {
         "Out": {
-            "": {
-                "TurnedKnob": [
-                    "Out",
-                    "CloseDoor"
-                ],
-                "Failed": [
-                    "Out"
-                ]
-            },
+            "turned_knob": [
+                "Out",
+                "CloseDoor"
+            ],
+            "failed": [
+                "Out"
+            ],
             "CloseDoor": {
-                "PulledKnob": [
+                "pulled_knob": [
                     "Out",
                     "OpenDoor"
                 ],
-                "Failed": [
+                "failed": [
                     "Out"
                 ]
             },
             "OpenDoor": {
-                "Enter": [
+                "enter": [
                     "Stairs"
                 ],
-                "Failed": [
+                "failed": [
                     "Out"
                 ]
             }
         },
         "Stairs": {
-            "Up": [
+            "up": [
                 "MyRoom"
             ],
-            "Failed": [
+            "failed": [
                 "Out"
             ]
         },
         "MyRoom": {
-            "Sitting down": null,
-            "Failed": [
+            "sitting_down": null,
+            "failed": [
                 "Out"
             ]
         }
