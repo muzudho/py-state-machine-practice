@@ -21,6 +21,7 @@ GAME = "Game"
 # ディクショナリーのキーとして State と被らないように頭に E_ を付けます
 
 E_OK = "ok"
+E_LOGIN = "login"
 E_INCORRECT = "incorrect"
 E_LOGOUT = "logout"
 E_COMPLETED = "completed"

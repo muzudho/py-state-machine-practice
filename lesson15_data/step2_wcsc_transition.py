@@ -6,6 +6,7 @@ from lesson15_data.step1_wcsc_const import (
     E_GAME_OVER_WCSC,
     E_GAME_SUMMARY,
     E_INCORRECT,
+    E_LOGIN,
     E_LOGOUT,
     E_MOVE,
     E_MOVE_ECHO,
@@ -26,7 +27,7 @@ wcsc_transition_py_dict = {
     "entry_node": INIT,
     "data": {
         INIT: {
-            "": [INIT, LOGIN],
+            E_LOGIN: [INIT, LOGIN],
             LOGIN: {E_OK: [LOBBY], E_INCORRECT: [INIT]},
         },
         LOBBY: {

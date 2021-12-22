@@ -6,7 +6,7 @@ digraph {
 		"(Start)" -> Init [label=start]
 		"(Terminal)" [color=gray shape=circle]
 		Init [color=pink shape=circle]
-		Init -> "Init/Login" [label=""]
+		Init -> "Init/Login" [label=login]
 		"Init/Login" [color=pink shape=circle]
 		"Init/Login" -> Lobby [label=ok]
 		"Init/Login" [color=pink shape=circle]
