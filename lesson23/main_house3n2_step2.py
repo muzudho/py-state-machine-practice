@@ -7,6 +7,7 @@ from lesson20.transition_json_reader import TransitionJsonReader
 INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-house3-const.json"
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/house3n2-transition3.json"
 OUTPUT_STEP2_AUTO_STATE_DIR = "lesson23/house3n2_step2n2_auto_state"
+IMPORT_FROM_PATH = "lesson18_data.step1n2_auto_const.pen_const"
 
 
 class Main:
@@ -22,6 +23,7 @@ class Main:
             dir_path=OUTPUT_STEP2_AUTO_STATE_DIR,
             const_py_dict=const_json_obj,
             transition_py_dict=transition_json_obj,
+            import_from_path=IMPORT_FROM_PATH,
         )
         return 0
 

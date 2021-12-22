@@ -8,7 +8,9 @@ from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 
 class StateFileGen:
     @classmethod
-    def generate_state_file(clazz, dir_path, const_conf, transition_conf, node_path):
+    def generate_state_file(
+        clazz, dir_path, const_conf, transition_conf, node_path, import_from_path
+    ):
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")
         # print(f"[Render] node_path={node_path} ----> {file_stem}")
@@ -67,7 +69,7 @@ class StateFileGen:
         # TODO importのパスを変数にしたい
         if 0 < len(used_const_set):
             import_statement = ImportGen.generate_import(
-                from_s="lesson18_data.step1n2_auto_const.pen_const",
+                from_s=import_from_path,
                 import_set=used_const_set,
             )
             text = f"{import_statement}\n{text}"

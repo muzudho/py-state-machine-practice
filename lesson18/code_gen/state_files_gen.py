@@ -4,7 +4,7 @@ from lesson18.const_conf import ConstConf
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
-def gen_state_files_v18(dir_path, const_py_dict, transition_py_dict):
+def gen_state_files_v18(dir_path, const_py_dict, transition_py_dict, import_from_path):
     const_conf = ConstConf(const_py_dict)
     transition_conf = TransitionConfV1n3(transition_py_dict)
 
@@ -23,5 +23,9 @@ def gen_state_files_v18(dir_path, const_py_dict, transition_py_dict):
             continue
 
         StateFileGen().generate_state_file(
-            dir_path, const_conf, transition_conf, node_path
+            dir_path,
+            const_conf,
+            transition_conf,
+            node_path,
+            import_from_path,
         )

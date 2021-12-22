@@ -6,6 +6,7 @@ from lesson18_data.pen_step1_const_dict import pen_const_py_dict
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
 
 OUTPUT_STEP2_AUTO_STATE_DIR = "lesson18/pen_step2n2_auto_state"
+IMPORT_FROM_PATH = "lesson18_data.step1n2_auto_const.pen_const"
 
 
 class Main:
@@ -14,6 +15,7 @@ class Main:
             dir_path=OUTPUT_STEP2_AUTO_STATE_DIR,
             const_py_dict=pen_const_py_dict,
             transition_py_dict=pen_transition_py_dict,
+            import_from_path=IMPORT_FROM_PATH,
         )
         return 0
 
