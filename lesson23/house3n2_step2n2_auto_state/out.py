@@ -1,3 +1,5 @@
+from lesson18_data.step1n2_auto_const.pen_const import E_FAILED, E_TURNED_KNOB
+
 class OutState():
     def update(self, req):
 
@@ -7,9 +9,13 @@ class OutState():
         msg = self.on_trigger(req)
 
         # 分岐
-        if True:
-            self.on_(req)
-            return ""
+        if msg == E_TURNED_KNOB:
+            self.on_turned_knob(req)
+            return E_TURNED_KNOB
+
+        elif msg == E_FAILED:
+            self.on_failed(req)
+            return E_FAILED
 
         else:
             raise ValueError(f"Unexpected msg:{msg}")
@@ -19,4 +25,10 @@ class OutState():
 
     def on_trigger(self, req):
         return req.pull_trigger()
+
+    def on_turned_knob(self, req):
+        pass
+
+    def on_failed(self, req):
+        pass
 
