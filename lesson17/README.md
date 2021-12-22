@@ -16,7 +16,7 @@ REPLY = 'Reply'
 # 以下略
 ```
 
-👆 step1 では、定数を定義した Pythonスクリプトを自動生成します  
+👆 step1 では、 Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、定数を定義した Pythonスクリプトを自動生成します  
 
 init.py:  
 

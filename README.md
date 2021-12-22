@@ -30,8 +30,8 @@
 * 📖 [Lesson16](./lesson16) - `step2n2_auto` フォルダーを自動生成し、その中に `init.py` （状態）ファイルの雛型を自動生成してみましょう
 * 📖 [Lesson16-2](./lesson16n2) - `pen_transition.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
 * 📖 [Lesson16-3](./lesson16n3) - 次に、 エッジの分岐を自動生成しましょう
-* 📖 [Lesson17](./lesson17) - 定数をデータ化したディクショナリー（`const_dict.py`） から、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう
-* 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
+* 📖 [Lesson17](./lesson17) - Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう
+* 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
 * 📖 [Lesson19](./lesson19) - `conf_transition_py_dict.py` のデータ部を JSON へ書き出してみましょう
 * 📖 [Lesson20](./lesson20) - `pen-transition.json` ファイルを読み取ってみましょう
 * 📖 [Lesson21](./lesson21) - トランジション設定ファイル（JSON形式）から、 `pen_transition.py` ファイルを逆生成してみましょう
