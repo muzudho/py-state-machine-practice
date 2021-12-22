@@ -13,7 +13,6 @@ def const_file_gen(file_path):
     for key, value in conf.data.items():
         text += f"{key} = '{value}'\n"
 
-    # フォルダーが無ければ作る
+    # 出力
     FileIo.makedirs(os.path.dirname(file_path))
-
     FileIo.write(file_path, text)
