@@ -7,7 +7,7 @@ from lesson17.code_gen.const_file_gen import gen_const_file_v17
 from lesson20.transition_json_reader import TransitionJsonReader
 from lesson16.code_gen.file_io import FileIo
 
-INPUT_JSON_FILE_PATH = "lesson22_data/step1_pen_const.json"
+INPUT_JSON_FILE_PATH = "lesson22_data/step1-pen-const.json"
 OUTPUT_JSON_FILE_PATH = "lesson22_data/step1n2_auto_const/pen_const.json"
 OUTPUT_FILE_PATH = "lesson22_data/step1n2_auto_const/pen_const.py"
 
