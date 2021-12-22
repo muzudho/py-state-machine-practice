@@ -4,7 +4,6 @@ import os
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file
-from lesson17_data.step1_house3_const_dict import house3_const_py_dict
 from lesson20.transition_json_reader import TransitionJsonReader
 from lesson16.code_gen.file_io import FileIo
 
@@ -28,6 +27,7 @@ class Main:
 
         # dict等 に変換できれば、既存コードに引き渡せます
         # gen_const_file(OUTPUT_FILE_PATH, house3_const_py_dict)
+        gen_const_file(OUTPUT_FILE_PATH, transition_json_obj)
         return 0
 
     def on_finally(self):
