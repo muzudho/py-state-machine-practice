@@ -8,8 +8,10 @@ from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson20.transition_json_reader import TransitionJsonReader
 
 INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/house3n2-transition2.json"
-OUTPUT_JSON_FILE_PATH_1 = "lesson20_data/auto/house3n2-transition3-default-fomat.json"
-OUTPUT_JSON_FILE_PATH_2 = "lesson20_data/auto/house3n2-transition3.json"
+OUTPUT_JSON_FILE_PATH_1 = (
+    "lesson20_data/step2n2_auto/house3n2-transition3-default-fomat.json"
+)
+OUTPUT_JSON_FILE_PATH_2 = "lesson20_data/step2n2_auto/house3n2-transition3.json"
 
 
 class Main:
