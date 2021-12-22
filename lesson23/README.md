@@ -7,4 +7,6 @@ Pythonのdict（これはOrderedDictではありません）を経由せず、JS
 
 ```shell
 python.exe -m lesson23.main_pen_step1
+python.exe -m lesson23.main_house3n2_step1
+python.exe -m lesson23.main_wcsc_step1
 ```

@@ -1,12 +1,14 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson16n3.code_gen.state_files_gen import gen_state_files
+from lesson16n3.code_gen.state_files_gen import gen_state_files_v16n3
+
+STEP2_AUTO_DIR_PATH = "lesson16n3/step2n2_auto"
 
 
 class Main:
     def on_main(self):
-        gen_state_files()
+        gen_state_files_v16n3(STEP2_AUTO_DIR_PATH)
         return 0
 
     def on_finally(self):

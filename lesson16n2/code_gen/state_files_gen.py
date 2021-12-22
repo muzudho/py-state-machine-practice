@@ -4,7 +4,7 @@ from lesson16n2.transition_conf_v1n2 import TransitionConfV1n2
 from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
 
 
-def gen_state_files():
+def gen_state_files_v16n2(dir_path):
     transition_conf = TransitionConfV1n2(wcsc_transition_py_dict)
 
     # エッジの一覧
@@ -12,8 +12,7 @@ def gen_state_files():
     for edge in edge_list:
         print(f"[Render] edge={edge}")
 
-    # `step2n2_auto` フォルダーが無ければ作る
-    dir_path = "lesson16n2/step2n2_auto"
+    # フォルダーが無ければ作る
     FileIo.makedirs(dir_path)
 
     # ノードの一覧
