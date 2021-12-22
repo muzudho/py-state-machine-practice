@@ -1,12 +1,9 @@
 from lesson18_data.step1n2_auto_const.pen_const import E_THIS
-from lesson18.pen_step2n2_auto_state.init import InitState
 
 __is_verbose = True
 
 
-def create_init_state():
-    obj = InitState()
-
+def create_init_state(target_state):
     def __on_entry(req):
         """現在位置の表示"""
         state_path_str = "/".join(req.state_path)
@@ -15,7 +12,7 @@ def create_init_state():
 State path={state_path_str}""".encode()
         )
 
-    obj.on_entry = __on_entry
+    target_state.on_entry = __on_entry
 
     def __on_trigger(req):
         msg = req.pull_trigger()
@@ -26,24 +23,24 @@ State path={state_path_str}""".encode()
 
         return msg
 
-    obj.on_trigger = __on_trigger
+    target_state.on_trigger = __on_trigger
 
     def __on_this(req):
         if __is_verbose:
             req.c_sock.send(f"[English] This分岐".encode())
 
-    obj.on_this = __on_this
+    target_state.on_this = __on_this
 
     def __on_that(req):
         if __is_verbose:
             req.c_sock.send(f"[English] That分岐".encode())
 
-    obj.on_that = __on_that
+    target_state.on_that = __on_that
 
     def __on_over(req):
         if __is_verbose:
             req.c_sock.send(f"[English] Over分岐".encode())
 
-    obj.on_over = __on_over
+    target_state.on_over = __on_over
 
-    return obj
+    return target_state
