@@ -19,7 +19,8 @@ class Main:
         data = TransitionJsonReader.read_file(INPUT_TRANSITION_JSON_FILE_PATH)
 
         transition_conf_py_stringification = TransitionConfPyStringification(
-            pen_const_py_dict
+            const_py_dict=pen_const_py_dict,
+            import_from_path="lesson18_data.step1n2_auto_const.pen_const",
         )
         out_text = transition_conf_py_stringification.stringify(
             variable_name=OUTPUT_TRANSITION_VARIABLE_NAME, ordered_dict_data=data

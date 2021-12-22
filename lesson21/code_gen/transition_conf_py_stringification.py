@@ -3,9 +3,10 @@ from lesson18.const_conf import ConstConf
 
 
 class TransitionConfPyStringification:
-    def __init__(self, const_py_dict):
+    def __init__(self, const_py_dict, import_from_path):
         self._const_conf = ConstConf(const_py_dict)
         self._used_const_set = set()
+        self._import_from_path = import_from_path
 
     @classmethod
     def n4sp(clazz, indent):
@@ -65,10 +66,9 @@ class TransitionConfPyStringification:
 """
 
         # 定数のインポートをファイルの冒頭に付けます
-        # TODO importのパスを変数にしたい
         if 0 < len(self._used_const_set):
             import_statement = ImportGen.generate_import(
-                from_s="lesson18_data.step1n2_auto_const.pen_const",
+                from_s=self._import_from_path,
                 import_set=self._used_const_set,
             )
             text = f"{import_statement}\n{text}"
