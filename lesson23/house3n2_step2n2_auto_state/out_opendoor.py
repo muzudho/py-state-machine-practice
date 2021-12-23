@@ -1,6 +1,6 @@
 from lesson23_data.step1n2_auto_const.house3n2_const import E_ENTER, E_FAILED
 
-class OutOpenDoorState():
+class OutOpendoorState():
     def update(self, req):
 
         self.on_entry(req)
