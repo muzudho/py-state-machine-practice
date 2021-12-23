@@ -36,3 +36,4 @@
 * 📖 [Lesson20](./lesson20) - `pen-transition.json` ファイルを読み取ってみましょう
 * 📖 [Lesson21](./lesson21) - トランジション設定ファイル（JSON形式）から、 `pen_transition.py` ファイルを逆生成してみましょう
 * 📖 [Lesson22](./lesson22) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
+* 📖 [Lesson23](./lesson23) - Lesson18 をさらに発展させ、Pythonのdict（これはOrderedDictではありません）を経由せず、JSON（OrderedDictを使います）でデータ化した定数（`const_dict.py`）を元に、Lesson14と同等のPythonスクリプトのルーチン（状態のスクリプト）を自動生成しましょう

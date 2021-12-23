@@ -72,7 +72,7 @@ Sit down
 q
 ```
 
-# wcsc (WIP)
+# wcsc
 ## Set up
 
 ```shell
@@ -92,4 +92,32 @@ Client start:
 
 ```shell
 python.exe -m lesson09.main
+```
+
+Input:  
+
+```plain
+login
+incorrect
+
+login
+ok
+logout
+completed
+
+login
+ok
+game_summary
+reject
+reject
+
+game_summary
+agree
+start
+move
+move_echo
+game_over_floodgate
+
+login
+q
 ```
