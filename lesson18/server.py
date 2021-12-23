@@ -7,6 +7,10 @@ from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
 class Server:
+    @classmethod
+    def is_verbose(clazz):
+        return False
+
     def __init__(
         self,
         state_gen,
@@ -58,9 +62,11 @@ class Server:
 ----------------------""".encode()
             )
 
-            print(
-                f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
-            )
+            if Server.is_verbose():
+                print(
+                    f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
+                )
+
             transition_conf = TransitionConfV1n3(self._transition_py_dict)
 
             # 最初
@@ -86,24 +92,27 @@ class Server:
                     # メッセージに応じたアクションを行ったあと、Edge名を返します。
                     # Edge名は空でない文字列です。 None や list であってはいけません
                     edge_name = state.update(req)
-                    print(
-                        f"[L18 server.py] transition_conf.title={transition_conf.title}"
-                    )
-                    print(
-                        f"[L18 server.py] transition_conf.entry_state={transition_conf.entry_state}"
-                    )
-                    print(
-                        f"[L18 server.py] transition_conf.data={transition_conf.data}"
-                    )
-                    print(f"[L18 server.py] state_path={state_path}")
-                    print(f"[L18 server.py] edge_name={edge_name}")
+
+                    if Server.is_verbose():
+                        print(
+                            f"[L18 server.py] transition_conf.title={transition_conf.title}"
+                        )
+                        print(
+                            f"[L18 server.py] transition_conf.entry_state={transition_conf.entry_state}"
+                        )
+                        print(
+                            f"[L18 server.py] transition_conf.data={transition_conf.data}"
+                        )
+                        print(f"[L18 server.py] state_path={state_path}")
+                        print(f"[L18 server.py] edge_name={edge_name}")
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
                         transition_conf.data, state_path, edge_name
                     )
 
-                    print(f"[L18 server.py] state_path={state_path}")
+                    if Server.is_verbose():
+                        print(f"[L18 server.py] state_path={state_path}")
 
                     if state_path is None:
                         # 次のステートがナンだったので、ステートマシンは終了しました

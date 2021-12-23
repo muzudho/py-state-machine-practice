@@ -4,7 +4,7 @@
 class StateMachineHelperV13:
     @classmethod
     def is_verbose(clazz):
-        return True
+        return False
 
     @classmethod
     def lookup_next_state_path_v13(clazz, transition_conf_data, state_path, edge_name):
