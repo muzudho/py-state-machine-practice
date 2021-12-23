@@ -2,18 +2,30 @@ from lesson12_data.step1_house3_const import MSG_UP, E_FAILED, E_UP
 
 
 class StairsState:
-    def __init__(self):
-        pass
-
     def update(self, req):
-        req.c_sock.send("You can see the stairs.".encode())
+
+        self.on_entry(req)
 
         # 入力
-        message = req.pull_trigger()
+        msg = self.on_trigger(req)
 
         # `Up` とメッセージを送ってくるのが正解です
-        if message == MSG_UP:
+        if msg == MSG_UP:
+            self.on_up(req)
             return E_UP
 
         else:
+            self.on_failed(req)
             return E_FAILED
+
+    def on_entry(self, req):
+        req.c_sock.send("You can see the stairs.".encode())
+
+    def on_trigger(self, req):
+        return req.pull_trigger()
+
+    def on_up(self, req):
+        pass
+
+    def on_failed(self, req):
+        pass

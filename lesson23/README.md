@@ -10,7 +10,6 @@ Pythonのdict（これはOrderedDictではありません）を経由せず、JS
 ```shell
 python.exe -m lesson23.main_pen_step1
 python.exe -m lesson23.main_pen_step2
-python.exe -m lesson23.main_pen_step3
 ```
 
 ## Run
