@@ -71,11 +71,11 @@ state_gen_conf.py:
 house3_state_gen = {
     OUT: {
         '': lambda: OutState(),
-        CLOSE_DOOR: lambda: OutCloseDoorState(),
-        OPEN_DOOR: lambda: OutOpenDoorState(),
+        CLOSE_DOOR: lambda: OutClosedoorState(),
+        OPEN_DOOR: lambda: OutOpendoorState(),
     },
     STAIRS: lambda: StairsState(),
-    MY_ROOM: lambda: MyRoomState(),
+    MY_ROOM: lambda: MyroomState(),
 }
 ```
 

@@ -1,4 +1,4 @@
-def create_out_open_door(state):
+def create_out_opendoor(state):
     def __on_entry(self, req):
         req.c_sock.send("You can see the open door.".encode())
 

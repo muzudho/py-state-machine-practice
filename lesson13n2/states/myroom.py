@@ -1,7 +1,7 @@
 from lesson12_data.step1_house3_const import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
 
 
-class MyRoomState:
+class MyroomState:
     def update(self, req):
 
         self.on_entry(req)

@@ -1,7 +1,7 @@
 from lesson12_data.step1_house3_const import E_PULLED_KNOB, MSG_PULL_KNOB, E_FAILED
 
 
-class OutCloseDoorState:
+class OutClosedoorState:
     def update(self, req):
 
         self.on_entry(req)

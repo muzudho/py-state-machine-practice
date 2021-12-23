@@ -6,10 +6,10 @@ from lesson12_data.step1_house3_const import (
     OPEN_DOOR,
     STAIRS,
 )
-from lesson13.states.my_room import MyRoomState
+from lesson13.states.myroom import MyroomState
 from lesson13.states.out import OutState
-from lesson13.states.out_close_door import OutCloseDoorState
-from lesson13.states.out_open_door import OutOpenDoorState
+from lesson13.states.out_closedoor import OutClosedoorState
+from lesson13.states.out_opendoor import OutOpendoorState
 from lesson13.states.stairs import StairsState
 
 
@@ -17,9 +17,9 @@ from lesson13.states.stairs import StairsState
 house3_state_gen = {
     OUT: {
         "": lambda: OutState(),
-        CLOSE_DOOR: lambda: OutCloseDoorState(),
-        OPEN_DOOR: lambda: OutOpenDoorState(),
+        CLOSE_DOOR: lambda: OutClosedoorState(),
+        OPEN_DOOR: lambda: OutOpendoorState(),
     },
     STAIRS: lambda: StairsState(),
-    MY_ROOM: lambda: MyRoomState(),
+    MY_ROOM: lambda: MyroomState(),
 }

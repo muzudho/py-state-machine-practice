@@ -1,7 +1,7 @@
-from lesson11_data.step1_house_v1_const import MY_ROOM, OUT, MSG_SIT_DOWN
+from lesson12_data.step1_house3_const import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
 
 
-class MyRoomState:
+class MyroomState:
     def __init__(self):
         pass
 
@@ -12,8 +12,8 @@ class MyRoomState:
                 """Clear!
 Please push q key to quit.""".encode()
             )
-            return MY_ROOM
+            return E_SITTING_DOWN
 
         else:
             c_sock.send("You can see the house.".encode())
-            return OUT
+            return E_FAILED

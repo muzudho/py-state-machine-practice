@@ -1,16 +1,11 @@
-from lesson12_data.step1_house3_const import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
+from lesson11n3_data.step1_house2_const import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
 
 
-class MyRoomState:
+class MyroomState:
     def __init__(self):
         pass
 
-    def update(self, c_sock, pull_trigger):
-        c_sock.send("You can see the your room.".encode())
-
-        # 入力
-        message = pull_trigger()
-
+    def update(self, message, c_sock):
         # 'Sit down' とメッセージを送ってくるのが正解です
         if message == MSG_SIT_DOWN:
             c_sock.send(
@@ -20,4 +15,5 @@ Please push q key to quit.""".encode()
             return E_SITTING_DOWN
 
         else:
+            c_sock.send("You can see the house.".encode())
             return E_FAILED

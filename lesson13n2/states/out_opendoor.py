@@ -1,7 +1,7 @@
 from lesson12_data.step1_house3_const import E_ENTER, MSG_ENTER, E_FAILED
 
 
-class OutOpenDoorState:
+class OutOpendoorState:
     def update(self, req):
 
         self.on_entry(req)

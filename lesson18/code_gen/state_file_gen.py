@@ -11,8 +11,23 @@ class StateFileGen:
     def generate_state_file(
         clazz, dir_path, const_conf, transition_conf, node_path, import_from_path
     ):
+        """状態ファイルを作ります。
+
+        Parameters
+        ----------
+        node_path : str
+            "ThisIs/A/ColorPen" のような書式の文字列です
+        """
+
+        # "ThisIs/A/ColorPen" であれば、 "thisis_a_colorpen" に変換します
         file_stem = node_path.replace("/", "_").lower()
-        class_name = node_path.replace("/", "")
+
+        # "ThisIs/A/ColorPen" であれば、 "ThisisAColorpen" に変換します
+        class_name = ""
+        for node in node_path.split("/"):
+            node = node.capitalize()
+            class_name += node
+
         # print(f"[Render] node_path={node_path} ----> {file_stem}")
 
         # `init.py` ファイルを作成します

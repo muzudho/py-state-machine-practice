@@ -1,4 +1,4 @@
-def create_my_room(state):
+def create_myroom(state):
     def __on_entry(self, req):
         req.c_sock.send("You can see the your room.".encode())
 
