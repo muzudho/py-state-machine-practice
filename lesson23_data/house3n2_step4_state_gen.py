@@ -20,9 +20,11 @@ from lesson23.house3n2_step3_man_state.stairs import create_stairs
 house3n2_state_gen = {
     MY_ROOM: {
         "": lambda: create_myroom(MyroomState()),
+    },
+    OUT: {
+        "": lambda: create_out(OutState()),
         CLOSE_DOOR: lambda: create_out_closedoor(OutClosedoorState),
         OPEN_DOOR: lambda: create_out_opendoor(OutOpendoorState),
     },
-    OUT: lambda: create_out(OutState()),
     STAIRS: lambda: create_stairs(StairsState()),
 }

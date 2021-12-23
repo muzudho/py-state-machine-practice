@@ -36,7 +36,7 @@ pen
 q
 ```
 
-# house3n2 (WIP)
+# house3n2
 
 Lesson13n2 と同じ動きをするものを作りましょう  
 
@@ -81,3 +81,15 @@ python.exe -m lesson23.main_wcsc_step2
 ```
 
 ## Run
+
+Server start:  
+
+```shell
+python.exe -m lesson23.main_wcsc_step3
+```
+
+Client start:  
+
+```shell
+python.exe -m lesson09.main
+```

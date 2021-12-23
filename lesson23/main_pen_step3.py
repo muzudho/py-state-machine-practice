@@ -3,20 +3,25 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson18.server import Server
-from lesson14_data.step2_pen_transition import pen_transition_py_dict
+from lesson20.transition_json_reader import TransitionJsonReader
 
 # Lesson 23
 from lesson23_data.step1n2_auto_const.pen_const import INIT
 from lesson23_data.pen_step4_state_gen import pen_state_gen_v23
 
+INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
 server = None
 
 
 class Main:
     def on_main(self):
+        transition_json_obj = TransitionJsonReader.read_file(
+            INPUT_TRANSITION_JSON_FILE_PATH
+        )
+
         server = Server(
             state_gen=pen_state_gen_v23,
-            transition_py_dict=pen_transition_py_dict,
+            transition_py_dict=transition_json_obj,
             host="0.0.0.0",
             port=5002,
             entry_state=INIT,

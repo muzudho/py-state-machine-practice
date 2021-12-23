@@ -1,4 +1,4 @@
-from lesson18_data.step1n2_auto_const.pen_const import E_GAME_SUMMARY, E_LOGOUT
+from lesson23_data.step1n2_auto_const.wcsc_const import E_GAME_SUMMARY, E_LOGOUT
 
 class LobbyState():
     def update(self, req):

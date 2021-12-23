@@ -1,33 +1,39 @@
 import sys
 
+
 from lesson07n2.main_finally import MainFinally
-from lesson18.code_gen.state_files_gen import gen_state_files_v18
+from lesson18.server import Server
 from lesson20.transition_json_reader import TransitionJsonReader
 
-INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-wcsc-const.json"
+# Lesson 23
+from lesson23_data.step1n2_auto_const.house3n2_const import OUT
+from lesson23_data.wcsc_step4_state_gen import wcsc_state_gen
+
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/wcsc-transition.json"
-OUTPUT_STEP2_AUTO_STATE_DIR = "lesson23/wcsc_step2n2_auto_state"
-IMPORT_FROM_PATH = "lesson23_data.step1n2_auto_const.wcsc_const"
+server = None
 
 
 class Main:
     def on_main(self):
-        # JSONファイルから、定数と遷移の設定を読込みます
-        const_json_obj = TransitionJsonReader.read_file(INPUT_CONST_JSON_FILE_PATH)
         transition_json_obj = TransitionJsonReader.read_file(
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 
-        # 状態の .py スクリプトを出力します
-        gen_state_files_v18(
-            dir_path=OUTPUT_STEP2_AUTO_STATE_DIR,
-            const_py_dict=const_json_obj,
+        server = Server(
+            state_gen=wcsc_state_gen,
             transition_py_dict=transition_json_obj,
-            import_from_path=IMPORT_FROM_PATH,
+            host="0.0.0.0",
+            port=5002,
+            entry_state=OUT,
         )
+        server.run()
         return 0
 
     def on_finally(self):
+        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
+        if server:
+            server.clean_up()
+
         print("★しっかり終わった")
         return 1
 
