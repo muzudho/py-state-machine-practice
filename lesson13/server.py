@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 from lesson13.request import Request
-from lesson13.state_machine_helper import StateMachineHelper
+from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson12_data.step1_house3_const import OUT
 from lesson13_data.step2_house3_transition2 import house3_transition2_py_dict
 from lesson13_data.step3_house3_state_gen import house3_state_gen
@@ -51,7 +51,7 @@ class Server:
             # 最初は外に居ます
             state_path = [OUT]
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelper.create_state(house3_state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(house3_state_gen, state_path)
 
             while True:
                 try:
@@ -69,12 +69,12 @@ class Server:
                     print(f"[server.py 67] edge_name={edge_name}")
 
                     # transition_conf_data.py を見て state_path を得ます
-                    state_path = StateMachineHelper.lookup_next_state_path(
+                    state_path = StateMachineHelperV13.lookup_next_state_path_v13(
                         house3_transition2_py_dict, state_path, edge_name
                     )
 
                     # state_gen_conf.py を見て state_path から state を生成します
-                    state = StateMachineHelper.create_state(
+                    state = StateMachineHelperV13.create_state_v13(
                         house3_state_gen, state_path
                     )
 

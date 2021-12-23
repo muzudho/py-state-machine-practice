@@ -39,6 +39,8 @@ q
 
 # house3n2 (WIP)
 
+Lesson13n2 と同じ動きをするものを作りましょう  
+
 ## Set up
 
 ```shell

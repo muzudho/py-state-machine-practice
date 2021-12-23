@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 from lesson14.request import Request
-from lesson14.state_machine_helper import StateMachineHelper
+from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson14_data.step1_pen_const import INIT
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
 from lesson14_data.step3_pen_state_gen import pen_state_gen
@@ -51,7 +51,7 @@ class Server:
             # 最初
             state_path = [INIT]
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelper.create_state(pen_state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(pen_state_gen, state_path)
 
             while True:
                 try:
@@ -73,7 +73,7 @@ class Server:
                     print(f"[server.py] edge_name={edge_name}")
 
                     # pen_transition_py_dict を見て state_path を得ます
-                    state_path = StateMachineHelper.lookup_next_state_path(
+                    state_path = StateMachineHelperV13.lookup_next_state_path_v13(
                         pen_transition_py_dict["data"], state_path, edge_name
                     )
 
@@ -85,7 +85,9 @@ class Server:
                         break
 
                     # state_gen_conf.py を見て state_path から state を生成します
-                    state = StateMachineHelper.create_state(pen_state_gen, state_path)
+                    state = StateMachineHelperV13.create_state_v13(
+                        pen_state_gen, state_path
+                    )
 
                 except Exception as e:
                     # client no longer connected

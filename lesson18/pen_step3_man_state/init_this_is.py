@@ -1,7 +1,7 @@
 __is_verbose = True
 
 
-def create_init_this_is_state(state):
+def create_init_this_is(state):
     def __on_entry(req):
         # 現在位置の表示
         state_path_str = "/".join(req.state_path)

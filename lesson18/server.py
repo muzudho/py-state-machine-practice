@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 
 from lesson18.request import Request
-from lesson18.state_machine_helper import StateMachineHelper
+from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
@@ -58,12 +58,15 @@ class Server:
 ----------------------""".encode()
             )
 
+            print(
+                f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
+            )
             transition_conf = TransitionConfV1n3(self._transition_py_dict)
 
             # 最初
             state_path = [self._entry_state]
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelper.create_state(self._state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(self._state_gen, state_path)
 
             while True:
                 try:
@@ -83,12 +86,24 @@ class Server:
                     # メッセージに応じたアクションを行ったあと、Edge名を返します。
                     # Edge名は空でない文字列です。 None や list であってはいけません
                     edge_name = state.update(req)
-                    print(f"[server.py] edge_name={edge_name}")
+                    print(
+                        f"[L18 server.py] transition_conf.title={transition_conf.title}"
+                    )
+                    print(
+                        f"[L18 server.py] transition_conf.entry_state={transition_conf.entry_state}"
+                    )
+                    print(
+                        f"[L18 server.py] transition_conf.data={transition_conf.data}"
+                    )
+                    print(f"[L18 server.py] state_path={state_path}")
+                    print(f"[L18 server.py] edge_name={edge_name}")
 
                     # transition_conf.py を見て state_path を得ます
-                    state_path = StateMachineHelper.lookup_next_state_path(
+                    state_path = StateMachineHelperV13.lookup_next_state_path_v13(
                         transition_conf, state_path, edge_name
                     )
+
+                    print(f"[L18 server.py] state_path={state_path}")
 
                     if state_path is None:
                         # 次のステートがナンだったので、ステートマシンは終了しました
@@ -101,7 +116,9 @@ class Server:
                         break
 
                     # state_gen_conf.py を見て state_path から state を生成します
-                    state = StateMachineHelper.create_state(self._state_gen, state_path)
+                    state = StateMachineHelperV13.create_state_v13(
+                        self._state_gen, state_path
+                    )
 
                 except Exception as e:
                     # client no longer connected
