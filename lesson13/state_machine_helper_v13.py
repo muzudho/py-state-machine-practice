@@ -8,16 +8,23 @@ class StateMachineHelperV13:
 
     @classmethod
     def lookup_next_state_path_v13(clazz, transition_conf_data, state_path, edge_name):
-        # transition設定ファイルの階層を下りていきましょう
+        """state_path に従って transition_conf_data の階層を下りていきましょう"""
 
         if clazz.is_verbose():
             print(f"[lookup_next_state 12] state_path={state_path}")
+
         curr_dict = transition_conf_data
+
         for state_node in state_path:
 
             if clazz.is_verbose():
+                print(f"[lookup_next_state 14] drop curr_dict={curr_dict}")
                 print(f"[lookup_next_state 14] drop state_node={state_node}")
+
             curr_dict = curr_dict[state_node]
+
+        if clazz.is_verbose():
+            print(f"[lookup_next_state 12] dropped")
 
         # TODO 無名キーの仕様は廃止するか？
         # サブステートに無名状態があれば規定値ですので最下層まで下りていきましょう

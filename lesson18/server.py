@@ -100,7 +100,7 @@ class Server:
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        transition_conf, state_path, edge_name
+                        transition_conf.data, state_path, edge_name
                     )
 
                     print(f"[L18 server.py] state_path={state_path}")
