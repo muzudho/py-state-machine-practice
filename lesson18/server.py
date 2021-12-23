@@ -57,9 +57,10 @@ class Server:
                 接続しているクライアントのソケット
             """
 
+            # Serverクラスは使い回すので、Lesson 18 とは限りません
             c_sock.send(
-                """Welcome to Lesson 18 !
-----------------------""".encode()
+                """Welcome to lesson server !
+--------------------------""".encode()
             )
 
             if Server.is_verbose():
