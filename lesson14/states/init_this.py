@@ -3,19 +3,38 @@ from lesson14_data.step1_pen_const import E_IS, E_OVER, E_WAS, MSG_IS, MSG_WAS
 
 class InitThisState:
     def update(self, req):
+
+        self.on_entry(req)
+
+        # 入力
+        msg = self.on_trigger(req)
+
+        # 分岐
+        if msg == MSG_IS:
+            self.on_is(req)
+            return E_IS
+
+        elif msg == MSG_WAS:
+            self.on_was(req)
+            return E_WAS
+
+        else:
+            self.on_over(req)
+            return E_OVER
+
+    def on_entry(self, req):
         # 現在位置の表示
         state_path_str = "/".join(req.state_path)
         req.c_sock.send(f"""State path={state_path_str}""".encode())
 
-        # 入力
-        msg = req.pull_trigger()
+    def on_trigger(self, req):
+        return req.pull_trigger()
 
-        # 分岐
-        if msg == MSG_IS:
-            return E_IS
+    def on_over(self, req):
+        pass
 
-        elif msg == MSG_WAS:
-            return E_WAS
+    def on_was(self, req):
+        pass
 
-        else:
-            return E_OVER
+    def on_is(self, req):
+        pass

@@ -17,7 +17,7 @@ from lesson18.pen_step2n2_auto_state.pen import PenState
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-pen_state_gen = {
+pen_state_gen_v18 = {
     INIT: {
         "": lambda: create_init(InitState()),
         THIS: {

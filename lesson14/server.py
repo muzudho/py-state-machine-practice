@@ -5,7 +5,7 @@ from lesson14.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson14_data.step1_pen_const import INIT
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
-from lesson14_data.step3_pen_state_gen import pen_state_gen
+from lesson14_data.step3_pen_state_gen import pen_state_gen_v14
 
 
 class Server:
@@ -51,7 +51,9 @@ class Server:
             # 最初
             state_path = [INIT]
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelperV13.create_state_v13(pen_state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(
+                pen_state_gen_v14, state_path
+            )
 
             while True:
                 try:
@@ -86,7 +88,7 @@ class Server:
 
                     # state_gen_conf.py を見て state_path から state を生成します
                     state = StateMachineHelperV13.create_state_v13(
-                        pen_state_gen, state_path
+                        pen_state_gen_v14, state_path
                     )
 
                 except Exception as e:

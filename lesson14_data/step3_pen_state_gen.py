@@ -8,7 +8,7 @@ from lesson14.states.pen import PenState
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-pen_state_gen = {
+pen_state_gen_v14 = {
     INIT: {
         "": lambda: InitState(),
         THIS: {
