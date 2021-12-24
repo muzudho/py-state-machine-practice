@@ -71,7 +71,7 @@ class StateFileGen:
         text += MethodGen.generate_method(
             name="on_trigger",
             parameters_s="self, req",
-            body_sequence=["return req.pull_trigger()"],
+            body_sequence=["return req.context.pull_trigger()"],
         )
         # ハンドラ自動生成
         for edge in directed_edge_list:

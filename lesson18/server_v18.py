@@ -1,7 +1,8 @@
 import socket
 from threading import Thread
+from lesson18.client_context_v18 import ClientContextV18
 
-from lesson18.request import Request
+from lesson18.request_v18 import RequestV18
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 
 
@@ -52,19 +53,24 @@ class ServerV18:
                 接続しているクライアントのソケット
             """
 
+            def __on_pull_trigger():
+                """クライアントから受信したバイナリデータをテキストに変換します"""
+                message = c_sock.recv(self._message_size).decode()
+                return message
+
+            # 外部から与えるオブジェクト
+            client_context = ClientContextV18(
+                c_sock=c_sock,
+                pull_trigger=__on_pull_trigger,
+            )
+
             def __create_req():
                 """req変数を生成します"""
 
-                def __on_pull_trigger():
-                    """クライアントから受信したバイナリデータをテキストに変換します"""
-                    message = c_sock.recv(self._message_size).decode()
-                    return message
-
                 # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                req = Request(
+                req = RequestV18(
                     state_path=self._state_machine.state_path,
-                    c_sock=c_sock,
-                    pull_trigger=__on_pull_trigger,
+                    context=client_context,
                 )
                 return req
 

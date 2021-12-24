@@ -7,7 +7,7 @@ def create_pen(state):
     def __on_entry(req):
         # 現在位置の表示
         state_path_str = "/".join(req.state_path)
-        req.c_sock.send(
+        req.context.c_sock.send(
             f"""[English] State path={state_path_str}
 おつかれさまでした""".encode()
         )
@@ -18,7 +18,7 @@ def create_pen(state):
 
     def __on_over(req):
         """クライアントを終了させます"""
-        req.c_sock.send("quit".encode())
+        req.context.c_sock.send("quit".encode())
 
     state.on_entry = __on_entry
     state.on_trigger = __on_trigger
