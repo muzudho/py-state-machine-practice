@@ -23,8 +23,8 @@ house3n2_state_gen = {
     },
     OUT: {
         "": lambda: create_out(OutState()),
-        CLOSE_DOOR: lambda: create_out_closedoor(OutClosedoorState),
-        OPEN_DOOR: lambda: create_out_opendoor(OutOpendoorState),
+        CLOSE_DOOR: lambda: create_out_closedoor(OutClosedoorState()),
+        OPEN_DOOR: lambda: create_out_opendoor(OutOpendoorState()),
     },
     STAIRS: lambda: create_stairs(StairsState()),
 }

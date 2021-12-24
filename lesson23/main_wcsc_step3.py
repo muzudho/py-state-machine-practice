@@ -2,7 +2,7 @@ import sys
 
 
 from lesson07n2.main_finally import MainFinally
-from lesson18.server import Server
+from lesson18.server_v18 import ServerV18
 from lesson20.transition_json_reader import TransitionJsonReader
 
 # Lesson 23
@@ -19,7 +19,7 @@ class Main:
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 
-        server = Server(
+        server = ServerV18(
             state_gen=wcsc_state_gen,
             transition_py_dict=transition_json_obj,
             host="0.0.0.0",

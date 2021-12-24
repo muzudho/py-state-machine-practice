@@ -63,7 +63,7 @@ class ServerV18:
 --------------------------""".encode()
             )
 
-            if Server.is_verbose():
+            if ServerV18.is_verbose():
                 print(
                     f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
                 )
@@ -94,7 +94,7 @@ class ServerV18:
                     # Edge名は空でない文字列です。 None や list であってはいけません
                     edge_name = state.update(req)
 
-                    if Server.is_verbose():
+                    if ServerV18.is_verbose():
                         print(
                             f"[L18 server.py] transition_conf.title={transition_conf.title}"
                         )
@@ -112,7 +112,7 @@ class ServerV18:
                         transition_conf.data, state_path, edge_name
                     )
 
-                    if Server.is_verbose():
+                    if ServerV18.is_verbose():
                         print(f"[L18 server.py] state_path={state_path}")
 
                     if state_path is None:
