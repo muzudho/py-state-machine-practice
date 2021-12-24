@@ -69,13 +69,6 @@ class ServerV24:
                     f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
                 )
 
-            # 最初
-            state_machine = StateMachineV24(
-                state_gen=self._state_gen,
-                transition_py_dict=self._transition_py_dict,
-                entry_state_path=[self._entry_state],
-            )
-
             def __create_req():
                 """req変数を生成します"""
 
@@ -102,15 +95,24 @@ Remove a socket"""
                 )
                 self._c_sock_set.remove(c_sock)
 
+            # 最初
+            state_machine = StateMachineV24(
+                state_gen=self._state_gen,
+                transition_py_dict=self._transition_py_dict,
+                entry_state_path=[self._entry_state],
+                fn_create_request=__create_req,
+                fn_on_terminated=__on_terminated,
+            )
+
             try:
                 # このループも ステートマシーンに入れたら？
                 while True:
-                    req = __create_req()
+                    req = state_machine.create_request()
 
                     state_machine.update_state_path(req)
 
                     if state_machine.state_path is None:
-                        __on_terminated()
+                        state_machine.on_terminated()
                         break  # ループから抜けます
 
                     state_machine.move_to_next_state()

@@ -3,7 +3,14 @@ from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
 class StateMachineV24:
-    def __init__(self, state_gen, transition_py_dict, entry_state_path):
+    def __init__(
+        self,
+        state_gen,
+        transition_py_dict,
+        entry_state_path,
+        fn_create_request,
+        fn_on_terminated,
+    ):
         """ステートマシン
 
         Parameters
@@ -12,6 +19,10 @@ class StateMachineV24:
             状態オブジェクトを生成するのに使います
         entry_state_path : list
             開始状態
+        fn_create_request : function
+            Request変数を返す関数です
+        fn_on_terminated : function
+            ステートマシーン終了時に呼び出されます
         """
 
         self._is_verbose = False
@@ -27,6 +38,8 @@ class StateMachineV24:
         )
 
         self._edge = None
+        self.create_request = fn_create_request
+        self.on_terminated = fn_on_terminated
 
     @property
     def state_path(self):
@@ -59,6 +72,11 @@ class StateMachineV24:
     @transition_conf.setter
     def transition_conf(self, val):
         self._transition_conf = val
+
+    def start():
+        """ステートマシーンを開始します"""
+
+        pass
 
     def update_state_path(self, req):
         """メッセージに応じたアクションを行ったあと、Edge名を返します。
