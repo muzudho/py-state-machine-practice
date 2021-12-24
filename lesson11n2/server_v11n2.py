@@ -5,7 +5,7 @@ from lesson11n2.states.out import OutState
 from lesson11n2_data.step3_house_state_gen import house_state_gen
 
 
-class Server:
+class ServerV11n2:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
