@@ -3,7 +3,7 @@ import random
 from threading import Thread
 
 
-class Server():
+class ServerV10:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
