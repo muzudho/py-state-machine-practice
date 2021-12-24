@@ -7,6 +7,7 @@ from lesson20.transition_json_reader import TransitionJsonReader
 
 # Lesson 23
 from lesson23_data.step1n2_auto_const.pen_const import INIT
+from lesson24.state_machine_v24 import StateMachineV24
 from lesson24_data.pen_step4_state_gen_v24 import pen_state_gen_v24
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
@@ -19,12 +20,18 @@ class Main:
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 
-        server = ServerV24(
+        # 状態遷移マシン
+        state_machine = StateMachineV24(
             state_gen=pen_state_gen_v24,
             transition_py_dict=transition_json_obj,
+            entry_state_path=[INIT],
+        )
+
+        # サーバー
+        server = ServerV24(
             host="0.0.0.0",
             port=5002,
-            entry_state=INIT,
+            state_machine=state_machine,
         )
         server.run()
         return 0

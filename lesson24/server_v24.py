@@ -3,7 +3,6 @@ from threading import Thread
 
 from lesson24.request_v24 import RequestV24
 from lesson24.client_context_v24 import ClientContextV24
-from lesson24.state_machine_v24 import StateMachineV24
 
 
 class ServerV24:
@@ -13,12 +12,10 @@ class ServerV24:
 
     def __init__(
         self,
-        state_gen,
-        transition_py_dict,
+        state_machine,
         host="0.0.0.0",
         port=5002,
         message_size=1024,
-        entry_state="Init",
     ):
         """初期化
 
@@ -37,21 +34,9 @@ class ServerV24:
         self._port = port
         self._message_size = message_size
 
-        # '_s_sock' - (Server socket) このサーバーのTCPソケットです
-        self._s_sock = None
-
-        # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
-        self._c_sock_set = None
-
-        if ServerV24.is_verbose():
-            print(f"[L18 server.py] transition_py_dict={transition_py_dict}")
-
-        # 状態遷移マシン
-        self._state_machine = StateMachineV24(
-            state_gen=state_gen,
-            transition_py_dict=transition_py_dict,
-            entry_state_path=[entry_state],
-        )
+        self._s_sock = None  # (Server socket) このサーバーのTCPソケットです
+        self._c_sock_set = None  # (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
+        self._state_machine = state_machine  # 状態遷移マシン
 
     def run(self):
         def client_worker(c_sock):
