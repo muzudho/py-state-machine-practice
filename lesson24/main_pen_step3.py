@@ -7,7 +7,7 @@ from lesson20.transition_json_reader import TransitionJsonReader
 
 # Lesson 23
 from lesson23_data.step1n2_auto_const.pen_const import INIT
-from lesson23_data.pen_step4_state_gen import pen_state_gen_v23
+from lesson24_data.pen_step4_state_gen_v24 import pen_state_gen_v24
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
 server = None
@@ -20,7 +20,7 @@ class Main:
         )
 
         server = ServerV24(
-            state_gen=pen_state_gen_v23,
+            state_gen=pen_state_gen_v24,
             transition_py_dict=transition_json_obj,
             host="0.0.0.0",
             port=5002,

@@ -7,7 +7,7 @@ from lesson20.transition_json_reader import TransitionJsonReader
 
 # Lesson 23
 from lesson23_data.step1n2_auto_const.wcsc_const import INIT
-from lesson23_data.wcsc_step4_state_gen import wcsc_state_gen
+from lesson23_data.wcsc_step4_state_gen_v23 import wcsc_state_gen_v23
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/wcsc-transition.json"
 server = None
@@ -20,7 +20,7 @@ class Main:
         )
 
         server = ServerV18(
-            state_gen=wcsc_state_gen,
+            state_gen=wcsc_state_gen_v23,
             transition_py_dict=transition_json_obj,
             host="0.0.0.0",
             port=5002,

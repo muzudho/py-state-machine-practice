@@ -1,9 +1,8 @@
 import socket
 from threading import Thread
 
-from lesson18.request import Request
-from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
+from lesson24.request_v24 import RequestV24
+from lesson24.client_context_v24 import ClientContextV24
 from lesson24.state_machine_v24 import StateMachineV24
 
 
@@ -69,19 +68,23 @@ class ServerV24:
                     f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
                 )
 
+            def __on_pull_trigger():
+                """クライアントから受信したバイナリデータをテキストに変換します"""
+                message = c_sock.recv(self._message_size).decode()
+                return message
+
+            # 外部から与えるオブジェクト
+            client_context = ClientContextV24(
+                c_sock=c_sock,
+                pull_trigger=__on_pull_trigger,
+            )
+
             def __create_req():
                 """req変数を生成します"""
 
-                def __on_pull_trigger():
-                    """クライアントから受信したバイナリデータをテキストに変換します"""
-                    message = c_sock.recv(self._message_size).decode()
-                    return message
-
                 # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                req = Request(
-                    state_path=state_machine.state_path,
-                    c_sock=c_sock,
-                    pull_trigger=__on_pull_trigger,
+                req = RequestV24(
+                    state_path=state_machine.state_path, context=client_context
                 )
                 return req
 

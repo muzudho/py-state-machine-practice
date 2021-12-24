@@ -45,7 +45,7 @@ from lesson23.wcsc_step3_man_state.reply import create_reply
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-wcsc_state_gen = {
+wcsc_state_gen_v23 = {
     INIT: {
         "": lambda: create_init(InitState()),
         LOGIN: lambda: create_init_login(InitLoginState()),

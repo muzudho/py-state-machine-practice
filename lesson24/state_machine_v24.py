@@ -93,7 +93,7 @@ class StateMachineV24:
 
         Parameters
         ----------
-        req : Request
+        req : RequestV24
             状態に渡される引数
         """
         self._edge_name = self.state.update(req)
