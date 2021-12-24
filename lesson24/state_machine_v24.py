@@ -15,18 +15,25 @@ class StateMachineV24:
         """
 
         self._is_verbose = False
-
         self._state_gen = state_gen
         self._transition_py_dict = transition_py_dict
         self._transition_conf = TransitionConfV1n3(self._transition_py_dict)
-
         self._state_path = entry_state_path
+
         # state_gen_conf.py を見て state_path から state を生成します
         self._state = StateMachineHelperV13.create_state_v13(
             self._state_gen, self._state_path
         )
 
         self._edge = None
+
+    @property
+    def state_gen(self):
+        return self._state_gen
+
+    @property
+    def transition_conf(self):
+        return self._transition_conf
 
     @property
     def state_path(self):
@@ -51,14 +58,6 @@ class StateMachineV24:
     @edge_name.setter
     def edge_name(self, val):
         self._edge_name = val
-
-    @property
-    def transition_conf(self):
-        return self._transition_conf
-
-    @transition_conf.setter
-    def transition_conf(self, val):
-        self._transition_conf = val
 
     def start(self):
         """ステートマシーンを開始します"""
@@ -87,14 +86,14 @@ class StateMachineV24:
 
         if self._is_verbose:
             print(
-                f"[L18 server.py] transition_conf.title={self._transition_conf.title}"
+                f"[state_machine] transition_conf.title={self._transition_conf.title}"
             )
             print(
-                f"[L18 server.py] transition_conf.entry_state={self._transition_conf.entry_state}"
+                f"[state_machine] transition_conf.entry_state={self._transition_conf.entry_state}"
             )
-            print(f"[L18 server.py] transition_conf.data={self._transition_conf.data}")
-            print(f"[L18 server.py] state_path={self.state_path}")
-            print(f"[L18 server.py] edge_name={self.edge_name}")
+            print(f"[state_machine] transition_conf.data={self._transition_conf.data}")
+            print(f"[state_machine] state_path={self.state_path}")
+            print(f"[state_machine] edge_name={self.edge_name}")
 
         # transition_conf.py を見て state_path を得ます
         self.state_path = StateMachineHelperV13.lookup_next_state_path_v13(
@@ -104,7 +103,7 @@ class StateMachineV24:
         )
 
         if self._is_verbose:
-            print(f"[L18 server.py] state_path={self.state_path}")
+            print(f"[state_machine] state_path={self.state_path}")
 
     def move_to_next_state(self):
         # state_gen_conf.py を見て state_path から state を生成します
