@@ -3,6 +3,7 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson18.server_v18 import ServerV18
+from lesson18.state_machine_v18 import StateMachineV18
 from lesson20.transition_json_reader import TransitionJsonReader
 
 # Lesson 23
@@ -19,12 +20,18 @@ class Main:
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 
-        server = ServerV18(
+        # 状態遷移マシン
+        state_machine = StateMachineV18(
             state_gen=house3n2_state_gen_v23,
             transition_py_dict=transition_json_obj,
+            entry_state_path=[OUT],
+        )
+
+        # サーバー
+        server = ServerV18(
             host="0.0.0.0",
             port=5002,
-            entry_state=OUT,
+            state_machine=state_machine,
         )
         server.run()
         return 0

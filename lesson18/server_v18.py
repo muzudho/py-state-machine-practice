@@ -3,7 +3,6 @@ from threading import Thread
 
 from lesson18.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
 class ServerV18:
@@ -13,12 +12,10 @@ class ServerV18:
 
     def __init__(
         self,
-        state_gen,
-        transition_py_dict,
+        state_machine,
         host="0.0.0.0",
         port=5002,
         message_size=1024,
-        entry_state="Init",
     ):
         """初期化
 
@@ -43,9 +40,7 @@ class ServerV18:
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
 
-        self._state_gen = state_gen
-        self._transition_py_dict = transition_py_dict
-        self._entry_state = entry_state
+        self._state_machine = state_machine
 
     def run(self):
         def client_worker(c_sock):
@@ -63,17 +58,12 @@ class ServerV18:
 --------------------------""".encode()
             )
 
-            if ServerV18.is_verbose():
-                print(
-                    f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
-                )
-
-            transition_conf = TransitionConfV1n3(self._transition_py_dict)
-
             # 最初
-            state_path = [self._entry_state]
+            state_path = self._state_machine.state_path
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelperV13.create_state_v13(self._state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(
+                self._state_machine.state_gen, state_path
+            )
 
             while True:
                 try:
@@ -96,24 +86,24 @@ class ServerV18:
 
                     if ServerV18.is_verbose():
                         print(
-                            f"[L18 server.py] transition_conf.title={transition_conf.title}"
+                            f"[state_machine] transition_conf.title={self._state_machine.transition_conf.title}"
                         )
                         print(
-                            f"[L18 server.py] transition_conf.entry_state={transition_conf.entry_state}"
+                            f"[state_machine] transition_conf.entry_state={self._state_machine.transition_conf.entry_state}"
                         )
                         print(
-                            f"[L18 server.py] transition_conf.data={transition_conf.data}"
+                            f"[state_machine] transition_conf.data={self._state_machine.transition_conf.data}"
                         )
-                        print(f"[L18 server.py] state_path={state_path}")
-                        print(f"[L18 server.py] edge_name={edge_name}")
+                        print(f"[state_machine] state_path={state_path}")
+                        print(f"[state_machine] edge_name={edge_name}")
 
                     # transition_conf.py を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        transition_conf.data, state_path, edge_name
+                        self._state_machine.transition_conf.data, state_path, edge_name
                     )
 
                     if ServerV18.is_verbose():
-                        print(f"[L18 server.py] state_path={state_path}")
+                        print(f"[state_machine] state_path={state_path}")
 
                     if state_path is None:
                         # 次のステートがナンだったので、ステートマシンは終了しました
@@ -127,7 +117,7 @@ class ServerV18:
 
                     # state_gen_conf.py を見て state_path から state を生成します
                     state = StateMachineHelperV13.create_state_v13(
-                        self._state_gen, state_path
+                        self._state_machine.state_gen, state_path
                     )
 
                 except Exception as e:
