@@ -62,7 +62,7 @@ class ServerV18:
 
                 # 開発が進むと Request の引数が増えたり減ったりするでしょう
                 req = Request(
-                    state_path=state_path,
+                    state_path=self._state_machine.state_path,
                     c_sock=c_sock,
                     pull_trigger=__on_pull_trigger,
                 )
@@ -84,58 +84,17 @@ class ServerV18:
 --------------------------""".encode()
             )
 
-            # 最初
-            state_path = self._state_machine.state_path
-            # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelperV13.create_state_v13(
-                self._state_machine.state_gen, state_path
-            )
-
             try:
-                while True:
-                    req = self._state_machine.create_request()
-
-                    # メッセージに応じたアクションを行ったあと、Edge名を返します。
-                    # Edge名は空でない文字列です。 None や list であってはいけません
-                    edge_name = state.update(req)
-
-                    if ServerV18.is_verbose():
-                        print(
-                            f"[state_machine] transition_conf.title={self._state_machine.transition_conf.title}"
-                        )
-                        print(
-                            f"[state_machine] transition_conf.entry_state={self._state_machine.transition_conf.entry_state}"
-                        )
-                        print(
-                            f"[state_machine] transition_conf.data={self._state_machine.transition_conf.data}"
-                        )
-                        print(f"[state_machine] state_path={state_path}")
-                        print(f"[state_machine] edge_name={edge_name}")
-
-                    # transition_conf.py を見て state_path を得ます
-                    state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        self._state_machine.transition_conf.data, state_path, edge_name
-                    )
-
-                    if ServerV18.is_verbose():
-                        print(f"[state_machine] state_path={state_path}")
-
-                    if state_path is None:
-                        # 次のステートがナンだったので、ステートマシンは終了しました
-                        self._state_machine.on_terminated()
-                        break
-
-                    # state_gen_conf.py を見て state_path から state を生成します
-                    state = StateMachineHelperV13.create_state_v13(
-                        self._state_machine.state_gen, state_path
-                    )
+                # ステートマシーンが停止するか、例外を投げるまでブロックします
+                self._state_machine.start()
 
             except Exception as e:
                 # client no longer connected
                 # remove it from the set
-                print(f"[!] Error: {e}")
-
-                print(f"Remove a socket")
+                print(
+                    f"""[!] Error: {e}
+Remove a socket"""
+                )
                 self._c_sock_set.remove(c_sock)
 
         self._c_sock_set = set()  # 初期化

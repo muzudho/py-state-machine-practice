@@ -28,6 +28,10 @@ class StateMachineV24:
         self._edge = None
 
     @property
+    def is_verbose(self):
+        return self._is_verbose
+
+    @property
     def state_gen(self):
         return self._state_gen
 
@@ -61,7 +65,6 @@ class StateMachineV24:
 
     def start(self):
         """ステートマシーンを開始します"""
-        # このループも ステートマシーンに入れたら？
         while True:
             req = self.create_request()
 

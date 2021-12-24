@@ -94,9 +94,10 @@ Remove a socket"""
             except Exception as e:
                 # client no longer connected
                 # remove it from the set
-                print(f"[!] Error: {e}")
-
-                print(f"Remove a socket")
+                print(
+                    f"""[!] Error: {e}
+Remove a socket"""
+                )
                 self._c_sock_set.remove(c_sock)
 
         self._c_sock_set = set()  # 初期化
