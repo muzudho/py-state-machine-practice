@@ -7,19 +7,21 @@ class StateMachineHelperV13:
         return False
 
     @classmethod
-    def lookup_next_state_path_v13(clazz, transition_conf_data, state_path, edge_name):
-        """state_path に従って transition_conf_data の階層を下りていきましょう"""
+    def lookup_next_state_path_v13(clazz, transition_data, state_path, edge_name):
+        """state_path に従って transition_data の階層を下りていきましょう"""
 
         if clazz.is_verbose():
             print(f"[lookup_next_state 12] state_path={state_path}")
 
-        curr_dict = transition_conf_data
+        curr_dict = transition_data
 
         for state_node in state_path:
 
             if clazz.is_verbose():
-                print(f"[lookup_next_state 14] drop curr_dict={curr_dict}")
-                print(f"[lookup_next_state 14] drop state_node={state_node}")
+                print(
+                    f"""[lookup_next_state 14] drop curr_dict={curr_dict}
+[lookup_next_state 14] drop state_node={state_node}"""
+                )
 
             curr_dict = curr_dict[state_node]
 
@@ -45,7 +47,7 @@ class StateMachineHelperV13:
 
     @classmethod
     def create_state_v13(clazz, state_gen, state_path):
-        # ステート名パスをたどって、state_gen設定ファイルの階層を下りていきましょう
+        """ステート名パスをたどって、state_gen設定ファイルの階層を下りていきましょう"""
         if clazz.is_verbose():
             print(f"[create_state 39] state_path={state_path}")
 
