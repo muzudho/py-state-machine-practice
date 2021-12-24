@@ -1,5 +1,7 @@
 # Lesson 24
 
+**Lesson24の内容はLesson18に取り込みました**  
+
 Lesson18 の `server_v18.py` ファイルから、 サーバーの機能と ステートマシンの機能を切り分けましょう  
 
 ## Run
