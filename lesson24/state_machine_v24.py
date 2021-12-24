@@ -3,14 +3,7 @@ from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
 class StateMachineV24:
-    def __init__(
-        self,
-        state_gen,
-        transition_py_dict,
-        entry_state_path,
-        fn_create_request,
-        fn_on_terminated,
-    ):
+    def __init__(self, state_gen, transition_py_dict, entry_state_path):
         """ステートマシン
 
         Parameters
@@ -19,10 +12,6 @@ class StateMachineV24:
             状態オブジェクトを生成するのに使います
         entry_state_path : list
             開始状態
-        fn_create_request : function
-            Request変数を返す関数です
-        fn_on_terminated : function
-            ステートマシーン終了時に呼び出されます
         """
 
         self._is_verbose = False
@@ -38,8 +27,6 @@ class StateMachineV24:
         )
 
         self._edge = None
-        self.create_request = fn_create_request
-        self.on_terminated = fn_on_terminated
 
     @property
     def state_path(self):
@@ -124,3 +111,11 @@ class StateMachineV24:
         self.state = StateMachineHelperV13.create_state_v13(
             self._state_gen, self.state_path
         )
+
+    def create_request(self):
+        """Request変数を返す関数です"""
+        return None
+
+    def on_terminated(self):
+        """ステートマシーン終了時に呼び出されます"""
+        pass

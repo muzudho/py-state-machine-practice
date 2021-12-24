@@ -43,9 +43,15 @@ class ServerV24:
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
 
-        self._state_gen = state_gen
-        self._transition_py_dict = transition_py_dict
-        self._entry_state = entry_state
+        if ServerV24.is_verbose():
+            print(f"[L18 server.py] transition_py_dict={transition_py_dict}")
+
+        # 状態遷移マシン
+        self._state_machine = StateMachineV24(
+            state_gen=state_gen,
+            transition_py_dict=transition_py_dict,
+            entry_state_path=[entry_state],
+        )
 
     def run(self):
         def client_worker(c_sock):
@@ -63,11 +69,6 @@ class ServerV24:
 --------------------------""".encode()
             )
 
-            if ServerV24.is_verbose():
-                print(
-                    f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
-                )
-
             def __on_pull_trigger():
                 """クライアントから受信したバイナリデータをテキストに変換します"""
                 message = c_sock.recv(self._message_size).decode()
@@ -84,7 +85,7 @@ class ServerV24:
 
                 # 開発が進むと Request の引数が増えたり減ったりするでしょう
                 req = RequestV24(
-                    state_path=state_machine.state_path, context=client_context
+                    state_path=self._state_machine.state_path, context=client_context
                 )
                 return req
 
@@ -98,18 +99,13 @@ Remove a socket"""
                 )
                 self._c_sock_set.remove(c_sock)
 
-            # 最初
-            state_machine = StateMachineV24(
-                state_gen=self._state_gen,
-                transition_py_dict=self._transition_py_dict,
-                entry_state_path=[self._entry_state],
-                fn_create_request=__create_req,
-                fn_on_terminated=__on_terminated,
-            )
+            # セット
+            self._state_machine.create_request = __create_req
+            self._state_machine.on_terminated = __on_terminated
 
             try:
                 # ステートマシーンが停止するか、例外を投げるまでブロックします
-                state_machine.start()
+                self._state_machine.start()
 
             except Exception as e:
                 # client no longer connected
