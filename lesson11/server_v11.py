@@ -11,7 +11,7 @@ from lesson11_data.step1_house_v1_const import (
 )
 
 
-class Server:
+class ServerV11:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
