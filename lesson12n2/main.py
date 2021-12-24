@@ -1,14 +1,14 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson12n2.server import Server
+from lesson12n2.server_v12n2 import Server12n2
 
 server = None
 
 
 class Main:
     def on_main(self):
-        server = Server(host="0.0.0.0", port=5002)
+        server = Server12n2(host="0.0.0.0", port=5002)
         server.run()
         return 0
 

@@ -7,7 +7,7 @@ from lesson12_data.step2_house3_transition import house3_transition_py_dict
 from lesson12n2_data.step3_house3_state_gen import house3_state_gen
 
 
-class Server:
+class Server12n2:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
