@@ -76,44 +76,52 @@ class ServerV24:
                 entry_state_path=[self._entry_state],
             )
 
-            def __on_pull_trigger():
-                # クライアントから受信したバイナリデータをテキストに変換します
-                message = c_sock.recv(self._message_size).decode()
-                return message
+            def __create_req():
+                """req変数を生成します"""
 
-            # このループも ステートマシーンに入れたら？
-            while True:
-                try:
+                def __on_pull_trigger():
+                    """クライアントから受信したバイナリデータをテキストに変換します"""
+                    message = c_sock.recv(self._message_size).decode()
+                    return message
 
-                    # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                    req = Request(
-                        state_path=state_machine.state_path,
-                        c_sock=c_sock,
-                        pull_trigger=__on_pull_trigger,
-                    )
+                # 開発が進むと Request の引数が増えたり減ったりするでしょう
+                req = Request(
+                    state_path=state_machine.state_path,
+                    c_sock=c_sock,
+                    pull_trigger=__on_pull_trigger,
+                )
+                return req
+
+            def __on_terminated():
+                """ステートマシン終了時に行う処理"""
+                # 次のステートがナンだったので、ステートマシンは終了しました
+                # TODO クライアントに quit 命令などを送信する必要があるか？
+                print(
+                    """[server.py] Next state is None. State machine is finished.
+Remove a socket"""
+                )
+                self._c_sock_set.remove(c_sock)
+
+            try:
+                # このループも ステートマシーンに入れたら？
+                while True:
+                    req = __create_req()
 
                     state_machine.update_state_path(req)
 
                     if state_machine.state_path is None:
-                        # 次のステートがナンだったので、ステートマシンは終了しました
-                        # TODO クライアントに quit 命令などを送信する必要があるか？
-                        print(
-                            "[server.py] Next state is None. State machine is finished."
-                        )
-                        print("Remove a socket")
-                        self._c_sock_set.remove(c_sock)
-                        break
+                        __on_terminated()
+                        break  # ループから抜けます
 
                     state_machine.move_to_next_state()
 
-                except Exception as e:
-                    # client no longer connected
-                    # remove it from the set
-                    print(f"[!] Error: {e}")
+            except Exception as e:
+                # client no longer connected
+                # remove it from the set
+                print(f"[!] Error: {e}")
 
-                    print(f"Remove a socket")
-                    self._c_sock_set.remove(c_sock)
-                    break
+                print(f"Remove a socket")
+                self._c_sock_set.remove(c_sock)
 
         self._c_sock_set = set()  # 初期化
 
