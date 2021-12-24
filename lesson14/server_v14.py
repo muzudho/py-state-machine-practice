@@ -8,7 +8,7 @@ from lesson14_data.step2_pen_transition import pen_transition_py_dict
 from lesson14_data.step3_pen_state_gen import pen_state_gen_v14
 
 
-class Server:
+class ServerV14:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
