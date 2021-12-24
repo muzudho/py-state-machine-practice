@@ -8,7 +8,7 @@ from lesson13n2_data.step2_house3n2_transition2 import house3n2_transition2_py_d
 from lesson13n2_data.step3_state_gen_conf import house3n2_state_gen
 
 
-class Server:
+class ServerV13n2:
     def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
