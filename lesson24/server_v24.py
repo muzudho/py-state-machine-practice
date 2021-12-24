@@ -105,17 +105,8 @@ Remove a socket"""
             )
 
             try:
-                # このループも ステートマシーンに入れたら？
-                while True:
-                    req = state_machine.create_request()
-
-                    state_machine.update_state_path(req)
-
-                    if state_machine.state_path is None:
-                        state_machine.on_terminated()
-                        break  # ループから抜けます
-
-                    state_machine.move_to_next_state()
+                # ステートマシーンが停止するか、例外を投げるまでブロックします
+                state_machine.start()
 
             except Exception as e:
                 # client no longer connected

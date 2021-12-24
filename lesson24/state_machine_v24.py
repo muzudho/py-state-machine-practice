@@ -73,10 +73,19 @@ class StateMachineV24:
     def transition_conf(self, val):
         self._transition_conf = val
 
-    def start():
+    def start(self):
         """ステートマシーンを開始します"""
+        # このループも ステートマシーンに入れたら？
+        while True:
+            req = self.create_request()
 
-        pass
+            self.update_state_path(req)
+
+            if self.state_path is None:
+                self.on_terminated()
+                break  # ループから抜けます
+
+            self.move_to_next_state()
 
     def update_state_path(self, req):
         """メッセージに応じたアクションを行ったあと、Edge名を返します。
