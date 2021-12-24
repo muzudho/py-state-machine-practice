@@ -6,7 +6,7 @@ from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
-class Server:
+class ServerV18:
     @classmethod
     def is_verbose(clazz):
         return False
