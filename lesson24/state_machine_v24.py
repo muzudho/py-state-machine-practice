@@ -68,6 +68,7 @@ class StateMachineV24:
             self.update_state_path(req)
 
             if self.state_path is None:
+                # 次のステートがナンだったので、ステートマシンは終了しました
                 self.on_terminated()
                 break  # ループから抜けます
 

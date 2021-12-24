@@ -52,6 +52,32 @@ class ServerV18:
                 接続しているクライアントのソケット
             """
 
+            def __create_req():
+                """req変数を生成します"""
+
+                def __on_pull_trigger():
+                    """クライアントから受信したバイナリデータをテキストに変換します"""
+                    message = c_sock.recv(self._message_size).decode()
+                    return message
+
+                # 開発が進むと Request の引数が増えたり減ったりするでしょう
+                req = Request(
+                    state_path=state_path,
+                    c_sock=c_sock,
+                    pull_trigger=__on_pull_trigger,
+                )
+                return req
+
+            def __on_terminated():
+                # TODO クライアントに quit 命令などを送信する必要があるか？
+                print("[server.py] Next state is None. State machine is finished.")
+                print("Remove a socket")
+                self._c_sock_set.remove(c_sock)
+
+            # セット
+            self._state_machine.create_request = __create_req
+            self._state_machine.on_terminated = __on_terminated
+
             # Serverクラスは使い回すので、Lesson 18 とは限りません
             c_sock.send(
                 """Welcome to lesson server !
@@ -65,20 +91,9 @@ class ServerV18:
                 self._state_machine.state_gen, state_path
             )
 
-            while True:
-                try:
-
-                    def __on_pull_trigger():
-                        # クライアントから受信したバイナリデータをテキストに変換します
-                        message = c_sock.recv(self._message_size).decode()
-                        return message
-
-                    # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                    req = Request(
-                        state_path=state_path,
-                        c_sock=c_sock,
-                        pull_trigger=__on_pull_trigger,
-                    )
+            try:
+                while True:
+                    req = self._state_machine.create_request()
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します。
                     # Edge名は空でない文字列です。 None や list であってはいけません
@@ -107,12 +122,7 @@ class ServerV18:
 
                     if state_path is None:
                         # 次のステートがナンだったので、ステートマシンは終了しました
-                        # TODO クライアントに quit 命令などを送信する必要があるか？
-                        print(
-                            "[server.py] Next state is None. State machine is finished."
-                        )
-                        print("Remove a socket")
-                        self._c_sock_set.remove(c_sock)
+                        self._state_machine.on_terminated()
                         break
 
                     # state_gen_conf.py を見て state_path から state を生成します
@@ -120,14 +130,13 @@ class ServerV18:
                         self._state_machine.state_gen, state_path
                     )
 
-                except Exception as e:
-                    # client no longer connected
-                    # remove it from the set
-                    print(f"[!] Error: {e}")
+            except Exception as e:
+                # client no longer connected
+                # remove it from the set
+                print(f"[!] Error: {e}")
 
-                    print(f"Remove a socket")
-                    self._c_sock_set.remove(c_sock)
-                    break
+                print(f"Remove a socket")
+                self._c_sock_set.remove(c_sock)
 
         self._c_sock_set = set()  # 初期化
 

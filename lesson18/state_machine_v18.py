@@ -24,3 +24,11 @@ class StateMachineV18:
     @state_path.setter
     def state_path(self, val):
         self._state_path = val
+
+    def create_request(self):
+        """Request変数を返す関数です"""
+        return None
+
+    def on_terminated(self):
+        """ステートマシーン終了時に呼び出されます"""
+        pass

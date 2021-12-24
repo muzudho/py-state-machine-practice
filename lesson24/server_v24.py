@@ -76,7 +76,6 @@ class ServerV24:
 
             def __on_terminated():
                 """ステートマシン終了時に行う処理"""
-                # 次のステートがナンだったので、ステートマシンは終了しました
                 # TODO クライアントに quit 命令などを送信する必要があるか？
                 print(
                     """[server.py] Next state is None. State machine is finished.
