@@ -52,7 +52,15 @@ class StateMachineV24:
     def edge_name(self, val):
         self._edge_name = val
 
-    def update_state(self, req):
+    @property
+    def transition_conf(self):
+        return self._transition_conf
+
+    @transition_conf.setter
+    def transition_conf(self, val):
+        self._transition_conf = val
+
+    def update_state_path(self, req):
         """メッセージに応じたアクションを行ったあと、Edge名を返します。
         Edge名は空でない文字列です。 None や list であってはいけません
 
@@ -73,3 +81,19 @@ class StateMachineV24:
             print(f"[L18 server.py] transition_conf.data={self._transition_conf.data}")
             print(f"[L18 server.py] state_path={self.state_path}")
             print(f"[L18 server.py] edge_name={self.edge_name}")
+
+        # transition_conf.py を見て state_path を得ます
+        self.state_path = StateMachineHelperV13.lookup_next_state_path_v13(
+            self.transition_conf.data,
+            self.state_path,
+            self.edge_name,
+        )
+
+        if self._is_verbose:
+            print(f"[L18 server.py] state_path={self.state_path}")
+
+    def move_to_next_state(self):
+        # state_gen_conf.py を見て state_path から state を生成します
+        self.state = StateMachineHelperV13.create_state_v13(
+            self._state_gen, self.state_path
+        )

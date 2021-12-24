@@ -69,8 +69,6 @@ class ServerV24:
                     f"[L18 server.py] self._transition_py_dict={self._transition_py_dict}"
                 )
 
-            transition_conf = TransitionConfV1n3(self._transition_py_dict)
-
             # 最初
             state_machine = StateMachineV24(
                 state_gen=self._state_gen,
@@ -78,13 +76,14 @@ class ServerV24:
                 entry_state_path=[self._entry_state],
             )
 
+            def __on_pull_trigger():
+                # クライアントから受信したバイナリデータをテキストに変換します
+                message = c_sock.recv(self._message_size).decode()
+                return message
+
+            # このループも ステートマシーンに入れたら？
             while True:
                 try:
-
-                    def __on_pull_trigger():
-                        # クライアントから受信したバイナリデータをテキストに変換します
-                        message = c_sock.recv(self._message_size).decode()
-                        return message
 
                     # 開発が進むと Request の引数が増えたり減ったりするでしょう
                     req = Request(
@@ -93,19 +92,7 @@ class ServerV24:
                         pull_trigger=__on_pull_trigger,
                     )
 
-                    state_machine.update_state(req)
-
-                    # transition_conf.py を見て state_path を得ます
-                    state_machine.state_path = (
-                        StateMachineHelperV13.lookup_next_state_path_v13(
-                            transition_conf.data,
-                            state_machine.state_path,
-                            state_machine.edge_name,
-                        )
-                    )
-
-                    if ServerV24.is_verbose():
-                        print(f"[L18 server.py] state_path={state_machine.state_path}")
+                    state_machine.update_state_path(req)
 
                     if state_machine.state_path is None:
                         # 次のステートがナンだったので、ステートマシンは終了しました
@@ -117,10 +104,7 @@ class ServerV24:
                         self._c_sock_set.remove(c_sock)
                         break
 
-                    # state_gen_conf.py を見て state_path から state を生成します
-                    state_machine.state = StateMachineHelperV13.create_state_v13(
-                        self._state_gen, state_machine.state_path
-                    )
+                    state_machine.move_to_next_state()
 
                 except Exception as e:
                     # client no longer connected
