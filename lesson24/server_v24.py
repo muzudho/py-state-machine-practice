@@ -73,7 +73,9 @@ class ServerV24:
 
             # 最初
             state_machine = StateMachineV24(
-                state_gen=self._state_gen, entry_state_path=[self._entry_state]
+                state_gen=self._state_gen,
+                transition_py_dict=self._transition_py_dict,
+                entry_state_path=[self._entry_state],
             )
 
             while True:
@@ -91,27 +93,14 @@ class ServerV24:
                         pull_trigger=__on_pull_trigger,
                     )
 
-                    # メッセージに応じたアクションを行ったあと、Edge名を返します。
-                    # Edge名は空でない文字列です。 None や list であってはいけません
-                    edge_name = state_machine.state.update(req)
-
-                    if ServerV24.is_verbose():
-                        print(
-                            f"[L18 server.py] transition_conf.title={transition_conf.title}"
-                        )
-                        print(
-                            f"[L18 server.py] transition_conf.entry_state={transition_conf.entry_state}"
-                        )
-                        print(
-                            f"[L18 server.py] transition_conf.data={transition_conf.data}"
-                        )
-                        print(f"[L18 server.py] state_path={state_machine.state_path}")
-                        print(f"[L18 server.py] edge_name={edge_name}")
+                    state_machine.update_state(req)
 
                     # transition_conf.py を見て state_path を得ます
                     state_machine.state_path = (
                         StateMachineHelperV13.lookup_next_state_path_v13(
-                            transition_conf.data, state_machine.state_path, edge_name
+                            transition_conf.data,
+                            state_machine.state_path,
+                            state_machine.edge_name,
                         )
                     )
 

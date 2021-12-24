@@ -1,8 +1,9 @@
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
+from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
 class StateMachineV24:
-    def __init__(self, state_gen, entry_state_path):
+    def __init__(self, state_gen, transition_py_dict, entry_state_path):
         """ステートマシン
 
         Parameters
@@ -13,12 +14,19 @@ class StateMachineV24:
             開始状態
         """
 
+        self._is_verbose = False
+
         self._state_gen = state_gen
+        self._transition_py_dict = transition_py_dict
+        self._transition_conf = TransitionConfV1n3(self._transition_py_dict)
+
         self._state_path = entry_state_path
         # state_gen_conf.py を見て state_path から state を生成します
         self._state = StateMachineHelperV13.create_state_v13(
             self._state_gen, self._state_path
         )
+
+        self._edge = None
 
     @property
     def state_path(self):
@@ -35,3 +43,33 @@ class StateMachineV24:
     @state.setter
     def state(self, val):
         self._state = val
+
+    @property
+    def edge_name(self):
+        return self._edge_name
+
+    @edge_name.setter
+    def edge_name(self, val):
+        self._edge_name = val
+
+    def update_state(self, req):
+        """メッセージに応じたアクションを行ったあと、Edge名を返します。
+        Edge名は空でない文字列です。 None や list であってはいけません
+
+        Parameters
+        ----------
+        req : Request
+            状態に渡される引数
+        """
+        self._edge_name = self.state.update(req)
+
+        if self._is_verbose:
+            print(
+                f"[L18 server.py] transition_conf.title={self._transition_conf.title}"
+            )
+            print(
+                f"[L18 server.py] transition_conf.entry_state={self._transition_conf.entry_state}"
+            )
+            print(f"[L18 server.py] transition_conf.data={self._transition_conf.data}")
+            print(f"[L18 server.py] state_path={self.state_path}")
+            print(f"[L18 server.py] edge_name={self.edge_name}")
