@@ -53,7 +53,7 @@ class StateMachineV18:
                 print(f"[state_machine] state_path={state_path}")
                 print(f"[state_machine] edge_name={edge_name}")
 
-            # transition_conf.py を見て state_path を得ます
+            # transition_conf.py を見て、edge_nameから、state_path を得ます
             state_path = StateMachineHelperV13.lookup_next_state_path_v13(
                 self.transition_conf.data, state_path, edge_name
             )
