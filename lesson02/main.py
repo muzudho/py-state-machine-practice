@@ -1,10 +1,9 @@
-
-from lesson02.states import states
+from lesson02.fruits import fruits_v02
 
 
 if __name__ == "__main__":
-    state = states["Apple"]
+    state = fruits_v02["Apple"]
     state.print()
 
-    state = states["Banana"]
+    state = fruits_v02["Banana"]
     state.print()
