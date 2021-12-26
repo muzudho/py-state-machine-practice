@@ -7,7 +7,7 @@ from lesson23_data.step1n2_auto_const.house3n2_const import (
 
 def create_out(state):
     def __on_entry(req):
-        req.c_sock.send(
+        req.context.c_sock.send(
             """You can see the house.
 You can see the close knob.""".encode()
         )

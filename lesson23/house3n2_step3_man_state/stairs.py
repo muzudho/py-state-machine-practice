@@ -3,7 +3,7 @@ from lesson23_data.step1n2_auto_const.house3n2_const import E_FAILED, E_UP, MSG_
 
 def create_stairs(state):
     def __on_entry(req):
-        req.c_sock.send("You can see the stairs.".encode())
+        req.context.c_sock.send("You can see the stairs.".encode())
 
     def __on_trigger(req):
         msg = req.pull_trigger()

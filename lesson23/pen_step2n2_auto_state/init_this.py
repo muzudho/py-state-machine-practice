@@ -28,7 +28,7 @@ class InitThisState():
         pass
 
     def on_trigger(self, req):
-        return req.pull_trigger()
+        return req.context.pull_trigger()
 
     def on_over(self, req):
         pass

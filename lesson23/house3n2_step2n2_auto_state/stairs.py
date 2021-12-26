@@ -24,7 +24,7 @@ class StairsState():
         pass
 
     def on_trigger(self, req):
-        return req.pull_trigger()
+        return req.context.pull_trigger()
 
     def on_up(self, req):
         pass

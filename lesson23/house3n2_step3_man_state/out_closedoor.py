@@ -7,7 +7,7 @@ from lesson23_data.step1n2_auto_const.house3n2_const import (
 
 def create_out_closedoor(state):
     def __on_entry(req):
-        req.c_sock.send("""You can see the close door.""".encode())
+        req.context.c_sock.send("""You can see the close door.""".encode())
 
     def __on_trigger(req):
         msg = req.pull_trigger()

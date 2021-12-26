@@ -7,7 +7,7 @@ from lesson23_data.step1n2_auto_const.house3n2_const import (
 
 def create_myroom(state):
     def __on_entry(req):
-        req.c_sock.send("You can see the your room.".encode())
+        req.context.c_sock.send("You can see the your room.".encode())
 
     def __on_trigger(req):
         msg = req.pull_trigger()
@@ -17,7 +17,7 @@ def create_myroom(state):
             return E_FAILED
 
     def __on_sitting_down(req):
-        req.c_sock.send(
+        req.context.c_sock.send(
             """Clear!
 Please push q key to quit.""".encode()
         )
