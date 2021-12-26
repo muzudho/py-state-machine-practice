@@ -1,12 +1,11 @@
-
-from lesson01.state_machine import StateMachine
-from lesson01.apple_state import AppleState
-from lesson01.banana_state import BananaState
+from lesson01.juice import Juice
+from lesson01.fruit.apple import Apple
+from lesson01.fruit.banana import Banana
 
 
 if __name__ == "__main__":
-    state_machine = StateMachine(AppleState())
-    state_machine.print()
+    juice = Juice(Apple())
+    juice.print()
 
-    state_machine = StateMachine(BananaState())
-    state_machine.print()
+    juice = Juice(Banana())
+    juice.print()
