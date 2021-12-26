@@ -1,4 +1,4 @@
-class Node():
+class NodeV04:
     def __init__(self, name, next_name_list):
         """ノードです
 
