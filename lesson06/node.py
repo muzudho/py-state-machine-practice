@@ -1,4 +1,4 @@
-class Node():
+class Node:
     def __init__(self, name, next_name_list, behavior):
         """ノードです
 
@@ -22,5 +22,5 @@ class Node():
     def next_name_list(self):
         return self._next_name_list
 
-    def update(self, message):
-        return self._behavior.update(message)
+    def create_message_v06(self, message):
+        return self._behavior.create_message_v06(message)

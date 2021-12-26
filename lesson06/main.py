@@ -15,18 +15,20 @@ if __name__ == "__main__":
         "Hyogo": Node("Hyogo", ["Kyoto", "Osaka"], HyogoBehavior()),
         "Nara": Node("Nara", ["Osaka", "Kyoto", "Wakayama", "Mie"], NaraBehavior()),
         "Wakayama": Node("Wakayama", ["Osaka", "Nara", "Mie"], WakayamaBehavior()),
-        "Mie": Node("Mie", ["Kyoto", "Nara", "Wakayama"], MieBehavior())
+        "Mie": Node("Mie", ["Kyoto", "Nara", "Wakayama"], MieBehavior()),
     }
 
     message = ""
 
+    # ランダムに県を１つ選びます
     node_name = random.choice(list(nodes.keys()))
     node = nodes[node_name]
-    message = node.update(message)
+    message = node.create_message_v06(message)
     print(f"1.{node_name} {message}")
 
     for i in range(2, 21):
+        # 次に行ける県の中から、ランダムに１つ選びます
         node_name = random.choice(node.next_name_list)
         node = nodes[node_name]
-        message = node.update(message)
+        message = node.create_message_v06(message)
         print(f"{i}.{node_name} {message}")
