@@ -1,9 +1,7 @@
 import socket
 from threading import Thread
 from lesson18.client_context_v18 import ClientContextV18
-
 from lesson18.request_v18 import RequestV18
-from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 
 
 class ServerV18:
