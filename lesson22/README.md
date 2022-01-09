@@ -12,5 +12,7 @@ python.exe -m lesson22.main_pen_step1_const
 python.exe -m lesson22.main_wcsc_step1_const
 
 # WIP 開発中
-python.exe -m lesson22.wip_const_py_maker "lesson22_data/step1-house3-const.json" "lesson22_data/step1n2_auto_const/house3_const.py" --hidden "lesson22_data/step1n2_auto_const/house3_const.json"
+python.exe -m lesson22.const_py_maker "lesson22_data/step1-house3-const.json" "lesson22_data/step1n2_auto_const/house3_const.py"
+#                                     --------------------------------------- --------------------------------------------------
+#                                     入力ファイル                              出力ファイル
 ```
