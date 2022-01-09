@@ -5,7 +5,7 @@ import os
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
-from lesson20.transition_json_reader import TransitionJsonReader
+from lesson20.json_reader_v20 import JsonReaderV20
 
 INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/wcsc-transition.json"
 OUTPUT_JSON_FILE_PATH_1 = (
@@ -17,7 +17,7 @@ OUTPUT_JSON_FILE_PATH_2 = "lesson20_data/step2n2_auto/wcsc-transition.json"
 class Main:
     def on_main(self):
         # JSONファイルを読込みます
-        transition_json_obj = TransitionJsonReader.read_file(INPUT_JSON_FILE_PATH)
+        transition_json_obj = JsonReaderV20.read_file(INPUT_JSON_FILE_PATH)
         # print(f"transition_json_obj={transition_json_obj}")
 
         # フォーマッティング無しで出力するなら

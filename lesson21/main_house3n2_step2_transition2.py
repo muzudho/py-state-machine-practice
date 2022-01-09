@@ -3,7 +3,7 @@ import os
 
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
-from lesson20.transition_json_reader import TransitionJsonReader
+from lesson20.json_reader_v20 import JsonReaderV20
 from lesson21.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
@@ -19,7 +19,7 @@ OUTPUT_TRANSITION_VARIABLE_NAME = "house3n2_transition2_py_dict"
 
 class Main:
     def on_main(self):
-        data = TransitionJsonReader.read_file(INPUT_TRANSITION_JSON_FILE_PATH)
+        data = JsonReaderV20.read_file(INPUT_TRANSITION_JSON_FILE_PATH)
 
         transition_conf_py_stringification = TransitionConfPyStringification(
             const_py_dict=house3_const_py_dict,

@@ -2,7 +2,7 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson18.code_gen.state_files_gen import gen_state_files_v18
-from lesson20.transition_json_reader import TransitionJsonReader
+from lesson20.json_reader_v20 import JsonReaderV20
 
 INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-pen-const.json"
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
@@ -13,8 +13,8 @@ IMPORT_FROM_PATH = "lesson18_data.step1n2_auto_const.pen_const"
 class Main:
     def on_main(self):
         # JSONファイルから、定数と遷移の設定を読込みます
-        const_json_obj = TransitionJsonReader.read_file(INPUT_CONST_JSON_FILE_PATH)
-        transition_json_obj = TransitionJsonReader.read_file(
+        const_json_obj = JsonReaderV20.read_file(INPUT_CONST_JSON_FILE_PATH)
+        transition_json_obj = JsonReaderV20.read_file(
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 
