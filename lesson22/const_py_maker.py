@@ -2,8 +2,7 @@ import sys
 import argparse
 
 from lesson07n2.main_finally import MainFinally
-from lesson17.code_gen.const_file_gen import gen_const_file_v17
-from lesson20.transition_json_reader import TransitionJsonReader
+from lesson22.code_gen.const_py_gen import gen_const_py
 
 class Main:
     def on_main(self):
@@ -15,9 +14,7 @@ class Main:
         print(f'args.input : {args.input}') # Example: "lesson22_data/step1-house3-const.json"
         print(f'args.output: {args.output}') # Example: "lesson22_data/step1n2_auto_const/house3_const.py"
 
-        # JSON構造（順序付きDict）に変換 --> 出力
-        transition_json_obj = TransitionJsonReader.read_file(args.input)
-        gen_const_file_v17(args.output, transition_json_obj)
+        gen_const_py(args.input, args.output)
         return 0
 
     def on_finally(self):
