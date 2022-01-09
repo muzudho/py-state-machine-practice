@@ -3,7 +3,7 @@ import os
 
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
-from lesson20.json_reader_v20 import JsonReaderV20
+from lesson20.code_gen.json_reader_v20 import JsonReaderV20
 from lesson21.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )

@@ -1,5 +1,5 @@
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
-from lesson20.json_reader_v20 import JsonReaderV20
+from lesson20.code_gen.json_reader_v20 import JsonReaderV20
 
 def gen_const_py(input_path, output_path):
     """定数を定義したJSONファイルを元に、Pythonスクリプトを出力"""

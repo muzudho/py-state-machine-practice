@@ -2,7 +2,7 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
-from lesson20.json_reader_v20 import JsonReaderV20
+from lesson20.code_gen.json_reader_v20 import JsonReaderV20
 
 INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-pen-const.json"
 OUTPUT_CONST_PY_FILE_PATH = "lesson23_data/step1n2_auto_const/pen_const.py"
