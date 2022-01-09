@@ -2,7 +2,7 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson18.code_gen.state_files_gen import gen_state_files_v18
-from lesson20.code_gen.json_reader_v20 import JsonReaderV20
+from lesson20.code_gen.json_reader import JsonReaderV20
 
 INPUT_CONST_JSON_FILE_PATH = "lesson22_data/step1-wcsc-const.json"
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/wcsc-transition.json"

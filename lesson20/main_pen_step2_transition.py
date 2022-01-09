@@ -5,7 +5,7 @@ import os
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
-from lesson20.code_gen.json_reader_v20 import JsonReaderV20
+from lesson20.code_gen.json_reader import JsonReaderV20
 
 INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/pen-transition.json"
 OUTPUT_JSON_FILE_PATH_1 = "lesson20_data/step2n2_auto/pen-transition-default-fomat.json"

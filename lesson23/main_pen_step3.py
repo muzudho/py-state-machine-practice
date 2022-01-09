@@ -4,7 +4,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
-from lesson20.code_gen.json_reader_v20 import JsonReaderV20
+from lesson20.code_gen.json_reader import JsonReaderV20
 
 # Lesson 23
 from lesson23_data.step1n2_auto_const.pen_const import INIT
