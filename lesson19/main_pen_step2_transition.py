@@ -3,7 +3,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
-from lesson14_data.step2_pen_transition import (
+from lesson14_projects.pen.data.transition import (
     pen_transition_py_dict,
 )
 

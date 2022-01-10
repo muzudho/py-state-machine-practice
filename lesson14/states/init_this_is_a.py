@@ -1,4 +1,4 @@
-from lesson14_data.step1_pen_const import E_PEN, E_PIN, E_OVER, MSG_PEN, MSG_PIN
+from lesson14_projects.pen.data.const import E_PEN, E_PIN, E_OVER, MSG_PEN, MSG_PIN
 
 
 class InitThisIsAState:

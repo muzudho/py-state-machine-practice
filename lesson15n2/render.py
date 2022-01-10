@@ -3,7 +3,7 @@ from lesson15n2.code_gen.directive_edge import DirectiveEdge
 from lesson15n2.code_gen.clustered_directive_edge import ClusteredDirectiveEdge
 
 from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
-from lesson14_data.step2_pen_transition import pen_transition_py_dict
+from lesson14_projects.pen.data.transition import pen_transition_py_dict
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):

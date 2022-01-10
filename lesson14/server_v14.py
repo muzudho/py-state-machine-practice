@@ -3,9 +3,9 @@ from threading import Thread
 
 from lesson14.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson14_data.step1_pen_const import INIT
-from lesson14_data.step2_pen_transition import pen_transition_py_dict
-from lesson14_data.step3_pen_state_gen import pen_state_gen_v14
+from lesson14_projects.pen.data.const import INIT
+from lesson14_projects.pen.data.transition import pen_transition_py_dict
+from lesson14_projects.pen.data.state_gen import pen_state_gen_v14
 
 
 class ServerV14:

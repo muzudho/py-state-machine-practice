@@ -1,4 +1,4 @@
-from lesson14_data.step1_pen_const import E_OVER, E_THAT, E_THIS, MSG_THAT, MSG_THIS
+from lesson14_projects.pen.data.const import E_OVER, E_THAT, E_THIS, MSG_THAT, MSG_THIS
 
 
 class InitState:

@@ -2,7 +2,7 @@
 
 サブサブサブステートマシンを作ってみましょう  
 
-lesson14_data/step2_pen_transition.py:  
+lesson14_projects/pen/data/transition.py:  
 
 ```python
 # 定数の import 部分を略

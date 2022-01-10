@@ -1,7 +1,7 @@
 # Lesson19
 
 設定ファイルを書くなら 設定用のファイル形式を用いておくと 他のプログラムでも利用できます。  
-本レッスンでは `lesson14_data/step2_pen_transition.py` の Pythonスクリプトの dictionary 変数を JSON へ書き出してみましょう  
+本レッスンでは `lesson14_projects/pen.data/transition.py` の Pythonスクリプトの dictionary 変数を JSON へ書き出してみましょう  
 
 # Example - House
 
@@ -16,7 +16,7 @@ python.exe -m lesson19.main_house3n2_step2_transition3
 
 # Example - Pen
 
-入力元: `lesson14_data.step2_pen_transition` - `pen_transition_py_dict`  
+入力元: `lesson14_projects.pen.data.transition` - `pen_transition_py_dict`  
 出力先: `lesson19_projects/pen/data/auto_gen/transition.json`  
 
 ## Set up

@@ -6,7 +6,7 @@ from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
 from lesson18_projects.pen.data.auto_gen.const import INIT
 from lesson18_projects.pen.data.state_gen import pen_state_gen_v18
-from lesson14_data.step2_pen_transition import pen_transition_py_dict
+from lesson14_projects.pen.data.transition import pen_transition_py_dict
 
 server = None
 
