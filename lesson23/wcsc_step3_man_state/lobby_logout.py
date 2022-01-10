@@ -1,4 +1,4 @@
-from lesson23_projects.wcsc.data.auto_gen.const import E_COMPLETED
+from lesson23_projects.wcsc.auto_gen.data.const import E_COMPLETED
 
 
 def create_lobby_logout(state):

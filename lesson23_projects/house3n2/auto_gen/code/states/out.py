@@ -1,6 +1,6 @@
-from lesson23_projects.house3n2.data.auto_gen.const import E_FAILED, E_PULLED_KNOB
+from lesson23_projects.house3n2.auto_gen.data.const import E_FAILED, E_TURNED_KNOB
 
-class OutClosedoorState():
+class OutState():
     def update(self, req):
 
         self.on_entry(req)
@@ -9,9 +9,9 @@ class OutClosedoorState():
         msg = self.on_trigger(req)
 
         # 分岐
-        if msg == E_PULLED_KNOB:
-            self.on_pulled_knob(req)
-            return E_PULLED_KNOB
+        if msg == E_TURNED_KNOB:
+            self.on_turned_knob(req)
+            return E_TURNED_KNOB
 
         elif msg == E_FAILED:
             self.on_failed(req)
@@ -26,7 +26,7 @@ class OutClosedoorState():
     def on_trigger(self, req):
         return req.context.pull_trigger()
 
-    def on_pulled_knob(self, req):
+    def on_turned_knob(self, req):
         pass
 
     def on_failed(self, req):

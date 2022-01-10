@@ -2,11 +2,11 @@
 from lesson12_projects.house3.data.const import MY_ROOM, CLOSE_DOOR, OPEN_DOOR, OUT, STAIRS
 
 # Lesson 23 State
-from lesson23.house3n2.auto_gen.states.myroom import MyroomState
-from lesson23.house3n2.auto_gen.states.out_closedoor import OutClosedoorState
-from lesson23.house3n2.auto_gen.states.out_opendoor import OutOpendoorState
-from lesson23.house3n2.auto_gen.states.out import OutState
-from lesson23.house3n2.auto_gen.states.stairs import StairsState
+from lesson23_projects.house3n2.auto_gen.code.states.myroom import MyroomState
+from lesson23_projects.house3n2.auto_gen.code.states.out_closedoor import OutClosedoorState
+from lesson23_projects.house3n2.auto_gen.code.states.out_opendoor import OutOpendoorState
+from lesson23_projects.house3n2.auto_gen.code.states.out import OutState
+from lesson23_projects.house3n2.auto_gen.code.states.stairs import StairsState
 
 # Lesson 23 State wrapper
 from lesson23.house3n2_step3_man_state.myroom import create_myroom

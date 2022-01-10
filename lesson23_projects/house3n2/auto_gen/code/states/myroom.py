@@ -1,4 +1,4 @@
-from lesson23_projects.house3n2.data.auto_gen.const import E_FAILED, E_SITTING_DOWN
+from lesson23_projects.house3n2.auto_gen.data.const import E_FAILED, E_SITTING_DOWN
 
 class MyroomState():
     def update(self, req):
