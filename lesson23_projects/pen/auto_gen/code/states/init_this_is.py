@@ -1,4 +1,4 @@
-from lesson18_projects.pen.data.auto_gen.const import E_A, E_AN, E_OVER
+from lesson18_projects.pen.auto_gen.data.const import E_A, E_AN, E_OVER
 
 class InitThisIsState():
     def update(self, req):

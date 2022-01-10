@@ -10,7 +10,7 @@ from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 from lesson23_projects.pen.auto_gen.data.const import INIT
 from lesson23_projects.pen.data.state_gen_v23 import pen_state_gen_v23
 
-INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_projects/pen/data/auto_gen/transition.json"
+INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_projects/pen/auto_gen/data/transition.json"
 server = None
 
 

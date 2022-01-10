@@ -9,11 +9,11 @@ from lesson23_projects.house3n2.auto_gen.code.states.out import OutState
 from lesson23_projects.house3n2.auto_gen.code.states.stairs import StairsState
 
 # Lesson 23 State wrapper
-from lesson23.house3n2_step3_man_state.myroom import create_myroom
-from lesson23.house3n2_step3_man_state.out_closedoor import create_out_closedoor
-from lesson23.house3n2_step3_man_state.out_opendoor import create_out_opendoor
-from lesson23.house3n2_step3_man_state.out import create_out
-from lesson23.house3n2_step3_man_state.stairs import create_stairs
+from lesson23_projects.house3n2.code.states.myroom import create_myroom
+from lesson23_projects.house3n2.code.states.out_closedoor import create_out_closedoor
+from lesson23_projects.house3n2.code.states.out_opendoor import create_out_opendoor
+from lesson23_projects.house3n2.code.states.out import create_out
+from lesson23_projects.house3n2.code.states.stairs import create_stairs
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
