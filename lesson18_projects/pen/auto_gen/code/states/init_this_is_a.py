@@ -1,6 +1,6 @@
-from lesson18_projects.pen.data.auto_gen.const import E_A, E_AN, E_OVER
+from lesson18_projects.pen.auto_gen.data.const import E_OVER, E_PEN, E_PIN
 
-class InitThisIsState():
+class InitThisIsAState():
     def update(self, req):
 
         self.on_entry(req)
@@ -13,13 +13,13 @@ class InitThisIsState():
             self.on_over(req)
             return E_OVER
 
-        elif msg == E_AN:
-            self.on_an(req)
-            return E_AN
+        elif msg == E_PIN:
+            self.on_pin(req)
+            return E_PIN
 
-        elif msg == E_A:
-            self.on_a(req)
-            return E_A
+        elif msg == E_PEN:
+            self.on_pen(req)
+            return E_PEN
 
         else:
             raise ValueError(f"Unexpected msg:{msg}")
@@ -33,9 +33,9 @@ class InitThisIsState():
     def on_over(self, req):
         pass
 
-    def on_an(self, req):
+    def on_pin(self, req):
         pass
 
-    def on_a(self, req):
+    def on_pen(self, req):
         pass
 

@@ -9,7 +9,7 @@ Pythonのdict（これはOrderedDictではありません）でデータ化し�
 
 実行前に 以下のフォルダーが既に作成されていれば、不要なファイルが残っているかもしれませんので削除してください
 
-- `lesson18_projects/data/auto_gen`
+- `lesson18_projects/auto_gen`
 
 ```shell
 python.exe -m lesson18.main_pen_step1

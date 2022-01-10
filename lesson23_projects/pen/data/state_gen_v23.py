@@ -1,12 +1,12 @@
 """State Generator"""
-from lesson18_projects.pen.data.auto_gen.const import A, INIT, IS, PEN, THIS
+from lesson18_projects.pen.auto_gen.data.const import A, INIT, IS, PEN, THIS
 
 # Lesson 18 State wrapper
-from lesson18.pen_step3_man_state.init import create_init
-from lesson18.pen_step3_man_state.init_this import create_init_this
-from lesson18.pen_step3_man_state.init_this_is import create_init_this_is
-from lesson18.pen_step3_man_state.init_this_is_a import create_init_this_is_a
-from lesson18.pen_step3_man_state.pen import create_pen
+from lesson18_projects.pen.code.states.init import create_init
+from lesson18_projects.pen.code.states.init_this import create_init_this
+from lesson18_projects.pen.code.states.init_this_is import create_init_this_is
+from lesson18_projects.pen.code.states.init_this_is_a import create_init_this_is_a
+from lesson18_projects.pen.code.states.pen import create_pen
 
 # Lesson 23
 from lesson23_projects.pen.auto_gen.code.states.init_this_is_a import InitThisIsAState

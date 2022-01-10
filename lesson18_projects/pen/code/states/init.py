@@ -1,4 +1,4 @@
-from lesson18_projects.pen.data.auto_gen.const import E_THIS
+from lesson18_projects.pen.auto_gen.data.const import E_THIS
 
 __is_verbose = True
 
