@@ -1,4 +1,4 @@
-from lesson18_data.auto_gen.pen_const import E_OVER
+from lesson18_projects.pen.data.auto_gen.const import E_OVER
 
 __is_verbose = True
 

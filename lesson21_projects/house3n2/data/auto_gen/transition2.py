@@ -1,4 +1,4 @@
-from lesson18_data.auto_gen.house3_const import CLOSE_DOOR, E_ENTER, E_FAILED, E_PULLED_KNOB, E_SITTING_DOWN, E_TURNED_KNOB, E_UP, MY_ROOM, OPEN_DOOR, OUT, STAIRS
+from lesson18_projects.house3.data.auto_gen.const import CLOSE_DOOR, E_ENTER, E_FAILED, E_PULLED_KNOB, E_SITTING_DOWN, E_TURNED_KNOB, E_UP, MY_ROOM, OPEN_DOOR, OUT, STAIRS
 
 house3n2_transition2_py_dict = {
     "title": "House",

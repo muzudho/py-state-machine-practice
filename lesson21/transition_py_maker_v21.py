@@ -9,7 +9,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
 
-from lesson18_data.house3_step1_const_dict import house3_const_py_dict
+from lesson18_projects.house3.data.const_dict import house3_const_py_dict
 
 class Main:
     def on_main(self):
@@ -22,7 +22,7 @@ class Main:
 
         print(f'args.input  : {args.input}') # Example: "lesson19_projects/house3n2/data/auto_gen/transition2.json"
         print(f'args.output : {args.output}') # Example: "lesson21_projects/house3n2/data/auto_gen/transition2.py"
-        print(f'args.import_module : {args.import_module}') # Example: "lesson18_data.auto_gen.house3n2_const"
+        print(f'args.import_module : {args.import_module}') # Example: "lesson18_projects.house3n2.data.auto_gen.const"
         print(f'args.var_name : {args.var_name}') # Example: "house3n2_transition2_py_dict"
 
         data = JsonReaderV17n2.read_file(args.input)
