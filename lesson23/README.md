@@ -14,10 +14,8 @@ Lesson13n2 と同じ動きをするものを作りましょう
 python.exe -m lesson22.const_py_maker "lesson22_data/step1-house3-const.json" "lesson23_data/auto_gen/house3n2_const.py"
 #                                     --------------------------------------- ----------------------------------------------------
 #                                     入力ファイル (.json)                      出力ファイル (.py)
-```
 
-```shell
-python.exe -m lesson23.main_house3n2_step2
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-house3-const.json" "lesson20_data/step2n2_auto/house3n2-transition3.json" "lesson23_data.auto_gen.house3n2_const" "lesson23/house3n2_step2n2_auto_state"
 ```
 
 ## Run

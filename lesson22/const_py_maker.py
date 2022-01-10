@@ -6,9 +6,9 @@ from lesson22.code_gen.const_py_gen import gen_const_py
 
 class Main:
     def on_main(self):
-        parser = argparse.ArgumentParser(description='(定数).pyファイルを作成します')
+        parser = argparse.ArgumentParser(description='定数を定義した .pyファイルを作成します')
         parser.add_argument('input', help='定数を定義した入力ファイル(.json)')
-        parser.add_argument('output', help='出力ファイル(.py)')
+        parser.add_argument('output', help='定数を定義した出力ファイル(.py)')
         args = parser.parse_args()
 
         print(f'args.input : {args.input}') # Example: "lesson22_data/step1-house3-const.json"
