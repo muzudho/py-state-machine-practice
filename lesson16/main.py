@@ -1,12 +1,13 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson16.code_gen.init_file_gen import gen_init_file
+from lesson16.code_gen.init_file_gen import gen_init_file_v16
 
+OUTPUT_DIR_PATH = "lesson16_projects/wcsc/auto_gen/code/status"
 
 class Main:
     def on_main(self):
-        gen_init_file()
+        gen_init_file_v16(OUTPUT_DIR_PATH)
         return 0
 
     def on_finally(self):

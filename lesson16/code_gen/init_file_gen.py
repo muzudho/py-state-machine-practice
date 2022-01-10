@@ -3,14 +3,13 @@ import os
 from lesson16.code_gen.file_io import FileIo
 
 
-def gen_init_file():
+def gen_init_file_v16(output_dir_path):
     # `auto_gen` フォルダーが無ければ作る
-    dir_path = "lesson16/auto_gen"
-    FileIo.makedirs(dir_path)
+    FileIo.makedirs(output_dir_path)
 
     # `init.py` ファイルを作成します
     # TODO import文を変数にしたい
-    file_path = "lesson16/auto_gen/init.py"
+    file_path = os.path.join(output_dir_path, "init.py")
     text = """from lesson15_projects.wcsc.data.const import E_OVER
 
 class InitState():
