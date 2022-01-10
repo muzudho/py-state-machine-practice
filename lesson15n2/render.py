@@ -1,6 +1,6 @@
 from graphviz import Digraph
-from lesson15n2.directive_edge import DirectiveEdge
-from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
+from lesson15n2.code_gen.directive_edge import DirectiveEdge
+from lesson15n2.code_gen.clustered_directive_edge import ClusteredDirectiveEdge
 
 from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
