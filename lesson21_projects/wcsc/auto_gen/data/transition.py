@@ -1,36 +1,38 @@
+from lesson18_projects.wcsc.auto_gen.data.const import AGREE, E_AGREE, E_COMPLETED, E_GAME_OVER_FLOODGATE, E_GAME_OVER_WCSC, E_GAME_SUMMARY, E_INCORRECT, E_LOGOUT, E_MOVE, E_MOVE_ECHO, E_OK, E_REJECT, E_START, GAME, INIT, LOBBY, LOGIN, LOGOUT, REJECT, REPLY
+
 wcsc_transition_py_dict = {
     "title": "CSA Server protocol 1.2.1",
-    "entry_state": "Init",
+    "entry_state": INIT,
     "data": {
-        "Init": {
-            "login": ["Init", "Login"],
-            "Login": {
-                "ok": ["Lobby"],
-                "incorrect": ["Init"]
+        INIT: {
+            "login": [INIT, LOGIN],
+            LOGIN: {
+                E_OK: [LOBBY],
+                E_INCORRECT: [INIT]
             }
         },
-        "Lobby": {
-            "game_summary": ["Reply"],
-            "logout": ["Lobby", "Logout"],
-            "Logout": {
-                "completed": ["Init"]
+        LOBBY: {
+            E_GAME_SUMMARY: [REPLY],
+            E_LOGOUT: [LOBBY, LOGOUT],
+            LOGOUT: {
+                E_COMPLETED: [INIT]
             }
         },
-        "Reply": {
-            "agree": ["Reply", "Agree"],
-            "reject": ["Reply", "Reject"],
-            "Agree": {
-                "start": ["Game"]
+        REPLY: {
+            E_AGREE: [REPLY, AGREE],
+            E_REJECT: [REPLY, REJECT],
+            AGREE: {
+                E_START: [GAME]
             },
-            "Reject": {
-                "reject": ["Lobby"]
+            REJECT: {
+                E_REJECT: [LOBBY]
             }
         },
-        "Game": {
-            "move": ["Game"],
-            "move_echo": ["Game"],
-            "game_over_floodgate": ["Init"],
-            "game_over_wcsc": ["Lobby"]
+        GAME: {
+            E_MOVE: [GAME],
+            E_MOVE_ECHO: [GAME],
+            E_GAME_OVER_FLOODGATE: [INIT],
+            E_GAME_OVER_WCSC: [LOBBY]
         }
     }
 }

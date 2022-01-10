@@ -17,7 +17,7 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/house3/data/const.j
 
 python.exe -m lesson23.state_py_maker "lesson18n2_projects/house3/data/const.json" "lesson20_projects/house3n2/auto_gen/data/transition3.json" "lesson23_projects.house3n2.auto_gen.data.const" "lesson23_projects/house3n2/auto_gen/code/states"
 #                                     -------------------------------------------- ----------------------------------------------------------- ------------------------------------------------ -------------------------------------------------
-#                                     入力ファイル (.json)                          入力ファイル (.py)                                            import文に書く                                    出力ディレクトリー
+#                                     定数入力ファイル (.json)                       状態遷移入力ファイル (.py)                                    import文に書く                                    出力ディレクトリー
 ```
 
 ## Run
@@ -57,7 +57,7 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/pen/data/const.json
 
 python.exe -m lesson23.state_py_maker "lesson18n2_projects/pen/data/const.json" "lesson20_projects/pen/auto_gen/data/transition.json" "lesson18_projects.pen.auto_gen.data.const" "lesson23_projects/pen/auto_gen/code/states"
 #                                     ----------------------------------------- ----------------------------------------------------- ------------------------------------------- --------------------------------------------
-#                                     入力ファイル (.json)                       入力ファイル (.py)                                      import文に書く                               出力ディレクトリー
+#                                     定数入力ファイル (.json)                    状態遷移入力ファイル (.py)                              import文に書く                               出力ディレクトリー
 ```
 
 ## Run
@@ -95,7 +95,7 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/wcsc/data/const.jso
 
 python.exe -m lesson23.state_py_maker "lesson18n2_projects/wcsc/data/const.json" "lesson20_projects/wcsc/auto_gen/data/transition.json" "lesson23_projects.wcsc.auto_gen.data.const" "lesson23_projects/wcsc/auto_gen/code/states"
 #                                     ------------------------------------------ ----------------------------------------------------- --------------------------------------------- ---------------------------------------------
-#                                     入力ファイル (.json)                        入力ファイル (.py)                                      import文に書く                                 出力ディレクトリー
+#                                     定数入力ファイル (.json)                     状態遷移入力ファイル (.py)                              import文に書く                                 出力ディレクトリー
 ```
 
 ## Run

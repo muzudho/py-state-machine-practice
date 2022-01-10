@@ -1,29 +1,31 @@
+from lesson18_projects.pen.auto_gen.data.const import A, E_A, E_AN, E_IS, E_OVER, E_PEN, E_PIN, E_THAT, E_THIS, E_WAS, INIT, IS, PEN, THIS
+
 pen_transition_py_dict = {
     "title": "This is a pen",
-    "entry_state": "Init",
+    "entry_state": INIT,
     "data": {
-        "Init": {
-            "over": ["Init"],
-            "that": ["Init"],
-            "this": ["Init", "This"],
-            "This": {
-                "over": ["Init"],
-                "was": ["Init"],
-                "is": ["Init", "This", "Is"],
-                "Is": {
-                    "over": ["Init"],
-                    "an": ["Init"],
-                    "a": ["Init", "This", "Is", "A"],
-                    "A": {
-                        "over": ["Init"],
-                        "pin": ["Init"],
-                        "pen": ["Pen"]
+        INIT: {
+            E_OVER: [INIT],
+            E_THAT: [INIT],
+            E_THIS: [INIT, THIS],
+            THIS: {
+                E_OVER: [INIT],
+                E_WAS: [INIT],
+                E_IS: [INIT, THIS, IS],
+                IS: {
+                    E_OVER: [INIT],
+                    E_AN: [INIT],
+                    E_A: [INIT, THIS, IS, A],
+                    A: {
+                        E_OVER: [INIT],
+                        E_PIN: [INIT],
+                        E_PEN: [PEN]
                     }
                 }
             }
         },
-        "Pen": {
-            "over": None
+        PEN: {
+            E_OVER: None
         }
     }
 }

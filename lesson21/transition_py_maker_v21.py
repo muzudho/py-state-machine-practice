@@ -9,30 +9,31 @@ from lesson21.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
 
-from lesson18_projects.house3.data.const_dict import house3_const_py_dict
-
 class Main:
     def on_main(self):
         parser = argparse.ArgumentParser(description='状態遷移を定義した .jsonファイルを元に、状態遷移を定義した .pyファイルを作成します')
-        parser.add_argument('input', help='状態遷移を定義した入力ファイル(.json)')
+        parser.add_argument('input_const', help='定数を定義した入力ファイル(.json)')
+        parser.add_argument('input_transition', help='状態遷移を定義した入力ファイル(.json)')
         parser.add_argument('output', help='状態遷移を定義した出力ファイル(.py)')
         parser.add_argument('import_module', help='import文に書く文字列')
         parser.add_argument('var_name', help='状態遷移ディクショナリーの変数名')
         args = parser.parse_args()
 
-        print(f'args.input  : {args.input}') # Example: "lesson19_projects/house3n2/data/auto_gen/transition2.json"
-        print(f'args.output : {args.output}') # Example: "lesson21_projects/house3n2/data/auto_gen/transition2.py"
-        print(f'args.import_module : {args.import_module}') # Example: "lesson18_projects.house3n2.data.auto_gen.const"
-        print(f'args.var_name : {args.var_name}') # Example: "house3n2_transition2_py_dict"
+        print(f'args.input_const     : {args.input_const}') # Example: "lesson18n2_projects/house3/data/const.json"
+        print(f'args.input_transition: {args.input_transition}') # Example: "lesson19_projects/house3n2/data/auto_gen/transition2.json"
+        print(f'args.output          : {args.output}') # Example: "lesson21_projects/house3n2/data/auto_gen/transition2.py"
+        print(f'args.import_module   : {args.import_module}') # Example: "lesson18_projects.house3n2.data.auto_gen.const"
+        print(f'args.var_name        : {args.var_name}') # Example: "house3n2_transition2_py_dict"
 
-        data = JsonReaderV17n2.read_file(args.input)
+        const_data = JsonReaderV17n2.read_file(args.input_const)
+        transition_data = JsonReaderV17n2.read_file(args.input_transition)
 
         transition_conf_py_stringification = TransitionConfPyStringification(
-            const_py_dict=house3_const_py_dict,
+            const_py_dict=const_data,
             import_from_path=args.import_module,
         )
         out_text = transition_conf_py_stringification.stringify(
-            variable_name=args.var_name, ordered_dict_data=data
+            variable_name=args.var_name, ordered_dict_data=transition_data
         )
 
         FileIo.makedirs(os.path.dirname(args.output))

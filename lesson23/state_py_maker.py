@@ -13,7 +13,7 @@ class Main:
     # Windows
     python.exe -m lesson23.state_py_maker "example-const.json" "example-transition.json" "lesson23_projects.house3n2.data.auto_gen.const" "lesson23/house3n2/auto_gen/states"
     #                                     -------------------- ------------------------- ------------------------------------------------ -----------------------------------
-    #                                     定数定義ファイル       状態遷移定義ファイル        import文に書く文字列                      出力ディレクトリ
+    #                                     定数定義ファイル       状態遷移定義ファイル        import文に書く文字列                              出力ディレクトリ
     """
 
     def on_main(self):
