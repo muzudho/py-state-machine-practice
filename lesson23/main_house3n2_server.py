@@ -8,7 +8,7 @@ from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 
 # Lesson 23
 from lesson23_projects.house3n2.data.auto_gen.const import OUT
-from lesson23_projects.house3n2.data.step4_state_gen_v23 import house3n2_state_gen_v23
+from lesson23_projects.house3n2.data.state_gen_v23 import house3n2_state_gen_v23
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/auto_gen/house3n2-transition3.json"
 server = None

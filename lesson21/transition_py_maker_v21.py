@@ -21,7 +21,7 @@ class Main:
         args = parser.parse_args()
 
         print(f'args.input  : {args.input}') # Example: "lesson19_data/auto_gen/house3n2-transition2.json"
-        print(f'args.output : {args.output}') # Example: "lesson21_data/auto_gen/step2_house3n2_transition2.py"
+        print(f'args.output : {args.output}') # Example: "lesson21_projects/house3n2/data/auto_gen/transition2.py"
         print(f'args.import_module : {args.import_module}') # Example: "lesson18_data.auto_gen.house3n2_const"
         print(f'args.var_name : {args.var_name}') # Example: "house3n2_transition2_py_dict"
 
