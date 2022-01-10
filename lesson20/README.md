@@ -13,6 +13,12 @@ python.exe -m lesson20.transition_py_maker_v20 "lesson19_data/auto_gen/house3n2-
 #                                              Input (.json)                                      Output (.json)
 ```
 
+## Run
+
+```shell
+python.exe -m lesson20.main_house3n2_step2_transition3
+```
+
 # Example - Pen
 
 ## Set up
@@ -22,6 +28,12 @@ python.exe -m lesson20.transition_py_maker_v20 "lesson19_data/auto_gen/house3n2-
 python.exe -m lesson20.transition_py_maker_v20 "lesson19_data/auto_gen/pen-transition.json" "lesson20_data/auto_gen/pen-transition.json" --output_default_format "lesson20_data/auto_gen/pen-transition-default-fomat.json"
 #                                              -------------------------------------------- --------------------------------------------
 #                                              Input (.json)                                 Output (.json)
+```
+
+## Run
+
+```shell
+python.exe -m lesson20.main_pen_step2_transition
 ```
 
 # Example - WCSC
@@ -38,7 +50,5 @@ python.exe -m lesson20.transition_py_maker_v20 "lesson19_data/auto_gen/wcsc-tran
 ## Run
 
 ```shell
-python.exe -m lesson20.main_house3n2_step2_transition3
-python.exe -m lesson20.main_pen_step2_transition
 python.exe -m lesson20.main_wcsc_step2_transition
 ```
