@@ -55,7 +55,9 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/pen/data/const.json
 #                                       ----------------------------------------- ----------------------------------------------
 #                                       入力ファイル (.json)                        出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson18n2_projects/pen/data/const.json" "lesson20_projects/pen/data/auto_gen/transition.json" "lesson18_projects.pen.data.auto_gen.const" "lesson23/pen/auto_gen/states"
+python.exe -m lesson23.state_py_maker "lesson18n2_projects/pen/data/const.json" "lesson20_projects/pen/data/auto_gen/transition.json" "lesson18_projects.pen.data.auto_gen.const" "lesson23_projects/pen/auto_gen/code/states"
+#                                     ----------------------------------------- ----------------------------------------------------- ------------------------------------------- --------------------------------------------
+#                                     入力ファイル (.json)                       出力ファイル (.py)                                      import文に書く                               出力ディレクトリー
 ```
 
 ## Run

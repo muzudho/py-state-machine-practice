@@ -9,11 +9,11 @@ from lesson18.pen_step3_man_state.init_this_is_a import create_init_this_is_a
 from lesson18.pen_step3_man_state.pen import create_pen
 
 # Lesson 23
-from lesson23.pen.auto_gen.states.init_this_is_a import InitThisIsAState
-from lesson23.pen.auto_gen.states.init_this_is import InitThisIsState
-from lesson23.pen.auto_gen.states.init_this import InitThisState
-from lesson23.pen.auto_gen.states.init import InitState
-from lesson23.pen.auto_gen.states.pen import PenState
+from lesson23_projects.pen.auto_gen.code.states.init_this_is_a import InitThisIsAState
+from lesson23_projects.pen.auto_gen.code.states.init_this_is import InitThisIsState
+from lesson23_projects.pen.auto_gen.code.states.init_this import InitThisState
+from lesson23_projects.pen.auto_gen.code.states.init import InitState
+from lesson23_projects.pen.auto_gen.code.states.pen import PenState
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
