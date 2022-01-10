@@ -40,7 +40,7 @@ class Main:
         args = parser.parse_args()
 
         print(f'args.input : {args.input}') # Example: "lesson22_data/step1-house3-const.json"
-        print(f'args.output: {args.output}') # Example: "lesson22_data/step1n2_auto_const/house3_const.py"
+        print(f'args.output: {args.output}') # Example: "lesson22_data/auto_gen/house3_const.py"
 
         gen_const_py(args.input, args.output)
         return 0
