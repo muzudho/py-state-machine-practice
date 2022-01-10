@@ -4,7 +4,7 @@ from lesson07n2.main_finally import MainFinally
 from lesson18_data.pen_step1_const_dict import pen_const_py_dict
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
 
-OUTPUT_CONST_FILE_PATH = "lesson18_data/step1n2_auto_const/pen_const.py"
+OUTPUT_CONST_FILE_PATH = "lesson18_data/auto_gen/pen_const.py"
 
 
 class Main:

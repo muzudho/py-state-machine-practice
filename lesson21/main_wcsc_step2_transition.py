@@ -21,7 +21,7 @@ class Main:
 
         transition_conf_py_stringification = TransitionConfPyStringification(
             const_py_dict=wcsc_const_py_dict,
-            import_from_path="lesson18_data.step1n2_auto_const.pen_const",
+            import_from_path="lesson18_data.auto_gen.pen_const",
         )
         out_text = transition_conf_py_stringification.stringify(
             variable_name=OUTPUT_TRANSITION_VARIABLE_NAME, ordered_dict_data=data

@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson18_data.step1n2_auto_const.pen_const import A, INIT, IS, PEN, THIS
+from lesson18_data.auto_gen.pen_const import A, INIT, IS, PEN, THIS
 
 # State wrapper
 from lesson18.pen_step3_man_state.init import create_init

@@ -7,7 +7,7 @@ Pythonのdict（これはOrderedDictではありません）でデータ化し�
 
 実行前に 以下のフォルダーが既に作成されていれば、不要なファイルが残っているかもしれませんので削除してください
 
-- `lesson18/step1n2_auto_const`
+- `lesson18/auto_gen`
 - `lesson18/pen_step2n2_auto_state`
 
 ```shell

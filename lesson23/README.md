@@ -53,7 +53,7 @@ python.exe -m lesson22.const_py_maker "lesson22_data/step1-pen-const.json" "less
 #                                     ------------------------------------ -----------------------------------------------
 #                                     入力ファイル (.json)                   出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-pen-const.json" "lesson20_data/auto_gen/pen-transition.json" "lesson18_data.step1n2_auto_const.pen_const" "lesson23/pen/auto_gen/states"
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-pen-const.json" "lesson20_data/auto_gen/pen-transition.json" "lesson18_data.auto_gen.pen_const" "lesson23/pen/auto_gen/states"
 ```
 
 ## Run

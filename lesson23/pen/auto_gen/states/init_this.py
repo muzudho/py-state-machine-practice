@@ -1,4 +1,4 @@
-from lesson18_data.step1n2_auto_const.pen_const import E_IS, E_OVER, E_WAS
+from lesson18_data.auto_gen.pen_const import E_IS, E_OVER, E_WAS
 
 class InitThisState():
     def update(self, req):

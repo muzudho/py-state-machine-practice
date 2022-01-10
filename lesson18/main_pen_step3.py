@@ -4,7 +4,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
-from lesson18_data.step1n2_auto_const.pen_const import INIT
+from lesson18_data.auto_gen.pen_const import INIT
 from lesson18_data.pen_step4_state_gen import pen_state_gen_v18
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
 
