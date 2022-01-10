@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson12_data.step1_house3_const import (
+from lesson12_projects.house3.data.const import (
     MY_ROOM,
     OUT,
     CLOSE_DOOR,

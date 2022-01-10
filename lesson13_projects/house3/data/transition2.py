@@ -1,4 +1,4 @@
-from lesson12_data.step1_house3_const import (
+from lesson12_projects.house3.data.const import (
     CLOSE_DOOR,
     E_ENTER,
     E_PULLED_KNOB,
