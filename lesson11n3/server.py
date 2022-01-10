@@ -2,9 +2,9 @@ import socket
 from threading import Thread
 
 from lesson11n3.states.out import OutState
-from lesson11n3_data.step1_house2_const import OUT
-from lesson11n3_data.step2_house2_transition import house2_transition_py_dict
-from lesson11n3_data.step3_house2_state_gen import house2_state_gen
+from lesson11n3_projects.house2.data.const import OUT
+from lesson11n3_projects.house2.data.transition import house2_transition_py_dict
+from lesson11n3_projects.house2.data.state_gen import house2_state_gen
 
 
 class Server:

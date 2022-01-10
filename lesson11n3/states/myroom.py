@@ -1,4 +1,4 @@
-from lesson11n3_data.step1_house2_const import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
+from lesson11n3_projects.house2.data.const import MSG_SIT_DOWN, E_FAILED, E_SITTING_DOWN
 
 
 class MyroomState:

@@ -1,4 +1,4 @@
-from lesson11n3_data.step1_house2_const import MSG_OPEN, E_FAILED, E_OPENED
+from lesson11n3_projects.house2.data.const import MSG_OPEN, E_FAILED, E_OPENED
 
 
 class OutState:
