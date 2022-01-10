@@ -18,8 +18,8 @@ class Main:
         args = parser.parse_args()
 
         print(f'args.input  : {args.input}') # Example: "lesson19_data/auto_gen/house3n2-transition2.json"
-        print(f'args.output : {args.output}') # Example: "lesson20_data/auto_gen/house3n2-transition3.json"
-        print(f'args.output_default_format : {args.output_default_format}') # Example: "lesson20_data/auto_gen/house3n2-transition3-default-fomat.json"
+        print(f'args.output : {args.output}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3.json"
+        print(f'args.output_default_format : {args.output_default_format}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3-default-fomat.json"
 
         # JSONファイルを読込みます
         transition_json_obj = JsonReaderV17n2.read_file(args.input)

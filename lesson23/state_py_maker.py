@@ -25,7 +25,7 @@ class Main:
         args = parser.parse_args()
 
         print(f'args.input_const : {args.input_const}') # Example: "lesson18n2_data/house3-const.json"
-        print(f'args.input_transition : {args.input_transition}') # Example: "lesson20_data/auto_gen/house3n2-transition3.json"
+        print(f'args.input_transition : {args.input_transition}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3.json"
         print(f'args.import_module : {args.import_module}') # Example: "lesson23_projects.house3n2.data.auto_gen.const"
         print(f'args.output : {args.output}') # Example: "lesson23/house3n2/auto_gen/states"
 
