@@ -15,7 +15,7 @@ python.exe -m lesson22.const_py_maker "lesson22_data/step1-house3-const.json" "l
 #                                     --------------------------------------- ----------------------------------------------------
 #                                     入力ファイル (.json)                      出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-house3-const.json" "lesson20_data/auto_gen/house3n2-transition3.json" "lesson23_data.auto_gen.house3n2_const" "lesson23/house3n2_step2n2_auto_state"
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-house3-const.json" "lesson20_data/auto_gen/house3n2-transition3.json" "lesson23_data.auto_gen.house3n2_const" "lesson23/house3n2/auto_gen/states"
 ```
 
 ## Run
@@ -48,16 +48,12 @@ q
 ## Set up
 
 ```shell
-# Example (House)
+# Example (Pen)
 python.exe -m lesson22.const_py_maker "lesson22_data/step1-pen-const.json" "lesson23_data/auto_gen/pen_const.py"
 #                                     ------------------------------------ -----------------------------------------------
 #                                     入力ファイル (.json)                   出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-pen-const.json" "lesson20_data/auto_gen/pen-transition.json" "lesson18_data.step1n2_auto_const.pen_const" "lesson23/pen_step2n2_auto_state"
-```
-
-```shell
-python.exe -m lesson23.main_pen_step2
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-pen-const.json" "lesson20_data/auto_gen/pen-transition.json" "lesson18_data.step1n2_auto_const.pen_const" "lesson23/pen/auto_gen/states"
 ```
 
 ## Run
@@ -65,7 +61,7 @@ python.exe -m lesson23.main_pen_step2
 Server start:  
 
 ```shell
-python.exe -m lesson18.main_pen_server
+python.exe -m lesson23.main_pen_server
 ```
 
 Client start:  
@@ -88,16 +84,12 @@ q
 ## Set up
 
 ```shell
-# Example (House)
+# Example (WCSC)
 python.exe -m lesson22.const_py_maker "lesson22_data/step1-wcsc-const.json" "lesson23_data/auto_gen/wcsc_const.py"
 #                                     ------------------------------------- ------------------------------------------------
 #                                     入力ファイル (.json)                    出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-wcsc-const.json" "lesson20_data/auto_gen/wcsc-transition.json" "lesson23_data.auto_gen.wcsc_const" "lesson23/wcsc_step2n2_auto_state"
-```
-
-```shell
-python.exe -m lesson23.main_wcsc_step2
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-wcsc-const.json" "lesson20_data/auto_gen/wcsc-transition.json" "lesson23_data.auto_gen.wcsc_const" "lesson23/wcsc/auto_gen/states"
 ```
 
 ## Run

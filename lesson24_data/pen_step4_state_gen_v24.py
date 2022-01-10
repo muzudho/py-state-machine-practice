@@ -2,11 +2,11 @@
 from lesson18_data.step1n2_auto_const.pen_const import A, INIT, IS, PEN, THIS
 
 # State (Lesson 23)
-from lesson23.pen_step2n2_auto_state.init_this_is_a import InitThisIsAState
-from lesson23.pen_step2n2_auto_state.init_this_is import InitThisIsState
-from lesson23.pen_step2n2_auto_state.init_this import InitThisState
-from lesson23.pen_step2n2_auto_state.init import InitState
-from lesson23.pen_step2n2_auto_state.pen import PenState
+from lesson23.pen.auto_gen.states.init_this_is_a import InitThisIsAState
+from lesson23.pen.auto_gen.states.init_this_is import InitThisIsState
+from lesson23.pen.auto_gen.states.init_this import InitThisState
+from lesson23.pen.auto_gen.states.init import InitState
+from lesson23.pen.auto_gen.states.pen import PenState
 
 # State wrapper (Lesson 18)
 from lesson24.pen_step3_man_state.init import create_init
