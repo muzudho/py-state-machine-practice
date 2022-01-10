@@ -1,4 +1,4 @@
-from lesson17_data.auto_gen.wcsc_const import E_INCORRECT, INIT, E_OK, LOBBY
+from lesson17_projects.wcsc.data.auto_gen.const import E_INCORRECT, LOBBY, INIT, E_OK
 
 class InitLoginState():
 

@@ -2,9 +2,9 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
-from lesson17_data.step1_wcsc_const_dict import wcsc_const_py_dict
+from lesson17_projects.wcsc.data.const_dict import wcsc_const_py_dict
 
-OUTPUT_FILE_PATH = "lesson17_data/auto_gen/wcsc_const.py"
+OUTPUT_FILE_PATH = "lesson17_projects/wcsc/data/auto_gen/const.py"
 
 
 class Main:

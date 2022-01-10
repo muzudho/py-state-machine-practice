@@ -66,7 +66,7 @@ def gen_state_file(dir_path, node_path, const_conf, transition_conf):
     # 定数をインポートします
     # TODO import文を変数にしたい
     if 0 < len(used_const):
-        pre_text = "from lesson17_data.auto_gen.wcsc_const import "
+        pre_text = "from lesson17_projects.wcsc.data.auto_gen.const import "
         is_skip_first = True
 
         for const in used_const:

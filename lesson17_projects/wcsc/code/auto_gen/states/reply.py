@@ -1,4 +1,4 @@
-from lesson17_data.auto_gen.wcsc_const import REJECT, E_REJECT, E_AGREE, REPLY, AGREE
+from lesson17_projects.wcsc.data.auto_gen.const import REPLY, E_REJECT, REJECT, AGREE, E_AGREE
 
 class ReplyState():
 

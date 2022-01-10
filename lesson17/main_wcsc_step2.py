@@ -2,10 +2,10 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.state_files_gen import gen_state_files_v17
-from lesson17_data.step1_wcsc_const_dict import wcsc_const_py_dict
+from lesson17_projects.wcsc.data.const_dict import wcsc_const_py_dict
 from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
 
-STEP2_AUTO_STATE_DIR_PATH = "lesson17/wcsc_step2n2_auto_state"
+STEP2_AUTO_STATE_DIR_PATH = "lesson17_projects/wcsc/code/auto_gen/states"
 
 
 class Main:

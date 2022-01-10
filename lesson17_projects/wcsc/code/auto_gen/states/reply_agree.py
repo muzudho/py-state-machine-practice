@@ -1,6 +1,6 @@
-from lesson17_data.auto_gen.wcsc_const import E_REJECT, LOBBY
+from lesson17_projects.wcsc.data.auto_gen.const import E_START, GAME
 
-class ReplyRejectState():
+class ReplyAgreeState():
 
     def update(self, req):
 
@@ -8,8 +8,8 @@ class ReplyRejectState():
         msg = req.pull_trigger()
 
         # 分岐
-        if msg == E_REJECT:
-            return [LOBBY]
+        if msg == E_START:
+            return [GAME]
 
         else:
             raise ValueError(f"Unexpected msg:{msg}")
