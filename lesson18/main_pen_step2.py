@@ -3,7 +3,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson18.code_gen.state_files_gen import gen_state_files_v18
 from lesson18_projects.pen.data.const_dict import pen_const_py_dict
-from lesson14_projects.pen.data.transition import pen_transition_py_dict
+from lesson14_projects.pen.data.transition import pen_transition_obj_v14
 
 OUTPUT_STEP2_AUTO_STATE_DIR = "lesson18_projects/pen/auto_gen/code/states"
 IMPORT_FROM_PATH = "lesson18_projects.pen.auto_gen.data.const"
@@ -14,7 +14,7 @@ class Main:
         gen_state_files_v18(
             dir_path=OUTPUT_STEP2_AUTO_STATE_DIR,
             const_py_dict=pen_const_py_dict,
-            transition_py_dict=pen_transition_py_dict,
+            transition_py_dict=pen_transition_obj_v14,
             import_from_path=IMPORT_FROM_PATH,
         )
         return 0

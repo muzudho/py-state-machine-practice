@@ -12,7 +12,7 @@ from lesson12_projects.house3.data.const import (
     STAIRS,
 )
 
-house3n2_transition3_py_dict = {
+house3n2_transition3_obj_v14 = {
     "title": "House",
     "entry_state": OUT,
     "data": {

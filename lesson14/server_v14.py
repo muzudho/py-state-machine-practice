@@ -4,7 +4,7 @@ from threading import Thread
 from lesson14.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson14_projects.pen.data.const import INIT
-from lesson14_projects.pen.data.transition import pen_transition_py_dict
+from lesson14_projects.pen.data.transition import pen_transition_obj_v14
 from lesson14_projects.pen.data.state_gen import pen_state_gen_v14
 
 
@@ -74,9 +74,9 @@ class ServerV14:
                     edge_name = state.update(req)
                     print(f"[server.py] edge_name={edge_name}")
 
-                    # pen_transition_py_dict を見て state_path を得ます
+                    # pen_transition_obj_v14 を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        pen_transition_py_dict["data"], state_path, edge_name
+                        pen_transition_obj_v14["data"], state_path, edge_name
                     )
 
                     if state_path is None:

@@ -15,7 +15,7 @@ from lesson14_projects.pen.data.const import (
     THIS,
 )
 
-pen_transition_py_dict = {
+pen_transition_obj_v14 = {
     "title": "This is a pen",
     "entry_state": INIT,
     "data": {
