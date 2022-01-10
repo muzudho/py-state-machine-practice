@@ -2,25 +2,53 @@
 
 トランジション設定ファイル（JSON形式）から、 `pen_transition.py` ファイルを逆生成してみましょう  
 
-step2:  
+# Example House
 
-入力元: `lesson19_data/auto_gen/pen-transition.json`  
-出力先: `lesson21_data/auto_gen/step2_pen_transition.py`  
+## Set up
 
-step2-2:  
-
-入力元: `lesson19_data/auto_gen/wcsc-transition.json`  
-出力先: `lesson21_data/auto_gen/step2_wcsc_transition.py`  
-
-step2-3:  
-
-入力元: `lesson19_data/auto_gen/house3n2-transition2.json`  
-出力先: `lesson21_data/auto_gen/step2_house3n2_transition2.py`  
+```shell
+# Windows
+python.exe -m lesson21.transition_py_maker "lesson19_data/auto_gen/house3n2-transition2.json" "lesson21_data/auto_gen/step2_house3n2_transition2.py" "lesson18_data.auto_gen.house3n2_const" "house3n2_transition2_py_dict"
+#                                          -------------------------------------------------- ------------------------------------------------------ --------------------------------------- ------------------------------
+#                                          Input (.json)                                      Output (.json)                                          Output (import statement)               Output (Variable name)
+```
 
 ## Run
 
 ```shell
 python.exe -m lesson21.main_house3n2_step2_transition2
+```
+
+# Example: Pen
+
+## Set up
+
+```shell
+# Windows
+python.exe -m lesson21.transition_py_maker "lesson19_data/auto_gen/pen-transition.json" "lesson21_data/auto_gen/step2_pen_transition.py" "lesson18_data.auto_gen.pen_const" "pen_transition_py_dict"
+#                                          -------------------------------------------- ------------------------------------------------ ---------------------------------- ------------------------
+#                                          Input (.json)                                 Output (.json)                                   Output (import statement)          Output (Variable name)
+```
+
+## Run
+
+```shell
 python.exe -m lesson21.main_pen_step2_transition
+```
+
+# Example: Wcsc
+
+## Set up
+
+```shell
+# Windows
+python.exe -m lesson21.transition_py_maker "lesson19_data/auto_gen/wcsc-transition.json" "lesson21_data/auto_gen/step2_wcsc_transition.py" "lesson18_data.auto_gen.wcsc_const" "wcsc_transition_py_dict"
+#                                          --------------------------------------------- ------------------------------------------------- ----------------------------------- -------------------------
+#                                          Input (.json)                                 Output (.json)                                    Output (import statement)           Output (Variable name)
+```
+
+## Run
+
+```shell
 python.exe -m lesson21.main_wcsc_step2_transition
 ```

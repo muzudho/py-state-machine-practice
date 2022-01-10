@@ -1,16 +1,4 @@
-from lesson18_data.auto_gen.pen_const import (
-    CLOSE_DOOR,
-    E_ENTER,
-    E_FAILED,
-    E_PULLED_KNOB,
-    E_SITTING_DOWN,
-    E_TURNED_KNOB,
-    E_UP,
-    MY_ROOM,
-    OPEN_DOOR,
-    OUT,
-    STAIRS,
-)
+from lesson18_data.auto_gen.house3n2_const import CLOSE_DOOR, E_ENTER, E_FAILED, E_PULLED_KNOB, E_SITTING_DOWN, E_TURNED_KNOB, E_UP, MY_ROOM, OPEN_DOOR, OUT, STAIRS
 
 house3n2_transition2_py_dict = {
     "title": "House",
@@ -19,10 +7,22 @@ house3n2_transition2_py_dict = {
         OUT: {
             E_TURNED_KNOB: [OUT, CLOSE_DOOR],
             E_FAILED: [OUT],
-            CLOSE_DOOR: {E_PULLED_KNOB: [OUT, OPEN_DOOR], E_FAILED: [OUT]},
-            OPEN_DOOR: {E_ENTER: [STAIRS], E_FAILED: [OUT]},
+            CLOSE_DOOR: {
+                E_PULLED_KNOB: [OUT, OPEN_DOOR],
+                E_FAILED: [OUT]
+            },
+            OPEN_DOOR: {
+                E_ENTER: [STAIRS],
+                E_FAILED: [OUT]
+            }
         },
-        STAIRS: {E_UP: [MY_ROOM], E_FAILED: [OUT]},
-        MY_ROOM: {E_SITTING_DOWN: None, E_FAILED: [OUT]},
-    },
+        STAIRS: {
+            E_UP: [MY_ROOM],
+            E_FAILED: [OUT]
+        },
+        MY_ROOM: {
+            E_SITTING_DOWN: None,
+            E_FAILED: [OUT]
+        }
+    }
 }
