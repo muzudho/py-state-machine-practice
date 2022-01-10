@@ -1,4 +1,4 @@
-from lesson23_data.auto_gen.wcsc_const import (
+from lesson23_projects.wcsc.data.auto_gen.const import (
     E_GAME_OVER_FLOODGATE,
     E_GAME_OVER_WCSC,
     E_MOVE,

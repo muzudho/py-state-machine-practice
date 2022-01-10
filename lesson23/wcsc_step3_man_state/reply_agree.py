@@ -1,4 +1,4 @@
-from lesson23_data.auto_gen.wcsc_const import E_START
+from lesson23_projects.wcsc.data.auto_gen.const import E_START
 
 
 def create_reply_agree(state):

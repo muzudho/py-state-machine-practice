@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson23_data.auto_gen.wcsc_const import (
+from lesson23_projects.wcsc.data.auto_gen.const import (
     INIT,
     LOGIN,
     LOBBY,

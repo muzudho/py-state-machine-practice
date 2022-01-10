@@ -49,8 +49,8 @@ q
 
 ```shell
 # Example (Pen)
-python.exe -m lesson18n2.const_py_maker "lesson18n2_data/pen-const.json" "lesson23_data/auto_gen/pen_const.py"
-#                                       -------------------------------- -------------------------------------
+python.exe -m lesson18n2.const_py_maker "lesson18n2_data/pen-const.json" "lesson23_projects/pen/data/auto_gen/const.py"
+#                                       -------------------------------- ----------------------------------------------
 #                                       入力ファイル (.json)               出力ファイル (.py)
 
 python.exe -m lesson23.state_py_maker "lesson18n2_data/pen-const.json" "lesson20_data/auto_gen/pen-transition.json" "lesson18_data.auto_gen.pen_const" "lesson23/pen/auto_gen/states"
@@ -85,11 +85,11 @@ q
 
 ```shell
 # Example (WCSC)
-python.exe -m lesson18n2.const_py_maker "lesson18n2_data/wcsc-const.json" "lesson23_data/auto_gen/wcsc_const.py"
-#                                       --------------------------------- --------------------------------------
+python.exe -m lesson18n2.const_py_maker "lesson18n2_data/wcsc-const.json" "lesson23_projects/wcsc/data/auto_gen/const.py"
+#                                       --------------------------------- -----------------------------------------------
 #                                       入力ファイル (.json)                出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson18n2_data/wcsc-const.json" "lesson20_data/auto_gen/wcsc-transition.json" "lesson23_data.auto_gen.wcsc_const" "lesson23/wcsc/auto_gen/states"
+python.exe -m lesson23.state_py_maker "lesson18n2_data/wcsc-const.json" "lesson20_data/auto_gen/wcsc-transition.json" "lesson23_projects.wcsc.data.auto_gen.const" "lesson23/wcsc/auto_gen/states"
 ```
 
 ## Run

@@ -1,4 +1,4 @@
-from lesson23_data.auto_gen.wcsc_const import E_INCORRECT, E_OK
+from lesson23_projects.wcsc.data.auto_gen.const import E_INCORRECT, E_OK
 
 
 def create_init_login(state):

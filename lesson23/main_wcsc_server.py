@@ -7,8 +7,8 @@ from lesson18.state_machine_v18 import StateMachineV18
 from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 
 # Lesson 23
-from lesson23_data.auto_gen.wcsc_const import INIT
-from lesson23_data.wcsc_step4_state_gen_v23 import wcsc_state_gen_v23
+from lesson23_projects.wcsc.data.auto_gen.const import INIT
+from lesson23_projects.wcsc.data.step4_state_gen_v23 import wcsc_state_gen_v23
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/auto_gen/wcsc-transition.json"
 server = None

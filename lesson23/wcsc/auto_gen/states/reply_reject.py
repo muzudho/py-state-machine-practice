@@ -1,4 +1,4 @@
-from lesson23_data.auto_gen.wcsc_const import E_REJECT
+from lesson23_projects.wcsc.data.auto_gen.const import E_REJECT
 
 class ReplyRejectState():
     def update(self, req):
