@@ -7,4 +7,3 @@ def gen_const_py(input_path, output_path):
     # JSON構造（順序付きDict）に変換 --> 出力
     transition_json_obj = JsonReaderV20.read_file(input_path)
     gen_const_file_v17(output_path, transition_json_obj)
-    

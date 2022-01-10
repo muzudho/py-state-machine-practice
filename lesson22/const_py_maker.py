@@ -32,7 +32,7 @@ class Main:
     MSG_TURN_KNOB = 'Turn knob'
     MSG_PULL_KNOB = 'Pull knob'
     """
-    
+
     def on_main(self):
         parser = argparse.ArgumentParser(description='定数を定義した .pyファイルを作成します')
         parser.add_argument('input', help='定数を定義した入力ファイル(.json)')
