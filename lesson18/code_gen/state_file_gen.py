@@ -1,3 +1,5 @@
+import os
+
 from lesson16.code_gen.file_io import FileIo
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 from lesson18.code_gen.py_syntax.class_gen import ClassGen
@@ -32,7 +34,7 @@ class StateFileGen:
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
-        file_path = f"{dir_path}/{file_stem}.py"
+        file_path = os.path.join(dir_path, "{file_stem}.py")
 
         # エッジの分岐部分
         directed_edge_list = TransitionConfV16n3.create_edge_list_by_node_path(
