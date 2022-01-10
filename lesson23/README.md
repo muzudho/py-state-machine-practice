@@ -23,7 +23,7 @@ python.exe -m lesson23.state_py_maker "lesson22_data/step1-house3-const.json" "l
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_house3n2_step3
+python.exe -m lesson23.main_house3n2_server
 ```
 
 Client start:  
@@ -65,7 +65,7 @@ python.exe -m lesson23.main_pen_step2
 Server start:  
 
 ```shell
-python.exe -m lesson18.main_pen_step3
+python.exe -m lesson18.main_pen_server
 ```
 
 Client start:  
@@ -105,7 +105,7 @@ python.exe -m lesson23.main_wcsc_step2
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_wcsc_step3
+python.exe -m lesson23.main_wcsc_server
 ```
 
 Client start:  
