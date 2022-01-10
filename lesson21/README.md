@@ -8,7 +8,7 @@
 
 ```shell
 # Windows
-python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/house3n2/data/auto_gen/transition2.json" "lesson21_projects/house3n2/auto_gen/data/transition2.py" "lesson18_projects.house3.auto_gen.data.const" "house3n2_transition2_py_dict"
+python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/house3n2/auto_gen/data/transition2.json" "lesson21_projects/house3n2/auto_gen/data/transition2.py" "lesson18_projects.house3.auto_gen.data.const" "house3n2_transition2_py_dict"
 #                                              ----------------------------------------------------------- --------------------------------------------------------- ---------------------------------------------- ------------------------------
 #                                              Input (.json)                                                Output (.json)                                            Output (import statement)                     Output (Variable name)
 ```
@@ -19,7 +19,7 @@ python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/house3n2/data/
 
 ```shell
 # Windows
-python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/pen/data/auto_gen/transition.json" "lesson21_projects/pen/auto_gen/data/transition.py" "lesson18_projects.pen.auto_gen.data.const" "pen_transition_py_dict"
+python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/pen/auto_gen/data/transition.json" "lesson21_projects/pen/auto_gen/data/transition.py" "lesson18_projects.pen.auto_gen.data.const" "pen_transition_py_dict"
 #                                              ----------------------------------------------------- --------------------------------------------------- ------------------------------------------- ------------------------
 #                                              Input (.json)                                         Output (.json)                                       Output (import statement)                   Output (Variable name)
 ```
@@ -30,7 +30,7 @@ python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/pen/data/auto_
 
 ```shell
 # Windows
-python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/wcsc/data/auto_gen/transition.json" "lesson21_projects/wcsc/auto_gen/data/transition.py" "lesson18_projects.wcsc.auto_gen.data.const" "wcsc_transition_py_dict"
+python.exe -m lesson21.transition_py_maker_v21 "lesson19_projects/wcsc/auto_gen/data/transition.json" "lesson21_projects/wcsc/auto_gen/data/transition.py" "lesson18_projects.wcsc.auto_gen.data.const" "wcsc_transition_py_dict"
 #                                              ------------------------------------------------------ ---------------------------------------------------- -------------------------------------------- -------------------------
 #                                              Input (.json)                                           Output (.json)                                       Output (import statement)                   Output (Variable name)
 ```
