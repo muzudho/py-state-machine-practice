@@ -1,8 +1,8 @@
-from lesson16n2.transition_conf_v1n2 import TransitionConfV1n2
+from lesson16n2.code_gen.transition_conf_v16n2 import TransitionConfV16n2
 from lesson15n2.directive_edge import DirectiveEdge
 
 
-class TransitionConfV16n3(TransitionConfV1n2):
+class TransitionConfV16n3(TransitionConfV16n2):
     @classmethod
     def create_edge_list_by_node_path(clazz, curr_dict, node_path):
         """ノードパスを辿って任意のノードまで下りていき、

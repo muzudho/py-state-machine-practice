@@ -1,8 +1,8 @@
-from lesson15.transition_conf_v1 import TransitionConfV1
+from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
 from lesson15n2.directive_edge import DirectiveEdge
 
 
-class TransitionConfV1n2(TransitionConfV1):
+class TransitionConfV16n2(TransitionConfV15):
     def create_edge_list(self):
         """辺（DirectiveEdgeクラス）の一覧を作成"""
 

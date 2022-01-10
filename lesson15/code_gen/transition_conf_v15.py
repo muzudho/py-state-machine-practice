@@ -1,4 +1,4 @@
-class TransitionConfV1:
+class TransitionConfV15:
     def __init__(self, data):
         self._title = data["title"]
         self._entry_state = data["entry_state"]

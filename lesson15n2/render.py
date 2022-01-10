@@ -2,7 +2,7 @@ from graphviz import Digraph
 from lesson15n2.directive_edge import DirectiveEdge
 from lesson15n2.clustered_directive_edge import ClusteredDirectiveEdge
 
-from lesson15.transition_conf_v1 import TransitionConfV1
+from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
 
 
@@ -86,7 +86,7 @@ class Render:
 
         edge_list = []
 
-        transition_conf = TransitionConfV1(pen_transition_py_dict)
+        transition_conf = TransitionConfV15(pen_transition_py_dict)
 
         # エッジの一覧を作成
         create_edge_list(transition_conf.data, [], None, edge_list)
