@@ -4,7 +4,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
-from lesson20.code_gen.json_reader import JsonReaderV20
+from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 
 # Lesson 23
 from lesson23_data.auto_gen.pen_const import INIT
@@ -16,7 +16,7 @@ server = None
 
 class Main:
     def on_main(self):
-        transition_json_obj = JsonReaderV20.read_file(
+        transition_json_obj = JsonReaderV17n2.read_file(
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 

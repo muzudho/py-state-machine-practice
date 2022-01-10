@@ -6,7 +6,7 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
-from lesson20.code_gen.json_reader import JsonReaderV20
+from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 
 
 class Main:
@@ -22,7 +22,7 @@ class Main:
         print(f'args.output_default_format : {args.output_default_format}') # Example: "lesson20_data/auto_gen/house3n2-transition3-default-fomat.json"
 
         # JSONファイルを読込みます
-        transition_json_obj = JsonReaderV20.read_file(args.input)
+        transition_json_obj = JsonReaderV17n2.read_file(args.input)
         # print(f"transition_json_obj={transition_json_obj}")
 
         # デフォルトのフォーマッティングで出力するなら
