@@ -10,7 +10,7 @@
 # Windows
 python.exe -m lesson21.transition_py_maker_v21 "lesson18n2_projects/house3/data/const.json" "lesson19_projects/house3n2/auto_gen/data/transition2.json" "lesson21_projects/house3n2/auto_gen/data/transition2.py" "lesson18_projects.house3.auto_gen.data.const" "house3n2_transition2_py_dict"
 #                                              -------------------------------------------- ----------------------------------------------------------- --------------------------------------------------------- ---------------------------------------------- ------------------------------
-#                                              定数定義入力ファイル (.json)                   状態遷移定義入力ファイル(.json)                                Output (.json)                                            Output (import statement)                     Output (Variable name)
+#                                              定数定義入力ファイル (.json)                   状態遷移定義入力ファイル(.json)                                Output (.py)                                              Output (import statement)                     Output (Variable name)
 ```
 
 # Example: Pen
