@@ -2,7 +2,7 @@ import sys
 import argparse
 
 from lesson07n2.main_finally import MainFinally
-from lesson22.code_gen.const_py_gen import gen_const_py
+from lesson18n2.code_gen.const_py_gen import gen_const_py
 
 class Main:
     """定数を定義した .pyファイルを作成します
