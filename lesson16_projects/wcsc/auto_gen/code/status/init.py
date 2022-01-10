@@ -1,4 +1,4 @@
-from lesson15_projects.wcsc.data.const import E_OVER
+from lesson14_projects.wcsc.data.const import E_OVER
 
 class InitState():
 

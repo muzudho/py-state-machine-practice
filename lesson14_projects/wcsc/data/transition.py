@@ -1,4 +1,4 @@
-from lesson15_projects.wcsc.data.const import (
+from lesson14_projects.wcsc.data.const import (
     AGREE,
     E_AGREE,
     E_COMPLETED,
@@ -22,7 +22,7 @@ from lesson15_projects.wcsc.data.const import (
     REPLY,
 )
 
-wcsc_transition_py_dict = {
+wcsc_transition_obj_v14 = {
     "title": "CSA Server protocol 1.2.1",
     "entry_state": INIT,
     "data": {

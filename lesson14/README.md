@@ -1,6 +1,6 @@
 # Lesson14
 
-サブサブサブステートマシンを作ってみましょう  
+状態遷移定義ファイルを作ってみましょう。サブサブサブステートマシンを作ってみましょう  
 
 lesson14_projects/pen/data/transition.py:  
 

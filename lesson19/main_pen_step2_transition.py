@@ -12,12 +12,12 @@ OUTPUT_FILE_PATH = "lesson19_projects/pen/auto_gen/data/transition.json"
 
 class Main:
     def on_main(self):
-        transition_conf_obj = TransitionConfV16n3(pen_transition_py_dict)
+        transition_obj = TransitionConfV16n3(pen_transition_py_dict)
         TransitionJsonWriter.write(
             file_path=OUTPUT_FILE_PATH,
-            title=transition_conf_obj.title,
-            entry_state=transition_conf_obj.entry_state,
-            data=transition_conf_obj.data,
+            title=transition_obj.title,
+            entry_state=transition_obj.entry_state,
+            data=transition_obj.data,
         )
         return 0
 

@@ -3,21 +3,19 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
-from lesson15_projects.wcsc.data.transition import (
-    wcsc_transition_py_dict,
-)
+from lesson14_projects.wcsc.data.transition import wcsc_transition_obj_v14
 
 OUTPUT_FILE_PATH = "lesson19_projects/wcsc/auto_gen/data/transition.json"
 
 
 class Main:
     def on_main(self):
-        transition_conf_obj = TransitionConfV16n3(wcsc_transition_py_dict)
+        transition_obj = TransitionConfV16n3(wcsc_transition_obj_v14)
         TransitionJsonWriter.write(
             file_path=OUTPUT_FILE_PATH,
-            title=transition_conf_obj.title,
-            entry_state=transition_conf_obj.entry_state,
-            data=transition_conf_obj.data,
+            title=transition_obj.title,
+            entry_state=transition_obj.entry_state,
+            data=transition_obj.data,
         )
         return 0
 

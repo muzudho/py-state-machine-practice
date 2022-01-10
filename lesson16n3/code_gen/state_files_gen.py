@@ -1,7 +1,7 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson16n3.code_gen.state_file_gen import gen_state_file_v16n3
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
-from lesson15_projects.wcsc.data.transition import wcsc_transition_py_dict
+from lesson14_projects.wcsc.data.transition import wcsc_transition_obj_v14
 
 
 def gen_state_files_v16n3(output_dir_path):
@@ -11,7 +11,7 @@ def gen_state_files_v16n3(output_dir_path):
     output_dir : str
         例えば 'lesson16n3_projects/wcsc/auto_gen/code/states'
     """
-    transition_conf = TransitionConfV16n3(wcsc_transition_py_dict)
+    transition_conf = TransitionConfV16n3(wcsc_transition_obj_v14)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()

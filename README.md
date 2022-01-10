@@ -24,7 +24,7 @@
 * 📖 [Lesson13](./lesson13) - ステート（State）とサブステート（Sub-state）を分けて 大きな状態遷移、小さな状態遷移といった　強調を  
   付けた方が 人間の目の検索能力の負担を軽くできるかもしれません
 * 📖 [Lesson13-2](./lesson13n2) - `transigion_conf.py` に、ステートマシンを終了させる出口を指定できるようにしましょう
-* 📖 [Lesson14](./lesson14) - サブサブサブステートマシンを作ってみましょう
+* 📖 [Lesson14](./lesson14) - 状態遷移定義ファイルを作ってみましょう。サブサブサブステートマシンを作ってみましょう
 * 📖 [Lesson15](./lesson15) - `transition_conf_data.py` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。 graphviz を使って可視化しましょう
 * 📖 [Lesson15-2](./lesson15n2) - サブステートを可視化できるように、 graphviz のクラスタリングを使いましょう
 * 📖 [Lesson16](./lesson16) - `auto_gen` フォルダーを自動生成し、その中に `init.py` （状態）ファイルの雛型を自動生成してみましょう
@@ -34,7 +34,7 @@
 * 📖 [Lesson17-2](./lesson17n2) - (Lesson20からLesson17-2へ移動) .json を読み取る練習をしましょう
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
 * 📖 [Lesson18-2](./lesson18n2) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
-* 📖 [Lesson19](./lesson19) - `conf_transition_py_dict.py` のデータ部を JSON へ書き出してみましょう
+* 📖 [Lesson19](./lesson19) - `conf_transition_py_dict.py` のデータ部を JSON へ書き出してみましょう (TODO 状態遷移ファイルは、最初からJSONで書けないか？)
 * 📖 [Lesson20](./lesson20) - `pen-transition.json` ファイルを読み取ってみましょう (Lesson17-2へ一部移動)
 * 📖 [Lesson21](./lesson21) - 状態遷移定義ファイル（JSON形式）から、 `pen_transition.py` ファイルを逆生成してみましょう
 * 📖 Lesson22 - (Lesson18-2に移動)
