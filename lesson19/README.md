@@ -27,7 +27,7 @@ python.exe -m lesson19.main_pen_step2_transition
 
 # Example - Wcsc
 
-入力元: `lesson15_data.step2_wcsc_transitio` - `wcsc_transition_py_dict,`  
+入力元: `lesson15_projects.wcsc.data.transitio` - `wcsc_transition_py_dict,`  
 出力先: `lesson19_projects/wcsc/data/auto_gen/transition.json`  
 
 ## Set up

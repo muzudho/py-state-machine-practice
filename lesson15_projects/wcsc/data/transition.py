@@ -1,4 +1,4 @@
-from lesson15_data.step1_wcsc_const import (
+from lesson15_projects.wcsc.data.const import (
     AGREE,
     E_AGREE,
     E_COMPLETED,

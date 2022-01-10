@@ -1,7 +1,7 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson16n3.code_gen.state_file_gen import gen_state_file
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
-from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
+from lesson15_projects.wcsc.data.transition import wcsc_transition_py_dict
 
 
 def gen_state_files_v16n3(dir_path):

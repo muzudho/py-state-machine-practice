@@ -1,7 +1,7 @@
 import os
 from lesson16.code_gen.file_io import FileIo
 from lesson16n2.code_gen.transition_conf_v16n2 import TransitionConfV16n2
-from lesson15_data.step2_wcsc_transition import wcsc_transition_py_dict
+from lesson15_projects.wcsc.data.transition import wcsc_transition_py_dict
 
 
 def gen_state_files_v16n2(dir_path):
@@ -25,7 +25,7 @@ def gen_state_files_v16n2(dir_path):
         # `init.py` ファイルを作成します
         # TODO import文を変数にしたい
         file_path = f"lesson16n2/auto_gen/{file_stem}.py"
-        text = f"""from lesson15_data.step1_wcsc_const import E_OVER
+        text = f"""from lesson15_projects.wcsc.data.const import E_OVER
 
 class {class_name}State():
 

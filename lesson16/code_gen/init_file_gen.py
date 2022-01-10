@@ -11,7 +11,7 @@ def gen_init_file():
     # `init.py` ファイルを作成します
     # TODO import文を変数にしたい
     file_path = "lesson16/auto_gen/init.py"
-    text = """from lesson15_data.step1_wcsc_const import E_OVER
+    text = """from lesson15_projects.wcsc.data.const import E_OVER
 
 class InitState():
 
