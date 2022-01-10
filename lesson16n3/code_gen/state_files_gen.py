@@ -4,12 +4,12 @@ from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 from lesson15_projects.wcsc.data.transition import wcsc_transition_py_dict
 
 
-def gen_state_files_v16n3(dir_path, output_dir):
+def gen_state_files_v16n3(output_dir_path):
     """
     Parameters
     ----------
     output_dir : str
-        例えば 'lesson16n3_projects/example/auto_gen'
+        例えば 'lesson16n3_projects/wcsc/auto_gen/code/states'
     """
     transition_conf = TransitionConfV16n3(wcsc_transition_py_dict)
 
@@ -19,9 +19,9 @@ def gen_state_files_v16n3(dir_path, output_dir):
         print(f"[Render] edge={edge}")
 
     # フォルダーが無ければ作る
-    FileIo.makedirs(dir_path)
+    FileIo.makedirs(output_dir_path)
 
     # ノードの一覧
     node_path_set = TransitionConfV16n3.extract_node_path_set(edge_list)
     for node_path in node_path_set:
-        gen_state_file_v16n3(transition_conf, node_path, output_dir)
+        gen_state_file_v16n3(transition_conf, node_path, output_dir_path)
