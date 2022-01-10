@@ -8,8 +8,8 @@
 
 ```shell
 # Windows
-python.exe -m lesson21.transition_py_maker "lesson19_data/auto_gen/house3n2-transition2.json" "lesson21_data/auto_gen/step2_house3n2_transition2.py" "lesson18_data.auto_gen.house3n2_const" "house3n2_transition2_py_dict"
-#                                          -------------------------------------------------- ------------------------------------------------------ --------------------------------------- ------------------------------
+python.exe -m lesson21.transition_py_maker "lesson19_data/auto_gen/house3n2-transition2.json" "lesson21_data/auto_gen/step2_house3n2_transition2.py" "lesson18_data.auto_gen.house3_const" "house3n2_transition2_py_dict"
+#                                          -------------------------------------------------- ------------------------------------------------------ ------------------------------------- ------------------------------
 #                                          Input (.json)                                      Output (.json)                                          Output (import statement)               Output (Variable name)
 ```
 
