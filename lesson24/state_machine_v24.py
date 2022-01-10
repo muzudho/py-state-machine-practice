@@ -1,5 +1,5 @@
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
+from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 
 
 class StateMachineV24:
@@ -17,7 +17,7 @@ class StateMachineV24:
         self._is_verbose = False
         self._state_gen = state_gen
         self._transition_py_dict = transition_py_dict
-        self._transition_conf = TransitionConfV1n3(self._transition_py_dict)
+        self._transition_conf = TransitionConfV16n3(self._transition_py_dict)
         self._state_path = entry_state_path
 
         # state_gen_conf.py を見て state_path から state を生成します
