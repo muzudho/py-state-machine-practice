@@ -10,9 +10,9 @@ class Main:
     Examples
     --------
     # Windows
-    python.exe -m lesson22.const_py_maker "example-const.json" "example_const.py"
-    #                                     -------------------- ------------------
-    #                                     入力ファイル           出力ファイル
+    python.exe -m lesson18n2.const_py_maker "example-const.json" "example_const.py"
+    #                                       -------------------- ------------------
+    #                                       入力ファイル           出力ファイル
 
     # example-const.json
     {
@@ -39,8 +39,8 @@ class Main:
         parser.add_argument('output', help='定数を定義した出力ファイル(.py)')
         args = parser.parse_args()
 
-        print(f'args.input : {args.input}') # Example: "lesson22_data/house3-const.json"
-        print(f'args.output: {args.output}') # Example: "lesson22_data/auto_gen/house3_const.py"
+        print(f'args.input : {args.input}') # Example: "lesson18n2_data/house3-const.json"
+        print(f'args.output: {args.output}') # Example: "lesson18n2_data/auto_gen/house3_const.py"
 
         gen_const_py(args.input, args.output)
         return 0
