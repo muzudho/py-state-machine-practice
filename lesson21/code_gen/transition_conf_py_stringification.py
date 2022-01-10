@@ -1,10 +1,10 @@
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
-from lesson18.const_conf import ConstConf
+from lesson18.code_gen.const_conf import ConstConfV18
 
 
 class TransitionConfPyStringification:
     def __init__(self, const_py_dict, import_from_path):
-        self._const_conf = ConstConf(const_py_dict)
+        self._const_conf = ConstConfV18(const_py_dict)
         self._used_const_set = set()
         self._import_from_path = import_from_path
 

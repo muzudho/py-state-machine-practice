@@ -1,4 +1,4 @@
-class ConstConf:
+class ConstConfV18:
     def __init__(self, data):
         # (1) キーと値は 全単射にしてください
         # (2) 大文字と小文字は区別します

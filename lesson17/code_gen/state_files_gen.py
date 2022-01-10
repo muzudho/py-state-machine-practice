@@ -1,12 +1,12 @@
 from lesson16.code_gen.file_io import FileIo
 from lesson17.code_gen.state_file_gen import gen_state_file
-from lesson17.code_gen.const_conf import ConstConf
+from lesson17.code_gen.const_conf import ConstConfV17
 from lesson16n3.transition_conf_v1n3 import TransitionConfV1n3
 
 
 def gen_state_files_v17(const_conf_py_dict, transition_conf_data, output_dir_path):
     transition_conf = TransitionConfV1n3(transition_conf_data)
-    const_conf = ConstConf(const_conf_py_dict)
+    const_conf = ConstConfV17(const_conf_py_dict)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
