@@ -5,7 +5,7 @@ from lesson18.code_gen.state_files_gen import gen_state_files_v18
 from lesson18_data.pen_step1_const_dict import pen_const_py_dict
 from lesson14_data.step2_pen_transition import pen_transition_py_dict
 
-OUTPUT_STEP2_AUTO_STATE_DIR = "lesson18/pen_step2n2_auto_state"
+OUTPUT_STEP2_AUTO_STATE_DIR = "lesson18/pen/auto_gen/states"
 IMPORT_FROM_PATH = "lesson18_data.auto_gen.pen_const"
 
 
