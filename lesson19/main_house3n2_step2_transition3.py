@@ -6,7 +6,7 @@ from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 from lesson19_projects.house3n2.data.transition3 import house3n2_transition3_py_dict
 
 
-OUTPUT_FILE_PATH = "lesson19_projects/house3n2/data/auto_gen/transition2.json"
+OUTPUT_FILE_PATH = "lesson19_projects/house3n2/auto_gen/data/transition2.json"
 
 
 class Main:
