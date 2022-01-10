@@ -1,4 +1,4 @@
-from lesson17_projects.wcsc.data.auto_gen.const import INIT, E_LOGIN, LOGIN
+from lesson17_projects.wcsc.data.auto_gen.const import E_LOGIN, LOGIN, INIT
 
 class InitState():
 
