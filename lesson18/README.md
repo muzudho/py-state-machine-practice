@@ -3,12 +3,13 @@
 Lesson17で行ったコードの自動生成を発展させ、  
 Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、Lesson14と同等のPythonスクリプトのルーチン（状態のスクリプト）を自動生成しましょう  
 
+# Example - Pen
+
 ## Set up
 
 実行前に 以下のフォルダーが既に作成されていれば、不要なファイルが残っているかもしれませんので削除してください
 
-- `lesson18/auto_gen`
-- `lesson18/pen_step2n2_auto_state`
+- `lesson18_data/auto_gen`
 
 ```shell
 python.exe -m lesson18.main_pen_step1

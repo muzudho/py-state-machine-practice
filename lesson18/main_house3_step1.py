@@ -2,15 +2,15 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
-from lesson18_data.pen_step1_const_dict import pen_const_py_dict
+from lesson18_data.house3_step1_const_dict import house3_const_py_dict
 
-OUTPUT_CONST_FILE_PATH = "lesson18_data/auto_gen/pen_const.py"
+OUTPUT_CONST_FILE_PATH = "lesson18_data/auto_gen/house3_const.py"
 
 
 class Main:
     def on_main(self):
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        gen_const_file_v17(OUTPUT_CONST_FILE_PATH, pen_const_py_dict)
+        gen_const_file_v17(OUTPUT_CONST_FILE_PATH, house3_const_py_dict)
         return 0
 
     def on_finally(self):
