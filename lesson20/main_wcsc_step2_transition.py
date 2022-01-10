@@ -7,7 +7,7 @@ from lesson16.code_gen.file_io import FileIo
 from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson20.code_gen.json_reader import JsonReaderV20
 
-INPUT_JSON_FILE_PATH = "lesson19_data/step2_auto/wcsc-transition.json"
+INPUT_JSON_FILE_PATH = "lesson19_data/auto_gen/wcsc-transition.json"
 OUTPUT_JSON_FILE_PATH_1 = (
     "lesson20_data/auto_gen/wcsc-transition-default-fomat.json"
 )

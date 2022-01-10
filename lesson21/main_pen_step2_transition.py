@@ -9,7 +9,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
 )
 from lesson18_data.pen_step1_const_dict import pen_const_py_dict
 
-INPUT_TRANSITION_JSON_FILE_PATH = "lesson19_data/step2_auto/pen-transition.json"
+INPUT_TRANSITION_JSON_FILE_PATH = "lesson19_data/auto_gen/pen-transition.json"
 OUTPUT_AUTO_TRANSITION_FILE_PATH = "lesson21_data/step2n2_auto/step2_pen_transition.py"
 OUTPUT_TRANSITION_VARIABLE_NAME = "pen_transition_py_dict"
 

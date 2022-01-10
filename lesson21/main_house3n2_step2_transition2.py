@@ -10,7 +10,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
 
 from lesson18_data.house3_step1_const_dict import house3_const_py_dict
 
-INPUT_TRANSITION_JSON_FILE_PATH = "lesson19_data/step2_auto/house3n2-transition2.json"
+INPUT_TRANSITION_JSON_FILE_PATH = "lesson19_data/auto_gen/house3n2-transition2.json"
 OUTPUT_AUTO_TRANSITION_FILE_PATH = (
     "lesson21_data/auto_gen/step2_house3n2_transition2.py"
 )
