@@ -4,8 +4,8 @@ from threading import Thread
 from lesson13.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson12_data.step1_house3_const import OUT
-from lesson13_data.step2_house3_transition2 import house3_transition2_py_dict
-from lesson13_data.step3_house3_state_gen import house3_state_gen
+from lesson13_projects.house3.data.transition2 import house3_transition2_py_dict
+from lesson13_projects.house3.data.state_gen import house3_state_gen
 
 
 class ServerV13:
