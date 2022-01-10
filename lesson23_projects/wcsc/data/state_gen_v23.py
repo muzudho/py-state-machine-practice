@@ -24,14 +24,14 @@ from lesson23_projects.wcsc.auto_gen.data.const import (
 )
 
 # Lesson 23 State
-from lesson23.wcsc.auto_gen.states.game import GameState
-from lesson23.wcsc.auto_gen.states.init_login import InitLoginState
-from lesson23.wcsc.auto_gen.states.init import InitState
-from lesson23.wcsc.auto_gen.states.lobby_logout import LobbyLogoutState
-from lesson23.wcsc.auto_gen.states.lobby import LobbyState
-from lesson23.wcsc.auto_gen.states.reply_agree import ReplyAgreeState
-from lesson23.wcsc.auto_gen.states.reply_reject import ReplyRejectState
-from lesson23.wcsc.auto_gen.states.reply import ReplyState
+from lesson23_projects.wcsc.auto_gen.code.states.game import GameState
+from lesson23_projects.wcsc.auto_gen.code.states.init_login import InitLoginState
+from lesson23_projects.wcsc.auto_gen.code.states.init import InitState
+from lesson23_projects.wcsc.auto_gen.code.states.lobby_logout import LobbyLogoutState
+from lesson23_projects.wcsc.auto_gen.code.states.lobby import LobbyState
+from lesson23_projects.wcsc.auto_gen.code.states.reply_agree import ReplyAgreeState
+from lesson23_projects.wcsc.auto_gen.code.states.reply_reject import ReplyRejectState
+from lesson23_projects.wcsc.auto_gen.code.states.reply import ReplyState
 
 # Lesson 23 State wrapper
 from lesson23.wcsc_step3_man_state.game import create_game

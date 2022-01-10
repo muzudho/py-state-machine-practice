@@ -93,7 +93,9 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/wcsc/data/const.jso
 #                                       ------------------------------------------ -----------------------------------------------
 #                                       入力ファイル (.json)                        出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson18n2_projects/wcsc/data/const.json" "lesson20_projects/wcsc/data/auto_gen/transition.json" "lesson23_projects.wcsc.data.auto_gen.const" "lesson23/wcsc/auto_gen/states"
+python.exe -m lesson23.state_py_maker "lesson18n2_projects/wcsc/data/const.json" "lesson20_projects/wcsc/data/auto_gen/transition.json" "lesson23_projects.wcsc.auto_gen.data.const" "lesson23_projects/wcsc/auto_gen/code/states"
+#                                     ------------------------------------------ ----------------------------------------------------- --------------------------------------------- ---------------------------------------------
+#                                     入力ファイル (.json)                        出力ファイル (.py)                                      import文に書く                                 出力ディレクトリー
 ```
 
 ## Run
