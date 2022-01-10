@@ -7,7 +7,7 @@ from lesson15_data.step2_wcsc_transition import (
     wcsc_transition_py_dict,
 )
 
-OUTPUT_FILE_PATH = "lesson19_data/auto_gen/wcsc-transition.json"
+OUTPUT_FILE_PATH = "lesson19_projects/wcsc/data/auto_gen/transition.json"
 
 
 class Main:

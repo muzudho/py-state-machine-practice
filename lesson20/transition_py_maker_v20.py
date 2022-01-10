@@ -17,7 +17,7 @@ class Main:
         parser.add_argument('--output_default_format', help='状態遷移を定義した出力ファイル(.py)デフォルトのフォーマットの確認用')
         args = parser.parse_args()
 
-        print(f'args.input  : {args.input}') # Example: "lesson19_data/auto_gen/house3n2-transition2.json"
+        print(f'args.input  : {args.input}') # Example: "lesson19_projects/house3n2/data/auto_gen/transition2.json"
         print(f'args.output : {args.output}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3.json"
         print(f'args.output_default_format : {args.output_default_format}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3-default-fomat.json"
 

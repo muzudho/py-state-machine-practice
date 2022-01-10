@@ -5,8 +5,8 @@
 
 # Example - House
 
-入力元: `lesson19_data.step2_house3n2_transition3/house3n2_transition3_py_dict`  
-出力先: `lesson19_data/auto_gen/house3n2-transition2.json`  
+入力元: `lesson19_projects.house3n2.data.transition3` - `house3n2_transition3_py_dict`  
+出力先: `lesson19_projects/house3n2/data/auto_gen/transition2.json`  
 
 ## Set up
 
@@ -16,8 +16,8 @@ python.exe -m lesson19.main_house3n2_step2_transition3
 
 # Example - Pen
 
-入力元: `lesson14_data.step2_pen_transition/pen_transition_py_dict`  
-出力先: `lesson19_data/auto_gen/pen-transition.json`  
+入力元: `lesson14_data.step2_pen_transition` - `pen_transition_py_dict`  
+出力先: `lesson19_projects/pen/data/auto_gen/transition.json`  
 
 ## Set up
 
@@ -27,8 +27,8 @@ python.exe -m lesson19.main_pen_step2_transition
 
 # Example - Wcsc
 
-入力元: `lesson15_data.step2_wcsc_transitio/wcsc_transition_py_dict,`  
-出力先: `lesson19_data/auto_gen/wcsc-transition.json`  
+入力元: `lesson15_data.step2_wcsc_transitio` - `wcsc_transition_py_dict,`  
+出力先: `lesson19_projects/wcsc/data/auto_gen/transition.json`  
 
 ## Set up
 

@@ -7,7 +7,7 @@ from lesson14_data.step2_pen_transition import (
     pen_transition_py_dict,
 )
 
-OUTPUT_FILE_PATH = "lesson19_data/auto_gen/pen-transition.json"
+OUTPUT_FILE_PATH = "lesson19_projects/pen/data/auto_gen/transition.json"
 
 
 class Main:
