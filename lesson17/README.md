@@ -43,8 +43,9 @@ class InitState():
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  
 
-* `lesson17/auto_gen`
-* `lesson17/step2n2_auto_state`
+* `lesson17_projects/house3/auto_gen`
+* `lesson17_projects/pen/auto_gen`
+* `lesson17_projects/wcsc/auto_gen`
 
 
 ```shell

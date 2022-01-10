@@ -5,7 +5,7 @@ from lesson17.code_gen.state_files_gen import gen_state_files_v17
 from lesson17_projects.wcsc.data.const_dict import wcsc_const_py_dict
 from lesson15_projects.wcsc.data.transition import wcsc_transition_py_dict
 
-STEP2_AUTO_STATE_DIR_PATH = "lesson17_projects/wcsc/code/auto_gen/states"
+STEP2_AUTO_STATE_DIR_PATH = "lesson17_projects/wcsc/auto_gen/code/states"
 
 
 class Main:

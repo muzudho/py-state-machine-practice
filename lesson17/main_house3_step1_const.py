@@ -4,7 +4,7 @@ from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
 from lesson17_projects.house3.data.const_dict import house3_const_py_dict
 
-OUTPUT_FILE_PATH = "lesson17_projects/house3/data/auto_gen/const.py"
+OUTPUT_FILE_PATH = "lesson17_projects/house3/auto_gen/data/const.py"
 
 
 class Main:
