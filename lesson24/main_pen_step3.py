@@ -10,7 +10,7 @@ from lesson23_data.step1n2_auto_const.pen_const import INIT
 from lesson24.state_machine_v24 import StateMachineV24
 from lesson24_data.pen_step4_state_gen_v24 import pen_state_gen_v24
 
-INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
+INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/auto_gen/pen-transition.json"
 server = None
 
 

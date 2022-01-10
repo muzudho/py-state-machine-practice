@@ -15,7 +15,7 @@ python.exe -m lesson22.const_py_maker "lesson22_data/step1-house3-const.json" "l
 #                                     --------------------------------------- ----------------------------------------------------
 #                                     入力ファイル (.json)                      出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-house3-const.json" "lesson20_data/step2n2_auto/house3n2-transition3.json" "lesson23_data.auto_gen.house3n2_const" "lesson23/house3n2_step2n2_auto_state"
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-house3-const.json" "lesson20_data/auto_gen/house3n2-transition3.json" "lesson23_data.auto_gen.house3n2_const" "lesson23/house3n2_step2n2_auto_state"
 ```
 
 ## Run
@@ -53,7 +53,7 @@ python.exe -m lesson22.const_py_maker "lesson22_data/step1-pen-const.json" "less
 #                                     ------------------------------------ -----------------------------------------------
 #                                     入力ファイル (.json)                   出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-pen-const.json" "lesson20_data/step2n2_auto/pen-transition.json" "lesson18_data.step1n2_auto_const.pen_const" "lesson23/pen_step2n2_auto_state"
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-pen-const.json" "lesson20_data/auto_gen/pen-transition.json" "lesson18_data.step1n2_auto_const.pen_const" "lesson23/pen_step2n2_auto_state"
 ```
 
 ```shell
@@ -93,7 +93,7 @@ python.exe -m lesson22.const_py_maker "lesson22_data/step1-wcsc-const.json" "les
 #                                     ------------------------------------- ------------------------------------------------
 #                                     入力ファイル (.json)                    出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson22_data/step1-wcsc-const.json" "lesson20_data/step2n2_auto/wcsc-transition.json" "lesson23_data.auto_gen.wcsc_const" "lesson23/wcsc_step2n2_auto_state"
+python.exe -m lesson23.state_py_maker "lesson22_data/step1-wcsc-const.json" "lesson20_data/auto_gen/wcsc-transition.json" "lesson23_data.auto_gen.wcsc_const" "lesson23/wcsc_step2n2_auto_state"
 ```
 
 ```shell
