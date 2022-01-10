@@ -1,4 +1,4 @@
-from lesson11_data.step1_house_v1_const import MY_ROOM, OUT, MSG_SIT_DOWN
+from lesson11_projects.house.data.const import MY_ROOM, OUT, MSG_SIT_DOWN
 
 
 class MyroomState:
