@@ -3,7 +3,7 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson16n2.code_gen.state_files_gen import gen_state_files_v16n2
 
-STEP2_AUTO_DIR_PATH = "lesson16n2/step2n2_auto"
+STEP2_AUTO_DIR_PATH = "lesson16n2/auto_gen"
 
 
 class Main:

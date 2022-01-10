@@ -24,7 +24,7 @@ def gen_state_files_v16n2(dir_path):
 
         # `init.py` ファイルを作成します
         # TODO import文を変数にしたい
-        file_path = f"lesson16n2/step2n2_auto/{file_stem}.py"
+        file_path = f"lesson16n2/auto_gen/{file_stem}.py"
         text = f"""from lesson15_data.step1_wcsc_const import E_OVER
 
 class {class_name}State():

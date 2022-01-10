@@ -5,17 +5,17 @@
 step2:  
 
 入力元: `lesson19_data/auto_gen/pen-transition.json`  
-出力先: `lesson21_data/step2n2_auto/step2_pen_transition.py`  
+出力先: `lesson21_data/auto_gen/step2_pen_transition.py`  
 
 step2-2:  
 
 入力元: `lesson19_data/auto_gen/wcsc-transition.json`  
-出力先: `lesson21_data/step2n2_auto/step2_wcsc_transition.py`  
+出力先: `lesson21_data/auto_gen/step2_wcsc_transition.py`  
 
 step2-3:  
 
 入力元: `lesson19_data/auto_gen/house3n2-transition2.json`  
-出力先: `lesson21_data/step2n2_auto/step2_house3n2_transition2.py`  
+出力先: `lesson21_data/auto_gen/step2_house3n2_transition2.py`  
 
 ## Run
 

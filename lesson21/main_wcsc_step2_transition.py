@@ -11,7 +11,7 @@ from lesson21.code_gen.transition_conf_py_stringification import (
 from lesson17_data.step1_wcsc_const_dict import wcsc_const_py_dict
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson19_data/auto_gen/wcsc-transition.json"
-OUTPUT_AUTO_TRANSITION_FILE_PATH = "lesson21_data/step2n2_auto/step2_wcsc_transition.py"
+OUTPUT_AUTO_TRANSITION_FILE_PATH = "lesson21_data/auto_gen/step2_wcsc_transition.py"
 OUTPUT_TRANSITION_VARIABLE_NAME = "wcsc_transition_py_dict"
 
 

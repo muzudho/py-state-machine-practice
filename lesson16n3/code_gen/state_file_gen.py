@@ -10,7 +10,7 @@ def gen_state_file(transition_conf, node_path):
 
     # `init.py` ファイルを作成します
     # 'x' - ファイルが存在しない場合のみの上書き
-    file_path = f"lesson16n3/step2n2_auto/{file_stem}.py"
+    file_path = f"lesson16n3/auto_gen/{file_stem}.py"
     text = f"""class {class_name}State():
 
     def update(self, req):
