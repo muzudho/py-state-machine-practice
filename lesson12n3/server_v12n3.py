@@ -5,7 +5,7 @@ from lesson12n3.request import Request
 from lesson12n3.states.out import OutState
 from lesson12_data.step1_house3_const import OUT
 from lesson12_data.step2_house3_transition import house3_transition_py_dict
-from lesson12n3_data.step3_house3_state_gen import house3_state_gen
+from lesson12n3_projects.house3.data.state_gen import house3_state_gen
 
 
 class ServerV12n3:
