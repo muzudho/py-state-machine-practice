@@ -3,12 +3,12 @@ import sys
 from lesson07n2.main_finally import MainFinally
 from lesson16n2.code_gen.state_files_gen import gen_state_files_v16n2
 
-STEP2_AUTO_DIR_PATH = "lesson16n2/auto_gen"
+OUTPUT_DIR_PATH = "lesson16n2_projects/wcsc/auto_gen/code/states"
 
 
 class Main:
     def on_main(self):
-        gen_state_files_v16n2(STEP2_AUTO_DIR_PATH)
+        gen_state_files_v16n2(OUTPUT_DIR_PATH)
         return 0
 
     def on_finally(self):

@@ -4,7 +4,7 @@ from lesson16n2.code_gen.transition_conf_v16n2 import TransitionConfV16n2
 from lesson15_projects.wcsc.data.transition import wcsc_transition_py_dict
 
 
-def gen_state_files_v16n2(dir_path):
+def gen_state_files_v16n2(output_dir_path):
     transition_conf = TransitionConfV16n2(wcsc_transition_py_dict)
 
     # エッジの一覧
@@ -13,7 +13,7 @@ def gen_state_files_v16n2(dir_path):
         print(f"[Render] edge={edge}")
 
     # フォルダーが無ければ作る
-    FileIo.makedirs(dir_path)
+    FileIo.makedirs(output_dir_path)
 
     # ノードの一覧
     node_path_set = TransitionConfV16n2.extract_node_path_set(edge_list)
@@ -24,7 +24,7 @@ def gen_state_files_v16n2(dir_path):
 
         # `init.py` ファイルを作成します
         # TODO import文を変数にしたい
-        file_path = f"lesson16n2/auto_gen/{file_stem}.py"
+        file_path = os.path.join(output_dir_path, f"{file_stem}.py")
         text = f"""from lesson15_projects.wcsc.data.const import E_OVER
 
 class {class_name}State():

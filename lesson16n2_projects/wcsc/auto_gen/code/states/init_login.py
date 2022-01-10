@@ -1,6 +1,6 @@
-from lesson15_data.step1_wcsc_const import E_OVER
+from lesson15_projects.wcsc.data.const import E_OVER
 
-class GameState():
+class InitLoginState():
 
     def update(self, req):
         # 何もせず終わります
