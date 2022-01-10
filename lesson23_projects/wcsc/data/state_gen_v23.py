@@ -34,14 +34,14 @@ from lesson23_projects.wcsc.auto_gen.code.states.reply_reject import ReplyReject
 from lesson23_projects.wcsc.auto_gen.code.states.reply import ReplyState
 
 # Lesson 23 State wrapper
-from lesson23.wcsc_step3_man_state.game import create_game
-from lesson23.wcsc_step3_man_state.init_login import create_init_login
-from lesson23.wcsc_step3_man_state.init import create_init
-from lesson23.wcsc_step3_man_state.lobby_logout import create_lobby_logout
-from lesson23.wcsc_step3_man_state.lobby import create_lobby
-from lesson23.wcsc_step3_man_state.reply_agree import create_reply_agree
-from lesson23.wcsc_step3_man_state.reply_reject import create_reply_reject
-from lesson23.wcsc_step3_man_state.reply import create_reply
+from lesson23_projects.wcsc.code.states.game import create_game
+from lesson23_projects.wcsc.code.states.init_login import create_init_login
+from lesson23_projects.wcsc.code.states.init import create_init
+from lesson23_projects.wcsc.code.states.lobby_logout import create_lobby_logout
+from lesson23_projects.wcsc.code.states.lobby import create_lobby
+from lesson23_projects.wcsc.code.states.reply_agree import create_reply_agree
+from lesson23_projects.wcsc.code.states.reply_reject import create_reply_reject
+from lesson23_projects.wcsc.code.states.reply import create_reply
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
