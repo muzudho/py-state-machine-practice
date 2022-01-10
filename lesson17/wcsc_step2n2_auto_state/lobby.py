@@ -1,4 +1,4 @@
-from lesson17_data.step1n2_auto_const.wcsc_const import E_LOGOUT, E_GAME_SUMMARY, LOGOUT, REPLY, LOBBY
+from lesson17_data.auto_gen.wcsc_const import E_LOGOUT, E_GAME_SUMMARY, LOGOUT, REPLY, LOBBY
 
 class LobbyState():
 
