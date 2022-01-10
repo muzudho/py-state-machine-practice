@@ -39,8 +39,8 @@ class Main:
         parser.add_argument('output', help='定数を定義した出力ファイル(.py)')
         args = parser.parse_args()
 
-        print(f'args.input : {args.input}') # Example: "lesson18n2_data/house3-const.json"
-        print(f'args.output: {args.output}') # Example: "lesson18n2_data/auto_gen/house3_const.py"
+        print(f'args.input : {args.input}') # Example: "lesson18n2_projects/house3/data/const.json"
+        print(f'args.output: {args.output}') # Example: "lesson18n2_projects/house3/data/auto_gen/const.py"
 
         gen_const_py(args.input, args.output)
         return 0
