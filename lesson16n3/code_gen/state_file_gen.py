@@ -1,16 +1,17 @@
+import os
 from lesson16.code_gen.file_io import FileIo
 from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 
 
-def gen_state_file(transition_conf, node_path):
+def gen_state_file_v16n3(transition_conf, node_path, output_dir):
     file_stem = node_path.replace("/", "_").lower()
     class_name = node_path.replace("/", "")
     # print(f"[Render] node_path={node_path} ----> {file_stem}")
 
     # `init.py` ファイルを作成します
     # 'x' - ファイルが存在しない場合のみの上書き
-    file_path = f"lesson16n3/auto_gen/{file_stem}.py"
+    file_path = os.path.join(output_dir, f"{file_stem}.py")
     text = f"""class {class_name}State():
 
     def update(self, req):

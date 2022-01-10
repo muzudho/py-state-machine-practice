@@ -6,7 +6,7 @@ class InitState():
         msg = ""
 
         # 分岐
-        if msg == '':
+        if msg == 'login':
             return ['Init', 'Login']
 
         else:
