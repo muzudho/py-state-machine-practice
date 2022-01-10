@@ -6,6 +6,16 @@ from lesson18.code_gen.state_files_gen import gen_state_files_v18
 from lesson20.code_gen.json_reader import JsonReaderV20
 
 class Main:
+    """状態を定義した .pyファイルを作成します
+
+    Examples
+    --------
+    # Windows
+    python.exe -m lesson23.state_py_maker "example-const.json" "example-transition.json" "lesson23_data.auto_gen.house3n2_const" "lesson23/house3n2/auto_gen/states"
+    #                                     -------------------- ------------------------- --------------------------------------- -----------------------------------
+    #                                     定数定義ファイル       状態遷移定義ファイル        import文に書く文字列                      出力ディレクトリ
+    """
+
     def on_main(self):
         parser = argparse.ArgumentParser(description='ステートを定義した .pyファイルを作成します')
         parser.add_argument('input_const', help='定数を定義した入力ファイル(.json)')
