@@ -7,7 +7,7 @@ from lesson18.state_machine_v18 import StateMachineV18
 from lesson20.code_gen.json_reader import JsonReaderV20
 
 # Lesson 23
-from lesson23_data.step1n2_auto_const.house3n2_const import OUT
+from lesson23_data.auto_gen.house3n2_const import OUT
 from lesson23_data.house3n2_step4_state_gen_v23 import house3n2_state_gen_v23
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/house3n2-transition3.json"

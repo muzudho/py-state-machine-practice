@@ -7,7 +7,7 @@ from lesson18.state_machine_v18 import StateMachineV18
 from lesson20.code_gen.json_reader import JsonReaderV20
 
 # Lesson 23
-from lesson23_data.step1n2_auto_const.pen_const import INIT
+from lesson23_data.auto_gen.pen_const import INIT
 from lesson23_data.pen_step4_state_gen_v23 import pen_state_gen_v23
 
 INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_data/step2n2_auto/pen-transition.json"
