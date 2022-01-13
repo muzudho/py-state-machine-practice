@@ -29,33 +29,29 @@ transigion.json:
 
 👆 上図のようにフラットに設定しましたが、  
 
-transigion_conf.py:
+transigion.json:
 
-```python
-house3_transition2_py_dict = {
-    OUT: {
-        '': {
-            E_TURNED_KNOB: [OUT, CLOSE_DOOR],
-            E_FAILED: [OUT],
+```json
+        "Out": {
+            "turned_knob": ["Out", "CloseDoor"],
+            "failed": ["Out"],
+            "CloseDoor": {
+                "pulled_knob": ["Out", "open_door"],
+                "failed": ["Out"]
+            },
+            "open_door": {
+                "enter": ["stairs"],
+                "failed": ["Out"]
+            }
         },
-        CLOSE_DOOR: {
-            E_PULLED_KNOB: [OUT, OPEN_DOOR],
-            E_FAILED: [OUT],
+        "stairs": {
+            "up": ["MyRoom"],
+            "failed": ["Out"]
         },
-        OPEN_DOOR: {
-            E_ENTER: [STAIRS],
-            E_FAILED: [OUT],
-        },
-    },
-    STAIRS: {
-        E_UP: [MY_ROOM],
-        E_FAILED: [OUT],
-    },
-    MY_ROOM: {
-        E_SITTING_DOWN: [MY_ROOM],
-        E_FAILED: [OUT],
-    }
-}
+        "MyRoom": {
+            "sitting_down": ["MyRoom"],
+            "failed": ["Out"]
+        }
 ```
 
 👆 ステート（State）とサブステート（Sub-state）を分けて 大きな状態遷移、小さな状態遷移といった　強調を  
@@ -84,7 +80,9 @@ house3_state_gen = {
 Server start:  
 
 ```shell
-python.exe -m lesson13.main
+python.exe -m lesson13.main "lesson13_projects/house3/conf.toml"
+#                           ------------------------------------
+#                           設定ファイル
 ```
 
 Client start:  

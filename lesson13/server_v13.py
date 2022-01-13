@@ -1,15 +1,15 @@
 import socket
 from threading import Thread
 
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson13.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson12_projects.house3.data.const import OUT
-from lesson13_projects.house3.data.transition2 import house3_transition2_py_dict
 from lesson13_projects.house3.data.state_gen import house3_state_gen
 
 
 class ServerV13:
-    def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -32,6 +32,9 @@ class ServerV13:
 
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
+
+        # JSONファイルを読込みます
+        self._transition_doc = JsonReaderV11n100.read_file(transition_file_path)
 
     def run(self):
         def client_worker(c_sock):
@@ -70,7 +73,7 @@ class ServerV13:
 
                     # transition_conf_data.py を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        house3_transition2_py_dict, state_path, edge_name
+                        self._transition_doc['data'], state_path, edge_name
                     )
 
                     # state_gen_conf.py を見て state_path から state を生成します
