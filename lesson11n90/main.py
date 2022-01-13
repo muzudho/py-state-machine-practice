@@ -18,7 +18,10 @@ class Main:
         toml_doc = TomlReaderV11n90.read_file(args.input)
         # その内容を表示します
         toml_text = dumps(toml_doc)
-        print(f"toml_text={toml_text}")
+        print(f"toml_text-->{toml_text}")
+
+        # TOMLの内容を読み取ってみましょう
+        print(f"toml_doc['file_path']-->{toml_doc['file_path']}")
         return 0
 
     def on_finally(self):
