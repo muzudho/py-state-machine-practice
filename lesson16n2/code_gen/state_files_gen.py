@@ -1,11 +1,10 @@
 import os
 from lesson16.code_gen.file_io import FileIo
 from lesson16n2.code_gen.transition_conf_v16n2 import TransitionConfV16n2
-from lesson14_projects.wcsc.data.transition import wcsc_transition_doc_v14
 
 
-def gen_state_files_v16n2(output_dir_path):
-    transition_conf = TransitionConfV16n2(wcsc_transition_doc_v14)
+def gen_state_files_v16n2(transition_doc, output_dir_path):
+    transition_conf = TransitionConfV16n2(transition_doc)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
