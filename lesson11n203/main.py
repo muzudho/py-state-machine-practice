@@ -1,6 +1,8 @@
 import sys
+import argparse
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n203.server import Server
 
 server = None
@@ -8,7 +10,18 @@ server = None
 
 class Main:
     def on_main(self):
-        server = Server(transition_file_path="lesson11n203_projects/house2/data/transition.json", host="0.0.0.0", port=5002)
+        parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
+        parser.add_argument('conf', help='設定ファイルへのパス') # Example: "lesson11n203_projects/house2/conf.toml"
+        args = parser.parse_args()
+
+        # 設定ファイル（.toml）読取
+        # TOMLファイルを読込みます
+        toml_doc = TomlReaderV11n90.read_file(args.conf)
+
+        # TOMLの内容を読み取ります
+        transition_file_path = toml_doc['transition_file']
+
+        server = Server(transition_file_path=transition_file_path, host="0.0.0.0", port=5002)
         server.run()
         return 0
 

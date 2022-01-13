@@ -9,7 +9,7 @@
 Server start:  
 
 ```shell
-python.exe -m lesson11n203.main
+python.exe -m lesson11n203.main "lesson11n203_projects/house2/conf.toml"
 ```
 
 Client start:  
