@@ -1,6 +1,6 @@
 {
     "title": "House2",
-    "entry_state": "Init",
+    "entry_state": "Out",
     "data":{
         "Out": {
             "opened": ["Stairs"],

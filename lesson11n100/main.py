@@ -15,9 +15,9 @@ class Main:
         print(f'args.input  : {args.input}') # Example: "lesson11n100_projects/example-v11n100/example.json"
 
         # JSONファイルを読込みます
-        jso = JsonReaderV11n100.read_file(args.input)
+        doc = JsonReaderV11n100.read_file(args.input)
         # その内容を表示します
-        jso_text = json.dumps(jso, indent=4, ensure_ascii=False)
+        jso_text = json.dumps(doc, indent=4, ensure_ascii=False)
         print(f"Java Script Object (Text)={jso_text}")
         return 0
 

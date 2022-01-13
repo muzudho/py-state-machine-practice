@@ -15,7 +15,6 @@ class Main:
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
-        # TOMLファイルを読込みます
         toml_doc = TomlReaderV11n90.read_file(args.conf)
 
         # TOMLの内容を読み取ります

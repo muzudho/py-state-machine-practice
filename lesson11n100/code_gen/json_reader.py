@@ -11,8 +11,7 @@ class JsonReaderV11n100:
             in_text = f.read()
             # print(f"in_text={in_text}")
 
-        # JSON は Java Script Object Notation なのだから、読み取ったデータは Java Script Object（JSON）なはず
-        jso = json.loads(in_text, object_pairs_hook=OrderedDict)
-        # print(f"jso={jso}")
+        doc = json.loads(in_text, object_pairs_hook=OrderedDict)
+        # print(f"doc={doc}")
 
-        return jso
+        return doc

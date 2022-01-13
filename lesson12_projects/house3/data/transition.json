@@ -1,0 +1,27 @@
+{
+    "title": "House3",
+    "entry_state": "Out",
+    "data":{
+        "Out": {
+            "turned_knob": "CloseDoor",
+            "failed": "Out"
+        },
+        "CloseDoor": {
+            "pulled_knob": "OpenDoor",
+            "failed": "Out"
+        },
+        "OpenDoor": {
+            "enter": "Stairs",
+            "failed": "Out"
+        },
+        "Stairs": {
+            "up": "MyRoom",
+            "failed": "Out"
+        },
+        "MyRoom": {
+            "sitting_down": "MyRoom",
+            "failed": "Out"
+        }
+    }
+}
+
