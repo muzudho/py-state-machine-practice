@@ -5,7 +5,6 @@ from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson12.states.out import OutState
 from lesson12_projects.house3.data.state_gen import house3_state_gen
 from lesson12_projects.house3.data.const import OUT
-from lesson12_projects.house3.data.transition import house3_transition_py_dict
 
 
 class ServerV12:

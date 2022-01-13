@@ -20,6 +20,7 @@ class Main:
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc['transition_file']
 
+        # サーバー起動
         server = ServerV12(transition_file_path=transition_file_path, host="0.0.0.0", port=5002)
         server.run()
         return 0
