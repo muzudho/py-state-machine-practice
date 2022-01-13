@@ -2,8 +2,8 @@ from graphviz import Digraph
 from lesson15n2.code_gen.directive_edge import DirectiveEdge
 from lesson15n2.code_gen.clustered_directive_edge import ClusteredDirectiveEdge
 
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
-from lesson14_projects.pen.data.transition import pen_transition_doc_v14
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -21,9 +21,11 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
         child = curr_dict[child_key]
 
         if isinstance(child, dict):
-            create_edge_list(child, state_node_path, child_key, result_edge_list)
+            create_edge_list(child, state_node_path,
+                             child_key, result_edge_list)
         else:
-            edge = DirectiveEdge(src=state_node_path, dst=child, name=child_key)
+            edge = DirectiveEdge(src=state_node_path,
+                                 dst=child, name=child_key)
             result_edge_list.append(edge)
 
 
@@ -44,14 +46,17 @@ def rearrenge_in_tree(clustered_edge_in_list):
 
     for clustering_edge in clustered_edge_in_list:
         print("----")
-        print(f"clustering_edge.directive_edge={clustering_edge.directive_edge}")
+        print(
+            f"clustering_edge.directive_edge={clustering_edge.directive_edge}")
 
-        print(f"clustering_edge.to_cluster_str()={clustering_edge.to_cluster_str()}")
+        print(
+            f"clustering_edge.to_cluster_str()={clustering_edge.to_cluster_str()}")
 
         curr_dict = tree
 
         if len(clustering_edge.cluster) < 1:
-            print(f"len(clustering_edge.cluster)={len(clustering_edge.cluster)}")
+            print(
+                f"len(clustering_edge.cluster)={len(clustering_edge.cluster)}")
             pass
         else:
 
@@ -77,16 +82,20 @@ class Render:
     def is_verbose(clazz):
         return True
 
-    def __init__(self):
+    def __init__(self, transition_file_path):
         # グラフの設定
         self._g = Digraph(format="png")
         self._g.attr("node", shape="square", style="filled")
+
+        # JSONファイルを読込みます
+        self._transition_doc = JsonReaderV11n100.read_file(
+            transition_file_path)
 
     def run(self):
 
         edge_list = []
 
-        transition_conf = TransitionConfV15(pen_transition_doc_v14)
+        transition_conf = TransitionConfV15(self._transition_doc)
 
         # エッジの一覧を作成
         create_edge_list(transition_conf.data, [], None, edge_list)
@@ -100,6 +109,7 @@ class Render:
         # ツリー構造に再配置
         tree = rearrenge_in_tree(clustered_edge_in_list)
         # Debug
+
         def __show_tree(curr_dict, indent, cluster_name):
             # エッジを先に検出
             if "__edge__" in curr_dict:
