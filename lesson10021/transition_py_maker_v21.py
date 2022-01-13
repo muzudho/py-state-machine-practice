@@ -5,7 +5,7 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson16.code_gen.file_io import FileIo
 from lesson17n2.code_gen.json_reader import JsonReaderV17n2
-from lesson21.code_gen.transition_conf_py_stringification import (
+from lesson10021.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
 
@@ -21,7 +21,7 @@ class Main:
 
         print(f'args.input_const     : {args.input_const}') # Example: "lesson18n2_projects/house3/data/const.json"
         print(f'args.input_transition: {args.input_transition}') # Example: "lesson19_projects/house3n2/data/auto_gen/transition2.json"
-        print(f'args.output          : {args.output}') # Example: "lesson21_projects/house3n2/data/auto_gen/transition2.py"
+        print(f'args.output          : {args.output}') # Example: "lesson10021_projects/house3n2/data/auto_gen/transition2.py"
         print(f'args.import_module   : {args.import_module}') # Example: "lesson18_projects.house3n2.data.auto_gen.const"
         print(f'args.var_name        : {args.var_name}') # Example: "house3n2_transition2_py_dict"
 
