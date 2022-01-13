@@ -24,7 +24,9 @@ python.exe -m lesson18.main_pen_step2 "lesson18_projects/pen/conf.toml"
 Server start:  
 
 ```shell
-python.exe -m lesson18.main_pen_step3
+python.exe -m lesson18.main_pen_step3 "lesson18_projects/pen/conf.toml"
+#                                     ---------------------------------
+#                                     設定ファイル
 ```
 
 Client start:  
