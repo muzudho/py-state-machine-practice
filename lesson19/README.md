@@ -16,7 +16,7 @@ python.exe -m lesson19.main_house3n2_step2_transition3
 
 # Example - Pen
 
-入力元: `lesson14_projects.pen.data.transition.py` - `pen_transition_doc_v14`  
+入力元: `lesson19_projects.pen.data.transition.py` - `pen_transition_doc_v19`  
 出力先: `lesson19_projects/pen/auto_gen/data/transition.json`  
 
 ## Set up

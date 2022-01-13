@@ -15,7 +15,7 @@ from lesson14_projects.pen.data.const import (
     THIS,
 )
 
-pen_transition_doc_v14 = {
+pen_transition_doc_v19 = {
     "title": "This is a pen",
     "entry_state": INIT,
     "data": {
