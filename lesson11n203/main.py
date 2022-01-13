@@ -8,7 +8,7 @@ server = None
 
 class Main:
     def on_main(self):
-        server = Server(host="0.0.0.0", port=5002)
+        server = Server(transition_file_path="lesson11n203_projects/house2/data/transition.json", host="0.0.0.0", port=5002)
         server.run()
         return 0
 
