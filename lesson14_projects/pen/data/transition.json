@@ -1,10 +1,3 @@
-# Lesson14
-
-状態遷移定義ファイルを作ってみましょう。サブサブサブステートマシンを作ってみましょう  
-
-lesson14_projects/pen/data/transition.json:  
-
-```python
 {
     "title": "This is a pen",
     "entry_state": "Init",
@@ -34,33 +27,3 @@ lesson14_projects/pen/data/transition.json:
         }
     }
 }
-```
-
-👆 キーボードから `This`, `is`, `a` と入力することで サブサブサブステートマシンまで下ります。  
-`pen` と入力すると `Init` の次の状態の `Pen` へ遷移します  
-
-## Run
-
-Server start:  
-
-```shell
-python.exe -m lesson14.main "lesson14_projects/pen/conf.toml"
-#                           ---------------------------------
-#                           設定ファイル
-```
-
-Client start:  
-
-```shell
-python.exe -m lesson09.main
-```
-
-Input:  
-
-```shell
-This
-is
-a
-pen
-q
-```

@@ -1,15 +1,15 @@
 import socket
 from threading import Thread
 
-from lesson14.request import Request
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
+from lesson14.request import Request
 from lesson14_projects.pen.data.const import INIT
-from lesson14_projects.pen.data.transition import pen_transition_doc_v14
 from lesson14_projects.pen.data.state_gen import pen_state_gen_v14
 
 
 class ServerV14:
-    def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -32,6 +32,10 @@ class ServerV14:
 
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
+
+        # JSONファイルを読込みます
+        self._transition_doc = JsonReaderV11n100.read_file(
+            transition_file_path)
 
     def run(self):
         def client_worker(c_sock):
@@ -74,9 +78,9 @@ class ServerV14:
                     edge_name = state.update(req)
                     print(f"[server.py] edge_name={edge_name}")
 
-                    # pen_transition_doc_v14 を見て state_path を得ます
+                    # self._transition_doc を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        pen_transition_doc_v14["data"], state_path, edge_name
+                        self._transition_doc["data"], state_path, edge_name
                     )
 
                     if state_path is None:
