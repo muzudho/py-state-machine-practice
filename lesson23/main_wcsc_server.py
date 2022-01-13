@@ -1,7 +1,9 @@
 import sys
+import argparse
 
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
@@ -10,22 +12,30 @@ from lesson18.state_machine_v18 import StateMachineV18
 from lesson23_projects.wcsc.auto_gen.data.const import INIT
 from lesson23_projects.wcsc.data.state_gen_v23 import wcsc_state_gen_v23
 
-INPUT_TRANSITION_JSON_FILE_PATH = "lesson20_projects/wcsc/auto_gen/data/transition.json"
 server = None
 
 
 class Main:
     def on_main(self):
+        parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
+        parser.add_argument('conf', help='設定ファイルへのパス')
+        args = parser.parse_args()
+
+        # 設定ファイル（.toml）読取
+        toml_doc = TomlReaderV11n90.read_file(args.conf)
+
+        # TOMLの内容を読み取ります
+        transition_file_path = toml_doc['transition_file']
+
+        # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
-            INPUT_TRANSITION_JSON_FILE_PATH
-        )
+            transition_file_path)
 
         # 状態遷移マシン
         state_machine = StateMachineV18(
             state_gen=wcsc_state_gen_v23,
             transition_py_dict=transition_doc,
-            entry_state_path=[INIT],
-        )
+            entry_state_path=[INIT])
 
         # サーバー
         server = ServerV18(

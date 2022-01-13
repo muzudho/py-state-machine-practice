@@ -107,7 +107,9 @@ python.exe -m lesson23.state_py_maker "lesson18n2_projects/wcsc/data/const.json"
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_wcsc_server
+python.exe -m lesson23.main_wcsc_server "lesson23_projects/house3n2/conf.toml"
+#                                       --------------------------------------
+#                                       設定ファイル
 ```
 
 Client start:  
