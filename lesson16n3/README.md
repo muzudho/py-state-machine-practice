@@ -7,5 +7,7 @@
 実行前に `lesson16n3_projects/wcsc/auto_gen` フォルダーが既に作成されていれば、削除してください  
 
 ```shell
-python.exe -m lesson16n3.main
+python.exe -m lesson16n3.main "lesson16n3_projects/wcsc/conf.toml"
+#                             ------------------------------------
+#                             設定ファイル
 ```
