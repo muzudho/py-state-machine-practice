@@ -18,6 +18,7 @@
 * 📖 [Lesson11-3](./lesson11n3) - 前レッスンでは 状態（State）が 次の State の名前 を返していました。  
   これを 辺（Edge） の名前を返すように変更し、 transition_conf_data.py ファイルの中で  
   どの状態のどの辺は 次にどの状態につながるかを編集できるように変更します
+* 📖 [Lesson11-100](./lesson11n100) - JSONファイルを読み取って見ましょう
 * 📖 [Lesson12](./lesson12) - サブ状態（Sub-state）を持つサーバーの練習用のサンプルです
 * 📖 [Lesson12-2](./lesson12n2) - update() のメソッドの中で `c_sock.recv()` を呼び出すタイミングをプログラマーが毎回指定する手間の方が、コードが散らばる手間よりメンテナンスしやすいでしょう
 * 📖 [Lesson12-3](./lesson12n3) - `update()` の引数は `req` 変数 と決めつけてしまい、その下に変数をぶら下げることにしましょう
@@ -31,7 +32,7 @@
 * 📖 [Lesson16-2](./lesson16n2) - `pen_transition.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
 * 📖 [Lesson16-3](./lesson16n3) - 次に、 エッジの分岐を自動生成しましょう
 * 📖 [Lesson17](./lesson17) - Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう TODO (Lesson17 より先に Lesson22 を持ってこれないか？)
-* 📖 [Lesson17-2](./lesson17n2) - (Lesson20からLesson17-2へ移動) .json を読み取る練習をしましょう
+* 📖 [Lesson17-2](./lesson17n2) - (Lesson20からLesson17-2へ移動) .json を読み取る練習をしましょう ---> JsonReaderを、Lesson11n100 へ移動したい
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
 * 📖 [Lesson18-2](./lesson18n2) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
 * 📖 [Lesson19](./lesson19) - `conf_transition_py_dict.py` のデータ部を JSON へ書き出してみましょう (TODO 状態遷移ファイルは、最初からJSONで書けないか？)
