@@ -67,7 +67,9 @@ python.exe -m lesson23.state_py_maker "lesson18n2_projects/pen/data/const.json" 
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_pen_server
+python.exe -m lesson23.main_pen_server "lesson23_projects/house3n2/conf.toml"
+#                                      --------------------------------------
+#                                      設定ファイル
 ```
 
 Client start:  
