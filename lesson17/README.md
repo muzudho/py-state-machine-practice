@@ -53,5 +53,7 @@ python.exe -m lesson17.main_house3_step1_const
 python.exe -m lesson17.main_pen_step1_const
 python.exe -m lesson17.main_wcsc_step1_const
 
-python.exe -m lesson17.main_wcsc_step2
+python.exe -m lesson17.main_wcsc_step2 "lesson17_projects/wcsc/conf.toml"
+#                                      ----------------------------------
+#                                      設定ファイル
 ```

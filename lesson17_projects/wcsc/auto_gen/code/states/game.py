@@ -1,4 +1,4 @@
-from lesson17_projects.wcsc.data.auto_gen.const import E_GAME_OVER_FLOODGATE, E_MOVE, E_MOVE_ECHO, LOBBY, GAME, E_GAME_OVER_WCSC, INIT
+from lesson17_projects.wcsc.data.auto_gen.const import E_GAME_OVER_FLOODGATE, LOBBY, E_MOVE_ECHO, GAME, E_GAME_OVER_WCSC, E_MOVE, INIT
 
 class GameState():
 
