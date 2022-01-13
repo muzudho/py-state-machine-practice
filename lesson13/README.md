@@ -2,31 +2,29 @@
 
 前回の Lesson12 のサンプルでは、  
 
-transigion_conf.py:  
+transigion.json:  
 
-```python
-house3_transition_py_dict = {
-    OUT: {
-        E_TURNED_KNOB: CLOSE_DOOR,
-        E_FAILED: OUT,
-    },
-    CLOSE_DOOR: {
-        E_PULLED_KNOB: OPEN_DOOR,
-        E_FAILED: OUT,
-    },
-    OPEN_DOOR: {
-        E_ENTER: STAIRS,
-        E_FAILED: OUT,
-    },
-    STAIRS: {
-        E_UP: MY_ROOM,
-        E_FAILED: OUT,
-    },
-    MY_ROOM: {
-        E_SITTING_DOWN: MY_ROOM,
-        E_FAILED: OUT,
-    }
-}
+```json
+        "Out": {
+            "turned_knob": "CloseDoor",
+            "failed": "Out"
+        },
+        "CloseDoor": {
+            "pulled_knob": "OpenDoor",
+            "failed": "Out"
+        },
+        "OpenDoor": {
+            "enter": "Stairs",
+            "failed": "Out"
+        },
+        "Stairs": {
+            "up": "MyRoom",
+            "failed": "Out"
+        },
+        "MyRoom": {
+            "sitting_down": "MyRoom",
+            "failed": "Out"
+        }
 ```
 
 👆 上図のようにフラットに設定しましたが、  

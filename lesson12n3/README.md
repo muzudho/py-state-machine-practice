@@ -26,7 +26,9 @@
 Server start:  
 
 ```shell
-python.exe -m lesson12n3.main
+python.exe -m lesson12n3.main "lesson12_projects/house3/conf.toml"
+#                             ------------------------------------
+#                             設定ファイル
 ```
 
 Client start:  

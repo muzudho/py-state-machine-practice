@@ -2,14 +2,14 @@ import socket
 from threading import Thread
 from lesson12n3.request import Request
 
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson12n3.states.out import OutState
 from lesson12_projects.house3.data.const import OUT
-from lesson12_projects.house3.data.transition import house3_transition_py_dict
 from lesson12n3_projects.house3.data.state_gen import house3_state_gen
 
 
 class ServerV12n3:
-    def __init__(self, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -32,6 +32,9 @@ class ServerV12n3:
 
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
+
+        # JSONファイルを読込みます
+        self._transition_doc = JsonReaderV11n100.read_file(transition_file_path)
 
     def run(self):
         def client_worker(c_sock):
@@ -67,7 +70,7 @@ class ServerV12n3:
                     edge_name = state.update(req)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = house3_transition_py_dict[state_name][edge_name]
+                    state_name = self._transition_doc['data'][state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
                     state = house3_state_gen[state_name]()
