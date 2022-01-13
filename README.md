@@ -18,6 +18,7 @@
 * 📖 [Lesson11-3](./lesson11n3) - （Lesson11-203へ移動予定） 前レッスンでは 状態（State）が 次の State の名前 を返していました。  
   これを 辺（Edge） の名前を返すように変更し、 transition_conf_data.py ファイルの中で  
   どの状態のどの辺は 次にどの状態につながるかを編集できるように変更します
+* 📖 [Lesson11-90](./lesson11n90) - TOMLファイルを読み取って見ましょう
 * 📖 [Lesson11-100](./lesson11n100) - JSONファイルを読み取って見ましょう
 * 📖 [Lesson11-203](./lesson11n203) - (Lesson11-3 から Lesson11-203 へリナンバリング)
 * 📖 [Lesson12](./lesson12) - サブ状態（Sub-state）を持つサーバーの練習用のサンプルです
