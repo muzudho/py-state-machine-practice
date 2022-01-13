@@ -25,7 +25,9 @@ python.exe -m lesson23.state_py_maker "lesson18n2_projects/house3/data/const.jso
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_house3n2_server
+python.exe -m lesson23.main_house3n2_server "lesson23_projects/house3n2/conf.toml"
+#                                           --------------------------------------
+#                                           設定ファイル
 ```
 
 Client start:  
