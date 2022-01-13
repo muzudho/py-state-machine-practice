@@ -1,6 +1,6 @@
 import os
 from lesson16.code_gen.file_io import FileIo
-from lesson19.code_gen.transition_json_stringification import (
+from lesson10019.code_gen.transition_json_stringification import (
     TransitionJsonStringification,
 )
 

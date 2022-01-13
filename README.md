@@ -36,7 +36,6 @@
 * 📖 [Lesson17-2](./lesson17n2) - (Lesson20からLesson17-2へ移動) .json を読み取る練習をしましょう ---> JsonReaderを、Lesson11n100 へ移動したい
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
 * 📖 [Lesson18-2](./lesson18n2) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
-* 📖 [Lesson19](./lesson19) - `conf_transition_py_dict.py` のデータ部を JSON へ書き出してみましょう (TODO 状態遷移ファイルは、最初からJSONで書けないか？)
 * 📖 [Lesson20](./lesson20) - `transition.json` ファイルを読み取ってみましょう (Lesson17-2へ一部移動)
 * 📖 Lesson22 - (Lesson18-2に移動)
 * 📖 [Lesson23](./lesson23) - Lesson18 をさらに発展させ、Pythonのdict（これはOrderedDictではありません）を経由せず、JSON（OrderedDictを使います）でデータ化した定数（`const_dict.py`）を元に、Lesson14と同等のPythonスクリプトのルーチン（状態のスクリプト）を自動生成しましょう
@@ -44,4 +43,5 @@
 
 ## すぐには使わなさそうなものは 10000番台へ移動
 
+* 📖 [Lesson10019](./lesson10019) - `transition.py` のデータ部を JSON へ書き出してみましょう (TODO 状態遷移ファイルは、最初からJSONで書けないか？)
 * 📖 [Lesson10021](./lesson10021) - 状態遷移定義ファイル（JSON形式）から、 `pen_transition.py` ファイルを逆生成してみましょう

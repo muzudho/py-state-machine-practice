@@ -1,16 +1,16 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
+from lesson10019.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
-from lesson19_projects.wcsc.data.transition import wcsc_transition_doc_v19
+from lesson10019_projects.pen.data.transition import pen_transition_doc_v19
 
-OUTPUT_FILE_PATH = "lesson19_projects/wcsc/auto_gen/data/transition.json"
+OUTPUT_FILE_PATH = "lesson10019_projects/pen/auto_gen/data/transition.json"
 
 
 class Main:
     def on_main(self):
-        transition_doc = TransitionConfV16n3(wcsc_transition_doc_v19)
+        transition_doc = TransitionConfV16n3(pen_transition_doc_v19)
         TransitionJsonWriter.write(
             file_path=OUTPUT_FILE_PATH,
             title=transition_doc.title,

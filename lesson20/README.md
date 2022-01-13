@@ -8,7 +8,7 @@ Lesson 19 で作った `transition-pen.json` ファイルを読み取ってみ�
 
 ```shell
 # Windows
-python.exe -m lesson20.transition_py_maker_v20 "lesson19_projects/house3n2/auto_gen/data/transition2.json" "lesson20_projects/house3n2/auto_gen/data/transition3.json" --output_default_format "lesson20_projects/house3n2/auto_gen/data/transition3-default-fomat.json"
+python.exe -m lesson20.transition_py_maker_v20 "lesson10019_projects/house3n2/auto_gen/data/transition2.json" "lesson20_projects/house3n2/auto_gen/data/transition3.json" --output_default_format "lesson20_projects/house3n2/auto_gen/data/transition3-default-fomat.json"
 #                                              ----------------------------------------------------------- -----------------------------------------------------------
 #                                              Input (.json)                                               Output (.json)
 ```
@@ -19,7 +19,7 @@ python.exe -m lesson20.transition_py_maker_v20 "lesson19_projects/house3n2/auto_
 
 ```shell
 # Windows
-python.exe -m lesson20.transition_py_maker_v20 "lesson19_projects/pen/auto_gen/data/transition.json" "lesson20_projects/pen/auto_gen/data/transition.json" --output_default_format "lesson20_projects/pen/auto_gen/data/transition-default-fomat.json"
+python.exe -m lesson20.transition_py_maker_v20 "lesson10019_projects/pen/auto_gen/data/transition.json" "lesson20_projects/pen/auto_gen/data/transition.json" --output_default_format "lesson20_projects/pen/auto_gen/data/transition-default-fomat.json"
 #                                              ----------------------------------------------------- -----------------------------------------------------
 #                                              Input (.json)                                          Output (.json)
 ```
@@ -30,7 +30,7 @@ python.exe -m lesson20.transition_py_maker_v20 "lesson19_projects/pen/auto_gen/d
 
 ```shell
 # Windows
-python.exe -m lesson20.transition_py_maker_v20 "lesson19_projects/wcsc/auto_gen/data/transition.json" "lesson20_projects/wcsc/auto_gen/data/transition.json" --output_default_format "lesson20_projects/wcsc/auto_gen/data/transition-default-fomat.json"
+python.exe -m lesson20.transition_py_maker_v20 "lesson10019_projects/wcsc/auto_gen/data/transition.json" "lesson20_projects/wcsc/auto_gen/data/transition.json" --output_default_format "lesson20_projects/wcsc/auto_gen/data/transition-default-fomat.json"
 #                                              ------------------------------------------------------ ------------------------------------------------------
 #                                              Input (.json)                                           Output (.json)
 ```

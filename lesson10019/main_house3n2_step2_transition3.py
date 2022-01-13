@@ -1,12 +1,12 @@
 import sys
 
 from lesson07n2.main_finally import MainFinally
-from lesson19.code_gen.transition_json_writer import TransitionJsonWriter
+from lesson10019.code_gen.transition_json_writer import TransitionJsonWriter
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
-from lesson19_projects.house3n2.data.transition3 import house3n2_transition3_doc_v14
+from lesson10019_projects.house3n2.data.transition3 import house3n2_transition3_doc_v14
 
 
-OUTPUT_FILE_PATH = "lesson19_projects/house3n2/auto_gen/data/transition2.json"
+OUTPUT_FILE_PATH = "lesson10019_projects/house3n2/auto_gen/data/transition2.json"
 
 
 class Main:
