@@ -2,8 +2,9 @@ import sys
 import argparse
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson18.code_gen.state_files_gen import gen_state_files_v18
-from lesson17n2.code_gen.json_reader import JsonReaderV17n2
+
 
 class Main:
     """状態を定義した .pyファイルを作成します
@@ -24,15 +25,18 @@ class Main:
         parser.add_argument('output', help='状態を定義したファイルを出力するディレクトリ')
         args = parser.parse_args()
 
-        print(f'args.input_const : {args.input_const}') # Example: "lesson18n2_projects/house3/data/const.json"
-        print(f'args.input_transition : {args.input_transition}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3.json"
-        print(f'args.import_module : {args.import_module}') # Example: "lesson23_projects.house3n2.data.auto_gen.const"
-        print(f'args.output : {args.output}') # Example: "lesson23/house3n2/auto_gen/states"
-
+        # Example: "lesson18n2_projects/house3/data/const.json"
+        print(f'args.input_const : {args.input_const}')
+        # Example: "lesson20_projects/house3n2/data/auto_gen/transition3.json"
+        print(f'args.input_transition : {args.input_transition}')
+        # Example: "lesson23_projects.house3n2.data.auto_gen.const"
+        print(f'args.import_module : {args.import_module}')
+        # Example: "lesson23/house3n2/auto_gen/states"
+        print(f'args.output : {args.output}')
 
         # JSONファイルから、定数と遷移の設定を読込みます
-        const_json_obj = JsonReaderV17n2.read_file(args.input_const)
-        transition_doc = JsonReaderV17n2.read_file(args.input_transition)
+        const_json_obj = JsonReaderV11n100.read_file(args.input_const)
+        transition_doc = JsonReaderV11n100.read_file(args.input_transition)
 
         # 状態の .py スクリプトを出力します
         gen_state_files_v18(

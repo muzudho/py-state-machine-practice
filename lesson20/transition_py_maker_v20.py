@@ -4,9 +4,9 @@ import os
 import argparse
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson16.code_gen.file_io import FileIo
 from lesson10019.code_gen.transition_json_writer import TransitionJsonWriter
-from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 
 
 class Main:
@@ -27,7 +27,7 @@ class Main:
         print(f'args.output_default_format : {args.output_default_format}')
 
         # JSONファイルを読込みます
-        transition_doc = JsonReaderV17n2.read_file(args.input)
+        transition_doc = JsonReaderV11n100.read_file(args.input)
         # print(f"transition_doc={transition_doc}")
 
         # デフォルトのフォーマッティングで出力するなら

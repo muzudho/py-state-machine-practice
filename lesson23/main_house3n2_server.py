@@ -7,7 +7,6 @@ from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
-from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 
 # Lesson 23
 from lesson23_projects.house3n2.auto_gen.data.const import OUT

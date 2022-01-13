@@ -3,8 +3,8 @@ import os
 import argparse
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson16.code_gen.file_io import FileIo
-from lesson17n2.code_gen.json_reader import JsonReaderV17n2
 from lesson10021.code_gen.transition_conf_py_stringification import (
     TransitionConfPyStringification,
 )
@@ -32,8 +32,8 @@ class Main:
         # Example: "house3n2_transition2_py_dict"
         print(f'args.var_name        : {args.var_name}')
 
-        const_data = JsonReaderV17n2.read_file(args.input_const)
-        transition_data = JsonReaderV17n2.read_file(args.input_transition)
+        const_data = JsonReaderV11n100.read_file(args.input_const)
+        transition_data = JsonReaderV11n100.read_file(args.input_transition)
 
         transition_conf_py_stringification = TransitionConfPyStringification(
             const_py_dict=const_data,
