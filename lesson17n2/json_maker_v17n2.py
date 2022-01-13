@@ -19,11 +19,11 @@ class Main:
         print(f'args.output : {args.output}') # Example: "lesson17n2_projects/example-v17n2/auto_gen/example.json"
 
         # JSONファイルを読込みます
-        transition_json_obj = JsonReaderV17n2.read_file(args.input)
-        # print(f"transition_json_obj={transition_json_obj}")
+        transition_doc = JsonReaderV17n2.read_file(args.input)
+        # print(f"transition_doc={transition_doc}")
 
         # JSONファイルを出力します
-        out_text = json.dumps(transition_json_obj, indent=4, ensure_ascii=False)
+        out_text = json.dumps(transition_doc, indent=4, ensure_ascii=False)
         FileIo.makedirs(os.path.dirname(args.output))
         print(f"[L20] write {args.output}")
         FileIo.write(args.output, out_text)

@@ -32,13 +32,13 @@ class Main:
 
         # JSONファイルから、定数と遷移の設定を読込みます
         const_json_obj = JsonReaderV17n2.read_file(args.input_const)
-        transition_json_obj = JsonReaderV17n2.read_file(args.input_transition)
+        transition_doc = JsonReaderV17n2.read_file(args.input_transition)
 
         # 状態の .py スクリプトを出力します
         gen_state_files_v18(
             dir_path=args.output,
             const_py_dict=const_json_obj,
-            transition_py_dict=transition_json_obj,
+            transition_py_dict=transition_doc,
             import_from_path=args.import_module,
         )
         return 0

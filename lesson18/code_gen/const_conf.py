@@ -49,8 +49,8 @@ class ConstConfV18:
         if item in self._data:
             used_const_set.add(item)
 
-    def pickup_from_list(self, list_obj, used_const_set):
-        """list_obj の中で使われている定数を used_const_set へ追加します"""
-        for item in list_obj:
+    def pickup_from_list(self, listtransition_doc, used_const_set):
+        """listtransition_doc の中で使われている定数を used_const_set へ追加します"""
+        for item in listtransition_doc:
             if item in self._data:
                 used_const_set.add(item)

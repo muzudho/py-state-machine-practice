@@ -16,14 +16,14 @@ server = None
 
 class Main:
     def on_main(self):
-        transition_json_obj = JsonReaderV17n2.read_file(
+        transition_doc = JsonReaderV17n2.read_file(
             INPUT_TRANSITION_JSON_FILE_PATH
         )
 
         # 状態遷移マシン
         state_machine = StateMachineV18(
             state_gen=house3n2_state_gen_v23,
-            transition_py_dict=transition_json_obj,
+            transition_py_dict=transition_doc,
             entry_state_path=[OUT],
         )
 

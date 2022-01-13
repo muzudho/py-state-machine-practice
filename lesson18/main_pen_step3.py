@@ -6,7 +6,7 @@ from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
 from lesson18_projects.pen.auto_gen.data.const import INIT
 from lesson18_projects.pen.data.state_gen import pen_state_gen_v18
-from lesson14_projects.pen.data.transition import pen_transition_obj_v14
+from lesson14_projects.pen.data.transition import pen_transition_doc_v14
 
 server = None
 
@@ -17,7 +17,7 @@ class Main:
         # 状態遷移マシン
         state_machine = StateMachineV18(
             state_gen=pen_state_gen_v18,
-            transition_py_dict=pen_transition_obj_v14,
+            transition_py_dict=pen_transition_doc_v14,
             entry_state_path=[INIT],
         )
 

@@ -22,11 +22,11 @@ class Main:
         print(f'args.output_default_format : {args.output_default_format}') # Example: "lesson20_projects/house3n2/data/auto_gen/transition3-default-fomat.json"
 
         # JSONファイルを読込みます
-        transition_json_obj = JsonReaderV17n2.read_file(args.input)
-        # print(f"transition_json_obj={transition_json_obj}")
+        transition_doc = JsonReaderV17n2.read_file(args.input)
+        # print(f"transition_doc={transition_doc}")
 
         # デフォルトのフォーマッティングで出力するなら
-        out_text = json.dumps(transition_json_obj, indent=4, ensure_ascii=False)
+        out_text = json.dumps(transition_doc, indent=4, ensure_ascii=False)
         FileIo.makedirs(os.path.dirname(args.output_default_format))
         print(f"[L20] write {args.output_default_format}")
         FileIo.write(args.output_default_format, out_text)
@@ -35,9 +35,9 @@ class Main:
         print(f"[L20] write {args.output}")
         TransitionJsonWriter.write(
             file_path=args.output,
-            title=transition_json_obj["title"],
-            entry_state=transition_json_obj["entry_state"],
-            data=transition_json_obj["data"],
+            title=transition_doc["title"],
+            entry_state=transition_doc["entry_state"],
+            data=transition_doc["data"],
         )
 
         return 0

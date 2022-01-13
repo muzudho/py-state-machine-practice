@@ -7,7 +7,7 @@ lesson14_projects/pen/data/transition.py:
 ```python
 # 定数の import 部分を略
 
-pen_transition_obj_v14 = {
+pen_transition_doc_v14 = {
     "title": "This is a pen",
     "entry_state": INIT,
     "data": {

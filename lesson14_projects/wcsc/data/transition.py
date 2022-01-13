@@ -22,7 +22,7 @@ from lesson14_projects.wcsc.data.const import (
     REPLY,
 )
 
-wcsc_transition_obj_v14 = {
+wcsc_transition_doc_v14 = {
     "title": "CSA Server protocol 1.2.1",
     "entry_state": INIT,
     "data": {

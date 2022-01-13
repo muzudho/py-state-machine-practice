@@ -19,7 +19,7 @@ python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/house3/da
 
 ```shell
 # Windows
-python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/pen/data/const.json" "lesson19_projects/pen/auto_gen/data/transition.json" "lesson10021_projects/pen/auto_gen/data/transition.py" "lesson18_projects.pen.auto_gen.data.const" "pen_transition_obj_v14"
+python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/pen/data/const.json" "lesson19_projects/pen/auto_gen/data/transition.json" "lesson10021_projects/pen/auto_gen/data/transition.py" "lesson18_projects.pen.auto_gen.data.const" "pen_transition_doc_v14"
 #                                                 ----------------------------------------- ----------------------------------------------------- ------------------------------------------------------ ------------------------------------------- ------------------------
 #                                                 定数定義入力ファイル (.json)                状態遷移定義入力ファイル(.json)                          Output (.json)                                       Output (import statement)                   Output (Variable name)
 ```
@@ -30,7 +30,7 @@ python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/pen/data/
 
 ```shell
 # Windows
-python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/wcsc/data/const.json" "lesson19_projects/wcsc/auto_gen/data/transition.json" "lesson10021_projects/wcsc/auto_gen/data/transition.py" "lesson18_projects.wcsc.auto_gen.data.const" "wcsc_transition_obj_v14"
+python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/wcsc/data/const.json" "lesson19_projects/wcsc/auto_gen/data/transition.json" "lesson10021_projects/wcsc/auto_gen/data/transition.py" "lesson18_projects.wcsc.auto_gen.data.const" "wcsc_transition_doc_v14"
 #                                                 ------------------------------------------ ------------------------------------------------------ ------------------------------------------------------- -------------------------------------------- -------------------------
 #                                                 定数定義入力ファイル (.json)                 状態遷移定義入力ファイル(.json)                           Output (.json)                                       Output (import statement)                   Output (Variable name)
 ```
