@@ -13,7 +13,10 @@ Pythonのdict（これはOrderedDictではありません）でデータ化し�
 
 ```shell
 python.exe -m lesson18.main_pen_step1
-python.exe -m lesson18.main_pen_step2
+
+python.exe -m lesson18.main_pen_step2 "lesson18_projects/pen/conf.toml"
+#                                     ---------------------------------
+#                                     設定ファイル
 ```
 
 ## Run
