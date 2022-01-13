@@ -14,7 +14,9 @@ pip install graphviz
 # Run
 
 ```shell
-python.exe -m lesson15.main
+python.exe -m lesson15.main "lesson15_projects/house3/conf.toml"
+#                           ------------------------------------
+#                           設定ファイル
 ```
 
 Output:  
