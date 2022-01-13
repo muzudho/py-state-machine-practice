@@ -1,0 +1,26 @@
+{
+    "title": "House",
+    "entry_state": "Out",
+    "data": {
+        "Out": {
+            "turned_knob": ["Out", "CloseDoor"],
+            "Failed": ["Out"],
+            "CloseDoor": {
+                "PulledKnob": ["Out", "OpenDoor"],
+                "Failed": ["Out"]
+            },
+            "OpenDoor": {
+                "enter": ["Stairs"],
+                "Failed": ["Out"]
+            }
+        },
+        "Stairs": {
+            "up": ["MyRoom"],
+            "Failed": ["Out"]
+        },
+        "MyRoom": {
+            "sitting_down": null,
+            "Failed": ["Out"]
+        }
+    }
+}

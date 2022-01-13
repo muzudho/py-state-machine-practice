@@ -5,13 +5,15 @@
 
 # Example - House
 
-入力元: `lesson14_projects.house3n2.data.transition3.py` - `house3n2_transition3_doc_v14`  
+入力元: `lesson14_projects.house3n2.data.transition.json`  
 出力先: `lesson19_projects/house3n2/auto_gen/data/transition2.json`  
 
 ## Set up
 
 ```shell
-python.exe -m lesson19.main_house3n2_step2_transition3
+python.exe -m lesson19.main_house3n2_step2_transition3 "lesson19_projects/house3n2/conf.toml"
+#                                                      --------------------------------------
+#                                                      設定ファイル
 ```
 
 # Example - Pen
