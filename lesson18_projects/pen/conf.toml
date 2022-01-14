@@ -1,2 +1,4 @@
 transition_file = "lesson14_projects/pen/data/transition.json"
 const_file = "lesson18_projects/pen/auto_gen/data/const.py"
+output_states_dir = "lesson18_projects/pen/auto_gen/code/states"
+import_const_module = "lesson18_projects.pen.auto_gen.data.const"
