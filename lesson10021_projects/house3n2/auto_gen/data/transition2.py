@@ -1,6 +1,6 @@
 from lesson18_projects.house3.auto_gen.data.const import CLOSE_DOOR, E_ENTER, E_FAILED, E_PULLED_KNOB, E_SITTING_DOWN, E_TURNED_KNOB, E_UP, MY_ROOM, OPEN_DOOR, OUT, STAIRS
 
-house3n2_transition2_py_dict = {
+house3n2_transition2_doc = {
     "title": "House",
     "entry_state": OUT,
     "data": {

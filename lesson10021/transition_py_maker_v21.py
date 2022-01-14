@@ -29,14 +29,14 @@ class Main:
         print(f'args.output          : {args.output}')
         # Example: "lesson18_projects.house3n2.data.auto_gen.const"
         print(f'args.import_module   : {args.import_module}')
-        # Example: "house3n2_transition2_py_dict"
+        # Example: "house3n2_transition2_doc"
         print(f'args.var_name        : {args.var_name}')
 
         const_data = JsonReaderV11n100.read_file(args.input_const)
         transition_data = JsonReaderV11n100.read_file(args.input_transition)
 
         transition_conf_py_stringification = TransitionConfPyStringification(
-            const_py_dict=const_data,
+            const_doc=const_data,
             import_from_path=args.import_module,
         )
         out_text = transition_conf_py_stringification.stringify(

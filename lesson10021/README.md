@@ -8,7 +8,7 @@
 
 ```shell
 # Windows
-python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/house3/data/const.json" "lesson10019_projects/house3n2/auto_gen/data/transition2.json" "lesson10021_projects/house3n2/auto_gen/data/transition2.py" "lesson18_projects.house3.auto_gen.data.const" "house3n2_transition2_py_dict"
+python.exe -m lesson10021.transition_py_maker_v21 "lesson18n2_projects/house3/data/const.json" "lesson10019_projects/house3n2/auto_gen/data/transition2.json" "lesson10021_projects/house3n2/auto_gen/data/transition2.py" "lesson18_projects.house3.auto_gen.data.const" "house3n2_transition2_doc"
 #                                                 -------------------------------------------- ----------------------------------------------------------- ------------------------------------------------------------ ---------------------------------------------- ------------------------------
 #                                                 定数定義入力ファイル (.json)                   状態遷移定義入力ファイル(.json)                                Output (.py)                                              Output (import statement)                     Output (Variable name)
 ```

@@ -3,8 +3,8 @@ from lesson18.code_gen.const_conf import ConstConfV18
 
 
 class TransitionConfPyStringification:
-    def __init__(self, const_py_dict, import_from_path):
-        self._const_conf = ConstConfV18(const_py_dict)
+    def __init__(self, const_doc, import_from_path):
+        self._const_conf = ConstConfV18(const_doc)
         self._used_const_set = set()
         self._import_from_path = import_from_path
 
@@ -26,8 +26,10 @@ class TransitionConfPyStringification:
 
         # 定数 or "文字列" 判定
         entry_state = ordered_dict_data["entry_state"]
-        entry_state = self._const_conf.replace_item(entry_state, '"')  # 定数、でなければ "文字列"
-        self._const_conf.pickup_from_item_to_set(entry_state, self._used_const_set)
+        entry_state = self._const_conf.replace_item(
+            entry_state, '"')  # 定数、でなければ "文字列"
+        self._const_conf.pickup_from_item_to_set(
+            entry_state, self._used_const_set)
 
         text = f"""{variable_name} = {{
     "title": "{title}",
@@ -40,8 +42,10 @@ class TransitionConfPyStringification:
         block_list = []
         for key, value in ordered_dict_data["data"].items():
             # 定数 or "文字列" 判定
-            k_operand = self._const_conf.replace_item(key, '"')  # 定数、でなければ "文字列"
-            self._const_conf.pickup_from_item_to_set(k_operand, self._used_const_set)
+            k_operand = self._const_conf.replace_item(
+                key, '"')  # 定数、でなければ "文字列"
+            self._const_conf.pickup_from_item_to_set(
+                k_operand, self._used_const_set)
 
             if isinstance(value, dict):
                 block_list.append(
@@ -51,7 +55,8 @@ class TransitionConfPyStringification:
                 )
             elif isinstance(value, list):
                 block_list.append(
-                    f"{n4sp}{k_operand}: [" + ", ".join(self._child_list(value)) + f"]"
+                    f"{n4sp}{k_operand}: [" +
+                    ", ".join(self._child_list(value)) + f"]"
                 )
             elif value is None:
                 block_list.append(f"{n4sp}{k_operand}:null")
@@ -84,14 +89,16 @@ class TransitionConfPyStringification:
 
             # 定数 or "文字列" 判定
             k_operand = self._const_conf.replace_item(k, '"')  # 定数、でなければ "文字列"
-            self._const_conf.pickup_from_item_to_set(k_operand, self._used_const_set)
+            self._const_conf.pickup_from_item_to_set(
+                k_operand, self._used_const_set)
 
             text += f"{n4sp}{k_operand}: "
 
             # v
             if isinstance(v, dict):
                 text += (
-                    "{\n" + ",\n".join(self._child_dict(v, indent + 1)) + f"\n{n4sp}}}"
+                    "{\n" + ",\n".join(self._child_dict(v,
+                                       indent + 1)) + f"\n{n4sp}}}"
                 )
             elif isinstance(v, list):
                 text += "[" + ", ".join(self._child_list(v)) + f"]"
@@ -108,8 +115,10 @@ class TransitionConfPyStringification:
         for item in data:
 
             # 定数 or "文字列" 判定
-            operand = self._const_conf.replace_item(item, '"')  # 定数、でなければ "文字列"
-            self._const_conf.pickup_from_item_to_set(operand, self._used_const_set)
+            operand = self._const_conf.replace_item(
+                item, '"')  # 定数、でなければ "文字列"
+            self._const_conf.pickup_from_item_to_set(
+                operand, self._used_const_set)
 
             item_list.append(operand)
         return item_list
