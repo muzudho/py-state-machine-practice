@@ -3,6 +3,14 @@
 Lesson17で行ったコードの自動生成を発展させ、  
 Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、Lesson14と同等のPythonスクリプトのルーチン（状態のスクリプト）を自動生成しましょう  
 
+# Example - House
+
+```shell
+python.exe -m lesson18.main_house3_step1 "lesson18_projects/house3/conf.toml"
+#                                        ------------------------------------
+#                                        設定ファイル
+```
+
 # Example - Pen
 
 ## Set up
