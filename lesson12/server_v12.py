@@ -63,7 +63,7 @@ You can see the close knob.""".encode()
                     edge_name = state.update(message, c_sock)
 
                     # Edge名から、次の state名 に変えます
-                    state_name = self._transition_doc['doc'][state_name][edge_name]
+                    state_name = self._transition_doc['data'][state_name][edge_name]
 
                     # ステート名からオブジェクトを生成します
                     state = house3_state_gen[state_name]()
