@@ -1,14 +1,13 @@
 import socket
 from threading import Thread
 
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson12.states.out import OutState
 from lesson12_projects.house3.data.state_gen import house3_state_gen
 from lesson12_projects.house3.data.const import OUT
 
 
 class ServerV12:
-    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_doc, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -32,8 +31,7 @@ class ServerV12:
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
 
-        # JSONファイルを読込みます
-        self._transition_doc = JsonReaderV11n100.read_file(transition_file_path)
+        self._transition_doc = transition_doc
 
     def run(self):
         def client_worker(c_sock):
