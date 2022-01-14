@@ -41,8 +41,8 @@ class Main:
         # 状態の .py スクリプトを出力します
         gen_state_files_v18(
             dir_path=args.output,
-            const_py_dict=const_json_obj,
-            transition_py_dict=transition_doc,
+            const_doc=const_json_obj,
+            transition_doc=transition_doc,
             import_from_path=args.import_module,
         )
         return 0

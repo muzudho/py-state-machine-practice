@@ -34,7 +34,7 @@ class Main:
         # 状態遷移マシン
         state_machine = StateMachineV18(
             state_gen=house3n2_state_gen_v23,
-            transition_py_dict=transition_doc,
+            transition_doc=transition_doc,
             entry_state_path=[OUT],
         )
 
