@@ -1,7 +1,6 @@
 import socket
 from threading import Thread
 
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson14.request import Request
 from lesson14_projects.pen.data.const import INIT
@@ -9,7 +8,7 @@ from lesson14_projects.pen.data.state_gen import pen_state_gen_v14
 
 
 class ServerV14:
-    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_doc, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -34,8 +33,7 @@ class ServerV14:
         self._c_sock_set = None
 
         # JSONファイルを読込みます
-        self._transition_doc = JsonReaderV11n100.read_file(
-            transition_file_path)
+        self._transition_doc = transition_doc
 
     def run(self):
         def client_worker(c_sock):
