@@ -55,6 +55,14 @@ pen
 q
 ```
 
+# Example - Wcsc
+
+```shell
+python.exe -m lesson18.main_wcsc_step1 "lesson18_projects/wcsc/conf.toml"
+#                                      ----------------------------------
+#                                      設定ファイル
+```
+
 # 定数ファイル
 
 ```python
