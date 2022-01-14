@@ -4,9 +4,9 @@ from lesson17.code_gen.const_conf import ConstConfV17
 from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 
 
-def gen_state_files_v17(const_conf_py_dict, transition_conf_data, output_dir_path):
+def gen_state_files_v17(const_conf_doc, transition_conf_data, output_dir_path):
     transition_conf = TransitionConfV16n3(transition_conf_data)
-    const_conf = ConstConfV17(const_conf_py_dict)
+    const_conf = ConstConfV17(const_conf_doc)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()

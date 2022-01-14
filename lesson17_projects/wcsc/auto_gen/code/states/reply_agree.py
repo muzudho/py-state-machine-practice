@@ -1,4 +1,4 @@
-from lesson17_projects.wcsc.data.auto_gen.const import E_START, GAME
+from lesson17_projects.wcsc.data.auto_gen.const import GAME, E_START
 
 class ReplyAgreeState():
 

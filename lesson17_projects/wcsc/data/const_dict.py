@@ -1,6 +1,6 @@
 # (1) キーと値は 全単射にしてください
 # (2) 大文字と小文字は区別します
-wcsc_const_py_dict = {
+wcsc_const_doc = {
     # States
     # ------
     #

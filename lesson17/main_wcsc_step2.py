@@ -5,7 +5,7 @@ from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson17.code_gen.state_files_gen import gen_state_files_v17
-from lesson17_projects.wcsc.data.const_dict import wcsc_const_py_dict
+from lesson17_projects.wcsc.data.const_dict import wcsc_const_doc
 
 STEP2_AUTO_STATE_DIR_PATH = "lesson17_projects/wcsc/auto_gen/code/states"
 
@@ -28,7 +28,7 @@ class Main:
 
         # ファイル生成
         gen_state_files_v17(
-            const_conf_py_dict=wcsc_const_py_dict,
+            const_conf_doc=wcsc_const_doc,
             transition_conf_data=transition_doc,
             output_dir_path=STEP2_AUTO_STATE_DIR_PATH,
         )
