@@ -3,11 +3,11 @@ from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 
 
 class StateMachineV18:
-    def __init__(self, state_gen, transition_py_dict, entry_state_path):
+    def __init__(self, state_gen, transition_doc, entry_state_path):
         self._is_verbose = False
         self._state_gen = state_gen
-        self._transition_py_dict = transition_py_dict
-        self._transition_conf = TransitionConfV16n3(self._transition_py_dict)
+        self._transition_doc = transition_doc
+        self._transition_conf = TransitionConfV16n3(self._transition_doc)
         self._state_path = entry_state_path
 
     @property
@@ -31,7 +31,8 @@ class StateMachineV18:
         # 最初
         state_path = self.state_path
         # state_gen_conf.py を見て state_path から state を生成します
-        state = StateMachineHelperV13.create_state_v13(self.state_gen, state_path)
+        state = StateMachineHelperV13.create_state_v13(
+            self.state_gen, state_path)
 
         while True:
             req = self.create_request()
@@ -67,7 +68,8 @@ class StateMachineV18:
                 break
 
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelperV13.create_state_v13(self.state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(
+                self.state_gen, state_path)
 
     def create_request(self):
         """Request変数を返す関数です"""

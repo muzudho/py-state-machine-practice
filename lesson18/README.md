@@ -50,7 +50,7 @@ q
 ```python
 # (1) キーと値は 全単射にしてください
 # (2) 大文字と小文字は区別します
-house3_const_py_dict = {
+house3_const_doc = {
     # States
     # ------
     #

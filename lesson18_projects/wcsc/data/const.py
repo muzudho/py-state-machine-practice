@@ -1,4 +1,4 @@
-wcsc_const_py_dict = {
+wcsc_const_doc = {
     "INIT": 'Init',
     "LOGIN": 'Login',
     "LOBBY": 'Lobby',

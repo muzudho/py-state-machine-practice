@@ -32,7 +32,7 @@ class Main:
         # 状態遷移マシン
         state_machine = StateMachineV18(
             state_gen=pen_state_gen_v18,
-            transition_py_dict=transition_doc,
+            transition_doc=transition_doc,
             entry_state_path=[INIT],
         )
 

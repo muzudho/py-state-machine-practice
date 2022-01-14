@@ -2,7 +2,7 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
-from lesson17_projects.pen.data.const_dict import pen_const_doc
+from lesson17_projects.pen.data.const import pen_const_doc
 
 OUTPUT_FILE_PATH = "lesson17_projects/pen/auto_gen/data/const.py"
 
