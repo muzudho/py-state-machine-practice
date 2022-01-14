@@ -1,7 +1,6 @@
 import socket
 from threading import Thread
 
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson13.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson12_projects.house3.data.const import OUT
@@ -9,7 +8,7 @@ from lesson13_projects.house3.data.state_gen import house3_state_gen
 
 
 class ServerV13:
-    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_doc, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -33,8 +32,7 @@ class ServerV13:
         # '_c_sock_set' - (Client socket set) このサーバーに接続してきたクライアントのソケットの集まりです
         self._c_sock_set = None
 
-        # JSONファイルを読込みます
-        self._transition_doc = JsonReaderV11n100.read_file(transition_file_path)
+        self._transition_doc = transition_doc
 
     def run(self):
         def client_worker(c_sock):
@@ -54,7 +52,8 @@ class ServerV13:
             # 最初は外に居ます
             state_path = [OUT]
             # state_gen_conf.py を見て state_path から state を生成します
-            state = StateMachineHelperV13.create_state_v13(house3_state_gen, state_path)
+            state = StateMachineHelperV13.create_state_v13(
+                house3_state_gen, state_path)
 
             while True:
                 try:
@@ -65,7 +64,8 @@ class ServerV13:
                         return message
 
                     # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                    req = Request(c_sock=c_sock, pull_trigger=__on_pull_trigger)
+                    req = Request(
+                        c_sock=c_sock, pull_trigger=__on_pull_trigger)
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
                     edge_name = state.update(req)
