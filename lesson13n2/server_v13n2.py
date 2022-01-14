@@ -4,7 +4,7 @@ from threading import Thread
 from lesson13n2.request import Request
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 from lesson12_projects.house3.data.const import OUT
-from lesson13n2_projects.house3n2.data.transition2 import house3n2_transition2_py_dict
+from lesson13n2_projects.house3n2.data.transition2 import house3n2_transition2_doc
 from lesson13n2_projects.house3n2.data.state_gen_conf import house3n2_state_gen
 
 
@@ -64,7 +64,8 @@ class ServerV13n2:
                         return message
 
                     # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                    req = Request(c_sock=c_sock, pull_trigger=__on_pull_trigger)
+                    req = Request(
+                        c_sock=c_sock, pull_trigger=__on_pull_trigger)
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
                     edge_name = state.update(req)
@@ -72,7 +73,7 @@ class ServerV13n2:
 
                     # transition_conf_data.py を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                        house3n2_transition2_py_dict, state_path, edge_name
+                        house3n2_transition2_doc, state_path, edge_name
                     )
 
                     if state_path is None:

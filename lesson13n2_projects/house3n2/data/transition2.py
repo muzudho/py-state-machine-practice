@@ -12,7 +12,7 @@ from lesson12_projects.house3.data.const import (
     STAIRS,
 )
 
-house3n2_transition2_py_dict = {
+house3n2_transition2_doc = {
     OUT: {
         E_TURNED_KNOB: [OUT, CLOSE_DOOR],
         E_FAILED: [OUT],
