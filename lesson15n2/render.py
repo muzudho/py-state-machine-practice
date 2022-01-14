@@ -1,8 +1,7 @@
 from graphviz import Digraph
+
 from lesson15n2.code_gen.directive_edge import DirectiveEdge
 from lesson15n2.code_gen.clustered_directive_edge import ClusteredDirectiveEdge
-
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
 
 
@@ -82,14 +81,13 @@ class Render:
     def is_verbose(clazz):
         return True
 
-    def __init__(self, transition_file_path):
+    def __init__(self, transition_doc):
         # グラフの設定
         self._g = Digraph(format="png")
         self._g.attr("node", shape="square", style="filled")
 
         # JSONファイルを読込みます
-        self._transition_doc = JsonReaderV11n100.read_file(
-            transition_file_path)
+        self._transition_doc = transition_doc
 
     def run(self):
 

@@ -14,7 +14,7 @@ pip install graphviz
 
 ```shell
 python.exe -m lesson15n2.main "lesson15n2_projects/pen/conf.toml"
-#                             ---------------------------------
+#                             -----------------------------------
 #                             設定ファイル
 ```
 

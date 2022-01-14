@@ -3,6 +3,7 @@ import argparse
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
+from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson15n2.render import Render
 
 server = None
@@ -20,8 +21,12 @@ class Main:
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc['transition_file']
 
+        # JSONファイルを読込みます
+        transition_doc = JsonReaderV11n100.read_file(
+            transition_file_path)
+
         # サーバー起動
-        server = Render(transition_file_path=transition_file_path)
+        server = Render(transition_doc=transition_doc)
         server.run()
         return 0
 
