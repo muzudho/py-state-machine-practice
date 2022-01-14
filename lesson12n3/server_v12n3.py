@@ -2,14 +2,13 @@ import socket
 from threading import Thread
 from lesson12n3.request import Request
 
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson12n3.states.out import OutState
 from lesson12_projects.house3.data.const import OUT
 from lesson12n3_projects.house3.data.state_gen import house3_state_gen
 
 
 class ServerV12n3:
-    def __init__(self, transition_file_path, host="0.0.0.0", port=5002, message_size=1024):
+    def __init__(self, transition_doc, host="0.0.0.0", port=5002, message_size=1024):
         """初期化
 
         Parameters
@@ -34,7 +33,7 @@ class ServerV12n3:
         self._c_sock_set = None
 
         # JSONファイルを読込みます
-        self._transition_doc = JsonReaderV11n100.read_file(transition_file_path)
+        self._transition_doc = transition_doc
 
     def run(self):
         def client_worker(c_sock):
@@ -64,7 +63,8 @@ class ServerV12n3:
                         return message
 
                     # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                    req = Request(c_sock=c_sock, pull_trigger=__on_pull_trigger)
+                    req = Request(
+                        c_sock=c_sock, pull_trigger=__on_pull_trigger)
 
                     # メッセージに応じたアクションを行ったあと、Edge名を返します
                     edge_name = state.update(req)
