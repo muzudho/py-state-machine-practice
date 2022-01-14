@@ -1,1 +1,2 @@
 transition_file = "lesson14_projects/pen/data/transition.json"
+const_file = "lesson18_projects/pen/auto_gen/data/const.py"

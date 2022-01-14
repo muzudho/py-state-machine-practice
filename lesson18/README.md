@@ -20,7 +20,9 @@ python.exe -m lesson18.main_house3_step1 "lesson18_projects/house3/conf.toml"
 - `lesson18_projects/auto_gen`
 
 ```shell
-python.exe -m lesson18.main_pen_step1
+python.exe -m lesson18.main_pen_step1 "lesson18_projects/pen/conf.toml"
+#                                     ---------------------------------
+#                                     設定ファイル
 
 python.exe -m lesson18.main_pen_step2 "lesson18_projects/pen/conf.toml"
 #                                     ---------------------------------
