@@ -47,19 +47,19 @@ class GraphRender:
 
         edge_list = []
 
-        transition_conf = TransitionConfV15(self._transition_doc)
+        transition = TransitionConfV15(self._transition_doc)
 
         # エッジの一覧を作成
-        create_edge_list(transition_conf.data, [], None, edge_list)
+        create_edge_list(transition.doc['data'], [], None, edge_list)
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:
             # 一番外側のクラスターのラベルは図のタイトルのように見える
-            c.attr(color="white", label=transition_conf.title)
+            c.attr(color="white", label=transition.doc['title'])
             # 始端記号
             c.node("(Start)", shape="circle", color="gray")
             # 始端と開始ノードのエッジ
-            c.edge("(Start)", transition_conf.entry_state, label="start")
+            c.edge("(Start)", transition.doc['entry_state'], label="start")
             # 終端記号
             c.node("(Terminal)", shape="circle", color="gray")
 

@@ -1,6 +1,6 @@
 # Lesson15
 
-`transition_conf_data.py` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。  
+`transition.json` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。  
 graphviz を使って可視化しましょう  
 
 # Set up

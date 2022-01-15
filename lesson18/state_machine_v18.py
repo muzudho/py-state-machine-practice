@@ -7,7 +7,7 @@ class StateMachineV18:
         self._is_verbose = False
         self._state_gen = state_gen
         self._transition_doc = transition_doc
-        self._transition_conf = TransitionConfV16n3(self._transition_doc)
+        self._transition = TransitionConfV16n3(self._transition_doc)
         self._state_path = entry_state_path
 
     @property
@@ -15,8 +15,8 @@ class StateMachineV18:
         return self._state_gen
 
     @property
-    def transition_conf(self):
-        return self._transition_conf
+    def transition(self):
+        return self._transition
 
     @property
     def state_path(self):
@@ -43,20 +43,20 @@ class StateMachineV18:
 
             if self._is_verbose:
                 print(
-                    f"[state_machine] transition_conf.title={self.transition_conf.title}"
+                    f"[state_machine] transition.doc title={self.transition.doc['title']}"
                 )
                 print(
-                    f"[state_machine] transition_conf.entry_state={self.transition_conf.entry_state}"
+                    f"[state_machine] transition.doc entry_state={self.transition.doc['entry_state']}"
                 )
                 print(
-                    f"[state_machine] transition_conf.data={self.transition_conf.data}"
+                    f"[state_machine] transition.doc data={self.transition.doc['data']}"
                 )
                 print(f"[state_machine] state_path={state_path}")
                 print(f"[state_machine] edge_name={edge_name}")
 
-            # transition_conf.py を見て、edge_nameから、state_path を得ます
+            # transition を見て、edge_nameから、state_path を得ます
             state_path = StateMachineHelperV13.lookup_next_state_path_v13(
-                self.transition_conf.data, state_path, edge_name
+                self.transition.doc['data'], state_path, edge_name
             )
 
             if self._is_verbose:

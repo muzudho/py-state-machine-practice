@@ -10,12 +10,12 @@ OUTPUT_FILE_PATH = "lesson10019_projects/wcsc/auto_gen/data/transition.json"
 
 class Main:
     def on_main(self):
-        transition_doc = TransitionConfV16n3(wcsc_transition_doc_v19)
+        transition = TransitionConfV16n3(wcsc_transition_doc_v19)
         TransitionJsonWriter.write(
             file_path=OUTPUT_FILE_PATH,
-            title=transition_doc.title,
-            entry_state=transition_doc.entry_state,
-            data=transition_doc.data,
+            title=transition.doc['title'],
+            entry_state=transition.doc['entry_state'],
+            data=transition.doc['data'],
         )
         return 0
 
