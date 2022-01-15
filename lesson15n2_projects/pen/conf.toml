@@ -1,1 +1,2 @@
 transition_file = "lesson14_projects/pen/data/transition.json"
+output_graph_text_file = "lesson15n2_projects/pen/auto_gen/graphs.txt"

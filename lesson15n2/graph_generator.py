@@ -22,6 +22,7 @@ class Main:
 
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc['transition_file']
+        output_graph_text_file = toml_doc['output_graph_text_file']
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
@@ -33,7 +34,7 @@ class Main:
         # グラフ描画
         self._graph_render = GraphRenderV15n2(
             transition=transition,
-            output_text_file="lesson15n2_projects/pen/auto_gen/graphs.txt")
+            output_graph_text_file=output_graph_text_file)
         self._graph_render.run()
         return 0
 
