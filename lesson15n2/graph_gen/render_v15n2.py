@@ -1,6 +1,5 @@
 from graphviz import Digraph
 
-from lesson15.conf_obj.directive_edge_v15 import DirectiveEdgeV15
 from lesson15.conf_obj.clustered_directive_edge_v15 import ClusteredDirectiveEdgeV15
 from lesson15.graph_gen.render_v15 import create_edge_list_v15
 
