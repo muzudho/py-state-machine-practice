@@ -2,8 +2,8 @@ import sys
 import argparse
 
 from lesson07n2.main_finally import MainFinally
-from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
+from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
+from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson16n3.code_gen.state_files_gen import gen_state_files_v16n3
 
 OUTPUT_DIR_PATH = "lesson16n3_projects/wcsc/auto_gen/code/states"

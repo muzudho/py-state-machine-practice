@@ -3,7 +3,7 @@ import argparse
 from tomlkit import dumps
 
 from lesson07n2.main_finally import MainFinally
-from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
+from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 
 
 class Main:
@@ -12,7 +12,8 @@ class Main:
         parser.add_argument('input', help='TOMLファイルへのパス')
         args = parser.parse_args()
 
-        print(f'args.input  : {args.input}') # Example: "lesson11n90_projects/example/data/example.toml"
+        # Example: "lesson11n90_projects/example/data/example.toml"
+        print(f'args.input  : {args.input}')
 
         # TOMLファイルを読込みます
         toml_doc = TomlReaderV11n90.read_file(args.input)

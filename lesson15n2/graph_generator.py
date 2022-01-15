@@ -2,8 +2,8 @@ import sys
 import argparse
 
 from lesson07n2.main_finally import MainFinally
-from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
+from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
+from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson15.conf_obj.transition_v15 import TransitionV15
 from lesson15n2.graph_gen.render_v15n2 import GraphRenderV15n2
 
@@ -31,7 +31,9 @@ class Main:
         transition = TransitionV15(transition_doc)
 
         # グラフ描画
-        self._graph_render = GraphRenderV15n2(transition=transition)
+        self._graph_render = GraphRenderV15n2(
+            transition=transition,
+            output_text_file="lesson15n2_projects/pen/auto_gen/graphs.txt")
         self._graph_render.run()
         return 0
 

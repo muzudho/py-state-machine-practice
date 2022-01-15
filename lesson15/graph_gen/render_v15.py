@@ -39,12 +39,13 @@ class GraphRenderV15:
     def is_verbose(clazz):
         return True
 
-    def __init__(self, transition):
+    def __init__(self, transition, output_text_file):
         # グラフの設定
         self._g = Digraph(format="png")
         self._g.attr("node", shape="square", style="filled")
 
         self._transition = transition
+        self._output_text_file = output_text_file
 
     def run(self):
 
@@ -77,7 +78,7 @@ class GraphRenderV15:
                 c.edge(src_node, dst_node, label=edge.name)
 
         # 描画
-        self._g.render("lesson15-graphs")
+        self._g.render(self._output_text_file)
 
     def clean_up(self):
         pass

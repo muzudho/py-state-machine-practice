@@ -2,7 +2,7 @@ import sys
 import argparse
 
 from lesson07n2.main_finally import MainFinally
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
+from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson18.code_gen.state_files_gen import gen_state_files_v18
 
 

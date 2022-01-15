@@ -3,8 +3,8 @@ import argparse
 
 
 from lesson07n2.main_finally import MainFinally
-from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
-from lesson11n100.code_gen.json_reader import JsonReaderV11n100
+from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
+from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson18.server_v18 import ServerV18
 from lesson18.state_machine_v18 import StateMachineV18
 from lesson18_projects.pen.auto_gen.data.const import INIT
