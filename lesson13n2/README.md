@@ -1,9 +1,9 @@
-# Lesson13
+# Lesson13-2
 
-`transigion_conf.py` に、ステートマシンを終了させる出口を指定できるようにしましょう  
+`transigion2.py` に、ステートマシンを終了させる出口を指定できるようにしましょう  
 
 ```python
-transition_conf_data = {
+transition_doc = {
     OUT: {
         E_TURNED_KNOB: [OUT, CLOSE_DOOR],
         E_FAILED: [OUT],

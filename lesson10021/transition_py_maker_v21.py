@@ -5,7 +5,7 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson16.code_gen.file_io import FileIo
-from lesson10021.code_gen.transition_conf_py_stringification import (
+from lesson10021.code_gen.transition_stringification import (
     TransitionConfPyStringification,
 )
 
@@ -35,11 +35,11 @@ class Main:
         const_data = JsonReaderV11n100.read_file(args.input_const)
         transition_data = JsonReaderV11n100.read_file(args.input_transition)
 
-        transition_conf_py_stringification = TransitionConfPyStringification(
+        transition_stringification = TransitionConfPyStringification(
             const_doc=const_data,
             import_from_path=args.import_module,
         )
-        out_text = transition_conf_py_stringification.stringify(
+        out_text = transition_stringification.stringify(
             variable_name=args.var_name, ordered_dict_data=transition_data
         )
 

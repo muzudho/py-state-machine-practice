@@ -1,13 +1,25 @@
 import sys
+import argparse
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson16.code_gen.init_file_gen import gen_init_file_v16
 
-OUTPUT_DIR_PATH = "lesson16_projects/wcsc/auto_gen/code/status"
 
 class Main:
     def on_main(self):
-        gen_init_file_v16(OUTPUT_DIR_PATH)
+        parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
+        parser.add_argument('conf', help='設定ファイルへのパス')
+        args = parser.parse_args()
+
+        # 設定ファイル（.toml）読取
+        toml_doc = TomlReaderV11n90.read_file(args.conf)
+
+        # TOMLの内容を読み取ります
+        output_dir_path = toml_doc['output_dir']
+
+        # ファイル生成
+        gen_init_file_v16(output_dir_path)
         return 0
 
     def on_except(self, e):

@@ -26,7 +26,7 @@ class Main:
         transition_doc = JsonReaderV11n100.read_file(
             transition_file_path)
 
-        # サーバー起動
+        # グラフ描画
         self._graph_render = GraphRenderV15n2(transition_doc=transition_doc)
         self._graph_render.run()
         return 0

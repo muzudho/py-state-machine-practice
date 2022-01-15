@@ -27,7 +27,7 @@
   付けた方が 人間の目の検索能力の負担を軽くできるかもしれません
 * 📖 [Lesson13-2](./lesson13n2) - `transigion_conf.py` に、ステートマシンを終了させる出口を指定できるようにしましょう
 * 📖 [Lesson14](./lesson14) - 状態遷移定義ファイルを作ってみましょう。サブサブサブステートマシンを作ってみましょう
-* 📖 [Lesson15](./lesson15) - `transition_conf_data.py` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。 graphviz を使って可視化しましょう
+* 📖 [Lesson15](./lesson15) - `transition.json` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。 graphviz を使って可視化しましょう
 * 📖 [Lesson15-2](./lesson15n2) - サブステートを可視化できるように、 graphviz のクラスタリングを使いましょう
 * 📖 [Lesson16](./lesson16) - `auto_gen` フォルダーを自動生成し、その中に `init.py` （状態）ファイルの雛型を自動生成してみましょう
 * 📖 [Lesson16-2](./lesson16n2) - `pen_transition.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう

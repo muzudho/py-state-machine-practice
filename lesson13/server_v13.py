@@ -71,7 +71,7 @@ class ServerV13:
                     edge_name = state.update(req)
                     print(f"[server.py 67] edge_name={edge_name}")
 
-                    # transition_conf_data.py を見て state_path を得ます
+                    # transition を見て state_path を得ます
                     state_path = StateMachineHelperV13.lookup_next_state_path_v13(
                         self._transition_doc['data'], state_path, edge_name
                     )
