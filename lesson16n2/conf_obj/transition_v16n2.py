@@ -1,5 +1,5 @@
 from lesson15.conf_obj.transition_v15 import TransitionV15
-from lesson15n2.conf_obj.directive_edge import DirectiveEdge
+from lesson15.conf_obj.directive_edge_v15 import DirectiveEdgeV15
 
 
 class TransitionV16n2(TransitionV15):
@@ -26,7 +26,7 @@ class TransitionV16n2(TransitionV15):
                         child, state_node_path, child_key, result_edge_list
                     )
                 else:
-                    edge = DirectiveEdge(
+                    edge = DirectiveEdgeV15(
                         src=state_node_path, dst=child, name=child_key)
                     result_edge_list.append(edge)
 

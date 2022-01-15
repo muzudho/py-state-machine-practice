@@ -1,8 +1,8 @@
 from graphviz import Digraph
 
 from lesson15.conf_obj.transition_v15 import TransitionV15
-from lesson15n2.conf_obj.directive_edge import DirectiveEdge
-from lesson15n2.conf_obj.clustered_directive_edge import ClusteredDirectiveEdge
+from lesson15.conf_obj.directive_edge_v15 import DirectiveEdgeV15
+from lesson15.conf_obj.clustered_directive_edge_v15 import ClusteredDirectiveEdgeV15
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -23,8 +23,8 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
             create_edge_list(child, state_node_path,
                              child_key, result_edge_list)
         else:
-            edge = DirectiveEdge(src=state_node_path,
-                                 dst=child, name=child_key)
+            edge = DirectiveEdgeV15(src=state_node_path,
+                                    dst=child, name=child_key)
             result_edge_list.append(edge)
 
 
@@ -33,7 +33,7 @@ def clustering(edge_list):
     clustered_edge_in_list = []
 
     for edge in edge_list:
-        clustering_edge = ClusteredDirectiveEdge.clustering(edge)
+        clustering_edge = ClusteredDirectiveEdgeV15.clustering(edge)
         clustered_edge_in_list.append(clustering_edge)
 
     return clustered_edge_in_list

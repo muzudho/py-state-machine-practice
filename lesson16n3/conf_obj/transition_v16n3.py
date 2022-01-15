@@ -1,5 +1,5 @@
 from lesson16n2.conf_obj.transition_v16n2 import TransitionV16n2
-from lesson15n2.conf_obj.directive_edge import DirectiveEdge
+from lesson15.conf_obj.directive_edge_v15 import DirectiveEdgeV15
 
 
 class TransitionV16n3(TransitionV16n2):
@@ -38,7 +38,7 @@ class TransitionV16n3(TransitionV16n2):
                         # print(
                         #    f"[157] edge_name={edge_name} destination_node_path={destination_node_path}"
                         # )
-                        edge = DirectiveEdge(
+                        edge = DirectiveEdgeV15(
                             src=node_path,
                             dst=destination_node_path,
                             name=edge_name,

@@ -1,4 +1,4 @@
-class DirectiveEdge:
+class DirectiveEdgeV15:
     """向きのある辺"""
 
     def __init__(self, src, dst, name):
