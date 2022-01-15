@@ -17,6 +17,7 @@ class MainFinally:
             return 0
 
         def on_except(self, e):
+            # ここで例外キャッチ
             print(e)
 
         def on_finally(self):
@@ -50,6 +51,7 @@ class MainFinally:
             return_code = target.on_main()
 
         except Exception as e:
+            # ここで例外キャッチ
             target.on_except(e)
 
         finally:
