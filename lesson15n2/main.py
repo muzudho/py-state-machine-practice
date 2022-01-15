@@ -4,12 +4,13 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
-from lesson15n2.render import GraphRenderV15n2
-
-server = None
+from lesson15n2.graph_gen.render import GraphRenderV15n2
 
 
 class Main:
+    def __init__(self):
+        self._graph_render = None
+
     def on_main(self):
         parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
         parser.add_argument('conf', help='設定ファイルへのパス')
@@ -26,8 +27,8 @@ class Main:
             transition_file_path)
 
         # サーバー起動
-        server = GraphRenderV15n2(transition_doc=transition_doc)
-        server.run()
+        self._graph_render = GraphRenderV15n2(transition_doc=transition_doc)
+        self._graph_render.run()
         return 0
 
     def on_except(self, e):
@@ -36,8 +37,8 @@ class Main:
 
     def on_finally(self):
         # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
+        if self._graph_render:
+            self._graph_render.clean_up()
 
         print("★しっかり終わった")
         return 1
