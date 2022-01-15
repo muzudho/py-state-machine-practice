@@ -1,12 +1,14 @@
 from tomlkit import parse
 
+from lesson11n80.code_gen.file_io import FileIo
+
+
 class TomlReaderV11n90:
     @classmethod
     def read_file(clazz, file_path):
 
         # テキストファイルを読込みます
-        with open(file_path, encoding="utf-8") as f:
-            text = f.read()
+        text = FileIo.read(file_path)
 
         # TOML形式のテキストをパースします
         return parse(text)

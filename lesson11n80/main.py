@@ -12,7 +12,7 @@ class Main:
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
-        text = FileIo.read_file(args.conf)
+        text = FileIo.read(args.conf)
 
         # 表示
         print(f"text\n----\n{text}")

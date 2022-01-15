@@ -1,5 +1,8 @@
 import json
 from collections import OrderedDict
+from msilib.schema import File
+
+from lesson11n80.code_gen.file_io import FileIo
 
 
 class JsonReaderV11n100:
@@ -7,11 +10,9 @@ class JsonReaderV11n100:
     def read_file(clazz, file_path):
 
         # JSON形式のファイルを読込みます
-        with open(file_path, encoding="utf-8") as f:
-            in_text = f.read()
-            # print(f"in_text={in_text}")
+        itext = FileIo.read(file_path)
 
-        doc = json.loads(in_text, object_pairs_hook=OrderedDict)
+        doc = json.loads(itext, object_pairs_hook=OrderedDict)
         # print(f"doc={doc}")
 
         return doc
