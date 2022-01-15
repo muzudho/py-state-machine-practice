@@ -5,7 +5,7 @@ import argparse
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
-from lesson11n300.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io import FileIo
 from lesson10019.code_gen.transition_json_writer import TransitionJsonWriter
 
 

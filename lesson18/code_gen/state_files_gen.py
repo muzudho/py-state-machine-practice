@@ -1,4 +1,4 @@
-from lesson11n300.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen import StateFileGen
 from lesson18.code_gen.const_conf import ConstConfV18
 from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3

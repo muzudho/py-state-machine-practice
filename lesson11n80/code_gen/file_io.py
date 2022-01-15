@@ -3,6 +3,14 @@ import os
 
 class FileIo:
     @classmethod
+    def read_file(clazz, file_path):
+        """テキストファイルを読込みます"""
+        with open(file_path, encoding="utf-8") as f:
+            text = f.read()
+
+        return text
+
+    @classmethod
     def write(clazz, file_path, text):
         with open(file_path, "w", encoding="UTF-8") as f:
             f.write(text)

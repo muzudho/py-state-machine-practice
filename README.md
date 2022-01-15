@@ -15,6 +15,7 @@
 * 📖 [Lesson10](./lesson10) - 数字を受け取ると、大きいと `Too Big`、小さいと `Too Small`、 ちょうどいいなら `Just Right` を返してくるサーバーです
 * 📖 [Lesson11](./lesson11) - 状態を持つサーバーの練習用のサンプルです
 * 📖 [Lesson11-2](./lesson11n2) - 状態の数だけ if 文を書いていたところを、 ステート（State）デザインパターンで書き直す練習用のサンプルです
+* 📖 [Lesson11-80](./lesson11n80) - テキストファイルを読込む練習をしよう
 * 📖 [Lesson11-90](./lesson11n90) - TOMLファイルを読み取って見ましょう
 * 📖 [Lesson11-100](./lesson11n100) - JSONファイルを読み取って見ましょう
 * 📖 [Lesson11-203](./lesson11n203) - (Lesson11-3 から Lesson11-203 へリナンバリング) 前レッスン（Lesson11-2）では 状態（State）が 次のStateの名前 を返していました。  
@@ -33,7 +34,7 @@
 * 📖 Lesson16 - （TODO Lesson11-300に移動
 * 📖 [Lesson16-2](./lesson16n2) - `pen_transition.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
 * 📖 [Lesson16-3](./lesson16n3) - 次に、 エッジの分岐を自動生成しましょう
-* 📖 [Lesson17](./lesson17) - Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう TODO (Lesson17 より先に Lesson22 を持ってこれないか？)
+* 📖 [Lesson17](./lesson17) - doc構造でデータ化した定数（`const.py`）を元に、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう TODO (Lesson17 より先に Lesson22 を持ってこれないか？)
 * 📖 [Lesson17-2](./lesson17n2) - (Lesson20からLesson17-2へ移動) .json を読み取る練習をしましょう ---> JsonReaderを、Lesson11n100 へ移動したい
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、doc構造でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
 * 📖 [Lesson18-2](./lesson18n2) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう

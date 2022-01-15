@@ -1,6 +1,6 @@
 import os
 
-from lesson11n300.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io import FileIo
 
 
 def gen_init_file_v16(output_dir_path):
