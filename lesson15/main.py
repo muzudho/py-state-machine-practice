@@ -4,7 +4,7 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
-from lesson15.graph_gen.render import GraphRender
+from lesson15.graph_gen.render import GraphRenderV15
 
 
 class Main:
@@ -27,7 +27,7 @@ class Main:
             transition_file_path)
 
         # 図生成
-        self.__graph_render = GraphRender(transition_doc=transition_doc)
+        self.__graph_render = GraphRenderV15(transition_doc=transition_doc)
         self.__graph_render.run()
         return 0
 

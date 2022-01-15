@@ -13,7 +13,7 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
 
     for child_key in curr_dict.keys():
 
-        if GraphRender.is_verbose():
+        if GraphRenderV15.is_verbose():
             print(f"[render] child_key={child_key}")
 
         child = curr_dict[child_key]
@@ -30,7 +30,7 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
             result_edge_list.append(edge)
 
 
-class GraphRender:
+class GraphRenderV15:
     @classmethod
     def is_verbose(clazz):
         return True
