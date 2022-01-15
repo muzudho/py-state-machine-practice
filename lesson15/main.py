@@ -28,7 +28,7 @@ class Main:
             transition_file_path)
 
         # オブジェクト作成
-        transition = TransitionV15(self.transition_doc)
+        transition = TransitionV15(transition_doc)
 
         # 図生成
         self.__graph_render = GraphRenderV15(transition=transition)
