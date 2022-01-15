@@ -1,6 +1,6 @@
 import os
 from lesson11n80.code_gen.file_io import FileIo
-from lesson16n2.code_gen.transition_v16n2 import TransitionV16n2
+from lesson16n2.conf_obj.transition_v16n2 import TransitionV16n2
 
 
 def gen_state_files_v16n2(transition_doc, output_dir_path):

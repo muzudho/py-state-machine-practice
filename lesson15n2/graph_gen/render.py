@@ -1,8 +1,8 @@
 from graphviz import Digraph
 
-from lesson15.code_gen.transition_v15 import TransitionV15
-from lesson15n2.code_gen.directive_edge import DirectiveEdge
-from lesson15n2.code_gen.clustered_directive_edge import ClusteredDirectiveEdge
+from lesson15.conf_obj.transition_v15 import TransitionV15
+from lesson15n2.conf_obj.directive_edge import DirectiveEdge
+from lesson15n2.conf_obj.clustered_directive_edge import ClusteredDirectiveEdge
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):

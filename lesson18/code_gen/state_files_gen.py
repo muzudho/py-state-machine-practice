@@ -1,7 +1,7 @@
 from lesson11n80.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen import StateFileGen
 from lesson18.code_gen.const_conf import ConstConfV18
-from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
 def gen_state_files_v18(dir_path, const_doc, transition_doc, import_from_path):

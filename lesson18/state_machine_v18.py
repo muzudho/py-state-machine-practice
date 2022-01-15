@@ -1,5 +1,5 @@
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
 class StateMachineV18:

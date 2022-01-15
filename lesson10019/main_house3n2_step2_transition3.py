@@ -2,7 +2,7 @@ import sys
 
 from lesson07n2.main_finally import MainFinally
 from lesson10019.code_gen.transition_json_writer import TransitionJsonWriter
-from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 from lesson10019_projects.house3n2.data.transition3 import house3n2_transition3_doc_v14
 
 

@@ -1,7 +1,7 @@
 import os
 
 from lesson11n80.code_gen.file_io import FileIo
-from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
 from lesson18.code_gen.py_syntax.method_gen import MethodGen

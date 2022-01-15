@@ -1,5 +1,5 @@
-from lesson15.code_gen.transition_v15 import TransitionV15
-from lesson15n2.code_gen.directive_edge import DirectiveEdge
+from lesson15.conf_obj.transition_v15 import TransitionV15
+from lesson15n2.conf_obj.directive_edge import DirectiveEdge
 
 
 class TransitionV16n2(TransitionV15):
