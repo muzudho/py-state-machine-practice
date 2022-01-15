@@ -13,9 +13,9 @@ pip install graphviz
 # Run
 
 ```shell
-python.exe -m lesson15n2.main "lesson15n2_projects/pen/conf.toml"
-#                             -----------------------------------
-#                             設定ファイル
+python.exe -m lesson15n2.graph_generator "lesson15n2_projects/pen/conf.toml"
+#                                        -----------------------------------
+#                                        設定ファイル
 ```
 
 Output:  
