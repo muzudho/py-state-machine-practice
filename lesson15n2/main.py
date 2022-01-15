@@ -5,7 +5,7 @@ from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
 from lesson15.conf_obj.transition_v15 import TransitionV15
-from lesson15n2.graph_gen.render import GraphRenderV15n2
+from lesson15n2.graph_gen.render_v15n2 import GraphRenderV15n2
 
 
 class Main:

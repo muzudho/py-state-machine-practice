@@ -7,7 +7,7 @@ def gen_state_files_v16n2(transition_doc, output_dir_path):
     transition = TransitionV16n2(transition_doc)
 
     # エッジの一覧
-    edge_list = transition.create_edge_list()
+    edge_list = transition.create_edge_list_v16n2()
     for edge in edge_list:
         print(f"[gen_state_files_v16n2] edge={edge}")
 

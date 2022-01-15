@@ -3,12 +3,17 @@ from graphviz import Digraph
 from lesson15.conf_obj.directive_edge_v15 import DirectiveEdgeV15
 
 
-def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
-    """辺の一覧を作成"""
+def create_edge_list_v15(curr_dict, parent_state_node_path, node_name, result_edge_list):
+    """辺（DirectiveEdgeクラス）の一覧を作成"""
+
     state_node_path = list(parent_state_node_path)
     if not (node_name is None) and not (node_name is ""):
         state_node_path.append(node_name)
-        pass
+
+    if GraphRenderV15.is_verbose():
+        print(
+            f"parent_state_node_path={parent_state_node_path} node_name={node_name} state_node_path={state_node_path}"
+        )
 
     for child_key in curr_dict.keys():
 
@@ -18,8 +23,8 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
         child = curr_dict[child_key]
 
         if isinstance(child, dict):
-            create_edge_list(child, state_node_path,
-                             child_key, result_edge_list)
+            create_edge_list_v15(child, state_node_path,
+                                 child_key, result_edge_list)
         else:
             edge = DirectiveEdgeV15(
                 src=state_node_path,
@@ -46,7 +51,7 @@ class GraphRenderV15:
         edge_list = []
 
         # エッジの一覧を作成
-        create_edge_list(self._transition.doc['data'], [], None, edge_list)
+        create_edge_list_v15(self._transition.doc['data'], [], None, edge_list)
 
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:

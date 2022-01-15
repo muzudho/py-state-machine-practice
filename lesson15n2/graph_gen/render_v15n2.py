@@ -1,31 +1,8 @@
 from graphviz import Digraph
 
-from lesson15.conf_obj.transition_v15 import TransitionV15
 from lesson15.conf_obj.directive_edge_v15 import DirectiveEdgeV15
 from lesson15.conf_obj.clustered_directive_edge_v15 import ClusteredDirectiveEdgeV15
-
-
-def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
-    """辺の一覧を作成"""
-    state_node_path = list(parent_state_node_path)
-    if not (node_name is None) and not (node_name is ""):
-        state_node_path.append(node_name)
-        pass
-
-    for child_key in curr_dict.keys():
-
-        if GraphRenderV15n2.is_verbose():
-            print(f"[render] child_key={child_key}")
-
-        child = curr_dict[child_key]
-
-        if isinstance(child, dict):
-            create_edge_list(child, state_node_path,
-                             child_key, result_edge_list)
-        else:
-            edge = DirectiveEdgeV15(src=state_node_path,
-                                    dst=child, name=child_key)
-            result_edge_list.append(edge)
+from lesson15.graph_gen.render_v15 import create_edge_list_v15
 
 
 def clustering(edge_list):
@@ -93,7 +70,7 @@ class GraphRenderV15n2:
         edge_list = []
 
         # エッジの一覧を作成
-        create_edge_list(self._transition.doc['data'], [], None, edge_list)
+        create_edge_list_v15(self._transition.doc['data'], [], None, edge_list)
 
         # ノードパスによってクラスタリング
         clustered_edge_in_list = clustering(edge_list)

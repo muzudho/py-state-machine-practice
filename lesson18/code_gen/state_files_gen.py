@@ -9,7 +9,7 @@ def gen_state_files_v18(dir_path, const_doc, transition_doc, import_from_path):
     transition = TransitionV16n3(transition_doc)
 
     # エッジの一覧
-    edge_list = transition.create_edge_list()
+    edge_list = transition.create_edge_list_v16n2()
     for edge in edge_list:
         print(f"[gen_state_files_v18] edge={edge}")
 
