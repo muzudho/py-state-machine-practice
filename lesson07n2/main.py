@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 import sys
 import time
 
@@ -20,7 +21,12 @@ class Main:
 
         time.sleep(1)
 
+        # 例外のテスト: raise ValueError("☆（＾～＾）")
+
         return 0
+
+    def on_except(self, e):
+        print(e)
 
     def on_finally(self):
         """終了時にやりたい処理をここに書いてください"""
