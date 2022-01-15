@@ -1,13 +1,13 @@
 import os
-from lesson16.code_gen.file_io import FileIo
+from lesson11n300.code_gen.file_io import FileIo
 from lesson16n2.code_gen.transition_v16n2 import TransitionV16n2
 
 
 def gen_state_files_v16n2(transition_doc, output_dir_path):
-    transition_conf = TransitionV16n2(transition_doc)
+    transition = TransitionV16n2(transition_doc)
 
     # エッジの一覧
-    edge_list = transition_conf.create_edge_list()
+    edge_list = transition.create_edge_list()
     for edge in edge_list:
         print(f"[gen_state_files_v16n2] edge={edge}")
 

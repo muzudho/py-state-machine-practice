@@ -1,10 +1,10 @@
 import os
-from lesson16.code_gen.file_io import FileIo
+from lesson11n300.code_gen.file_io import FileIo
 from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3
 
 
-def gen_state_file_v16n3(transition_conf, node_path, output_dir):
+def gen_state_file_v16n3(transition, node_path, output_dir):
     file_stem = node_path.replace("/", "_").lower()
     class_name = node_path.replace("/", "")
     # print(f"[gen_state_file_v16n3] node_path={node_path} ----> {file_stem}")
@@ -24,7 +24,7 @@ def gen_state_file_v16n3(transition_conf, node_path, output_dir):
 
     # エッジの分岐部分
     directed_edge_list = TransitionV16n3.create_edge_list_by_node_path(
-        transition_conf.data, node_path.split("/")
+        transition.doc['data'], node_path.split("/")
     )
 
     switch_model = __edge_switch_model(directed_edge_list)
