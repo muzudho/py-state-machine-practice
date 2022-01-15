@@ -7,7 +7,7 @@ from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 def gen_state_file_v16n3(transition_conf, node_path, output_dir):
     file_stem = node_path.replace("/", "_").lower()
     class_name = node_path.replace("/", "")
-    # print(f"[Render] node_path={node_path} ----> {file_stem}")
+    # print(f"[gen_state_file_v16n3] node_path={node_path} ----> {file_stem}")
 
     # `init.py` ファイルを作成します
     # 'x' - ファイルが存在しない場合のみの上書き

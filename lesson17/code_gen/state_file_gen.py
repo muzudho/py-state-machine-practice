@@ -6,7 +6,7 @@ from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
 def gen_state_file(dir_path, node_path, const_conf, transition_conf):
     file_stem = node_path.replace("/", "_").lower()
     class_name = node_path.replace("/", "")
-    # print(f"[Render] node_path={node_path} ----> {file_stem}")
+    # print(f"[gen_state_file] node_path={node_path} ----> {file_stem}")
 
     # ステート Python スクリプトファイルを作成します
     file_path = f"{dir_path}/{file_stem}.py"
@@ -35,7 +35,8 @@ def gen_state_file(dir_path, node_path, const_conf, transition_conf):
             if_elif_list.append([cond, body_sequence])
 
         else:
-            operand = const_conf.stringify(edge.name, "'")  # できれば定数に変換します。でなければ文字列
+            operand = const_conf.stringify(
+                edge.name, "'")  # できれば定数に変換します。でなければ文字列
             if operand[0] != "'":
                 # 定数を使った
                 used_const.add(operand)

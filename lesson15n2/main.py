@@ -4,7 +4,7 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader import JsonReaderV11n100
-from lesson15n2.render import Render
+from lesson15n2.render import GraphRender
 
 server = None
 
@@ -26,7 +26,7 @@ class Main:
             transition_file_path)
 
         # サーバー起動
-        server = Render(transition_doc=transition_doc)
+        server = GraphRender(transition_doc=transition_doc)
         server.run()
         return 0
 

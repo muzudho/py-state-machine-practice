@@ -30,7 +30,7 @@ class StateFileGen:
             node = node.capitalize()
             class_name += node
 
-        # print(f"[Render] node_path={node_path} ----> {file_stem}")
+        # print(f"[generate_state_file] node_path={node_path} ----> {file_stem}")
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
@@ -65,11 +65,13 @@ class StateFileGen:
             directed_edge_list=directed_edge_list,
             used_const_set=used_const_set,
         )
-        text += SwitchGen.generate_switch("        ", switch_model=switch_model)
+        text += SwitchGen.generate_switch("        ",
+                                          switch_model=switch_model)
         text += "\n"
 
         # ハンドラ生成
-        text += MethodGen.generate_method(name="on_entry", parameters_s="self, req")
+        text += MethodGen.generate_method(name="on_entry",
+                                          parameters_s="self, req")
         text += MethodGen.generate_method(
             name="on_trigger",
             parameters_s="self, req",
@@ -100,14 +102,16 @@ class StateFileGen:
         for edge in directed_edge_list:
 
             # エッジ名を定数に置きかえれるか試します
-            edge_operand = const_conf.replace_item(edge.name, '"')  # 定数、でなければ "文字列"
+            edge_operand = const_conf.replace_item(
+                edge.name, '"')  # 定数、でなければ "文字列"
 
             # 条件式
             if edge.name == "":
                 cond = "True"  # 恒真
             else:
                 # この練習プログラムでは E_XXX のような定数になってるはず
-                const_conf.pickup_from_item_to_set(edge_operand, used_const_set)
+                const_conf.pickup_from_item_to_set(
+                    edge_operand, used_const_set)
                 cond = f"msg == {edge_operand}"
 
             # 本文シーケンス

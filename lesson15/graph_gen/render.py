@@ -1,6 +1,6 @@
 from graphviz import Digraph
 
-from lesson15.directive_edge import DirectiveEdge
+from lesson15.graph_gen.directive_edge import DirectiveEdge
 from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
 
 
@@ -13,7 +13,7 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
 
     for child_key in curr_dict.keys():
 
-        if Render.is_verbose():
+        if GraphRender.is_verbose():
             print(f"[render] child_key={child_key}")
 
         child = curr_dict[child_key]
@@ -30,7 +30,7 @@ def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_l
             result_edge_list.append(edge)
 
 
-class Render:
+class GraphRender:
     @classmethod
     def is_verbose(clazz):
         return True

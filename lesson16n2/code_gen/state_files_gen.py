@@ -9,7 +9,7 @@ def gen_state_files_v16n2(transition_doc, output_dir_path):
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
     for edge in edge_list:
-        print(f"[Render] edge={edge}")
+        print(f"[gen_state_files_v16n2] edge={edge}")
 
     # フォルダーが無ければ作る
     FileIo.makedirs(output_dir_path)
@@ -19,7 +19,8 @@ def gen_state_files_v16n2(transition_doc, output_dir_path):
     for node_path in node_path_set:
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")
-        print(f"[Render] node_path={node_path} ----> {file_stem}")
+        print(
+            f"[gen_state_files_v16n2] node_path={node_path} ----> {file_stem}")
 
         # `init.py` ファイルを作成します
         # TODO import文を変数にしたい

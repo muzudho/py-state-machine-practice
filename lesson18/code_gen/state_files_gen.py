@@ -11,7 +11,7 @@ def gen_state_files_v18(dir_path, const_doc, transition_doc, import_from_path):
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
     for edge in edge_list:
-        print(f"[Render] edge={edge}")
+        print(f"[gen_state_files_v18] edge={edge}")
 
     # フォルダーが無ければ作る
     FileIo.makedirs(dir_path)
