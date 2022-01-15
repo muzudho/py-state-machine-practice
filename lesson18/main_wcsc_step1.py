@@ -23,6 +23,10 @@ class Main:
         gen_const_file_v17(const_file, wcsc_const_doc)
         return 0
 
+    def on_except(self, e):
+        """ここで例外キャッチ"""
+        print(e)
+
     def on_finally(self):
         print("★しっかり終わった")
         return 1

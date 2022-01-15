@@ -30,6 +30,10 @@ class Main:
         server.run()
         return 0
 
+    def on_except(self, e):
+        """ここで例外キャッチ"""
+        print(e)
+
     def on_finally(self):
         # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
         if server:

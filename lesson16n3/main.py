@@ -29,6 +29,10 @@ class Main:
         gen_state_files_v16n3(transition_doc, OUTPUT_DIR_PATH)
         return 0
 
+    def on_except(self, e):
+        """ここで例外キャッチ"""
+        print(e)
+
     def on_finally(self):
         print("★しっかり終わった")
         return 1

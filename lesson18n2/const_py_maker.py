@@ -45,6 +45,10 @@ class Main:
         gen_const_py(args.input, args.output)
         return 0
 
+    def on_except(self, e):
+        """ここで例外キャッチ"""
+        print(e)
+
     def on_finally(self):
         print("★しっかり終わった")
         return 1

@@ -10,6 +10,10 @@ class Main:
         gen_init_file_v16(OUTPUT_DIR_PATH)
         return 0
 
+    def on_except(self, e):
+        """ここで例外キャッチ"""
+        print(e)
+
     def on_finally(self):
         print("★しっかり終わった")
         return 1

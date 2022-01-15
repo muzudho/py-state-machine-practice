@@ -13,6 +13,10 @@ class Main:
         gen_const_file_v17(OUTPUT_FILE_PATH, house3_const_doc)
         return 0
 
+    def on_except(self, e):
+        """ここで例外キャッチ"""
+        print(e)
+
     def on_finally(self):
         print("★しっかり終わった")
         return 1
