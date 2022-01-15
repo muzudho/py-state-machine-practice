@@ -1,10 +1,10 @@
 import os
 from lesson16.code_gen.file_io import FileIo
-from lesson16n2.code_gen.transition_conf_v16n2 import TransitionConfV16n2
+from lesson16n2.code_gen.transition_v16n2 import TransitionV16n2
 
 
 def gen_state_files_v16n2(transition_doc, output_dir_path):
-    transition_conf = TransitionConfV16n2(transition_doc)
+    transition_conf = TransitionV16n2(transition_doc)
 
     # エッジの一覧
     edge_list = transition_conf.create_edge_list()
@@ -15,7 +15,7 @@ def gen_state_files_v16n2(transition_doc, output_dir_path):
     FileIo.makedirs(output_dir_path)
 
     # ノードの一覧
-    node_path_set = TransitionConfV16n2.extract_node_path_set(edge_list)
+    node_path_set = TransitionV16n2.extract_node_path_set(edge_list)
     for node_path in node_path_set:
         file_stem = node_path.replace("/", "_").lower()
         class_name = node_path.replace("/", "")

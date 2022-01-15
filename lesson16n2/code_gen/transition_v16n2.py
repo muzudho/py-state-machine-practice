@@ -1,8 +1,8 @@
-from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
+from lesson15.code_gen.transition_v15 import TransitionV15
 from lesson15n2.code_gen.directive_edge import DirectiveEdge
 
 
-class TransitionConfV16n2(TransitionConfV15):
+class TransitionV16n2(TransitionV15):
     def create_edge_list(self):
         """辺（DirectiveEdgeクラス）の一覧を作成"""
 
@@ -26,7 +26,8 @@ class TransitionConfV16n2(TransitionConfV15):
                         child, state_node_path, child_key, result_edge_list
                     )
                 else:
-                    edge = DirectiveEdge(src=state_node_path, dst=child, name=child_key)
+                    edge = DirectiveEdge(
+                        src=state_node_path, dst=child, name=child_key)
                     result_edge_list.append(edge)
 
         result_edge_list = []

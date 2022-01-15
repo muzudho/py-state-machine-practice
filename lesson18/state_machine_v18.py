@@ -1,5 +1,5 @@
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson16n3.code_gen.transition_conf_v16n3 import TransitionConfV16n3
+from lesson16n3.code_gen.transition_v16n3 import TransitionV16n3
 
 
 class StateMachineV18:
@@ -7,7 +7,7 @@ class StateMachineV18:
         self._is_verbose = False
         self._state_gen = state_gen
         self._transition_doc = transition_doc
-        self._transition = TransitionConfV16n3(self._transition_doc)
+        self._transition = TransitionV16n3(self._transition_doc)
         self._state_path = entry_state_path
 
     @property

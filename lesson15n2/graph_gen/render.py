@@ -1,8 +1,8 @@
 from graphviz import Digraph
 
+from lesson15.code_gen.transition_v15 import TransitionV15
 from lesson15n2.code_gen.directive_edge import DirectiveEdge
 from lesson15n2.code_gen.clustered_directive_edge import ClusteredDirectiveEdge
-from lesson15.code_gen.transition_conf_v15 import TransitionConfV15
 
 
 def create_edge_list(curr_dict, parent_state_node_path, node_name, result_edge_list):
@@ -93,7 +93,7 @@ class GraphRenderV15n2:
 
         edge_list = []
 
-        transition = TransitionConfV15(self._transition_doc)
+        transition = TransitionV15(self._transition_doc)
 
         # エッジの一覧を作成
         create_edge_list(transition.doc['data'], [], None, edge_list)
