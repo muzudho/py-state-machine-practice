@@ -17,10 +17,6 @@ class OutState():
             self.on_failed(req)
             return E_FAILED
 
-        elif msg == "open_door":
-            self.on_open_door(req)
-            return "open_door"
-
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 
@@ -34,8 +30,5 @@ class OutState():
         pass
 
     def on_failed(self, req):
-        pass
-
-    def on_open_door(self, req):
         pass
 
