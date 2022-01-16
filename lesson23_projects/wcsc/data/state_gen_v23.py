@@ -32,7 +32,7 @@ from lesson23_projects.wcsc.code.states2.reply import create_reply
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-wcsc_state_gen_doc_v23 = {
+state_gen_doc = {
     INIT: {
         "": lambda: create_init(InitState()),
         LOGIN: lambda: create_init_login(InitLoginState()),

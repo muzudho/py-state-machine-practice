@@ -9,3 +9,4 @@ output_states_dir = "lesson23_projects/pen/auto_gen/code/states1"
 
 [import_module]
 const = "lesson17_projects.pen.auto_gen.data.const"
+state_gen = "lesson23_projects.pen.data.state_gen_v23"

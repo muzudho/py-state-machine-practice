@@ -26,10 +26,10 @@ class Main:
 
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc['transition_file']
-        state_gen_module = toml_doc['import_module']['state_gen']
+        state_gen_module_path = toml_doc['import_module']['state_gen']
 
         # 動的インポート
-        state_gen_module = importlib.import_module(state_gen_module)
+        state_gen_module = importlib.import_module(state_gen_module_path)
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
@@ -39,7 +39,7 @@ class Main:
 
         # 状態遷移マシン
         state_machine = StateMachineV23(
-            state_gen=state_gen_module.house3n2_state_gen_doc_v23,
+            state_gen=state_gen_module.state_gen_doc,
             transition=transition)
 
         # サーバー
