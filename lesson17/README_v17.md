@@ -110,14 +110,18 @@ python.exe -m lesson17.main_pen_step1_const "lesson17_projects/pen/conf.toml"
 #                                           設定ファイル (TOML形式)
 ```
 
-# Run
+# Example - WCSC
+
+## Run
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  
 
 * `lesson17_projects/wcsc/auto_gen`
 
 ```shell
-python.exe -m lesson17.main_wcsc_step1_const
+python.exe -m lesson17.main_wcsc_step1_const "lesson17_projects/wcsc/conf.toml"
+#                                            ----------------------------------
+#                                            設定ファイル (TOML形式)
 
 python.exe -m lesson17.main_wcsc_step2 "lesson17_projects/wcsc/conf.toml"
 #                                      ----------------------------------

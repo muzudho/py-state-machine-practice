@@ -1,1 +1,7 @@
+# 定数ファイル
+# 定数ファイル
+input_const_file = "lesson17_projects/wcsc/data/const.json"
+output_const_file = "lesson17_projects/wcsc/auto_gen/data/const.py"
+
+# 状態遷移ファイル
 transition_file = "lesson14_projects/wcsc/data/transition.json"
