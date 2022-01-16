@@ -1,4 +1,4 @@
-from lesson18.code_gen.py_syntax.import_gen import ImportGen
+from lesson18.code_gen.py_syntax.import_gen_v18 import ImportGenV18
 from lesson18.code_gen.const_v18 import ConstV18
 
 
@@ -72,7 +72,7 @@ class TransitionConfPyStringification:
 
         # 定数のインポートをファイルの冒頭に付けます
         if 0 < len(self._used_const_set):
-            import_statement = ImportGen.generate_import(
+            import_statement = ImportGenV18.generate_import(
                 from_s=self._import_from_path,
                 import_set=self._used_const_set,
             )

@@ -2,10 +2,10 @@ import os
 
 from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
-from lesson18.code_gen.py_syntax.class_gen import ClassGen
-from lesson18.code_gen.py_syntax.import_gen import ImportGen
-from lesson18.code_gen.py_syntax.method_gen import MethodGen
-from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
+from lesson18.code_gen.py_syntax.class_gen_v18 import ClassGenV18
+from lesson18.code_gen.py_syntax.import_gen_v18 import ImportGenV18
+from lesson18.code_gen.py_syntax.method_gen_v18 import MethodGenV18
+from lesson16n3.code_gen.py_syntax.switch_gen_v16n3 import SwitchGenV16n3
 
 
 class StateFileGen:
@@ -52,8 +52,8 @@ class StateFileGen:
             const.pickup_from_item_to_set(edge.name, used_const_set)
 
         text = ""
-        text += ClassGen.generate_class(name=f"{class_name}State")
-        text += MethodGen.signature(name="update", parameters_s="self, req")
+        text += ClassGenV18.generate_class(name=f"{class_name}State")
+        text += MethodGenV18.signature(name="update", parameters_s="self, req")
         text += """
         self.on_entry(req)
 
@@ -70,14 +70,14 @@ class StateFileGen:
             directed_edge_list=directed_edge_list,
             used_const_set=used_const_set,
         )
-        text += SwitchGen.generate_switch("        ",
-                                          switch_model=switch_model)
+        text += SwitchGenV16n3.generate_switch("        ",
+                                               switch_model=switch_model)
         text += "\n"
 
         # ハンドラ生成
-        text += MethodGen.generate_method(name="on_entry",
-                                          parameters_s="self, req")
-        text += MethodGen.generate_method(
+        text += MethodGenV18.generate_method(name="on_entry",
+                                             parameters_s="self, req")
+        text += MethodGenV18.generate_method(
             name="on_trigger",
             parameters_s="self, req",
             body_sequence=["return req.context.pull_trigger()"],
@@ -85,13 +85,13 @@ class StateFileGen:
         # ハンドラ自動生成
         for edge in directed_edge_list:
             if edge.name != "":
-                text += MethodGen.generate_method(
+                text += MethodGenV18.generate_method(
                     name=f"on_{edge.name}", parameters_s="self, req"
                 )
 
         # 定数のインポートをファイルの冒頭に付けます
         if 0 < len(used_const_set):
-            import_statement = ImportGen.generate_import(
+            import_statement = ImportGenV18.generate_import(
                 from_s=import_module_path,
                 import_set=used_const_set,
             )
