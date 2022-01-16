@@ -62,9 +62,14 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/pen/data/const.json
 #                                       ----------------------------------------- ----------------------------------------------
 #                                       入力ファイル (.json)                        出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker "lesson18n2_projects/pen/data/const.json" "lesson20_projects/pen/auto_gen/data/transition.json" "lesson18_projects.pen.auto_gen.data.const" "lesson23_projects/pen/auto_gen/code/states"
-#                                     ----------------------------------------- ----------------------------------------------------- ------------------------------------------- --------------------------------------------
-#                                     定数入力ファイル (.json)                    状態遷移入力ファイル (.py)                              import文に書く                               出力ディレクトリー
+python.exe -m lesson23.state_py_generator_v23 "lesson23_projects/pen/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
+#                                             --------------------------------- ------------ ----------------- ------- -------------------
+#                                             1.                                2.           3.                4.      5.
+# 1. 設定ファイル（TOML形式）へのパス
+# 2. 定数を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
+# 3. 状態遷移を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
+# 4. [import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前
+# 5. 状態ファイル出力ディレクトリーパスのプロパティ名
 ```
 
 ## Run
@@ -72,8 +77,8 @@ python.exe -m lesson23.state_py_maker "lesson18n2_projects/pen/data/const.json" 
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_pen_server "lesson23_projects/house3n2/conf.toml"
-#                                      --------------------------------------
+python.exe -m lesson23.main_pen_server "lesson23_projects/pen/conf.toml"
+#                                      ---------------------------------
 #                                      設定ファイル
 ```
 
