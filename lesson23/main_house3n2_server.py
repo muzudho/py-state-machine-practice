@@ -11,10 +11,6 @@ from lesson23.server_v23 import ServerV23
 from lesson23.state_machine_v23 import StateMachineV23
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
-# from lesson23_projects.house3n2.data.state_gen_v23 import house3n2_state_gen_doc_v23
-state_gen_module = importlib.import_module(
-    "lesson23_projects.house3n2.data.state_gen_v23")
-
 
 class Main:
     def __init__(self):
@@ -30,6 +26,10 @@ class Main:
 
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc['transition_file']
+        state_gen_module = toml_doc['import_module']['state_gen']
+
+        # 動的インポート
+        state_gen_module = importlib.import_module(state_gen_module)
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
