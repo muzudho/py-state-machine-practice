@@ -33,7 +33,7 @@ class Main:
     transition_file = "lesson10020_projects/house3n2/auto_gen/data/transition3.json"
 
     # 状態ファイル出力ディレクトリー
-    output_states_dir = "lesson23_projects/house3n2/auto_gen/code/states"
+    output_states_dir = "lesson23_projects/house3n2/auto_gen/code/states1"
 
     [import_module]
     const = "lesson23_projects.house3n2.auto_gen.data.const"

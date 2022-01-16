@@ -8,7 +8,7 @@ def gen_state_files_v16n3(transition_doc, output_dir_path):
     Parameters
     ----------
     output_dir : str
-        例えば 'lesson16n3_projects/wcsc/auto_gen/code/states'
+        例えば 'lesson16n3_projects/wcsc/auto_gen/code/states1'
     """
     transition = TransitionV16n3(transition_doc)
 
