@@ -13,7 +13,7 @@ class Main:
     """設定ファイル（.toml）を指定することで、状態遷移図を出力します。
 
     # コマンド
-    python.exe -m this.is.a.module.graph_generator "this/is/a/path/conf.toml" "transition_file"
+    python.exe -m this.is.a.module.graph_generator "this/is/a/path/conf.toml" "transition_file" "output_graph_text_file"
 
     上記のコマンドのケースでは、設定ファイルに必要な内容は以下の通りです。
 
