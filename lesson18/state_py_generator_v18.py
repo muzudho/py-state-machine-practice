@@ -5,7 +5,7 @@ import traceback
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson17.code_gen.state_files_gen_v17 import gen_state_files_v17
+from lesson18.code_gen.state_files_gen_v17 import gen_state_files_v17
 
 
 class Main:

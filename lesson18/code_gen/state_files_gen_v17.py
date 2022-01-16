@@ -1,5 +1,5 @@
 from lesson11n80.code_gen.file_io import FileIo
-from lesson17.code_gen.state_file_gen_v17 import gen_state_file_v17
+from lesson18.code_gen.state_file_gen_v17 import gen_state_file_v17
 from lesson17.code_gen.const_v17 import ConstV17
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
