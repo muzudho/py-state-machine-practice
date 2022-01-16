@@ -11,6 +11,14 @@ from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 class Main:
     """定数を定義した .pyファイルを作成します
 
+    # Windows
+    python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/house3/conf.toml" "input_const_file" "output_const_file"
+    #                                             ------------------------------------ ------------------ -------------------
+    #                                             1.                                   2.                 3.
+    # 1. 設定ファイル (TOML形式)
+    # 2. 読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
+    # 3. 書込ファイル（テキストファイル形式）へのパスが書いてあるプロパティのキー
+
     Examples
     --------
     # 入力ファイル example-const.json
