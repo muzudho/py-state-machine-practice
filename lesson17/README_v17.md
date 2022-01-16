@@ -1,9 +1,18 @@
 # Lesson 17
 
-前回の Lesson16n3 ではコードの自動生成まで進みましたが、定数を使っていないのはイケていません。  
-定数の定義も自動生成するようにしましょう  
-
+定数を定義した `const.json` を前もって用意し、 `const.py` を自動出力してみましょう。  
 ただし今回はコードを生成するだけで、生成したコードを実行するところまではやりません  
+
+const.json:  
+
+```json
+{
+    "OUT": "Out",
+    "CLOSE_DOOR": "CloseDoor",
+    "OPEN_DOOR": "OpenDoor",
+    "～以下略～": "",
+}
+```
 
 const.py:  
 
@@ -16,10 +25,7 @@ house3_const_doc = {
 }
 ```
 
-👆 step1 では、 doc構造でデータ化した定数（`const.py`）を元に、定数を定義した Pythonスクリプトを自動生成します  
-
-
-# constファイル
+# const.json コーディング規約
 
 * 1. キーと値は 全単射にしてください
 * 2. 大文字と小文字は区別します
@@ -46,14 +52,13 @@ house3_const_doc = {
 ## 任意文字列（メッセージ名）
 
 ```json
-    "定数": "文字列",
+    "メッセージ定数": "任意の文字列",
     "MSG_TURN_KNOB": "Turn knob",
 ```
 
 👆 任意の文字列ですが、値が State や Edge と突合するなら、それを使い回してください
 
-
-# Step 2
+# 出力する ～.py
 
 init.py:  
 
@@ -75,18 +80,30 @@ class InitState():
 
 👆 step2 では、 Pythonスクリプトファイルを自動生成します。このとき、定数に置き換えられるところは置き換えます  
 
+# Example - House
 
 # Run
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  
 
 * `lesson17_projects/house3/auto_gen`
+
+```shell
+# Windows
+python.exe -m lesson17.main_house3_step1_const "lesson17_projects/house3/conf.toml"
+#                                              ------------------------------------
+#                                              設定ファイル (TOML形式)
+```
+
+# Run
+
+実行前に 以下のフォルダーが既に作成されていれば、削除してください  
+
 * `lesson17_projects/pen/auto_gen`
 * `lesson17_projects/wcsc/auto_gen`
 
 
 ```shell
-python.exe -m lesson17.main_house3_step1_const
 python.exe -m lesson17.main_pen_step1_const
 python.exe -m lesson17.main_wcsc_step1_const
 

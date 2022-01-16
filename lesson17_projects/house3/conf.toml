@@ -1,0 +1,3 @@
+# 定数ファイル
+input_const_file = "lesson17_projects/house3/data/const.json"
+output_const_file = "lesson17_projects/house3/auto_gen/data/const.py"

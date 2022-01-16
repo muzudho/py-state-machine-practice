@@ -1,17 +1,32 @@
 import sys
+import argparse
 import traceback
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
+from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
-from lesson17_projects.house3.data.const import house3_const_doc
-
-OUTPUT_FILE_PATH = "lesson17_projects/house3/auto_gen/data/const.py"
 
 
 class Main:
     def on_main(self):
-        # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        gen_const_file_v17(OUTPUT_FILE_PATH, house3_const_doc)
+        parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
+        parser.add_argument('conf', help='設定ファイルへのパス')
+        args = parser.parse_args()
+
+        # 設定ファイル（.toml）読取
+        toml_doc = TomlReaderV11n90.read_file(args.conf)
+
+        # TOMLの内容を読み取ります
+        input_const_file_path = toml_doc['input_const_file']
+        output_const_file_path = toml_doc['output_const_file']
+
+        # JSONファイルを読込みます
+        const_doc = JsonReaderV11n100.read_file(
+            input_const_file_path)
+
+        # 定数ファイル生成
+        gen_const_file_v17(output_const_file_path, const_doc)
         return 0
 
     def on_except(self, e):

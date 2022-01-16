@@ -3,7 +3,7 @@ import argparse
 import traceback
 
 from lesson07n2.main_finally import MainFinally
-from lesson18n2.code_gen.const_py_gen import gen_const_py
+from lesson17.code_gen.const_py_gen_v18n2 import gen_const_py_v18n2
 
 
 class Main:
@@ -46,7 +46,7 @@ class Main:
         # Example: "lesson18n2_projects/house3/data/auto_gen/const.py"
         print(f'args.output: {args.output}')
 
-        gen_const_py(args.input, args.output)
+        gen_const_py_v18n2(args.input, args.output)
         return 0
 
     def on_except(self, e):
