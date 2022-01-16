@@ -1,5 +1,5 @@
 import os
-from lesson11n80.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson10019.code_gen.transition_json_stringification import (
     TransitionJsonStringification,
 )
@@ -13,5 +13,5 @@ class TransitionJsonWriter:
             entry_state=entry_state,
             data=data,
         )
-        FileIo.makedirs(os.path.dirname(file_path))
-        FileIo.write(file_path, text)
+        FileIoV11n80.makedirs(os.path.dirname(file_path))
+        FileIoV11n80.write(file_path, text)

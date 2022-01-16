@@ -1,5 +1,5 @@
 import os
-from lesson11n80.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
@@ -31,7 +31,7 @@ def gen_state_file_v16n3(transition, node_path, output_dir):
 
     text += SwitchGen.generate_switch("        ", switch_model)
 
-    FileIo.write(file_path, text)
+    FileIoV11n80.write(file_path, text)
 
 
 def __edge_switch_model(directed_edge_list):

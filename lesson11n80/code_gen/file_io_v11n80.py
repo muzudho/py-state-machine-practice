@@ -1,7 +1,7 @@
 import os
 
 
-class FileIo:
+class FileIoV11n80:
     @classmethod
     def read(clazz, file_path):
         """テキストファイルを読込みます"""

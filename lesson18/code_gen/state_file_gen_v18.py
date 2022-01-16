@@ -1,6 +1,6 @@
 import os
 
-from lesson11n80.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 from lesson18.code_gen.py_syntax.class_gen import ClassGen
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
@@ -97,7 +97,7 @@ class StateFileGen:
             )
             text = f"{import_statement}\n{text}"
 
-        FileIo.write(file_path, text)
+        FileIoV11n80.write(file_path, text)
 
     @classmethod
     def __edge_switch_model(clazz, const, directed_edge_list, used_const_set):

@@ -3,7 +3,7 @@ import argparse
 import traceback
 
 from lesson07n2.main_finally import MainFinally
-from lesson11n80.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 
 
 class Main:
@@ -13,7 +13,7 @@ class Main:
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
-        text = FileIo.read(args.conf)
+        text = FileIoV11n80.read(args.conf)
 
         # 表示
         print(f"text\n----\n{text}")

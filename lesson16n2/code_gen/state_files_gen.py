@@ -1,5 +1,5 @@
 import os
-from lesson11n80.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson16n2.conf_obj.transition_v16n2 import TransitionV16n2
 
 
@@ -12,7 +12,7 @@ def gen_state_files_v16n2(transition_doc, output_dir_path):
         print(f"[gen_state_files_v16n2] edge={edge}")
 
     # フォルダーが無ければ作る
-    FileIo.makedirs(output_dir_path)
+    FileIoV11n80.makedirs(output_dir_path)
 
     # ノードの一覧
     node_path_set = TransitionV16n2.extract_node_path_set(edge_list)
@@ -35,4 +35,4 @@ class {class_name}State():
 
 """
 
-        FileIo.write(file_path, text)
+        FileIoV11n80.write(file_path, text)

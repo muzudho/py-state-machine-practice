@@ -6,7 +6,7 @@ import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson11n80.code_gen.file_io import FileIo
+from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson10019.code_gen.transition_json_writer import TransitionJsonWriter
 
 
@@ -33,9 +33,9 @@ class Main:
 
         # デフォルトのフォーマッティングで出力するなら
         out_text = json.dumps(transition_doc, indent=4, ensure_ascii=False)
-        FileIo.makedirs(os.path.dirname(args.output_default_format))
+        FileIoV11n80.makedirs(os.path.dirname(args.output_default_format))
         print(f"[L20] write {args.output_default_format}")
-        FileIo.write(args.output_default_format, out_text)
+        FileIoV11n80.write(args.output_default_format, out_text)
 
         # フォーマッティングするなら
         print(f"[L20] write {args.output}")
