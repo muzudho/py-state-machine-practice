@@ -13,6 +13,9 @@ class ReplyAgreeState():
             self.on_start(req)
             return E_START
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

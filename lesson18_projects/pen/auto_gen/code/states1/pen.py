@@ -13,6 +13,9 @@ class PenState():
             self.on_over(req)
             return E_OVER
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

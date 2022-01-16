@@ -11,6 +11,9 @@ class InitState():
             self.on_login(req)
             return "login"
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

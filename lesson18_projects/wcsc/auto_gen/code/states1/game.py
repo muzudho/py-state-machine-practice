@@ -25,6 +25,9 @@ class GameState():
             self.on_game_over_wcsc(req)
             return E_GAME_OVER_WCSC
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

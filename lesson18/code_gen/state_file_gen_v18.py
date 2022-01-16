@@ -87,9 +87,12 @@ class StateFileGen:
                 from_s=import_module_path,
                 import_set=used_const_set,
             )
+            import_statement += "\n"
+        else:
+            import_statement = ""
 
         text = ""
-        text += f"{import_statement}\n"
+        text += import_statement
         text += class_name_line
         text += method_signature_line
         text += method_body
@@ -103,9 +106,15 @@ class StateFileGen:
 
     @classmethod
     def __edge_switch_model(clazz, const, directed_edge_list, used_const_set):
+        """エッジ分岐部"""
 
         if_elif_list = []
-        # if～elif文
+        # if～elif文のコード部分
+        # +------------------------+
+        # | if msg == xx1xx:       | 1. edge_operand
+        # |     self.on_xx2xx(req) | 2. edge.name
+        # |     return xx1xx       |
+        # +------------------------+
         for edge in directed_edge_list:
 
             # エッジ名を定数に置きかえれるか試します
@@ -129,7 +138,14 @@ class StateFileGen:
 
             if_elif_list.append([cond, body_sequence])
 
-        # else文
+        # None のケースを追加（ステートマシンの終了）
+        if_elif_list.append(["msg == None", ["return None"]])
+
+        # else文のコード部分
+        # +-----------------------------------------------+
+        # | else:                                         |
+        # |     raise ValueError(f"Unexpected msg:{msg}") |
+        # +-----------------------------------------------+
         else_sequence = ['raise ValueError(f"Unexpected msg:{msg}")']
 
         switch_model = [if_elif_list, else_sequence]

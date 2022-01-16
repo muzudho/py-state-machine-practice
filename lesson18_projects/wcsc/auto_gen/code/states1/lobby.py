@@ -17,6 +17,9 @@ class LobbyState():
             self.on_logout(req)
             return E_LOGOUT
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

@@ -13,6 +13,9 @@ class LobbyLogoutState():
             self.on_completed(req)
             return E_COMPLETED
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

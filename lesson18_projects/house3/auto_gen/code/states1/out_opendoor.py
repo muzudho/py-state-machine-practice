@@ -17,6 +17,9 @@ class OutOpendoorState():
             self.on_failed(req)
             return E_FAILED
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 

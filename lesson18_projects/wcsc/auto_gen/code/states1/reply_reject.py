@@ -13,6 +13,9 @@ class ReplyRejectState():
             self.on_reject(req)
             return E_REJECT
 
+        elif msg == None:
+            return None
+
         else:
             raise ValueError(f"Unexpected msg:{msg}")
 
