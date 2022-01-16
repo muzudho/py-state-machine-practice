@@ -1,10 +1,10 @@
 from lesson11n80.code_gen.file_io import FileIo
-from lesson17.code_gen.state_file_gen import gen_state_file
+from lesson17.code_gen.state_file_gen_v17 import gen_state_file_v17
 from lesson17.code_gen.const_v17 import ConstV17
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
-def gen_state_files_v17(const_doc, transition_doc, output_dir_path):
+def gen_state_files_v17(const_doc, transition_doc, output_dir_path, import_module_path):
     transition = TransitionV16n3(doc=transition_doc)
     const = ConstV17(const_doc)
 
@@ -22,4 +22,5 @@ def gen_state_files_v17(const_doc, transition_doc, output_dir_path):
         if node_path is None:
             continue
 
-        gen_state_file(output_dir_path, node_path, const, transition)
+        gen_state_file_v17(output_dir_path, node_path, const,
+                           transition, import_module_path)

@@ -35,6 +35,7 @@ class Main:
             const_doc=wcsc_const_doc,
             transition_doc=transition_doc,
             output_dir_path=output_states_dir,
+            import_module_path="lesson17_projects.wcsc.data.auto_gen.const",
         )
         return 0
 

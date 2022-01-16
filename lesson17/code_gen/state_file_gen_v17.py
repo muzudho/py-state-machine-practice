@@ -3,10 +3,10 @@ from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
-def gen_state_file(dir_path, node_path, const, transition):
+def gen_state_file_v17(dir_path, node_path, const, transition, import_module_path):
     file_stem = node_path.replace("/", "_").lower()
     class_name = node_path.replace("/", "")
-    # print(f"[gen_state_file] node_path={node_path} ----> {file_stem}")
+    # print(f"[gen_state_file_v17] node_path={node_path} ----> {file_stem}")
 
     # ステート Python スクリプトファイルを作成します
     file_path = f"{dir_path}/{file_stem}.py"
@@ -65,9 +65,8 @@ def gen_state_file(dir_path, node_path, const, transition):
     text += SwitchGen.generate_switch("        ", switch_model)
 
     # 定数をインポートします
-    # TODO import文を変数にしたい
     if 0 < len(used_const):
-        pre_text = "from lesson17_projects.wcsc.data.auto_gen.const import "
+        pre_text = f"from {import_module_path} import "
         is_skip_first = True
 
         used_const_list = list(used_const)
