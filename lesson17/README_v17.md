@@ -82,7 +82,7 @@ class InitState():
 
 # Example - House
 
-# Run
+## Run
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  
 
@@ -95,16 +95,28 @@ python.exe -m lesson17.main_house3_step1_const "lesson17_projects/house3/conf.to
 #                                              設定ファイル (TOML形式)
 ```
 
-# Run
+# Example - Pen
+
+## Run
 
 実行前に 以下のフォルダーが既に作成されていれば、削除してください  
 
 * `lesson17_projects/pen/auto_gen`
-* `lesson17_projects/wcsc/auto_gen`
-
 
 ```shell
-python.exe -m lesson17.main_pen_step1_const
+# Windows
+python.exe -m lesson17.main_pen_step1_const "lesson17_projects/pen/conf.toml"
+#                                           ---------------------------------
+#                                           設定ファイル (TOML形式)
+```
+
+# Run
+
+実行前に 以下のフォルダーが既に作成されていれば、削除してください  
+
+* `lesson17_projects/wcsc/auto_gen`
+
+```shell
 python.exe -m lesson17.main_wcsc_step1_const
 
 python.exe -m lesson17.main_wcsc_step2 "lesson17_projects/wcsc/conf.toml"
