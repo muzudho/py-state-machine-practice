@@ -36,10 +36,10 @@ transigion.json:
             "turned_knob": ["Out", "CloseDoor"],
             "failed": ["Out"],
             "CloseDoor": {
-                "pulled_knob": ["Out", "open_door"],
+                "pulled_knob": ["Out", "OpenDoor"],
                 "failed": ["Out"]
             },
-            "open_door": {
+            "OpenDoor": {
                 "enter": ["stairs"],
                 "failed": ["Out"]
             }
