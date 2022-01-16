@@ -90,9 +90,9 @@ class InitState():
 
 ```shell
 # Windows
-python.exe -m lesson17.main_house3_step1_const "lesson17_projects/house3/conf.toml"
-#                                              ------------------------------------
-#                                              設定ファイル (TOML形式)
+python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/house3/conf.toml"
+#                                             ------------------------------------
+#                                             設定ファイル (TOML形式)
 ```
 
 # Example - Pen
@@ -105,9 +105,9 @@ python.exe -m lesson17.main_house3_step1_const "lesson17_projects/house3/conf.to
 
 ```shell
 # Windows
-python.exe -m lesson17.main_pen_step1_const "lesson17_projects/pen/conf.toml"
-#                                           ---------------------------------
-#                                           設定ファイル (TOML形式)
+python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/pen/conf.toml"
+#                                             ---------------------------------
+#                                             設定ファイル (TOML形式)
 ```
 
 # Example - WCSC
@@ -119,9 +119,9 @@ python.exe -m lesson17.main_pen_step1_const "lesson17_projects/pen/conf.toml"
 * `lesson17_projects/wcsc/auto_gen`
 
 ```shell
-python.exe -m lesson17.main_wcsc_step1_const "lesson17_projects/wcsc/conf.toml"
-#                                            ----------------------------------
-#                                            設定ファイル (TOML形式)
+python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/wcsc/conf.toml"
+#                                             ----------------------------------
+#                                             設定ファイル (TOML形式)
 
 python.exe -m lesson17.main_wcsc_step2 "lesson17_projects/wcsc/conf.toml"
 #                                      ----------------------------------

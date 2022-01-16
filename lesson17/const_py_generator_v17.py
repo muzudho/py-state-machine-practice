@@ -3,6 +3,7 @@ import argparse
 import traceback
 
 from lesson07n2.main_finally import MainFinally
+from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 
@@ -33,12 +34,22 @@ class Main:
 
     def on_main(self):
         parser = argparse.ArgumentParser(description='定数を定義した .pyファイルを作成します')
-        parser.add_argument('input', help='定数を定義した入力ファイル(.json)')
-        parser.add_argument('output', help='定数を定義した出力ファイル(.py)')
+        parser.add_argument('conf', help='設定ファイルへのパス')
         args = parser.parse_args()
 
-        const_doc = JsonReaderV11n100.read_file(args.input)
-        gen_const_file_v17(const_doc, args.output)
+        # 設定ファイル（.toml）読取
+        toml_doc = TomlReaderV11n90.read_file(args.conf)
+
+        # TOMLの内容を読み取ります
+        input_const_file_path = toml_doc['input_const_file']
+        output_const_file_path = toml_doc['output_const_file']
+
+        # JSONファイルを読込みます
+        const_doc = JsonReaderV11n100.read_file(
+            input_const_file_path)
+
+        # 定数ファイル生成
+        gen_const_file_v17(const_doc, output_const_file_path)
         return 0
 
     def on_except(self, e):
