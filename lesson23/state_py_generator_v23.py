@@ -14,9 +14,27 @@ class Main:
     Examples
     --------
     # Windows
-    python.exe -m lesson23.state_py_maker "example-const.json" "example-transition.json" "lesson23_projects.house3n2.data.auto_gen.const" "lesson23/house3n2/auto_gen/states"
-    #                                     -------------------- ------------------------- ------------------------------------------------ -----------------------------------
-    #                                     定数定義ファイル       状態遷移定義ファイル        import文に書く文字列                              出力ディレクトリ
+    python.exe -m lesson23.state_py_maker_v23 "lesson23_projects/house3n2/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
+    #                                         -------------------------------------- ------------ ----------------- ------- -------------------
+    #                                         1.                                     2.           3.                4.      5.
+    # 1. 設定ファイル（TOML形式）へのパス
+    # 2. 定数を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
+    # 3. 状態遷移を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
+    # 4. [import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前
+    # 5. 状態ファイル出力ディレクトリーパスのプロパティ名
+
+    # Example: conf.toml
+    # 定数
+    const_file = "lesson18n2_projects/house3/data/const.json"
+
+    # 状態遷移
+    transition_file = "lesson20_projects/house3n2/auto_gen/data/transition3.json"
+
+    # 状態ファイル出力ディレクトリー
+    output_states_dir = "lesson23_projects/house3n2/auto_gen/code/states"
+
+    [import_module]
+    const = "lesson23_projects.house3n2.auto_gen.data.const"
     """
 
     def on_main(self):

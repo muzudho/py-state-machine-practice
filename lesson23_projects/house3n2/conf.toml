@@ -5,7 +5,7 @@ const_file = "lesson18n2_projects/house3/data/const.json"
 transition_file = "lesson20_projects/house3n2/auto_gen/data/transition3.json"
 
 # 状態ファイル出力ディレクトリー
-output_states_dir = "lesson23_projects/house3n2/auto_gen/code/states"
+output_states_dir = "lesson23_projects/house3n2/auto_gen/code/states1"
 
 [import_module]
 const = "lesson23_projects.house3n2.auto_gen.data.const"

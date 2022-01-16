@@ -15,9 +15,9 @@ python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/house3/data/const.j
 #                                       -------------------------------------------- ---------------------------------------------------
 #                                       入力ファイル (.json)                          出力ファイル (.py)
 
-python.exe -m lesson23.state_py_maker_v23 "lesson23_projects/house3n2/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
-#                                         -------------------------------------- ------------ ----------------- ------- -------------------
-#                                         1.                                     2.           3.                4.      5.
+python.exe -m lesson23.state_py_generator_v23 "lesson23_projects/house3n2/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
+#                                             -------------------------------------- ------------ ----------------- ------- -------------------
+#                                             1.                                     2.           3.                4.      5.
 # 1. 設定ファイル（TOML形式）へのパス
 # 2. 定数を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
 # 3. 状態遷移を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
