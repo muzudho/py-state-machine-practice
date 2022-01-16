@@ -1,4 +1,4 @@
-class RequestV18:
+class RequestV18n3:
     def __init__(self, state_path, context=None):
         self._state_path = state_path
         self._context = context

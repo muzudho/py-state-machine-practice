@@ -43,32 +43,6 @@ python.exe -m lesson18.state_py_generator_v18 "lesson18_projects/pen/conf.toml" 
 # 5. [import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前
 ```
 
-## Run
-
-Server start:  
-
-```shell
-python.exe -m lesson18.main_pen_step3 "lesson18_projects/pen/conf.toml"
-#                                     ---------------------------------
-#                                     設定ファイル
-```
-
-Client start:  
-
-```shell
-python.exe -m lesson09.main
-```
-
-Input:  
-
-```shell
-This
-is
-a
-pen
-q
-```
-
 # Example - Wcsc
 ## Set up
 

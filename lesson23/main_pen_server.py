@@ -5,8 +5,8 @@ import argparse
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson18.server_v18 import ServerV18
-from lesson18.state_machine_v18 import StateMachineV18
+from lesson18n3.server_v18n3 import ServerV18n3
+from lesson18n3.state_machine_v18n3 import StateMachineV18n3
 
 # Lesson 23
 from lesson23_projects.pen.auto_gen.data.const import INIT
@@ -32,14 +32,14 @@ class Main:
             transition_file_path)
 
         # 状態遷移マシン
-        state_machine = StateMachineV18(
+        state_machine = StateMachineV18n3(
             state_gen=pen_state_gen_v23,
             transition_doc=transition_doc,
             entry_state_path=[INIT],
         )
 
         # サーバー
-        server = ServerV18(
+        server = ServerV18n3(
             host="0.0.0.0",
             port=5002,
             state_machine=state_machine,

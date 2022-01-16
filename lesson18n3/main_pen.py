@@ -2,13 +2,16 @@ import sys
 import argparse
 import traceback
 
+
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson18.code_gen.state_files_gen_v18 import gen_state_files_v18
-from lesson18_projects.pen.data.const import pen_const_doc
-from lesson18.code_gen.const_v18 import ConstV18
-from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
+from lesson18n3.server_v18n3 import ServerV18n3
+from lesson18n3.state_machine_v18n3 import StateMachineV18n3
+from lesson18_projects.pen.auto_gen.data.const import INIT
+from lesson18_projects.pen.data.state_gen import pen_state_gen_v18
+
+server = None
 
 
 class Main:
@@ -22,23 +25,25 @@ class Main:
 
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc['transition_file']
-        output_states_dir = toml_doc['output_states_dir']
-        import_const_module = toml_doc['import_const_module']
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
             transition_file_path)
 
-        const = ConstV18(pen_const_doc)
-        transition = TransitionV16n3(transition_doc)
-
-        # ファイル生成
-        gen_state_files_v18(
-            const=const,
-            transition=transition,
-            import_module_path=import_const_module,
-            output_dir_path=output_states_dir,
+        # 状態遷移マシン
+        state_machine = StateMachineV18n3(
+            state_gen=pen_state_gen_v18,
+            transition_doc=transition_doc,
+            entry_state_path=[INIT],
         )
+
+        # サーバー
+        server = ServerV18n3(
+            host="0.0.0.0",
+            port=5002,
+            state_machine=state_machine,
+        )
+        server.run()
         return 0
 
     def on_except(self, e):
@@ -46,6 +51,10 @@ class Main:
         traceback.print_exc()
 
     def on_finally(self):
+        # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
+        if server:
+            server.clean_up()
+
         print("★これで終わり")
         return 1
 
