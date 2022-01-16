@@ -29,8 +29,11 @@ class Main:
 
     def on_main(self):
         parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
-        parser.add_argument('conf', help='設定ファイルへのパス')
-        parser.add_argument('input_property', help='読込ファイルへのパスが書いてあるプロパティのキー')
+        parser.add_argument('conf', help='設定ファイル（TOML形式）へのパス')
+        parser.add_argument(
+            'input_property', help='読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
+        parser.add_argument(
+            'output_property', help='書込ファイル（テキストファイル形式）へのパスが書いてあるプロパティのキー')
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
@@ -38,7 +41,7 @@ class Main:
 
         # TOMLの内容を読み取ります
         json_file_path = toml_doc[args.input_property]
-        output_graph_text_file = toml_doc['output_graph_text_file']
+        output_graph_text_file = toml_doc[args.output_property]
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
