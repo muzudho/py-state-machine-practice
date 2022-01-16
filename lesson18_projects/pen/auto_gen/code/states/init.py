@@ -1,4 +1,4 @@
-from lesson18_projects.pen.auto_gen.data.const import E_OVER, E_THAT, E_THIS
+from lesson17_projects.pen.auto_gen.data.const import E_OVER, E_THAT, E_THIS
 
 class InitState():
     def update(self, req):

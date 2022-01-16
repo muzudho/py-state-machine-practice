@@ -1,4 +1,4 @@
-from lesson18_projects.pen.auto_gen.data.const import E_OVER
+from lesson17_projects.pen.auto_gen.data.const import E_OVER
 
 class PenState():
     def update(self, req):
