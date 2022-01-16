@@ -11,20 +11,31 @@ graphviz を使って可視化しましょう
 pip install graphviz
 ```
 
-# Run
+# Example - House
+
+## Run
 
 ```shell
-python.exe -m lesson15.graph_generator "lesson15_projects/house3/conf.toml" "transition_file" "output_graph_text_file"
-#                                      ------------------------------------ ----------------- ------------------------
-#                                      1.                                   2.                3.
+python.exe -m lesson15.graph_generator "lesson15_projects/house3n2/conf.toml" "transition_file" "output_graph_text_file"
+#                                      -------------------------------------- ----------------- ------------------------
+#                                      1.                                     2.                3.
 # 1. 設定ファイル（TOML形式）
 # 2. 入力ファイル（JSON形式）を指すプロパティの名前
 # 3. 出力ファイル（テキストファイル形式）を指すプロパティの名前
 ```
 
-Output:  
+# Example - Pen
 
-`lesson15-graphs.png`  
+## Run
+
+```shell
+python.exe -m lesson15.graph_generator "lesson15_projects/pen/conf.toml" "transition_file" "output_graph_text_file"
+#                                      --------------------------------- ----------------- ------------------------
+#                                      1.                                2.                3.
+# 1. 設定ファイル（TOML形式）
+# 2. 入力ファイル（JSON形式）を指すプロパティの名前
+# 3. 出力ファイル（テキストファイル形式）を指すプロパティの名前
+```
 
 # Documents
 

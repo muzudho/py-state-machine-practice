@@ -1,0 +1,2 @@
+transition_file = "lesson14_projects/wcsc/data/transition.json"
+output_graph_text_file = "lesson15_projects/wcsc/auto_gen/graphs.txt"

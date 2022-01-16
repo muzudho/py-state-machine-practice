@@ -1,0 +1,3 @@
+# 状態遷移ファイル
+transition_file = "lesson14_projects/house3n2/data/transition.json"
+output_graph_text_file = "lesson15_projects/house3n2/auto_gen/graphs.txt"

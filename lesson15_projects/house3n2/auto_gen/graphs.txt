@@ -1,0 +1,29 @@
+digraph {
+	node [shape=square style=filled]
+	subgraph cluster_root {
+		color=white label=House
+		"(Start)" [color=gray shape=circle]
+		"(Start)" -> Out [label=start]
+		"(Terminal)" [color=gray shape=circle]
+		Out [color=pink shape=circle]
+		Out -> "Out/CloseDoor" [label=turned_knob]
+		Out [color=pink shape=circle]
+		Out -> Out [label=failed]
+		"Out/CloseDoor" [color=pink shape=circle]
+		"Out/CloseDoor" -> "Out/OpenDoor" [label=pulled_knob]
+		"Out/CloseDoor" [color=pink shape=circle]
+		"Out/CloseDoor" -> Out [label=failed]
+		"Out/OpenDoor" [color=pink shape=circle]
+		"Out/OpenDoor" -> Stairs [label=enter]
+		"Out/OpenDoor" [color=pink shape=circle]
+		"Out/OpenDoor" -> Out [label=failed]
+		Stairs [color=pink shape=circle]
+		Stairs -> MyRoom [label=up]
+		Stairs [color=pink shape=circle]
+		Stairs -> Out [label=failed]
+		MyRoom [color=pink shape=circle]
+		MyRoom -> "(Terminal)" [label=sitting_down]
+		MyRoom [color=pink shape=circle]
+		MyRoom -> Out [label=failed]
+	}
+}
