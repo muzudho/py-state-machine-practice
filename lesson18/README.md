@@ -5,12 +5,6 @@ doc構造でデータ化した定数（`const.py`）を元に、Lesson14と同�
 
 # Example - House
 
-```shell
-python.exe -m lesson18.main_house3_step1 "lesson18_projects/house3/conf.toml"
-#                                        ------------------------------------
-#                                        設定ファイル
-```
-
 # Example - Pen
 
 ## Set up
@@ -20,10 +14,6 @@ python.exe -m lesson18.main_house3_step1 "lesson18_projects/house3/conf.toml"
 - `lesson18_projects/auto_gen`
 
 ```shell
-python.exe -m lesson18.main_pen_step1 "lesson18_projects/pen/conf.toml"
-#                                     ---------------------------------
-#                                     設定ファイル
-
 python.exe -m lesson18.main_pen_step2 "lesson18_projects/pen/conf.toml"
 #                                     ---------------------------------
 #                                     設定ファイル
@@ -58,7 +48,7 @@ q
 # Example - Wcsc
 
 ```shell
-python.exe -m lesson18.state_py_generator_v18 "lesson18_projects/wcsc/conf.toml" "input_const_file" "transition_file" "output_states_dir" "const"
+python.exe -m lesson18.state_py_generator_v17 "lesson18_projects/wcsc/conf.toml" "input_const_file" "transition_file" "output_states_dir" "const"
 #                                             ---------------------------------- ------------------ ----------------- ------------------- -------
 #                                             1.                                 2.                 3.                4.                  5.
 # 1. 設定ファイル（TOML形式）

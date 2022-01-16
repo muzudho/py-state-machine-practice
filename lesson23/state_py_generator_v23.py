@@ -6,6 +6,8 @@ from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson18.code_gen.state_files_gen_v18 import gen_state_files_v18
+from lesson18.code_gen.const_v18 import ConstV18
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
 class Main:
@@ -61,15 +63,18 @@ class Main:
         output_graph_text_file = toml_doc[args.output]
 
         # JSONファイルから、定数と遷移の設定を読込みます
-        const_json_obj = JsonReaderV11n100.read_file(const_file_path)
+        const_doc = JsonReaderV11n100.read_file(const_file_path)
         transition_doc = JsonReaderV11n100.read_file(transition_file_path)
+
+        const = ConstV18(const_doc)
+        transition = TransitionV16n3(transition_doc)
 
         # 状態の .py スクリプトを出力します
         gen_state_files_v18(
-            dir_path=output_graph_text_file,
-            const_doc=const_json_obj,
-            transition_doc=transition_doc,
+            const=const,
+            transition=transition,
             import_from_path=import_module_path,
+            output_dir_path=output_graph_text_file,
         )
         return 0
 

@@ -5,7 +5,9 @@ import traceback
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson18.code_gen.state_files_gen_v17 import gen_state_files_v17
+from lesson18.code_gen.state_files_gen_v18 import gen_state_files_v18
+from lesson18.code_gen.const_v18 import ConstV18
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
 class Main:
@@ -38,12 +40,15 @@ class Main:
         transition_doc = JsonReaderV11n100.read_file(
             transition_file_path)
 
+        const = ConstV18(const_doc)
+        transition = TransitionV16n3(doc=transition_doc)
+
         # ファイル生成
-        gen_state_files_v17(
-            const_doc=const_doc,
-            transition_doc=transition_doc,
-            output_dir_path=output_states_dir,
+        gen_state_files_v18(
+            const=const,
+            transition=transition,
             import_module_path=import_module_const,
+            output_dir_path=output_states_dir,
         )
         return 0
 

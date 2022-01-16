@@ -1,16 +1,25 @@
-from lesson17_projects.wcsc.auto_gen.data.const import INIT, LOGIN
-
 class InitState():
-
     def update(self, req):
 
+        self.on_entry(req)
+
         # 入力
-        msg = req.pull_trigger()
+        msg = self.on_trigger(req)
 
         # 分岐
-        if msg == 'login':
-            return [INIT, LOGIN]
+        if msg == "login":
+            self.on_login(req)
+            return "login"
 
         else:
             raise ValueError(f"Unexpected msg:{msg}")
+
+    def on_entry(self, req):
+        pass
+
+    def on_trigger(self, req):
+        return req.context.pull_trigger()
+
+    def on_login(self, req):
+        pass
 

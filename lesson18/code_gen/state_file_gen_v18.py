@@ -11,7 +11,12 @@ from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 class StateFileGen:
     @classmethod
     def generate_state_file_v18(
-        clazz, dir_path, const, transition, node_path, import_module_path
+        clazz,
+        const,
+        transition,
+        node_path,
+        import_module_path,
+        output_dir_path,
     ):
         """状態ファイルを作ります。
 
@@ -34,7 +39,7 @@ class StateFileGen:
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
-        file_path = os.path.join(dir_path, f"{file_stem}.py")
+        file_path = os.path.join(output_dir_path, f"{file_stem}.py")
 
         # エッジの分岐部分
         directed_edge_list = TransitionV16n3.create_edge_list_by_node_path(
