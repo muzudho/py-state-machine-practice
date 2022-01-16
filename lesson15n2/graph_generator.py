@@ -10,6 +10,20 @@ from lesson15n2.graph_gen.render_v15n2 import GraphRenderV15n2
 
 
 class Main:
+    """設定ファイル（.toml）を指定することで、状態遷移図を出力します。
+
+    # コマンド
+    python.exe -m this.is.a.module.graph_generator "this/is/a/path/conf.toml"
+
+    設定ファイルに必要な内容は以下の通りです。
+
+    # 状態遷移図
+    transition_file = "This/is/a/path/transition.json"
+
+    # 状態遷移図の出力先
+    output_graph_text_file = "This/is/a/path/transigion_graph.txt"
+    """
+
     def __init__(self):
         self._graph_render = None
 

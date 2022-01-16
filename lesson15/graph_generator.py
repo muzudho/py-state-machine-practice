@@ -10,24 +10,39 @@ from lesson15.graph_gen.render_v15 import GraphRenderV15
 
 
 class Main:
+    """設定ファイル（.toml）を指定することで、状態遷移図を出力します。
+
+    # コマンド
+    python.exe -m this.is.a.module.graph_generator "this/is/a/path/conf.toml" "transition_file"
+
+    上記のコマンドのケースでは、設定ファイルに必要な内容は以下の通りです。
+
+    # 状態遷移図
+    transition_file = "This/is/a/path/transition.json"
+
+    # 状態遷移図の出力先
+    output_graph_text_file = "This/is/a/path/transigion_graph.txt"
+    """
+
     def __init__(self):
         self.__graph_render = None
 
     def on_main(self):
         parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
         parser.add_argument('conf', help='設定ファイルへのパス')
+        parser.add_argument('input_property', help='読込ファイルへのパスが書いてあるプロパティのキー')
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
         toml_doc = TomlReaderV11n90.read_file(args.conf)
 
         # TOMLの内容を読み取ります
-        transition_file_path = toml_doc['transition_file']
+        json_file_path = toml_doc[args.input_property]
         output_graph_text_file = toml_doc['output_graph_text_file']
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
-            transition_file_path)
+            json_file_path)
 
         # オブジェクト作成
         transition = TransitionV15(transition_doc)

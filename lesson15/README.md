@@ -14,9 +14,9 @@ pip install graphviz
 # Run
 
 ```shell
-python.exe -m lesson15.graph_generator "lesson15_projects/house3/conf.toml"
-#                                      ------------------------------------
-#                                      設定ファイル
+python.exe -m lesson15.graph_generator "lesson15_projects/house3/conf.toml" "transition_file"
+#                                      ------------------------------------ -----------------
+#                                      設定ファイル                           入力ファイルを指すプロパティの名前
 ```
 
 Output:  
