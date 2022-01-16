@@ -1,4 +1,4 @@
-from lesson17_projects.wcsc.data.auto_gen.const import LOBBY, E_REJECT
+from lesson17_projects.wcsc.data.auto_gen.const import E_REJECT, LOBBY
 
 class ReplyRejectState():
 

@@ -70,7 +70,10 @@ def gen_state_file(dir_path, node_path, const, transition):
         pre_text = "from lesson17_projects.wcsc.data.auto_gen.const import "
         is_skip_first = True
 
-        for const in used_const:
+        used_const_list = list(used_const)
+        used_const_list.sort()
+
+        for const in used_const_list:
             if is_skip_first:
                 is_skip_first = False
             else:
