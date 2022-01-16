@@ -1,5 +1,6 @@
 import sys
 import argparse
+import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
@@ -26,10 +27,10 @@ class Main:
 
     def on_except(self, e):
         """ここで例外キャッチ"""
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 

@@ -1,5 +1,6 @@
 import sys
 import argparse
+import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n80.code_gen.file_io import FileIo
@@ -20,10 +21,10 @@ class Main:
 
     def on_except(self, e):
         """ここで例外キャッチ"""
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 

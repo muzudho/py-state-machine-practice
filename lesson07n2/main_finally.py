@@ -9,6 +9,7 @@ class MainFinally:
     Examples
     --------
     import sys
+    import traceback
     from lesson07n2.main_finally import MainFinally
 
     class Main:
@@ -18,7 +19,7 @@ class MainFinally:
 
         def on_except(self, e):
             # ここで例外キャッチ
-            print(e)
+            traceback.print_exc()
 
         def on_finally(self):
             # ここで終了処理

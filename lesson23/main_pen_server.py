@@ -52,7 +52,7 @@ class Main:
         if server:
             server.clean_up()
 
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 

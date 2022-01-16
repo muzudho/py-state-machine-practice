@@ -1,6 +1,7 @@
-from multiprocessing.sharedctypes import Value
 import sys
 import time
+import traceback
+from multiprocessing.sharedctypes import Value
 
 from lesson07n2.main_finally import MainFinally
 
@@ -27,11 +28,11 @@ class Main:
 
     def on_except(self, e):
         # ここで例外キャッチ
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
         """終了時にやりたい処理をここに書いてください"""
-        print("★しっかり終わった")
+        print("★これで終わり")
 
         return 1
 

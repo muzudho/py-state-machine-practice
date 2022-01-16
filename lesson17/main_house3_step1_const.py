@@ -1,4 +1,5 @@
 import sys
+import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson17.code_gen.const_file_gen import gen_const_file_v17
@@ -15,10 +16,10 @@ class Main:
 
     def on_except(self, e):
         """ここで例外キャッチ"""
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 

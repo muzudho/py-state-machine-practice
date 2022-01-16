@@ -2,6 +2,7 @@ import sys
 import json
 import os
 import argparse
+import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
@@ -35,10 +36,10 @@ class Main:
 
     def on_except(self, e):
         """ここで例外キャッチ"""
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 

@@ -57,20 +57,17 @@ class GraphRenderV15n2:
     def is_verbose(clazz):
         return True
 
-    def __init__(self, transition, output_text_file):
+    def __init__(self):
         # グラフの設定
         self._g = Digraph(format="png")
         self._g.attr("node", shape="square", style="filled")
 
-        self._transition = transition
-        self._output_text_file = output_text_file
-
-    def run(self):
+    def write(self, transition, output_text_file):
 
         edge_list = []
 
         # エッジの一覧を作成
-        create_edge_list_v15(self._transition.doc['data'], [], None, edge_list)
+        create_edge_list_v15(transition.doc['data'], [], None, edge_list)
 
         # ノードパスによってクラスタリング
         clustered_edge_in_list = clustering(edge_list)
@@ -100,12 +97,12 @@ class GraphRenderV15n2:
         # クラスター 'cluster_' から名前を始める必要あり
         with self._g.subgraph(name="cluster_root") as c:
             # 一番外側のクラスターのラベルは図のタイトルのように見える
-            c.attr(color="white", label=self._transition.doc['title'])
+            c.attr(color="white", label=transition.doc['title'])
             # 始端記号
             c.node("(Start)", shape="circle", color="gray")
             # 始端と開始ノードのエッジ
             c.edge(
-                "(Start)", self._transition.doc['entry_state'], label="start")
+                "(Start)", transition.doc['entry_state'], label="start")
             # 終端記号
             c.node("(Terminal)", shape="circle", color="gray")
 
@@ -136,7 +133,7 @@ class GraphRenderV15n2:
             __create_cluster(tree, "", "root")
 
         # 描画
-        self._g.render(self._output_text_file)
+        self._g.render(output_text_file)
 
     def clean_up(self):
         pass

@@ -1,5 +1,6 @@
 import sys
 import argparse
+import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
@@ -32,22 +33,22 @@ class Main:
         transition = TransitionV15(transition_doc)
 
         # 図生成
-        self.__graph_render = GraphRenderV15(
+        self.__graph_render = GraphRenderV15()
+        self.__graph_render.write(
             transition=transition,
             output_text_file=output_graph_text_file)
-        self.__graph_render.run()
         return 0
 
     def on_except(self, e):
         """ここで例外キャッチ"""
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
         # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
         if self.__graph_render:
             self.__graph_render.clean_up()
 
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 

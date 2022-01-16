@@ -1,4 +1,5 @@
 import sys
+import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson08.echo_server import EchoServer
@@ -14,14 +15,14 @@ class Main:
 
     def on_except(self, e):
         """ここで例外キャッチ"""
-        print(e)
+        traceback.print_exc()
 
     def on_finally(self):
         # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
         if echo_server:
             echo_server.clean_up()
 
-        print("★しっかり終わった")
+        print("★これで終わり")
         return 1
 
 
