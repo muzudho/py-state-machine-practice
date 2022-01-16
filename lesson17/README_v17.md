@@ -132,11 +132,12 @@ python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/wcsc/conf.toml"
 # 2. 読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
 # 3. 書込ファイル（テキストファイル形式）へのパスが書いてあるプロパティのキー
 
-python.exe -m lesson17.state_py_generator_v17 "lesson17_projects/wcsc/conf.toml" "transition_file" "output_states_dir" "const"
-#                                             ---------------------------------- ----------------- ------------------- -------
-#                                             1.                                 2.                3.                  4.
+python.exe -m lesson17.state_py_generator_v17 "lesson17_projects/wcsc/conf.toml" "input_const_file" "transition_file" "output_states_dir" "const"
+#                                             ---------------------------------- ------------------ ----------------- ------------------- -------
+#                                             1.                                 2.                 3.                4.                  5.
 # 1. 設定ファイル（TOML形式）
-# 2. 読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
-# 3. 書込先ディレクトリーへのパスが書いてあるプロパティのキー
-# 4. [import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前
+# 2. 定数の読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
+# 3. 状態遷移の読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
+# 4. 書込先ディレクトリーへのパスが書いてあるプロパティのキー
+# 5. [import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前
 ```

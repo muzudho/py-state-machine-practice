@@ -5,8 +5,7 @@ import traceback
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson17.code_gen.state_files_gen import gen_state_files_v17
-from lesson17_projects.wcsc.data.const import wcsc_const_doc
+from lesson17.code_gen.state_files_gen_v17 import gen_state_files_v17
 
 
 class Main:
@@ -14,8 +13,10 @@ class Main:
         parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
         parser.add_argument('conf',
                             help='設定ファイルへのパス')
-        parser.add_argument('input_property',
-                            help='読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
+        parser.add_argument('const_input_property',
+                            help='定数の読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
+        parser.add_argument('transition_input_property',
+                            help='状態遷移の読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
         parser.add_argument('output_property',
                             help='書込先ディレクトリーへのパスが書いてあるプロパティのキー')
         parser.add_argument('import_module',
@@ -26,17 +27,20 @@ class Main:
         toml_doc = TomlReaderV11n90.read_file(args.conf)
 
         # TOMLの内容を読み取ります
-        transition_file_path = toml_doc[args.input_property]
+        const_file_path = toml_doc[args.const_input_property]
+        transition_file_path = toml_doc[args.transition_input_property]
         output_states_dir = toml_doc[args.output_property]
         import_module_const = toml_doc['import_module'][args.import_module]
 
         # JSONファイルを読込みます
+        const_doc = JsonReaderV11n100.read_file(
+            const_file_path)
         transition_doc = JsonReaderV11n100.read_file(
             transition_file_path)
 
         # ファイル生成
         gen_state_files_v17(
-            const_doc=wcsc_const_doc,
+            const_doc=const_doc,
             transition_doc=transition_doc,
             output_dir_path=output_states_dir,
             import_module_path=import_module_const,
