@@ -9,6 +9,7 @@ from lesson11n80.code_gen.file_io import FileIo
 from lesson10021.code_gen.transition_stringification import (
     TransitionConfPyStringification,
 )
+from lesson18.code_gen.const_v18 import ConstV18
 
 
 class Main:
@@ -22,11 +23,13 @@ class Main:
         parser.add_argument('var_name', help='状態遷移ディクショナリーの変数名')
         args = parser.parse_args()
 
-        const_data = JsonReaderV11n100.read_file(args.input_const)
+        const_doc = JsonReaderV11n100.read_file(args.input_const)
         transition_data = JsonReaderV11n100.read_file(args.input_transition)
 
+        const = ConstV18(const_doc)
+
         transition_stringification = TransitionConfPyStringification(
-            const_doc=const_data,
+            const=const,
             import_from_path=args.import_module,
         )
         out_text = transition_stringification.stringify(

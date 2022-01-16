@@ -1,15 +1,15 @@
-class ConstConfV18:
-    def __init__(self, data):
+class ConstV18:
+    def __init__(self, doc):
         # (1) キーと値は 全単射にしてください
         # (2) 大文字と小文字は区別します
-        self._data = data
+        self._doc = doc
 
         # 逆向きは自動生成します
         self._rev_data = {}
 
-        init_size = len(self._data)
+        init_size = len(self._doc)
 
-        for key, value in self._data.items():
+        for key, value in self._doc.items():
             if value in self._rev_data:
                 raise ValueError(f"value:{value} が重複しました。全単射にしてください")
 
@@ -19,8 +19,8 @@ class ConstConfV18:
             raise ValueError("定数のキーとバリューは全単射にしてください")
 
     @property
-    def data(self):
-        return self._data
+    def doc(self):
+        return self._doc
 
     @property
     def rev_data(self):
@@ -46,11 +46,11 @@ class ConstConfV18:
 
     def pickup_from_item_to_set(self, item, used_const_set):
         """item が定数なら used_const_set へ追加します"""
-        if item in self._data:
+        if item in self._doc:
             used_const_set.add(item)
 
     def pickup_from_list(self, listtransition_doc, used_const_set):
         """listtransition_doc の中で使われている定数を used_const_set へ追加します"""
         for item in listtransition_doc:
-            if item in self._data:
+            if item in self._doc:
                 used_const_set.add(item)

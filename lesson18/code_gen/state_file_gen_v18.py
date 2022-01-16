@@ -10,8 +10,8 @@ from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 
 class StateFileGen:
     @classmethod
-    def generate_state_file(
-        clazz, dir_path, const_conf, transition, node_path, import_from_path
+    def generate_state_file_v18(
+        clazz, dir_path, const, transition, node_path, import_module_path
     ):
         """状態ファイルを作ります。
 
@@ -30,7 +30,7 @@ class StateFileGen:
             node = node.capitalize()
             class_name += node
 
-        # print(f"[generate_state_file] node_path={node_path} ----> {file_stem}")
+        # print(f"[generate_state_file_v18] node_path={node_path} ----> {file_stem}")
 
         # `init.py` ファイルを作成します
         # 'x' - ファイルが存在しない場合のみの上書き
@@ -44,7 +44,7 @@ class StateFileGen:
         # 使った定数を調査
         used_const_set = set()
         for edge in directed_edge_list:
-            const_conf.pickup_from_item_to_set(edge.name, used_const_set)
+            const.pickup_from_item_to_set(edge.name, used_const_set)
 
         text = ""
         text += ClassGen.generate_class(name=f"{class_name}State")
@@ -61,7 +61,7 @@ class StateFileGen:
         # エッジ分岐部
         used_const_set = set()  # 使った定数
         switch_model = StateFileGen.__edge_switch_model(
-            const_conf=const_conf,
+            const=const,
             directed_edge_list=directed_edge_list,
             used_const_set=used_const_set,
         )
@@ -87,7 +87,7 @@ class StateFileGen:
         # 定数のインポートをファイルの冒頭に付けます
         if 0 < len(used_const_set):
             import_statement = ImportGen.generate_import(
-                from_s=import_from_path,
+                from_s=import_module_path,
                 import_set=used_const_set,
             )
             text = f"{import_statement}\n{text}"
@@ -95,14 +95,14 @@ class StateFileGen:
         FileIo.write(file_path, text)
 
     @classmethod
-    def __edge_switch_model(clazz, const_conf, directed_edge_list, used_const_set):
+    def __edge_switch_model(clazz, const, directed_edge_list, used_const_set):
 
         if_elif_list = []
         # if～elif文
         for edge in directed_edge_list:
 
             # エッジ名を定数に置きかえれるか試します
-            edge_operand = const_conf.replace_item(
+            edge_operand = const.replace_item(
                 edge.name, '"')  # 定数、でなければ "文字列"
 
             # 条件式
@@ -110,7 +110,7 @@ class StateFileGen:
                 cond = "True"  # 恒真
             else:
                 # この練習プログラムでは E_XXX のような定数になってるはず
-                const_conf.pickup_from_item_to_set(
+                const.pickup_from_item_to_set(
                     edge_operand, used_const_set)
                 cond = f"msg == {edge_operand}"
 

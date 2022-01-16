@@ -1,10 +1,10 @@
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
-from lesson18.code_gen.const_v18 import ConstConfV18
+from lesson18.code_gen.const_v18 import ConstV18
 
 
 class TransitionConfPyStringification:
-    def __init__(self, const_doc, import_from_path):
-        self._const_conf = ConstConfV18(const_doc)
+    def __init__(self, const, import_from_path):
+        self._const = const
         self._used_const_set = set()
         self._import_from_path = import_from_path
 
@@ -26,9 +26,9 @@ class TransitionConfPyStringification:
 
         # 定数 or "文字列" 判定
         entry_state = ordered_dict_data["entry_state"]
-        entry_state = self._const_conf.replace_item(
+        entry_state = self._const.replace_item(
             entry_state, '"')  # 定数、でなければ "文字列"
-        self._const_conf.pickup_from_item_to_set(
+        self._const.pickup_from_item_to_set(
             entry_state, self._used_const_set)
 
         text = f"""{variable_name} = {{
@@ -42,9 +42,9 @@ class TransitionConfPyStringification:
         block_list = []
         for key, value in ordered_dict_data["data"].items():
             # 定数 or "文字列" 判定
-            k_operand = self._const_conf.replace_item(
+            k_operand = self._const.replace_item(
                 key, '"')  # 定数、でなければ "文字列"
-            self._const_conf.pickup_from_item_to_set(
+            self._const.pickup_from_item_to_set(
                 k_operand, self._used_const_set)
 
             if isinstance(value, dict):
@@ -88,8 +88,8 @@ class TransitionConfPyStringification:
             text = ""
 
             # 定数 or "文字列" 判定
-            k_operand = self._const_conf.replace_item(k, '"')  # 定数、でなければ "文字列"
-            self._const_conf.pickup_from_item_to_set(
+            k_operand = self._const.replace_item(k, '"')  # 定数、でなければ "文字列"
+            self._const.pickup_from_item_to_set(
                 k_operand, self._used_const_set)
 
             text += f"{n4sp}{k_operand}: "
@@ -115,9 +115,9 @@ class TransitionConfPyStringification:
         for item in data:
 
             # 定数 or "文字列" 判定
-            operand = self._const_conf.replace_item(
+            operand = self._const.replace_item(
                 item, '"')  # 定数、でなければ "文字列"
-            self._const_conf.pickup_from_item_to_set(
+            self._const.pickup_from_item_to_set(
                 operand, self._used_const_set)
 
             item_list.append(operand)

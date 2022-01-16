@@ -1,11 +1,11 @@
 from lesson11n80.code_gen.file_io import FileIo
 from lesson18.code_gen.state_file_gen_v18 import StateFileGen
-from lesson18.code_gen.const_v18 import ConstConfV18
+from lesson18.code_gen.const_v18 import ConstV18
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
-def gen_state_files_v18(dir_path, const_doc, transition_doc, import_from_path):
-    const_conf = ConstConfV18(const_doc)
+def gen_state_files_v18(dir_path, const_doc, transition_doc, import_module_path):
+    const = ConstV18(const_doc)
     transition = TransitionV16n3(transition_doc)
 
     # エッジの一覧
@@ -22,10 +22,10 @@ def gen_state_files_v18(dir_path, const_doc, transition_doc, import_from_path):
         if node_path is None:
             continue
 
-        StateFileGen().generate_state_file(
-            dir_path,
-            const_conf,
-            transition,
-            node_path,
-            import_from_path,
+        StateFileGen().generate_state_file_v18(
+            dir_path=dir_path,
+            const=const,
+            transition=transition,
+            node_path=node_path,
+            import_module_path=import_module_path,
         )
