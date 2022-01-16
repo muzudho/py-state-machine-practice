@@ -1,5 +1,5 @@
 from lesson18.code_gen.py_syntax.import_gen import ImportGen
-from lesson18.code_gen.const_conf import ConstConfV18
+from lesson18.code_gen.const_v18 import ConstConfV18
 
 
 class TransitionConfPyStringification:
