@@ -8,7 +8,7 @@ from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson23.server_v23 import ServerV23
 from lesson23.state_machine_v23 import StateMachineV23
-from lesson23_projects.pen.data.state_gen_v18n3 import pen_state_gen_doc_v18n3
+from lesson23_projects.pen.data.state_gen_v23 import pen_state_gen_doc_v23
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
@@ -35,7 +35,7 @@ class Main:
 
         # 状態遷移マシン
         state_machine = StateMachineV23(
-            state_gen=pen_state_gen_doc_v18n3,
+            state_gen=pen_state_gen_doc_v23,
             transition=transition)
 
         # サーバー
