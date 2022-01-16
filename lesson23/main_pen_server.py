@@ -7,15 +7,15 @@ from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson18n3.server_v18n3 import ServerV18n3
 from lesson18n3.state_machine_v18n3 import StateMachineV18n3
-
-# Lesson 23
 from lesson23_projects.pen.auto_gen.data.const import INIT
 from lesson23_projects.pen.data.state_gen_v23 import pen_state_gen_v23
-
-server = None
+from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
 class Main:
+    def __init__(self):
+        self._server = None
+
     def on_main(self):
         parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
         parser.add_argument('conf', help='設定ファイルへのパス')
@@ -31,26 +31,28 @@ class Main:
         transition_doc = JsonReaderV11n100.read_file(
             transition_file_path)
 
+        transition = TransitionV16n3(transition_doc)
+
         # 状態遷移マシン
         state_machine = StateMachineV18n3(
             state_gen=pen_state_gen_v23,
-            transition_doc=transition_doc,
+            transition=transition,
             entry_state_path=[INIT],
         )
 
         # サーバー
-        server = ServerV18n3(
+        self._server = ServerV18n3(
             host="0.0.0.0",
             port=5002,
             state_machine=state_machine,
         )
-        server.run()
+        self._server.run()
         return 0
 
     def on_finally(self):
         # [Ctrl] + [C] を受け付けないから、ここにくるのは難しい
-        if server:
-            server.clean_up()
+        if self._server:
+            self._server.clean_up()
 
         print("★これで終わり")
         return 1

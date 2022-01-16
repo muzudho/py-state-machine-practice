@@ -1,13 +1,11 @@
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
-from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
 class StateMachineV18n3:
-    def __init__(self, state_gen, transition_doc, entry_state_path):
+    def __init__(self, state_gen, transition, entry_state_path):
         self._is_verbose = False
         self._state_gen = state_gen
-        self._transition_doc = transition_doc
-        self._transition = TransitionV16n3(self._transition_doc)
+        self._transition = transition
         self._state_path = entry_state_path
 
     @property
