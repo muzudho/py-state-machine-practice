@@ -6,7 +6,7 @@ from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson18.code_gen.state_files_gen_v18 import gen_state_files_v18
-from lesson18.code_gen.const_v18 import ConstV18
+from lesson18.conf_obj.const_v18 import ConstV18
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 

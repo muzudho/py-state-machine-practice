@@ -1,4 +1,4 @@
-from lesson17.code_gen.const_v17 import ConstV17
+from lesson17.conf_obj.const_v17 import ConstV17
 
 
 class ConstV18(ConstV17):

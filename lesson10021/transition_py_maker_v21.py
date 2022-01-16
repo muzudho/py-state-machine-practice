@@ -9,7 +9,7 @@ from lesson11n80.code_gen.file_io_v11n80 import FileIoV11n80
 from lesson10021.code_gen.transition_stringification import (
     TransitionConfPyStringification,
 )
-from lesson18.code_gen.const_v18 import ConstV18
+from lesson18.conf_obj.const_v18 import ConstV18
 
 
 class Main:
