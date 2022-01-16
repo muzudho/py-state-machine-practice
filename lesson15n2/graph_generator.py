@@ -33,10 +33,10 @@ class Main:
         transition = TransitionV15(transition_doc)
 
         # グラフ描画
-        self._graph_render = GraphRenderV15n2(
+        self._graph_render = GraphRenderV15n2()
+        self._graph_render.write(
             transition=transition,
             output_text_file=output_graph_text_file)
-        self._graph_render.run()
         return 0
 
     def on_except(self, e):
