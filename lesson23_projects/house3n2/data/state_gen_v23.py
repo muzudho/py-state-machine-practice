@@ -17,7 +17,7 @@ from lesson23_projects.house3n2.code.states2.stairs import create_stairs
 
 
 # ステートを使い回すのではなく、アクセスするたびに ステートの生成を実行しなおせるよう、ラムダ関数を返します
-house3n2_state_gen_v23 = {
+house3n2_state_gen_doc_v23 = {
     MY_ROOM: {
         "": lambda: create_myroom(MyroomState()),
     },
