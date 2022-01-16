@@ -1,10 +1,10 @@
 import socket
 from threading import Thread
-from lesson18n3.client_context_v18n3 import ClientContextV18n3
-from lesson18n3.request_v18n3 import RequestV18n3
+from lesson23.client_context_v23 import ClientContextV23
+from lesson23.request_v23 import RequestV23
 
 
-class ServerV18n3:
+class ServerV23:
     @classmethod
     def is_verbose(clazz):
         return False
@@ -57,7 +57,7 @@ class ServerV18n3:
                 return message
 
             # 外部から与えるオブジェクト
-            client_context = ClientContextV18n3(
+            client_context = ClientContextV23(
                 c_sock=c_sock,
                 pull_trigger=__on_pull_trigger,
             )
@@ -66,7 +66,7 @@ class ServerV18n3:
                 """req変数を生成します"""
 
                 # 開発が進むと Request の引数が増えたり減ったりするでしょう
-                req = RequestV18n3(
+                req = RequestV23(
                     state_path=self._state_machine.state_path,
                     context=client_context,
                 )

@@ -2,11 +2,11 @@ from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 
 
 class StateMachineV18n3:
-    def __init__(self, state_gen, transition, entry_state_path):
+    def __init__(self, state_gen, transition):
         self._is_verbose = False
         self._state_gen = state_gen
         self._transition = transition
-        self._state_path = entry_state_path
+        self._state_path = transition.doc['entry_state']
 
     @property
     def state_gen(self):

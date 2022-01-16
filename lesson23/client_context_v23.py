@@ -1,4 +1,4 @@
-class ClientContextV18n3:
+class ClientContextV23:
     def __init__(self, c_sock=None, pull_trigger=None):
         self._c_sock = c_sock
         self._fn_pull_trigger = pull_trigger
