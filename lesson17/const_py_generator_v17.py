@@ -12,12 +12,7 @@ class Main:
 
     Examples
     --------
-    # Windows
-    python.exe -m lesson17.const_py_generator "example-const.json" "example_const.py"
-    #                                         -------------------- ------------------
-    #                                         入力ファイル           出力ファイル
-
-    # example-const.json
+    # 入力ファイル example-const.json
     {
         "CLOSE_DOOR": "CloseDoor",
         "OPEN_DOOR": "OpenDoor",
@@ -27,7 +22,7 @@ class Main:
         "MSG_PULL_KNOB": "Pull knob",
     }
 
-    # example_const.py
+    # 出力ファイル example_const.py
     CLOSE_DOOR = 'CloseDoor'
     OPEN_DOOR = 'OpenDoor'
     E_TURNED_KNOB = 'turned_knob'

@@ -9,33 +9,7 @@ from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 
 
 class Main:
-    """定数を定義した .pyファイルを作成します
-
-    Examples
-    --------
-    # Windows
-    python.exe -m lesson17.const_py_generator "example-const.json" "example_const.py"
-    #                                         -------------------- ------------------
-    #                                         入力ファイル           出力ファイル
-
-    # example-const.json
-    {
-        "CLOSE_DOOR": "CloseDoor",
-        "OPEN_DOOR": "OpenDoor",
-        "E_TURNED_KNOB": "turned_knob",
-        "E_PULLED_KNOB": "pulled_knob",
-        "MSG_TURN_KNOB": "Turn knob",
-        "MSG_PULL_KNOB": "Pull knob",
-    }
-
-    # example_const.py
-    CLOSE_DOOR = 'CloseDoor'
-    OPEN_DOOR = 'OpenDoor'
-    E_TURNED_KNOB = 'turned_knob'
-    E_PULLED_KNOB = 'pulled_knob'
-    MSG_TURN_KNOB = 'Turn knob'
-    MSG_PULL_KNOB = 'Pull knob'
-    """
+    """定数を定義した .pyファイルを作成します"""
 
     def on_main(self):
         parser = argparse.ArgumentParser(description='定数を定義した .pyファイルを作成します')
