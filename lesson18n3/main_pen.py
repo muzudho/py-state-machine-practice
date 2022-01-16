@@ -9,7 +9,7 @@ from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
 from lesson18n3.server_v18n3 import ServerV18n3
 from lesson18n3.state_machine_v18n3 import StateMachineV18n3
 from lesson18_projects.pen.auto_gen.data.const import INIT
-from lesson18_projects.pen.data.state_gen import pen_state_gen_v18
+from lesson18n3_projects.pen.data.state_gen import pen_state_gen_v18n3
 
 server = None
 
@@ -32,7 +32,7 @@ class Main:
 
         # 状態遷移マシン
         state_machine = StateMachineV18n3(
-            state_gen=pen_state_gen_v18,
+            state_gen=pen_state_gen_v18n3,
             transition_doc=transition_doc,
             entry_state_path=[INIT],
         )

@@ -22,9 +22,9 @@ class Main:
 
         # Example: "lesson10019_projects/house3n2/data/auto_gen/transition2.json"
         print(f'args.input  : {args.input}')
-        # Example: "lesson20_projects/house3n2/data/auto_gen/transition3.json"
+        # Example: "lesson10020_projects/house3n2/data/auto_gen/transition3.json"
         print(f'args.output : {args.output}')
-        # Example: "lesson20_projects/house3n2/data/auto_gen/transition3-default-fomat.json"
+        # Example: "lesson10020_projects/house3n2/data/auto_gen/transition3-default-fomat.json"
         print(f'args.output_default_format : {args.output_default_format}')
 
         # JSONファイルを読込みます

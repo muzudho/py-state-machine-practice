@@ -2,7 +2,7 @@
 const_file = "lesson17_projects/pen/data/const.json"
 
 # 状態遷移
-transition_file = "lesson20_projects/pen/auto_gen/data/transition.json"
+transition_file = "lesson10020_projects/pen/auto_gen/data/transition.json"
 
 # 状態ファイル出力ディレクトリー
 output_states_dir = "lesson23_projects/pen/auto_gen/code/states1"
