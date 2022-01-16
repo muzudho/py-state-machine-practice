@@ -9,9 +9,9 @@ Lesson18 で作ったファイルを動かしましょう
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_house3n2_server "lesson23_projects/house3n2/conf.toml"
-#                                           --------------------------------------
-#                                           設定ファイル
+python.exe -m lesson23.main_run_server "lesson23_projects/house3n2/conf.toml"
+#                                      --------------------------------------
+#                                      設定ファイル
 ```
 
 Client start:  
@@ -38,7 +38,7 @@ q
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_pen_server "lesson23_projects/pen/conf.toml"
+python.exe -m lesson23.main_run_server "lesson23_projects/pen/conf.toml"
 #                                      ---------------------------------
 #                                      設定ファイル
 ```
@@ -66,9 +66,9 @@ q
 Server start:  
 
 ```shell
-python.exe -m lesson23.main_wcsc_server "lesson23_projects/house3n2/conf.toml"
-#                                       --------------------------------------
-#                                       設定ファイル
+python.exe -m lesson23.main_run_server "lesson23_projects/house3n2/conf.toml"
+#                                      --------------------------------------
+#                                      設定ファイル
 ```
 
 Client start:  
