@@ -10,17 +10,17 @@ from lesson23_projects.wcsc.auto_gen.data.const import (
     GAME,
 )
 
-# Lesson 23 State
-from lesson23_projects.wcsc.auto_gen.code.states1.game import GameState
-from lesson23_projects.wcsc.auto_gen.code.states1.init_login import InitLoginState
-from lesson23_projects.wcsc.auto_gen.code.states1.init import InitState
-from lesson23_projects.wcsc.auto_gen.code.states1.lobby_logout import LobbyLogoutState
-from lesson23_projects.wcsc.auto_gen.code.states1.lobby import LobbyState
-from lesson23_projects.wcsc.auto_gen.code.states1.reply_agree import ReplyAgreeState
-from lesson23_projects.wcsc.auto_gen.code.states1.reply_reject import ReplyRejectState
-from lesson23_projects.wcsc.auto_gen.code.states1.reply import ReplyState
+# State
+from lesson18_projects.wcsc.auto_gen.code.states1.game import GameState
+from lesson18_projects.wcsc.auto_gen.code.states1.init_login import InitLoginState
+from lesson18_projects.wcsc.auto_gen.code.states1.init import InitState
+from lesson18_projects.wcsc.auto_gen.code.states1.lobby_logout import LobbyLogoutState
+from lesson18_projects.wcsc.auto_gen.code.states1.lobby import LobbyState
+from lesson18_projects.wcsc.auto_gen.code.states1.reply_agree import ReplyAgreeState
+from lesson18_projects.wcsc.auto_gen.code.states1.reply_reject import ReplyRejectState
+from lesson18_projects.wcsc.auto_gen.code.states1.reply import ReplyState
 
-# Lesson 23 State wrapper
+# State wrapper
 from lesson23_projects.wcsc.code.states2.game import create_game
 from lesson23_projects.wcsc.code.states2.init_login import create_init_login
 from lesson23_projects.wcsc.code.states2.init import create_init

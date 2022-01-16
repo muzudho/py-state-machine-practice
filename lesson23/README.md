@@ -1,30 +1,8 @@
 # Lesson23
 
-Lesson18 をさらに発展させ、  
-Pythonのdict（これはOrderedDictではありません）を経由せず、JSON（OrderedDictを使います）でデータ化した定数（`const_dict.py`）を元に、Lesson14と同等のPythonスクリプトのルーチン（状態のスクリプト）を自動生成しましょう  
+Lesson18 で作ったファイルを動かしましょう  
 
 # house3n2
-
-Lesson13n2 と同じ動きをするものを作りましょう  
-
-## Set up
-
-```shell
-# 定数ファイルの自動生成
-python.exe -m lesson17.const_py_maker "lesson17_projects/house3/data/const.json" "lesson23_projects/house3n2/auto_gen/data/const.py"
-#                                     ------------------------------------------ ---------------------------------------------------
-#                                     入力ファイル (.json)                        出力ファイル (.py)
-
-# 状態遷移ファイルの自動生成
-python.exe -m lesson23.state_py_generator_v23 "lesson23_projects/house3n2/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
-#                                             -------------------------------------- ------------ ----------------- ------- -------------------
-#                                             1.                                     2.           3.                4.      5.
-# 1. 設定ファイル（TOML形式）へのパス
-# 2. 定数を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
-# 3. 状態遷移を定義した入力ファイル（JSON形式）へのパスが入ったプロパティの名前
-# 4. [import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前
-# 5. 状態ファイル出力ディレクトリーパスのプロパティ名
-```
 
 ## Run
 

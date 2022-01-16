@@ -1,14 +1,14 @@
 """State Generator"""
 from lesson12_projects.house3.data.const import MY_ROOM, CLOSE_DOOR, OPEN_DOOR, OUT, STAIRS
 
-# Lesson 23 State
-from lesson23_projects.house3n2.auto_gen.code.states1.myroom import MyroomState
-from lesson23_projects.house3n2.auto_gen.code.states1.out_closedoor import OutClosedoorState
-from lesson23_projects.house3n2.auto_gen.code.states1.out_opendoor import OutOpendoorState
-from lesson23_projects.house3n2.auto_gen.code.states1.out import OutState
-from lesson23_projects.house3n2.auto_gen.code.states1.stairs import StairsState
+# State
+from lesson18_projects.house3.auto_gen.code.states1.myroom import MyroomState
+from lesson18_projects.house3.auto_gen.code.states1.out_closedoor import OutClosedoorState
+from lesson18_projects.house3.auto_gen.code.states1.out_opendoor import OutOpendoorState
+from lesson18_projects.house3.auto_gen.code.states1.out import OutState
+from lesson18_projects.house3.auto_gen.code.states1.stairs import StairsState
 
-# Lesson 23 State wrapper
+# State wrapper
 from lesson23_projects.house3n2.code.states2.myroom import create_myroom
 from lesson23_projects.house3n2.code.states2.out_closedoor import create_out_closedoor
 from lesson23_projects.house3n2.code.states2.out_opendoor import create_out_opendoor

@@ -2,11 +2,11 @@
 from lesson17_projects.pen.auto_gen.data.const import A, INIT, IS, PEN, THIS
 
 # States
-from lesson23_projects.pen.auto_gen.code.states1.init_this_is_a import InitThisIsAState
-from lesson23_projects.pen.auto_gen.code.states1.init_this_is import InitThisIsState
-from lesson23_projects.pen.auto_gen.code.states1.init_this import InitThisState
-from lesson23_projects.pen.auto_gen.code.states1.init import InitState
-from lesson23_projects.pen.auto_gen.code.states1.pen import PenState
+from lesson18_projects.pen.auto_gen.code.states1.init_this_is_a import InitThisIsAState
+from lesson18_projects.pen.auto_gen.code.states1.init_this_is import InitThisIsState
+from lesson18_projects.pen.auto_gen.code.states1.init_this import InitThisState
+from lesson18_projects.pen.auto_gen.code.states1.init import InitState
+from lesson18_projects.pen.auto_gen.code.states1.pen import PenState
 
 # State wrapper
 from lesson18_projects.pen.code.states.init import create_init
