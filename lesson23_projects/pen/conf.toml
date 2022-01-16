@@ -8,4 +8,4 @@ transition_file = "lesson10020_projects/pen/auto_gen/data/transition.json"
 output_states_dir = "lesson23_projects/pen/auto_gen/code/states1"
 
 [import_module]
-const = "lesson18_projects.pen.auto_gen.data.const"
+const = "lesson17_projects.pen.auto_gen.data.const"

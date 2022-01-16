@@ -1,5 +1,5 @@
 """State Generator"""
-from lesson18_projects.pen.auto_gen.data.const import A, INIT, IS, PEN, THIS
+from lesson17_projects.pen.auto_gen.data.const import A, INIT, IS, PEN, THIS
 
 # State
 from lesson18_projects.pen.auto_gen.code.states1.init_this_is_a import InitThisIsAState

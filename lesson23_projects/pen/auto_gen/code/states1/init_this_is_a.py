@@ -1,4 +1,5 @@
-from lesson18_projects.pen.auto_gen.data.const import E_OVER, E_PEN, E_PIN
+from lesson17_projects.pen.auto_gen.data.const import E_OVER, E_PEN, E_PIN
+
 
 class InitThisIsAState():
     def update(self, req):
@@ -38,4 +39,3 @@ class InitThisIsAState():
 
     def on_pen(self, req):
         pass
-
