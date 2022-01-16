@@ -12,11 +12,14 @@ from lesson17_projects.wcsc.data.const import wcsc_const_doc
 class Main:
     def on_main(self):
         parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
-        parser.add_argument('conf', help='設定ファイルへのパス')
-        parser.add_argument(
-            'input_property', help='読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
-        parser.add_argument(
-            'output_property', help='書込先ディレクトリーへのパスが書いてあるプロパティのキー')
+        parser.add_argument('conf',
+                            help='設定ファイルへのパス')
+        parser.add_argument('input_property',
+                            help='読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
+        parser.add_argument('output_property',
+                            help='書込先ディレクトリーへのパスが書いてあるプロパティのキー')
+        parser.add_argument('import_module',
+                            help='[import_module]テーブル下の、import文のモジュールへのパスが入ったプロパティの名前')
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
@@ -25,6 +28,7 @@ class Main:
         # TOMLの内容を読み取ります
         transition_file_path = toml_doc[args.input_property]
         output_states_dir = toml_doc[args.output_property]
+        import_module_const = toml_doc['import_module'][args.import_module]
 
         # JSONファイルを読込みます
         transition_doc = JsonReaderV11n100.read_file(
@@ -35,7 +39,7 @@ class Main:
             const_doc=wcsc_const_doc,
             transition_doc=transition_doc,
             output_dir_path=output_states_dir,
-            import_module_path="lesson17_projects.wcsc.data.auto_gen.const",
+            import_module_path=import_module_const,
         )
         return 0
 
