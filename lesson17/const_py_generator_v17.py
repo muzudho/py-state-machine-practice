@@ -21,6 +21,10 @@ class Main:
 
     Examples
     --------
+    # 設定ファイル conf.toml
+    input_const_file = "lesson17_projects/house3/data/const.json"
+    output_const_file = "lesson17_projects/house3/auto_gen/data/const.py"
+
     # 入力ファイル example-const.json
     {
         "CLOSE_DOOR": "CloseDoor",
