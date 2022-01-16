@@ -5,18 +5,18 @@
 
 ただし今回はコードを生成するだけで、生成したコードを実行するところまではやりません  
 
-wcsc_const.py:  
+const.py:  
 
 ```python
-INIT = 'Init'
-LOGIN = 'Login'
-LOBBY = 'Lobby'
-LOGOUT = 'Logout'
-REPLY = 'Reply'
-# 以下略
+house3_const_doc = {
+    "OUT": "Out",  # Out/CloseKnob
+    "CLOSE_DOOR": "CloseDoor",
+    "OPEN_DOOR": "OpenDoor",
+    # 以下略
+}
 ```
 
-👆 step1 では、 Pythonのdict（これはOrderedDictではありません）でデータ化した定数（`const_dict.py`）を元に、定数を定義した Pythonスクリプトを自動生成します  
+👆 step1 では、 doc構造でデータ化した定数（`const.py`）を元に、定数を定義した Pythonスクリプトを自動生成します  
 
 init.py:  
 

@@ -31,11 +31,11 @@
 * 📖 [Lesson14](./lesson14) - 状態遷移定義ファイルを作ってみましょう。サブサブサブステートマシンを作ってみましょう
 * 📖 [Lesson15](./lesson15) - `transition.json` だけあれば、状態遷移がちゃんとつながっているか検証できるはずです。 graphviz を使って可視化しましょう
 * 📖 [Lesson15-2](./lesson15n2) - サブステートを可視化できるように、 graphviz のクラスタリングを使いましょう
-* 📖 Lesson16 - （TODO Lesson11-300に移動
+* 📖 Lesson16 - Lesson11-300に移動
 * 📖 [Lesson16-2](./lesson16n2) - `pen_transition.py` からすべてのステートを読取り、ステートクラスを自動生成しましょう
 * 📖 [Lesson16-3](./lesson16n3) - 次に、 エッジの分岐を自動生成しましょう
 * 📖 [Lesson17](./lesson17) - doc構造でデータ化した定数（`const.py`）を元に、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう TODO (Lesson17 より先に Lesson22 を持ってこれないか？)
-* 📖 [Lesson17-2](./lesson17n2) - (Lesson20からLesson17-2へ移動) .json を読み取る練習をしましょう ---> JsonReaderを、Lesson11n100 へ移動したい
+* 📖 Lesson17-2 - Lesson11-100 に移動
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、doc構造でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
 * 📖 [Lesson18-2](./lesson18n2) - JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
 * 📖 [Lesson20](./lesson20) - `transition.json` ファイルを読み取ってみましょう (Lesson17-2へ一部移動)
