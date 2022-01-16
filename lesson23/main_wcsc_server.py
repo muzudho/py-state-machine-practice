@@ -10,7 +10,6 @@ from lesson18n3.server_v18n3 import ServerV18n3
 from lesson18n3.state_machine_v18n3 import StateMachineV18n3
 
 # Lesson 23
-from lesson23_projects.wcsc.auto_gen.data.const import INIT
 from lesson23_projects.wcsc.data.state_gen_v23 import wcsc_state_gen_v23
 
 server = None
@@ -36,7 +35,7 @@ class Main:
         state_machine = StateMachineV18n3(
             state_gen=wcsc_state_gen_v23,
             transition_doc=transition_doc,
-            entry_state_path=[INIT])
+            entry_state_path=transition_doc['entry_state'])
 
         # サーバー
         server = ServerV18n3(

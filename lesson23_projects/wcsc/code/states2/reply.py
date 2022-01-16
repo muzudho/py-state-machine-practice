@@ -1,4 +1,4 @@
-from lesson23_projects.wcsc.auto_gen.data.const import E_AGREE, E_REJECT
+from lesson17_projects.wcsc.auto_gen.data.const import E_AGREE, E_REJECT
 
 
 def create_reply(state):
