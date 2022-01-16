@@ -22,17 +22,6 @@ class Main:
         parser.add_argument('var_name', help='状態遷移ディクショナリーの変数名')
         args = parser.parse_args()
 
-        # Example: "lesson18n2_projects/house3/data/const.json"
-        print(f'args.input_const     : {args.input_const}')
-        # Example: "lesson10019_projects/house3n2/data/auto_gen/transition2.json"
-        print(f'args.input_transition: {args.input_transition}')
-        # Example: "lesson10021_projects/house3n2/data/auto_gen/transition2.py"
-        print(f'args.output          : {args.output}')
-        # Example: "lesson18_projects.house3n2.data.auto_gen.const"
-        print(f'args.import_module   : {args.import_module}')
-        # Example: "house3n2_transition2_doc"
-        print(f'args.var_name        : {args.var_name}')
-
         const_data = JsonReaderV11n100.read_file(args.input_const)
         transition_data = JsonReaderV11n100.read_file(args.input_transition)
 

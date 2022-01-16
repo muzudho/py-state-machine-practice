@@ -11,9 +11,9 @@ Lesson13n2 と同じ動きをするものを作りましょう
 
 ```shell
 # 定数ファイルの自動生成
-python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/house3/data/const.json" "lesson23_projects/house3n2/auto_gen/data/const.py"
-#                                       -------------------------------------------- ---------------------------------------------------
-#                                       入力ファイル (.json)                          出力ファイル (.py)
+python.exe -m lesson17.const_py_maker "lesson17_projects/house3/data/const.json" "lesson23_projects/house3n2/auto_gen/data/const.py"
+#                                     ------------------------------------------ ---------------------------------------------------
+#                                     入力ファイル (.json)                        出力ファイル (.py)
 
 # 状態遷移ファイルの自動生成
 python.exe -m lesson23.state_py_generator_v23 "lesson23_projects/house3n2/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
@@ -59,9 +59,9 @@ q
 
 ```shell
 # 定数ファイルの自動生成
-python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/pen/data/const.json" "lesson23_projects/pen/auto_gen/data/const.py"
-#                                       ----------------------------------------- ----------------------------------------------
-#                                       入力ファイル (.json)                        出力ファイル (.py)
+python.exe -m lesson17.const_py_maker "lesson17_projects/pen/data/const.json" "lesson23_projects/pen/auto_gen/data/const.py"
+#                                     --------------------------------------- ----------------------------------------------
+#                                     入力ファイル (.json)                      出力ファイル (.py)
 
 # 状態遷移ファイルの自動生成
 python.exe -m lesson23.state_py_generator_v23 "lesson23_projects/pen/conf.toml" "const_file" "transition_file" "const" "output_states_dir"
@@ -105,9 +105,9 @@ q
 
 ```shell
 # 定数ファイルの自動生成
-python.exe -m lesson18n2.const_py_maker "lesson18n2_projects/wcsc/data/const.json" "lesson23_projects/wcsc/auto_gen/data/const.py"
-#                                       ------------------------------------------ -----------------------------------------------
-#                                       入力ファイル (.json)                        出力ファイル (.py)
+python.exe -m lesson17.const_py_maker "lesson17_projects/wcsc/data/const.json" "lesson23_projects/wcsc/auto_gen/data/const.py"
+#                                     ---------------------------------------- -----------------------------------------------
+#                                     入力ファイル (.json)                      出力ファイル (.py)
 
 # 状態遷移ファイルの自動生成
 python.exe -m lesson23.state_py_generator_v23 "lesson23_projects/wcsc/conf.toml" "const_file" "transition_file" "const" "output_states_dir"

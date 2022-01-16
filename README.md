@@ -37,7 +37,7 @@
 * 📖 [Lesson17](./lesson17) - doc構造でデータ化した定数（`const.py`）を元に、定数を定義したスクリプト（`const.py`）も自動生成するようにしましょう TODO (Lesson17 より先に Lesson22 を持ってこれないか？)
 * 📖 Lesson17-2 - Lesson11-100 に移動
 * 📖 [Lesson18](./lesson18) - Lesson17 で行ったコードの自動生成を発展させ、doc構造でデータ化した定数（`const_dict.py`）を元に、Lesson14 と同等の Python スクリプトのルーチン（状態のスクリプト）を自動生成しましょう
-* 📖 [Lesson18-2](./lesson18n2) - (TODO Lesson17に統合したい) JSONファイルでデータ化した定数の定義（`const.json`）から、定数を定義したPythonスクリプト（`const.py`）を出力しましょう
+* 📖 Lesson18-2 - Lesson17 へ統合
 * 📖 [Lesson20](./lesson20) - `transition.json` ファイルを読み取ってみましょう (Lesson17-2へ一部移動)
 * 📖 Lesson22 - (Lesson18-2に移動)
 * 📖 [Lesson23](./lesson23) - Lesson18 をさらに発展させ、Pythonのdict（これはOrderedDictではありません）を経由せず、JSON（OrderedDictを使います）でデータ化した定数（`const_dict.py`）を元に、Lesson14と同等のPythonスクリプトのルーチン（状態のスクリプト）を自動生成しましょう

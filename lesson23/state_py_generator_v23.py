@@ -25,7 +25,7 @@ class Main:
 
     # Example: conf.toml
     # 定数
-    const_file = "lesson18n2_projects/house3/data/const.json"
+    const_file = "lesson17_projects/house3/data/const.json"
 
     # 状態遷移
     transition_file = "lesson20_projects/house3n2/auto_gen/data/transition3.json"
