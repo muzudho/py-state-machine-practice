@@ -1,7 +1,7 @@
 from lesson13.state_machine_helper_v13 import StateMachineHelperV13
 
 
-class StateMachineV18n3:
+class StateMachineV23:
     def __init__(self, state_gen, transition):
         self._is_verbose = False
         self._state_gen = state_gen
