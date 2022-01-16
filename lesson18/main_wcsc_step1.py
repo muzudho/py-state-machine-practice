@@ -18,10 +18,10 @@ class Main:
         toml_doc = TomlReaderV11n90.read_file(args.conf)
 
         # TOMLの内容を読み取ります
-        const_file = toml_doc['const_file']
+        const_file_path = toml_doc['const_file']
 
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        gen_const_file_v17(const_file, wcsc_const_doc)
+        gen_const_file_v17(wcsc_const_doc, const_file_path)
         return 0
 
     def on_except(self, e):

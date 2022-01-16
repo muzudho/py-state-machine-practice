@@ -38,7 +38,7 @@ class Main:
     """
 
     def on_main(self):
-        parser = argparse.ArgumentParser(description='定数を定義した .pyファイルを作成します')
+        parser = argparse.ArgumentParser(description='設定ファイルを読み込みます')
         parser.add_argument('conf', help='設定ファイルへのパス')
         args = parser.parse_args()
 
@@ -54,7 +54,7 @@ class Main:
             input_const_file_path)
 
         # 定数ファイル生成
-        gen_const_file_v17(const_doc, output_const_file_path)
+        gen_const_file_v17(output_const_file_path, const_doc)
         return 0
 
     def on_except(self, e):

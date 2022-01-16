@@ -21,7 +21,7 @@ class Main:
         transition_file_path = toml_doc['const_file']
 
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        gen_const_file_v17(transition_file_path, pen_const_doc)
+        gen_const_file_v17(pen_const_doc, transition_file_path)
         return 0
 
     def on_except(self, e):

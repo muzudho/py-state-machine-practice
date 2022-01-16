@@ -22,7 +22,7 @@ class Main:
 
         # サーバー起動
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        gen_const_file_v17(transition_file_path, house3_const_doc)
+        gen_const_file_v17(house3_const_doc, transition_file_path)
         return 0
 
     def on_except(self, e):

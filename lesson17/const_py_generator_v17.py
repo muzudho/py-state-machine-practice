@@ -3,7 +3,8 @@ import argparse
 import traceback
 
 from lesson07n2.main_finally import MainFinally
-from lesson17.code_gen.const_py_gen_v18n2 import gen_const_py_v18n2
+from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
+from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 
 
 class Main:
@@ -41,7 +42,8 @@ class Main:
         parser.add_argument('output', help='定数を定義した出力ファイル(.py)')
         args = parser.parse_args()
 
-        gen_const_py_v18n2(args.input, args.output)
+        const_doc = JsonReaderV11n100.read_file(args.input)
+        gen_const_file_v17(const_doc, args.output)
         return 0
 
     def on_except(self, e):

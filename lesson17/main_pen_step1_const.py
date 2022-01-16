@@ -11,7 +11,7 @@ OUTPUT_FILE_PATH = "lesson17_projects/pen/auto_gen/data/const.py"
 class Main:
     def on_main(self):
         # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
-        gen_const_file_v17(OUTPUT_FILE_PATH, pen_const_doc)
+        gen_const_file_v17(pen_const_doc, OUTPUT_FILE_PATH)
         return 0
 
     def on_except(self, e):
