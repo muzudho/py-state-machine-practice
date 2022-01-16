@@ -3,7 +3,7 @@ from lesson16n3.code_gen.py_syntax.switch_gen import SwitchGen
 from lesson16n3.conf_obj.transition_v16n3 import TransitionV16n3
 
 
-def gen_state_file(dir_path, node_path, const_conf, transition):
+def gen_state_file(dir_path, node_path, const, transition):
     file_stem = node_path.replace("/", "_").lower()
     class_name = node_path.replace("/", "")
     # print(f"[gen_state_file] node_path={node_path} ----> {file_stem}")
@@ -35,7 +35,7 @@ def gen_state_file(dir_path, node_path, const_conf, transition):
             if_elif_list.append([cond, body_sequence])
 
         else:
-            operand = const_conf.stringify(
+            operand = const.stringify(
                 edge.name, "'")  # できれば定数に変換します。でなければ文字列
             if operand[0] != "'":
                 # 定数を使った
@@ -47,7 +47,7 @@ def gen_state_file(dir_path, node_path, const_conf, transition):
             # TODO ノードの文字列のうち、定数にできるところは定数にしたい
             text_list = []
             for item in edge.dst:
-                s1 = const_conf.stringify(item, "'")
+                s1 = const.stringify(item, "'")
                 if s1[0] != "'":
                     # 定数を使った
                     used_const.add(s1)

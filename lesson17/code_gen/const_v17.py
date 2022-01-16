@@ -1,16 +1,16 @@
-class ConstConfV17:
-    def __init__(self, data):
-        self._data = data
+class ConstV17:
+    def __init__(self, doc):
+        self._doc = doc
 
         # 逆向きは自動生成します
         self._rev_data = {}
 
-        for key, value in self._data.items():
+        for key, value in self._doc.items():
             self._rev_data[value] = key
 
     @property
-    def data(self):
-        return self._data
+    def doc(self):
+        return self._doc
 
     @property
     def rev_data(self):

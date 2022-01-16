@@ -4,7 +4,7 @@ import traceback
 
 from lesson07n2.main_finally import MainFinally
 from lesson11n90.code_gen.toml_reader_v11n90 import TomlReaderV11n90
-from lesson17.code_gen.const_file_gen import gen_const_file_v17
+from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 from lesson18_projects.house3.data.const import house3_const_doc
 
 

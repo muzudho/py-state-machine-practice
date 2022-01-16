@@ -29,8 +29,8 @@ class Main:
 
         # ファイル生成
         gen_state_files_v17(
-            const_conf_doc=wcsc_const_doc,
-            transition_conf_data=transition_doc,
+            const_doc=wcsc_const_doc,
+            transition_doc=transition_doc,
             output_dir_path=STEP2_AUTO_STATE_DIR_PATH,
         )
         return 0

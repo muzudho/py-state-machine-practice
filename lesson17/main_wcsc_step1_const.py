@@ -2,7 +2,7 @@ import sys
 import traceback
 
 from lesson07n2.main_finally import MainFinally
-from lesson17.code_gen.const_file_gen import gen_const_file_v17
+from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 from lesson17_projects.wcsc.data.const import wcsc_const_doc
 
 OUTPUT_FILE_PATH = "lesson17_projects/wcsc/auto_gen/data/const.py"

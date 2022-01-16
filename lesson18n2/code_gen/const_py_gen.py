@@ -1,5 +1,5 @@
 from lesson11n100.code_gen.json_reader_v11n100 import JsonReaderV11n100
-from lesson17.code_gen.const_file_gen import gen_const_file_v17
+from lesson17.code_gen.const_file_gen_v17 import gen_const_file_v17
 
 
 def gen_const_py(input_path, output_path):
