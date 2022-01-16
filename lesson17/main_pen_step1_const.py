@@ -25,7 +25,7 @@ class Main:
         const_doc = JsonReaderV11n100.read_file(
             input_const_file_path)
 
-        # 定数は transition_conf.py を作るために必要なので、先に作っておいてほしい
+        # 定数ファイル生成
         gen_const_file_v17(const_doc, output_const_file_path)
         return 0
 
