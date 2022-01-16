@@ -90,9 +90,12 @@ class InitState():
 
 ```shell
 # Windows
-python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/house3/conf.toml"
-#                                             ------------------------------------
-#                                             設定ファイル (TOML形式)
+python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/house3/conf.toml" "input_const_file" "output_const_file"
+#                                             ------------------------------------ ------------------ -------------------
+#                                             1.                                   2.                 3.
+# 1. 設定ファイル (TOML形式)
+# 2. 読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
+# 3. 書込ファイル（テキストファイル形式）へのパスが書いてあるプロパティのキー
 ```
 
 # Example - Pen
@@ -105,9 +108,12 @@ python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/house3/conf.tom
 
 ```shell
 # Windows
-python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/pen/conf.toml"
-#                                             ---------------------------------
-#                                             設定ファイル (TOML形式)
+python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/pen/conf.toml" "input_const_file" "output_const_file"
+#                                             --------------------------------- ------------------ -------------------
+#                                             1.                                2.                 3.
+# 1. 設定ファイル (TOML形式)
+# 2. 読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
+# 3. 書込ファイル（テキストファイル形式）へのパスが書いてあるプロパティのキー
 ```
 
 # Example - WCSC
@@ -119,9 +125,12 @@ python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/pen/conf.toml"
 * `lesson17_projects/wcsc/auto_gen`
 
 ```shell
-python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/wcsc/conf.toml"
-#                                             ----------------------------------
-#                                             設定ファイル (TOML形式)
+python.exe -m lesson17.const_py_generator_v17 "lesson17_projects/wcsc/conf.toml" "input_const_file" "output_const_file"
+#                                             ---------------------------------- ------------------ -------------------
+#                                             1.                                 2.                 3.
+# 1. 設定ファイル (TOML形式)
+# 2. 読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー
+# 3. 書込ファイル（テキストファイル形式）へのパスが書いてあるプロパティのキー
 
 python.exe -m lesson17.main_wcsc_step2 "lesson17_projects/wcsc/conf.toml"
 #                                      ----------------------------------

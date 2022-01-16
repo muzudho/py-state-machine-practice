@@ -35,6 +35,10 @@ class Main:
     def on_main(self):
         parser = argparse.ArgumentParser(description='定数を定義した .pyファイルを作成します')
         parser.add_argument('conf', help='設定ファイルへのパス')
+        parser.add_argument(
+            'input_property', help='読込ファイル（JSON形式）へのパスが書いてあるプロパティのキー')
+        parser.add_argument(
+            'output_property', help='書込ファイル（Python形式）へのパスが書いてあるプロパティのキー')
         args = parser.parse_args()
 
         # 設定ファイル（.toml）読取
