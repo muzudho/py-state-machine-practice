@@ -34,7 +34,7 @@ class Main:
         # グラフ描画
         self._graph_render = GraphRenderV15n2(
             transition=transition,
-            output_graph_text_file=output_graph_text_file)
+            output_text_file=output_graph_text_file)
         self._graph_render.run()
         return 0
 
