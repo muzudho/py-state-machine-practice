@@ -2,13 +2,15 @@
 
 果物（状態, State）を差し替えることで、せりふ（振る舞い, Behavior）が変わる理屈を習得してください  
 
+## Run
+
 ```shell
 python.exe -m lesson01.main
 ```
 
 ## 解説
 
-juice.py:  
+juice_v1.py:  
 
 ```python
 class Juice:
@@ -23,50 +25,50 @@ class Juice:
 Juice クラスが持っている fruit オブジェクトの `.print()` を代わりに呼んでいるだけ、  
 ということに注目してください
 
-fruit/apple.py:  
+fruit/apple_v1.py:  
 
 ```python
-class Apple:
+class AppleV1:
     def print(self):
         print("Refreshing!")
 ```
 
-fruit/banana.py:  
+fruit/banana_v1.py:  
 
 ```python
-class Banana:
+class BananaV1:
     def print(self):
         print("Very sweet!")
 ```
 
-fruit/cherry.py:
+fruit/cherry_v1.py:
 
 ```python
-class Cherry:
+class CherryV1:
     def print(self):
         print("Sour!")
 ```
 
-👆 fruit オブジェクトには、例えば Apple クラスのインスタンスだったり、  
-Banana クラスのインスタンスだったり、 Cherry クラスのインスタンスが代入されているとします
+👆 fruit オブジェクトには、例えば AppleV1 クラスのインスタンスだったり、  
+BananaV1 クラスのインスタンスだったり、 CherryV1 クラスのインスタンスが代入されているとします
 
 main.py:  
 
 ```python
 from lesson01.juice import Juice
-from lesson01.fruit.apple import Apple
-from lesson01.fruit.banana import Banana
-from lesson01.fruit.cherry import Cherry
+from lesson01.fruit.apple import AppleV1
+from lesson01.fruit.banana import BananaV1
+from lesson01.fruit.cherry import CherryV1
 
 
 if __name__ == "__main__":
-    juice = Juice(Apple())
+    juice = Juice(AppleV1())
     juice.print()
 
-    juice = Juice(Banana())
+    juice = Juice(BananaV1())
     juice.print()
 
-    juice = Juice(Cherry())
+    juice = Juice(CherryV1())
     juice.print()
 ```
 
