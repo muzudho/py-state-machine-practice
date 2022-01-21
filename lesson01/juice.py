@@ -1,6 +1,6 @@
 class Juice:
-    def __init__(self, state):
-        self._state = state
+    def __init__(self, fruit):
+        self._fruit = fruit
 
     def print(self):
-        self._state.print()
+        self._fruit.print()
