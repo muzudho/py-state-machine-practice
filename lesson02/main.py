@@ -1,12 +1,12 @@
-from lesson02.fruits import fruits_v02
+from lesson02.fruits_v02 import fruits_v02
 
 
 if __name__ == "__main__":
-    state = fruits_v02["Apple"]
-    state.print()
+    juice = fruits_v02["Apple"]
+    juice.print()
 
-    state = fruits_v02["Banana"]
-    state.print()
+    juice = fruits_v02["Banana"]
+    juice.print()
 
-    state = fruits_v02["Cherry"]
-    state.print()
+    juice = fruits_v02["Cherry"]
+    juice.print()

@@ -1,4 +1,4 @@
-from lesson02.fruits import fruits_v02
+from lesson02.fruits_v02 import fruits_v02
 
 
 if __name__ == "__main__":
