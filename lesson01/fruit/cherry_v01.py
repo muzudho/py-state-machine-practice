@@ -1,3 +1,3 @@
-class CherryV1:
+class CherryV01:
     def print(self):
         print("Sour!")

@@ -1,4 +1,4 @@
-class Juice:
+class Juice01:
     def __init__(self, fruit):
         self._fruit = fruit
 

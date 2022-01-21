@@ -15,14 +15,14 @@ fruits_v02.py:
 
 ```python
 from lesson01.fruit.apple import AppleV1
-from lesson01.fruit.banana import BananaV1
-from lesson01.fruit.cherry import CherryV1
+from lesson01.fruit.banana import BananaV01
+from lesson01.fruit.cherry import CherryV01
 
 
 fruits_v02 = {
     "Apple": AppleV1(),
-    "Banana": BananaV1(),
-    "Cherry": CherryV1(),
+    "Banana": BananaV01(),
+    "Cherry": CherryV01(),
 }
 ```
 
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     juice.print()
 ```
 
-👆 これによって、 Lesson01 では `juice = Juice(AppleV1())` と書いていたコードが、  
+👆 これによって、 Lesson01 では `juice = Juice01(AppleV1())` と書いていたコードが、  
 `juice = fruits_v02["Apple"]` と書くように変わりました  
 
 `AppleV1()` とハードコーディングしていたところを `"Apple"` のように文字列指定に変わったのが大きいです。  
