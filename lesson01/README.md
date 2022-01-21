@@ -8,6 +8,14 @@
 python.exe -m lesson01.main
 ```
 
+Output:  
+
+```plain
+🍎 Refreshing!
+🍌 Very sweet!
+🍒 Sour!
+```
+
 ## 解説
 
 juice_v01.py:  
