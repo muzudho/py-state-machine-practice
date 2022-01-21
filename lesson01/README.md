@@ -13,7 +13,7 @@ python.exe -m lesson01.main
 juice_v01.py:  
 
 ```python
-class Juice01:
+class JuiceV01:
     def __init__(self, fruit):
         self._fruit = fruit
 
@@ -22,7 +22,7 @@ class Juice01:
 ```
 
 👆 Juice クラスの `.print()` メソッドは、  
-Juice01 クラスが持っている fruit オブジェクトの `.print()` を代わりに呼んでいるだけ、  
+JuiceV01 クラスが持っている fruit オブジェクトの `.print()` を代わりに呼んでいるだけ、  
 ということに注目してください
 
 fruit/apple_v1.py:  
@@ -55,24 +55,24 @@ BananaV01 クラスのインスタンスだったり、 CherryV01 クラスの�
 main.py:  
 
 ```python
-from lesson01.juice import Juice01
+from lesson01.juice import JuiceV01
 from lesson01.fruit.apple import AppleV01
 from lesson01.fruit.banana import BananaV01
 from lesson01.fruit.cherry import CherryV01
 
 
 if __name__ == "__main__":
-    juice = Juice01(AppleV01())
+    juice = JuiceV01(AppleV01())
     juice.print()
 
-    juice = Juice01(BananaV01())
+    juice = JuiceV01(BananaV01())
     juice.print()
 
-    juice = Juice01(CherryV01())
+    juice = JuiceV01(CherryV01())
     juice.print()
 ```
 
 👆 コードで書くと上記の通りです。  
-これで、 Juice01 クラスの `.print()` メソッドは **振る舞い** を変えています。  
+これで、 JuiceV01 クラスの `.print()` メソッドは **振る舞い** を変えています。  
 
 このように、振る舞いを変えるコードの書き方のパターンを 覚えてください。  

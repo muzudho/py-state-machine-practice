@@ -32,22 +32,23 @@ Bananaクラスのインスタンス、Cherryクラスのインスタンスを�
 main.py:  
 
 ```python
+from lesson01.juice_v01 import JuiceV01
 from lesson02.fruits_v02 import fruits_v02
 
 
 if __name__ == "__main__":
-    juice = fruits_v02["Apple"]
+    juice = JuiceV01(fruits_v02["Apple"])
     juice.print()
 
-    juice = fruits_v02["Banana"]
+    juice = JuiceV01(fruits_v02["Banana"])
     juice.print()
 
-    juice = fruits_v02["Cherry"]
+    juice = JuiceV01(fruits_v02["Cherry"])
     juice.print()
 ```
 
-👆 これによって、 Lesson01 では `juice = Juice01(AppleV1())` と書いていたコードが、  
-`juice = fruits_v02["Apple"]` と書くように変わりました  
+👆 これによって、 Lesson01 では `juice = JuiceV01(AppleV1())` と書いていたコードが、  
+`juice = JuiceV01(fruits_v02["Apple"])` と書くように変わりました  
 
 `AppleV1()` とハードコーディングしていたところを `"Apple"` のように文字列指定に変わったのが大きいです。  
 これにより外部ファイルを読込むことでプログラムの動きを変える、といったことが可能になりそうです  
