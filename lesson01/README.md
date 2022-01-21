@@ -25,28 +25,28 @@ class JuiceV01:
 JuiceV01 クラスが持っている fruit オブジェクトの `.print()` を代わりに呼んでいるだけ、  
 ということに注目してください
 
-fruit/apple_v1.py:  
+fruit/apple_v01.py:  
 
 ```python
 class AppleV01:
     def print(self):
-        print("Refreshing!")
+        print("🍎 Refreshing!")
 ```
 
-fruit/banana_v1.py:  
+fruit/banana_v01.py:  
 
 ```python
 class BananaV01:
     def print(self):
-        print("Very sweet!")
+        print("🍌 Very sweet!")
 ```
 
-fruit/cherry_v1.py:
+fruit/cherry_v01.py:
 
 ```python
 class CherryV01:
     def print(self):
-        print("Sour!")
+        print("🍒 Sour!")
 ```
 
 👆 fruit オブジェクトには、例えば AppleV01 クラスのインスタンスだったり、  
