@@ -9,20 +9,28 @@
 python.exe -m lesson02.main
 ```
 
+Output:  
+
+```shell
+🍎 Refreshing!
+🍌 Very sweet!
+🍒 Sour!
+```
+
 ## 解説
 
 fruits_v02.py:  
 
 ```python
-from lesson01.fruit.apple import AppleV1
-from lesson01.fruit.banana import BananaV01
-from lesson01.fruit.cherry import CherryV01
+from lesson01n2.fruit.apple_v01n2 import AppleV01n2
+from lesson01n2.fruit.banana_v01n2 import BananaV01n2
+from lesson01n2.fruit.cherry_v01n2 import CherryV01n2
 
 
 fruits_v02 = {
-    "Apple": AppleV1(),
-    "Banana": BananaV01(),
-    "Cherry": CherryV01(),
+    "Apple": AppleV01n2("Refreshing!"),
+    "Banana": BananaV01n2("Very sweet!"),
+    "Cherry": CherryV01n2("Sour!"),
 }
 ```
 
@@ -52,3 +60,5 @@ if __name__ == "__main__":
 
 `AppleV1()` とハードコーディングしていたところを `"Apple"` のように文字列指定に変わったのが大きいです。  
 これにより外部ファイルを読込むことでプログラムの動きを変える、といったことが可能になりそうです  
+
+ただし、この方法だと　果物の本文を後から変えることができないため、不便に感じるかもしれません  
